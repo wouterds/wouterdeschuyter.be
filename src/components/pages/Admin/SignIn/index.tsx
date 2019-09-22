@@ -16,7 +16,7 @@ const SignIn = () => {
           <Form.Input id="password" type="password" />
         </Form.Field>
         <Form.Field>
-          <Form.Input type="submit" value="Sign in" />
+          <Form.Button type="submit">Sign in</Form.Button>
         </Form.Field>
       </Form>
     </Layout>
