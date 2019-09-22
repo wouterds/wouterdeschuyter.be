@@ -11,14 +11,6 @@
 ## Setup
 
 ```bash
-npm install
-```
-
-### Environment variables
-
-Copy `.env.example` to `.env` and **edit `.env`** with the correct values.
-
-```bash
 cp .env.example .env
 ```
 
@@ -45,5 +37,5 @@ cp .env.example .env
 ## Running
 
 ```bash
-npm run dev
+docker-compose -f .docker/docker-compose-dev.yml up
 ```
