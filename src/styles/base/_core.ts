@@ -3,6 +3,7 @@ import { css } from 'styled-components';
 export default css`
   #__next {
     min-height: 100%;
+    display: flex;
   }
 
   body,

@@ -1,10 +1,14 @@
 import React, { ReactNode } from 'react';
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const Layout = (props: { children: ReactNode }) => {
   const { children } = props;
 
-  return <Container>{children}</Container>;
+  return (
+    <Container>
+      <Content>{children}</Content>
+    </Container>
+  );
 };
 
 export default Layout;
