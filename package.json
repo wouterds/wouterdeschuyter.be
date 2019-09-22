@@ -5,6 +5,7 @@
   "repository": "github:wouterds/wouterdeschuyter.be",
   "author": "Wouter De Schuyter <wouter.de.schuyter@gmail.com>",
   "scripts": {
+    "start": "next start",
     "dev": "next ./src",
     "lint": "eslint '**/*.{ts,tsx}' && tsc",
     "lint:fix": "eslint '**/*.{ts,tsx}' --fix",
