@@ -6,10 +6,13 @@ import React, {
 } from 'react';
 import { Container } from './styles';
 
-type Props = DetailedHTMLProps<
-  InputHTMLAttributes<HTMLInputElement>,
-  HTMLInputElement
->;
+interface Props
+  extends DetailedHTMLProps<
+    InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  hasError?: boolean;
+}
 
 const Input = (props: Props, ref: Ref<HTMLInputElement>) => {
   return <Container {...props} ref={ref} />;

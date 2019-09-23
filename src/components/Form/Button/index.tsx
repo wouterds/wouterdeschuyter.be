@@ -1,8 +1,40 @@
-import React, { ButtonHTMLAttributes } from 'react';
+import React, {
+  forwardRef,
+  DetailedHTMLProps,
+  ButtonHTMLAttributes,
+  Ref,
+  useCallback,
+  MouseEvent,
+} from 'react';
 import { Container } from './styles';
 
-const Button = (props: ButtonHTMLAttributes<HTMLButtonElement>) => {
-  return <Container {...props} />;
+interface Props
+  extends DetailedHTMLProps<
+    ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  isLoading?: boolean;
+}
+
+const Button = (props: Props, ref: Ref<HTMLButtonElement>) => {
+  const { onClick, isLoading = false } = props;
+
+  const onClickProxy = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      if (isLoading) {
+        return;
+      }
+
+      if (!onClick) {
+        return;
+      }
+
+      onClick(e);
+    },
+    [onClick, isLoading],
+  );
+
+  return <Container {...props} ref={ref} onClick={onClickProxy} />;
 };
 
-export default Button;
+export default forwardRef<HTMLButtonElement, Props>(Button);
