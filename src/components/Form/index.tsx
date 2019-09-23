@@ -1,14 +1,12 @@
-import React, { ReactNode } from 'react';
+import React, { FormHTMLAttributes } from 'react';
 import { Container } from './styles';
 import Field from './Field';
 import Label from './Label';
 import Input from './Input';
 import Button from './Button';
 
-const Form = (props: { children: ReactNode }) => {
-  const { children } = props;
-
-  return <Container>{children}</Container>;
+const Form = (props: FormHTMLAttributes<HTMLFormElement>) => {
+  return <Container {...props} />;
 };
 
 Form.Field = Field;
