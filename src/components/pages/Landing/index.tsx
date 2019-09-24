@@ -21,6 +21,7 @@ const Index = () => {
         <>
           <br />
           <br />
+          <br />
 
           <h2>JWT token detected:</h2>
           <p>{jwt}</p>

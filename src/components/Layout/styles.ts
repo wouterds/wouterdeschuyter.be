@@ -4,6 +4,7 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   background: #fff;
   font-size: 1.6rem;
   line-height: 1.6;
+  word-break: break-all;
   color: #3b454e;
   flex: 1;
 
@@ -30,14 +31,16 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   h3 {
     margin-bottom: 0.75em;
     font-weight: 600;
+    color: #2b2f33;
   }
 
   h1 {
-    font-size: 1.8em;
+    font-size: 2em;
   }
 
   h2 {
     font-size: 1.6em;
+    margin-bottom: 0.5em;
   }
 
   h3 {

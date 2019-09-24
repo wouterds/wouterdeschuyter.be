@@ -52,7 +52,7 @@ const SignUp = () => {
   return (
     <Layout backgroundColor={backgroundColor}>
       <Container>
-        <h1>Sign up</h1>
+        <h2>Sign up</h2>
         <Form onSubmit={onSubmit}>
           <Form.Field>
             <Form.Label htmlFor="firstName">First name</Form.Label>
