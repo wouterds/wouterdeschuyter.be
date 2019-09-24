@@ -28,7 +28,7 @@ qemu-arm-static:
 	chmod +x qemu-arm-static
 
 .build-app: node_modules
-	docker run --rm -v $(PWD):/code -w /code node:12-slim npm run build
+	docker run --rm -v $(PWD):/code -w /code -e API_ENDPOINT node:12-slim npm run build
 	touch .build-app
 
 .build-node: qemu-arm-static .build-app $(DOCKERFILE_NODE)
