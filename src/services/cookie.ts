@@ -1,6 +1,8 @@
 import UniversalCookie from 'universal-cookie';
 
-export enum Cookies {}
+export enum Cookies {
+  JWT = 'jwt',
+}
 
 class Cookie {
   private client = new UniversalCookie();

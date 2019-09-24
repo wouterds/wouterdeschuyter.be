@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Form from 'components/Form';
 import { Container, backgroundColor } from './styles';
 import Layout from 'components/Layout';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
+import { useCookie, Cookies } from 'hooks/cookie';
 
 const SIGN_UP = gql`
   mutation SignUp(
@@ -28,6 +29,7 @@ const SignUp = () => {
     submitFocusError: false,
   });
   const [signUp] = useMutation(SIGN_UP);
+  const [jwt, setJwt] = useCookie(Cookies.JWT);
 
   const onSubmit = handleSubmit(data => {
     const { firstName, lastName, email, password } = data;
@@ -35,10 +37,17 @@ const SignUp = () => {
     setIsLoading(true);
 
     signUp({ variables: { firstName, lastName, email, password } })
-      .then(({ data }) => console.log({ data }))
+      .then(({ data }) => {
+        const { signUp: jwt } = data;
+        setJwt(jwt);
+      })
       .catch(e => console.error(e.message))
       .finally(() => setIsLoading(false));
   });
+
+  useEffect(() => {
+    console.log({ jwt });
+  }, [jwt]);
 
   return (
     <Layout backgroundColor={backgroundColor}>

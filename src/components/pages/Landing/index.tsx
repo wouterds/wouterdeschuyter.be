@@ -1,8 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Layout from 'components/Layout';
+import { useCookie, Cookies } from 'hooks/cookie';
 
 const Index = () => {
+  const [jwt] = useCookie(Cookies.JWT);
+
   return (
     <Layout>
       <h1>Hello world!</h1>
@@ -13,6 +16,16 @@ const Index = () => {
       <Link href="/admin/sign-up">
         <a>Sign up</a>
       </Link>
+
+      {jwt && (
+        <>
+          <br />
+          <br />
+
+          <h2>JWT token detected:</h2>
+          <p>{jwt}</p>
+        </>
+      )}
     </Layout>
   );
 };
