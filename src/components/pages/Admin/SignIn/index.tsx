@@ -3,19 +3,31 @@ import Form from 'components/Form';
 import { Container, backgroundColor } from './styles';
 import Layout from 'components/Layout';
 import useForm from 'react-hook-form';
+import gql from 'graphql-tag';
+import { useMutation } from '@apollo/react-hooks';
+
+const SIGN_IN = gql`
+  mutation SignIn($email: String!, $password: String!) {
+    signIn(email: $email, password: $password)
+  }
+`;
 
 const SignIn = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, errors } = useForm({
     submitFocusError: false,
   });
+  const [signIn] = useMutation(SIGN_IN);
 
   const onSubmit = handleSubmit(data => {
+    const { email, password } = data;
+
     setIsLoading(true);
 
-    console.log({ data });
-
-    setTimeout(() => setIsLoading(false), 1000);
+    signIn({ variables: { email, password } })
+      .then(({ data }) => console.log({ data }))
+      .catch(e => console.error(e.message))
+      .finally(() => setIsLoading(false));
   });
 
   return (
