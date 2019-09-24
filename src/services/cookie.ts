@@ -1,5 +1,7 @@
 import UniversalCookie from 'universal-cookie';
 
+export enum Cookies {}
+
 class Cookie {
   private client = new UniversalCookie();
 
