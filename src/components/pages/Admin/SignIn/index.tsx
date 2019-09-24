@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Form from 'components/Form';
-import { Container } from './styles';
+import { Container, backgroundColor } from './styles';
 import Layout from 'components/Layout';
 import useForm from 'react-hook-form';
 
@@ -19,7 +19,7 @@ const SignIn = () => {
   });
 
   return (
-    <Layout>
+    <Layout backgroundColor={backgroundColor}>
       <Container>
         <h1>Sign in</h1>
         <Form onSubmit={onSubmit}>

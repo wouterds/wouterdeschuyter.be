@@ -1,11 +1,16 @@
 import React, { ReactNode } from 'react';
 import { Container, Content } from './styles';
 
-const Layout = (props: { children: ReactNode }) => {
-  const { children } = props;
+interface Props {
+  children: ReactNode;
+  backgroundColor?: string;
+}
+
+const Layout = (props: Props) => {
+  const { children, backgroundColor } = props;
 
   return (
-    <Container>
+    <Container backgroundColor={backgroundColor}>
       <Content>{children}</Content>
     </Container>
   );

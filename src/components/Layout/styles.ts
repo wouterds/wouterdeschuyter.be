@@ -1,11 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{ backgroundColor?: string }>`
   background: #fff;
   font-size: 1.6rem;
   line-height: 1.6;
   color: #3b454e;
   flex: 1;
+
+  ${({ backgroundColor }) =>
+    backgroundColor &&
+    css`
+      background-color: ${backgroundColor};
+    `}
 
   input,
   textarea,
