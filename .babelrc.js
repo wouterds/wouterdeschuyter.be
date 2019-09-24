@@ -6,6 +6,7 @@ module.exports = {
     '@zeit/next-typescript/babel'
   ],
   plugins: [
+    'styled-components',
     [
       'module-resolver',
       {
