@@ -2,6 +2,7 @@ require('dotenv').config();
 const path = require('path');
 const withPlugins = require('next-compose-plugins');
 const typescript = require('@zeit/next-typescript');
+const css = require('@zeit/next-css');
 const dotenv = require('dotenv-webpack');
 
 const config = {
@@ -10,6 +11,7 @@ const config = {
 
 module.exports = withPlugins([
   [typescript],
+  [css],
 ], {
   webpack: (config) => {
     config.plugins = config.plugins || [];
