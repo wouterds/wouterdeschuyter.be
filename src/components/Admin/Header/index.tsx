@@ -1,9 +1,27 @@
-import React from 'react';
-import { Container, Title, Nav, NavItem, User } from './styles';
+import React, { useCallback, MouseEvent, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { AuthProps } from 'hocs/auth';
+import { useCookie, Cookies } from 'hooks/cookie';
+import { Container, Title, Nav, NavItem, User } from './styles';
 
 export const Header = (props: AuthProps) => {
   const { user } = props;
+  const [jwt, setJwt] = useCookie(Cookies.JWT);
+
+  const signOut = useCallback(
+    (e: MouseEvent) => {
+      e.preventDefault();
+      setJwt('');
+    },
+    [setJwt],
+  );
+
+  useEffect(() => {
+    if (!jwt) {
+      window.location.pathname = '/admin/sign-in';
+    }
+  }, [jwt]);
 
   return (
     <Container>
@@ -28,7 +46,15 @@ export const Header = (props: AuthProps) => {
         </NavItem>
       </Nav>
       <User>
-        {user.firstName} {user.lastName}
+        <div>
+          {user.firstName} {user.lastName}
+          <span>
+            <FontAwesomeIcon icon={faChevronDown} />
+          </span>
+          <a href="#" onClick={signOut}>
+            Sign out
+          </a>
+        </div>
       </User>
     </Container>
   );

@@ -82,5 +82,41 @@ export const User = styled.ul`
   top: 20px;
   right: 25px;
   font-weight: 500;
-  font-size: 1em;
+  font-size: 0.9em;
+
+  div {
+    display: inline-block;
+    border: 2px solid #e6ecf1;
+    background: #fff;
+    border-radius: 5px;
+    padding: 6px 12px;
+    text-align: right;
+
+    a {
+      display: none;
+      border: 0;
+      color: rgba(43, 47, 51, 0.5);
+      padding: 5px;
+      margin: 0 -5px -5px;
+
+      &:hover {
+        color: #ef50ae;
+
+        &:active {
+          color: #5783d8;
+        }
+      }
+    }
+
+    &:hover {
+      a {
+        display: block;
+      }
+    }
+  }
+
+  span {
+    font-size: 0.9em;
+    margin-left: 10px;
+  }
 `;
