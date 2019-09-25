@@ -1,10 +1,8 @@
 import React from 'react';
 import Layout from 'components/Layout';
-import withAuth from 'hocs/auth';
+import withAuth, { AuthProps } from 'hocs/auth';
 
-interface Props {
-  jwt: string;
-}
+type Props = AuthProps;
 
 const Admin = (props: Props) => {
   console.log({ props });

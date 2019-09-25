@@ -6,7 +6,7 @@ import { ServerResponse } from 'http';
 import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
 
-interface Props {
+export interface AuthProps {
   jwt: string;
   user: {
     firstName: string;
@@ -17,7 +17,7 @@ interface Props {
 
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/27805
 const withAuth = (WrappedComponent: any) => {
-  const Component = (props: Props) => {
+  const Component = (props: AuthProps) => {
     return <WrappedComponent {...(props as any)} />;
   };
 
