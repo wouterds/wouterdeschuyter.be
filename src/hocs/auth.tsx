@@ -5,6 +5,8 @@ import Cookie, { Cookies } from 'services/cookie';
 import { ServerResponse } from 'http';
 import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
+import Layout from 'components/Layout';
+import Link from 'next/link';
 
 export interface AuthProps {
   user: {
@@ -17,6 +19,23 @@ export interface AuthProps {
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/27805
 const withAuth = (WrappedComponent: any) => {
   const Component = (props: AuthProps) => {
+    const { user } = props;
+
+    if (!user) {
+      return (
+        <Layout.Modal>
+          <h2>Not authenticated</h2>
+          <p>
+            You can sign in{' '}
+            <Link href="/admin/sign-in" prefetch>
+              <a>here</a>
+            </Link>
+            .
+          </p>
+        </Layout.Modal>
+      );
+    }
+
     return <WrappedComponent {...(props as any)} />;
   };
 
