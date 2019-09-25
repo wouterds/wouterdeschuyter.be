@@ -9,11 +9,11 @@ const Index = () => {
   return (
     <Layout>
       <h1>Hello world!</h1>
-      <Link href="/admin/sign-in">
+      <Link href="/admin/sign-in" prefetch>
         <a>Sign in</a>
       </Link>
       {' or '}
-      <Link href="/admin/sign-up">
+      <Link href="/admin/sign-up" prefetch>
         <a>Sign up</a>
       </Link>
 
