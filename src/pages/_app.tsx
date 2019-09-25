@@ -21,7 +21,7 @@ class App extends NextApp<Props> {
     Component: NextComponentType;
     ctx: NextContext;
   }) {
-    if (ctx.req && ctx.req.headers) {
+    if (ctx && ctx.req && ctx.req.headers && ctx.req.headers.cookie) {
       Cookie.init(ctx.req.headers.cookie);
     }
 
