@@ -4,9 +4,15 @@ import Router from 'next/router';
 import Cookie, { Cookies } from 'services/cookie';
 import { ServerResponse } from 'http';
 import ApolloClient from 'apollo-client';
+import gql from 'graphql-tag';
 
 interface Props {
   jwt: string;
+  user: {
+    firstName: string;
+    lastName: string;
+    email: string;
+  };
 }
 
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/27805
@@ -23,7 +29,7 @@ const withAuth = (WrappedComponent: any) => {
       pageProps = await Component.getInitialProps(ctx);
     }
 
-    if (!jwt) {
+    const failed = () => {
       const route = '/admin/sign-in';
 
       if (ctx.res) {
@@ -36,15 +42,38 @@ const withAuth = (WrappedComponent: any) => {
       }
 
       return pageProps;
+    };
+
+    if (!jwt) {
+      return failed();
     }
 
     const { apolloClient } = (ctx as any) as {
       apolloClient: ApolloClient<any>;
     };
 
-    console.log({ apolloClient });
+    const ME = gql`
+      {
+        me {
+          firstName
+          lastName
+          email
+        }
+      }
+    `;
 
-    return { ...pageProps, jwt };
+    const user = await new Promise(resolve => {
+      apolloClient
+        .query({ query: ME })
+        .then(({ data }) => resolve(data.me))
+        .catch(() => resolve(null));
+    });
+
+    if (!user) {
+      return failed();
+    }
+
+    return { ...pageProps, jwt, user };
   };
 
   return Component;
