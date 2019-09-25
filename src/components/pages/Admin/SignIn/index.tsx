@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
@@ -15,7 +14,6 @@ const SIGN_IN = gql`
 `;
 
 const SignIn = () => {
-  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, errors } = useForm({
     submitFocusError: false,
@@ -32,7 +30,7 @@ const SignIn = () => {
       .then(({ data }) => {
         const { signIn: jwt } = data;
         setJwt(jwt);
-        router.push('/');
+        window.location.pathname = '/admin';
       })
       .catch(e => {
         console.error(e.message);
