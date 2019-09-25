@@ -41,8 +41,8 @@ const SignIn = () => {
   return (
     <Layout.Modal
       footer={
-        <Link href="/" prefetch>
-          <a>Go back</a>
+        <Link href="/admin/sign-up" prefetch>
+          <a>Sign up</a>
         </Link>
       }
     >
