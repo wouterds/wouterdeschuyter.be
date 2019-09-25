@@ -7,7 +7,6 @@ import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
 
 export interface AuthProps {
-  jwt: string;
   user: {
     firstName: string;
     lastName: string;
@@ -73,7 +72,7 @@ const withAuth = (WrappedComponent: any) => {
       return failed();
     }
 
-    return { ...pageProps, jwt, user };
+    return { ...pageProps, user };
   };
 
   return Component;
