@@ -1,3 +1,4 @@
+import '@fortawesome/fontawesome-svg-core/styles.css';
 import { createGlobalStyle } from 'styled-components';
 import reset from './_reset';
 import progress from './_progress';
