@@ -1,16 +1,14 @@
 import React from 'react';
 import Layout from 'components/Layout';
 import withAuth, { AuthProps } from 'hocs/auth';
+import Header from 'components/Admin/Header';
+import { backgroundColor } from './styles';
 
-type Props = AuthProps;
-
-const Admin = (props: Props) => {
-  console.log({ props });
-
+const Admin = (props: AuthProps) => {
   return (
-    <Layout.Modal>
-      <h2>Admin</h2>
-    </Layout.Modal>
+    <Layout backgroundColor={backgroundColor}>
+      <Header {...props} />
+    </Layout>
   );
 };
 
