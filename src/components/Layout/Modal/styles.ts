@@ -15,6 +15,12 @@ export const Container = styled.div`
   button {
     max-width: 100%;
   }
+
+  @media (max-width: 480px) {
+    margin: 0 0 25px;
+    border-radius: 0;
+    border: 0;
+  }
 `;
 
 export const Footer = styled.div`
