@@ -1,3 +1,1 @@
-import Admin from 'components/pages/Admin';
-
-export default Admin;
+export { default } from 'components/pages/Admin';
