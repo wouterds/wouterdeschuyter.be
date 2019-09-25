@@ -49,13 +49,19 @@ export const Container = styled.div<{ backgroundColor?: string }>`
 
   a {
     text-decoration: none;
-    padding-bottom: 1px;
+    padding-bottom: 2px;
     border-bottom: 2px solid #e1e1e1;
     color: #30373d;
     transition: border ease-in-out 200ms;
 
     &:hover {
       border-color: #ef50ae;
+      outline: 0;
+    }
+
+    &:focus {
+      border-color: #5783d8;
+      outline: 0;
     }
   }
 `;
