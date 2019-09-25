@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import Form from 'components/Form';
-import { Container, backgroundColor } from './styles';
 import Layout from 'components/Layout';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
@@ -50,56 +49,54 @@ const SignUp = () => {
   }, [jwt]);
 
   return (
-    <Layout backgroundColor={backgroundColor}>
-      <Container>
-        <h2>Sign up</h2>
-        <Form onSubmit={onSubmit}>
-          <Form.Field>
-            <Form.Label htmlFor="firstName">First name</Form.Label>
-            <Form.Input
-              id="firstName"
-              name="firstName"
-              hasError={errors.hasOwnProperty('firstName')}
-              ref={register({ required: true })}
-            />
-          </Form.Field>
-          <Form.Field>
-            <Form.Label htmlFor="lastName">Last name</Form.Label>
-            <Form.Input
-              id="lastName"
-              name="lastName"
-              hasError={errors.hasOwnProperty('lastName')}
-              ref={register({ required: true })}
-            />
-          </Form.Field>
-          <Form.Field>
-            <Form.Label htmlFor="email">Email</Form.Label>
-            <Form.Input
-              id="email"
-              name="email"
-              type="email"
-              hasError={errors.hasOwnProperty('email')}
-              ref={register({ required: true })}
-            />
-          </Form.Field>
-          <Form.Field>
-            <Form.Label htmlFor="password">Password</Form.Label>
-            <Form.Input
-              id="password"
-              name="password"
-              type="password"
-              hasError={errors.hasOwnProperty('password')}
-              ref={register({ required: true })}
-            />
-          </Form.Field>
-          <Form.Field>
-            <Form.Button type="submit" isLoading={isLoading}>
-              Sign up
-            </Form.Button>
-          </Form.Field>
-        </Form>
-      </Container>
-    </Layout>
+    <Layout.Modal>
+      <h2>Sign up</h2>
+      <Form onSubmit={onSubmit}>
+        <Form.Field>
+          <Form.Label htmlFor="firstName">First name</Form.Label>
+          <Form.Input
+            id="firstName"
+            name="firstName"
+            hasError={errors.hasOwnProperty('firstName')}
+            ref={register({ required: true })}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Form.Label htmlFor="lastName">Last name</Form.Label>
+          <Form.Input
+            id="lastName"
+            name="lastName"
+            hasError={errors.hasOwnProperty('lastName')}
+            ref={register({ required: true })}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Form.Label htmlFor="email">Email</Form.Label>
+          <Form.Input
+            id="email"
+            name="email"
+            type="email"
+            hasError={errors.hasOwnProperty('email')}
+            ref={register({ required: true })}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Form.Label htmlFor="password">Password</Form.Label>
+          <Form.Input
+            id="password"
+            name="password"
+            type="password"
+            hasError={errors.hasOwnProperty('password')}
+            ref={register({ required: true })}
+          />
+        </Form.Field>
+        <Form.Field>
+          <Form.Button type="submit" isLoading={isLoading}>
+            Sign up
+          </Form.Button>
+        </Form.Field>
+      </Form>
+    </Layout.Modal>
   );
 };
 

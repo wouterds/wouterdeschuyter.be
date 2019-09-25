@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import { Container, Content } from './styles';
+import Modal from './Modal';
 
 interface Props {
   children: ReactNode;
@@ -15,5 +16,7 @@ const Layout = (props: Props) => {
     </Container>
   );
 };
+
+Layout.Modal = Modal;
 
 export default Layout;
