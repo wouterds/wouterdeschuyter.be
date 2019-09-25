@@ -8,6 +8,7 @@ const Admin = (props: AuthProps) => {
   return (
     <Layout backgroundColor={backgroundColor}>
       <Header {...props} />
+      <Layout.Content>Hello world!</Layout.Content>
     </Layout>
   );
 };
