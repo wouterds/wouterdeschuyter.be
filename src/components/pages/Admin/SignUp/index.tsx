@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import useForm from 'react-hook-form';
@@ -31,7 +31,7 @@ const SignUp = () => {
     submitFocusError: false,
   });
   const [signUp] = useMutation(SIGN_UP);
-  const [jwt, setJwt] = useCookie(Cookies.JWT);
+  const [, setJwt] = useCookie(Cookies.JWT);
 
   const onSubmit = handleSubmit(data => {
     const { firstName, lastName, email, password } = data;
@@ -49,10 +49,6 @@ const SignUp = () => {
         setIsLoading(false);
       });
   });
-
-  useEffect(() => {
-    console.log({ jwt });
-  }, [jwt]);
 
   return (
     <Layout.Modal
