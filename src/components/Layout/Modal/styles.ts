@@ -8,7 +8,7 @@ export const Container = styled.div`
   border-radius: 5px;
   max-width: 480px;
   width: 100%;
-  margin: 50px auto;
+  margin: 75px auto 25px;
   padding: 25px 30px 30px;
 
   input,

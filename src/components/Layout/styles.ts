@@ -65,7 +65,3 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     }
   }
 `;
-
-export const Content = styled.div`
-  padding: 25px;
-`;

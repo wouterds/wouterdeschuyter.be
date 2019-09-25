@@ -7,7 +7,7 @@ interface Props {
   footer?: ReactNode;
 }
 
-const SignIn = (props: Props) => {
+const Modal = (props: Props) => {
   const { children, footer } = props;
 
   return (
@@ -18,4 +18,4 @@ const SignIn = (props: Props) => {
   );
 };
 
-export default SignIn;
+export default Modal;

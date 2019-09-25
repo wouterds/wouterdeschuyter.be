@@ -4,7 +4,9 @@ import Layout from 'components/Layout';
 const Landing = () => {
   return (
     <Layout>
-      <h1>Hello world!</h1>
+      <Layout.Content>
+        <h1>Hello world!</h1>
+      </Layout.Content>
     </Layout>
   );
 };
