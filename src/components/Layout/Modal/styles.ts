@@ -16,3 +16,7 @@ export const Container = styled.div`
     max-width: 100%;
   }
 `;
+
+export const Footer = styled.div`
+  text-align: center;
+`;

@@ -1,17 +1,19 @@
 import React, { ReactNode } from 'react';
-import { Container, backgroundColor } from './styles';
+import { Container, backgroundColor, Footer } from './styles';
 import Layout from 'components/Layout';
 
 interface Props {
   children: ReactNode;
+  footer?: ReactNode;
 }
 
 const SignIn = (props: Props) => {
-  const { children } = props;
+  const { children, footer } = props;
 
   return (
     <Layout backgroundColor={backgroundColor}>
       <Container>{children}</Container>
+      {footer && <Footer>{footer}</Footer>}
     </Layout>
   );
 };

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Form from 'components/Form';
-import Layout from 'components/Layout';
+import Link from 'next/link';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
+import Form from 'components/Form';
+import Layout from 'components/Layout';
 import { useCookie, Cookies } from 'hooks/cookie';
 
 const SIGN_UP = gql`
@@ -49,7 +50,13 @@ const SignUp = () => {
   }, [jwt]);
 
   return (
-    <Layout.Modal>
+    <Layout.Modal
+      footer={
+        <Link href="/">
+          <a>Go back</a>
+        </Link>
+      }
+    >
       <h2>Sign up</h2>
       <Form onSubmit={onSubmit}>
         <Form.Field>
