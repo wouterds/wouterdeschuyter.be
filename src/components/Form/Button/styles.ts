@@ -15,8 +15,8 @@ export const Container = styled.button<{ isLoading?: boolean }>`
   position: relative;
 
   &:hover {
-    border-color: #ed52ad;
-    background: #ed52ad;
+    border-color: #ef50ae;
+    background: #ef50ae;
   }
 
   ${({ isLoading }) =>
@@ -24,8 +24,8 @@ export const Container = styled.button<{ isLoading?: boolean }>`
     css`
       text-align: left;
       text-indent: -9999px;
-      background: #ed52ad;
-      border-color: #ed52ad;
+      background: #ef50ae;
+      border-color: #ef50ae;
       cursor: default;
 
       @keyframes spinner {
