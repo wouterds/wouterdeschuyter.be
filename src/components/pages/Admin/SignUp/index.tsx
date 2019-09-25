@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
@@ -24,6 +25,7 @@ const SIGN_UP = gql`
 `;
 
 const SignUp = () => {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const { register, handleSubmit, errors } = useForm({
     submitFocusError: false,
@@ -40,9 +42,12 @@ const SignUp = () => {
       .then(({ data }) => {
         const { signUp: jwt } = data;
         setJwt(jwt);
+        router.push('/');
       })
-      .catch(e => console.error(e.message))
-      .finally(() => setIsLoading(false));
+      .catch(e => {
+        console.error(e.message);
+        setIsLoading(false);
+      });
   });
 
   useEffect(() => {
