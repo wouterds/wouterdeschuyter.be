@@ -16,6 +16,7 @@ const FETCH_DATA = gql`
       email
       status
       createdAt
+      lastOnlineAt
     }
   }
 `;
@@ -40,6 +41,7 @@ const Users = (props: AuthProps) => {
                   <th>Email</th>
                   <th>Status</th>
                   <th>Created at</th>
+                  <th>Last online at</th>
                 </tr>
               </thead>
               <tbody>
@@ -61,6 +63,12 @@ const Users = (props: AuthProps) => {
                     <td>
                       {format(
                         new Date(parseInt(user.createdAt)),
+                        'MMMM do yyyy, HH:mm',
+                      )}
+                    </td>
+                    <td>
+                      {format(
+                        new Date(parseInt(user.lastOnlineAt)),
                         'MMMM do yyyy, HH:mm',
                       )}
                     </td>
