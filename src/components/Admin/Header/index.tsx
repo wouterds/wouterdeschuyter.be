@@ -4,9 +4,14 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import { AuthProps } from 'hocs/auth';
 import { useCookie, Cookies } from 'hooks/cookie';
 import { Container, Title, Nav, NavItem, User } from './styles';
+import Link from 'next/link';
 
-export const Header = (props: AuthProps) => {
-  const { user } = props;
+interface Props extends AuthProps {
+  active: string;
+}
+
+export const Header = (props: Props) => {
+  const { user, active } = props;
   const [jwt, setJwt] = useCookie(Cookies.JWT);
 
   const signOut = useCallback(
@@ -29,20 +34,30 @@ export const Header = (props: AuthProps) => {
         <h1>Admin</h1>
       </Title>
       <Nav>
-        <NavItem active={true}>
-          <a href="">Dashboard</a>
+        <NavItem active={active === 'dashboard'}>
+          <Link href="/admin/dashboard">
+            <a>Dashboard</a>
+          </Link>
         </NavItem>
-        <NavItem>
-          <a href="">Posts</a>
+        <NavItem active={active === 'posts'}>
+          <Link href="/admin/posts">
+            <a>Posts</a>
+          </Link>
         </NavItem>
-        <NavItem>
-          <a href="">Media assets</a>
+        <NavItem active={active === 'media'}>
+          <Link href="/admin/media">
+            <a>Media</a>
+          </Link>
         </NavItem>
-        <NavItem>
-          <a href="">Users</a>
+        <NavItem active={active === 'users'}>
+          <Link href="/admin/users">
+            <a>Users</a>
+          </Link>
         </NavItem>
-        <NavItem>
-          <a href="">Settings</a>
+        <NavItem active={active === 'settings'}>
+          <Link href="/admin/settings">
+            <a>Settings</a>
+          </Link>
         </NavItem>
       </Nav>
       <User>
