@@ -1,15 +1,75 @@
 import React from 'react';
-import Layout from 'components/Layout';
+import gql from 'graphql-tag';
+import { useQuery } from 'react-apollo';
+import { format } from 'date-fns';
 import withAuth, { AuthProps } from 'hocs/auth';
+import Layout from 'components/Layout';
 import Header from 'components/Admin/Header';
-import { backgroundColor } from './styles';
+import { backgroundColor, Content } from './styles';
+
+const FETCH_DATA = gql`
+  query fetchData {
+    users {
+      id
+      firstName
+      lastName
+      email
+      status
+      createdAt
+    }
+  }
+`;
 
 const Users = (props: AuthProps) => {
+  const { loading, data } = useQuery(FETCH_DATA);
+
   return (
     <Layout backgroundColor={backgroundColor}>
       <Header {...props} active="users" />
       <Layout.Content>
-        <h1>Users</h1>
+        <Content>
+          <h1>List of users</h1>
+          {loading && <h2>Loading...</h2>}
+          {!loading && (
+            <table>
+              <thead>
+                <tr>
+                  <th>Identifier</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Created at</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.users.map((user: any, index: number) => (
+                  <tr key={index}>
+                    <td>{user.id}</td>
+                    <td>{user.firstName}</td>
+                    <td>{user.lastName}</td>
+                    <td>{user.email}</td>
+                    <td
+                      style={{
+                        color: user.status === 'ACTIVE' ? '#2ecc71' : '#e74c3c',
+                      }}
+                    >
+                      {user.status === 'ACTIVE' && 'Active'}
+                      {user.status === 'DELETED' && 'Deleted'}
+                      {user.status === 'NOT_ACTIVATED' && 'Not activated'}
+                    </td>
+                    <td>
+                      {format(
+                        new Date(parseInt(user.createdAt)),
+                        'MMMM do yyyy, HH:mm',
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+        </Content>
       </Layout.Content>
     </Layout>
   );
