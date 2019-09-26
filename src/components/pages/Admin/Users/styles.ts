@@ -22,7 +22,8 @@ export const Content = styled.div`
 
     td,
     th {
-      padding: 10px 0;
+      padding: 10px;
+      padding-left: 0;
     }
   }
 `;
