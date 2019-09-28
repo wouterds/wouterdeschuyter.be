@@ -21,7 +21,7 @@
     "apollo-client": "^2.6.4",
     "apollo-link-http": "^1.5.16",
     "date-fns": "^2.4.1",
-    "graphql": "^14.5.7",
+    "graphql": "^14.5.8",
     "graphql-tag": "^2.10.1",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.7",
