@@ -23,10 +23,6 @@ class Cookie {
     return this.client;
   }
 
-  public getClient() {
-    return this.client;
-  }
-
   public get = (name: string, options?: CookieGetOptions) =>
     this.client.get(name, options);
 
