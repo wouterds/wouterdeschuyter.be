@@ -12,7 +12,7 @@ export default withApollo(({ headers, initialState }) => {
     Cookie.init(cookie);
   }
 
-  const JWT_TOKEN = Cookie.getClient().get(Cookies.JWT);
+  const JWT_TOKEN = Cookie.get(Cookies.JWT);
 
   return new ApolloClient({
     link: new HttpLink({
