@@ -25,5 +25,18 @@ export const Content = styled.div`
       padding: 10px;
       padding-left: 0;
     }
+
+    td {
+      > div {
+        max-width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      &:first-child > div {
+        max-width: 180px;
+      }
+    }
   }
 `;

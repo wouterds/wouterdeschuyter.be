@@ -47,7 +47,9 @@ const Users = (props: AuthProps) => {
               <tbody>
                 {data.users.map((user: any, index: number) => (
                   <tr key={index}>
-                    <td>{user.id}</td>
+                    <td>
+                      <div>{user.id}</div>
+                    </td>
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>{user.email}</td>
