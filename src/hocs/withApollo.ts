@@ -15,6 +15,7 @@ export default withApollo(({ headers, initialState }) => {
   const JWT_TOKEN = Cookie.get(Cookies.JWT);
 
   return new ApolloClient({
+    ssrMode: typeof window === 'undefined',
     link: new HttpLink({
       uri: `${process.env.API_ENDPOINT}`,
       fetch,
