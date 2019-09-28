@@ -31,8 +31,8 @@ const Posts = (props: AuthProps) => {
       <Header {...props} active="posts" />
       <Layout.Content>
         <Content>
-          <h1>List of posts</h1>
-          {loading && <h2>Loading...</h2>}
+          <h1>Posts</h1>
+          {loading && <p>Loading...</p>}
           {!loading && (
             <table>
               <thead>
@@ -48,12 +48,8 @@ const Posts = (props: AuthProps) => {
               <tbody>
                 {data.posts.map((post: any, index: number) => (
                   <tr key={index}>
-                    <td>
-                      <div>{post.id}</div>
-                    </td>
-                    <td>
-                      <div>{post.title}</div>
-                    </td>
+                    <td className="long id">{post.id}</td>
+                    <td className="long">{post.title}</td>
                     <td>
                       {post.user.firstName} {post.user.lastName}
                     </td>

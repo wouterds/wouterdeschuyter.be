@@ -4,7 +4,6 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   background: #fff;
   font-size: 1.6rem;
   line-height: 1.6;
-  word-break: break-all;
   color: #3b454e;
   flex: 1;
 

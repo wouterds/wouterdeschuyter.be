@@ -29,8 +29,8 @@ const Users = (props: AuthProps) => {
       <Header {...props} active="users" />
       <Layout.Content>
         <Content>
-          <h1>List of users</h1>
-          {loading && <h2>Loading...</h2>}
+          <h1>Users</h1>
+          {loading && <p>Loading...</p>}
           {!loading && (
             <table>
               <thead>
@@ -47,9 +47,7 @@ const Users = (props: AuthProps) => {
               <tbody>
                 {data.users.map((user: any, index: number) => (
                   <tr key={index}>
-                    <td>
-                      <div>{user.id}</div>
-                    </td>
+                    <td className="long id">{user.id}</td>
                     <td>{user.firstName}</td>
                     <td>{user.lastName}</td>
                     <td>{user.email}</td>

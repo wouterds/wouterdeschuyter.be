@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 export const Container = styled.div`
   background: #fff;
   border-bottom: 2px solid #e6ecf1;
-  height: 110px;
+  height: 100px;
   position: relative;
 `;
 
@@ -16,14 +16,13 @@ export const Title = styled.div`
     text-transform: uppercase;
     letter-spacing: 0.1em;
     word-spacing: 0.1em;
-    font-size: 0.95em;
+    font-size: 1em;
     line-height: 1;
     font-weight: 700;
-    color: #2b2f33;
-    border: 2px solid #2b2f33;
+    color: #fff;
+    background: #000;
     margin: 0;
-    padding: 10px 10px;
-    border-radius: 5px;
+    padding: 9px 10px;
   }
 `;
 
@@ -87,22 +86,18 @@ export const User = styled.ul`
 
   div {
     display: inline-block;
-    border: 2px solid #e6ecf1;
     cursor: pointer;
     background: #fff;
-    border-radius: 5px;
     padding: 6px 12px;
     text-align: right;
-    transition: max-height ease-in-out 200ms;
-    max-height: 40px;
-    overflow: hidden;
 
-    &:hover {
-      max-height: 100px;
+    span {
+      font-size: 0.9em;
+      margin-left: 7px;
+    }
 
-      a {
-        display: block;
-      }
+    &:hover a {
+      display: block;
     }
 
     a {
@@ -120,10 +115,5 @@ export const User = styled.ul`
         }
       }
     }
-  }
-
-  span {
-    font-size: 0.9em;
-    margin-left: 10px;
   }
 `;
