@@ -40,8 +40,8 @@ const Users = (props: AuthProps) => {
                   <th>Last name</th>
                   <th>Email</th>
                   <th>Status</th>
-                  <th>Created at</th>
                   <th>Last online at</th>
+                  <th>Created at</th>
                 </tr>
               </thead>
               <tbody>
@@ -63,14 +63,16 @@ const Users = (props: AuthProps) => {
                       {user.status === 'NOT_ACTIVATED' && 'Not activated'}
                     </td>
                     <td>
-                      {format(
-                        new Date(parseInt(user.createdAt)),
-                        'MMMM do yyyy, HH:mm',
-                      )}
+                      {user.lastOnlineAt
+                        ? format(
+                            new Date(parseInt(user.lastOnlineAt)),
+                            'MMMM do yyyy, HH:mm',
+                          )
+                        : '--'}
                     </td>
                     <td>
                       {format(
-                        new Date(parseInt(user.lastOnlineAt)),
+                        new Date(parseInt(user.createdAt)),
                         'MMMM do yyyy, HH:mm',
                       )}
                     </td>
