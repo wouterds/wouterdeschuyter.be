@@ -14,10 +14,6 @@ class Cookie {
   private client = new UniversalCookie();
 
   public init(header: string | null = null) {
-    if (this.client && typeof window !== 'undefined') {
-      return this.client;
-    }
-
     this.client = new UniversalCookie(header);
 
     return this.client;
