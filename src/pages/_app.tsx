@@ -4,7 +4,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
-import withApollo from 'hocs/apollo';
+import withApollo from 'hocs/withApollo';
 import BaseCSS from 'styles/base';
 
 interface Props {

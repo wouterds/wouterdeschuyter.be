@@ -1,7 +1,7 @@
 import React, { useCallback, MouseEvent, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
-import { AuthProps } from 'hocs/auth';
+import { AuthProps } from 'hocs/withAuth';
 import { useCookie, Cookies } from 'hooks/cookie';
 import { Container, Title, Nav, NavItem, User } from './styles';
 import Link from 'next/link';

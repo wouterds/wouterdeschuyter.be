@@ -2,7 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo';
 import { format } from 'date-fns';
-import withAuth, { AuthProps } from 'hocs/auth';
+import withAuth, { AuthProps } from 'hocs/withAuth';
 import Layout from 'components/Layout';
 import Header from 'components/Admin/Header';
 import { backgroundColor, Content } from './styles';
