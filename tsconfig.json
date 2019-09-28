@@ -5,12 +5,10 @@
       "@types"
     ],
     "baseUrl": "./",
-    "paths": {
-      "*": ["src/*"]
-    },
-    "lib": ["dom", "es6"],
+    "paths": { "*": [ "src/*" ] },
+    "lib": [ "dom", "es6" ],
     "target": "esnext",
-    "module": "commonjs",
+    "module": "esnext",
     "moduleResolution": "node",
     "jsx": "preserve",
     "noEmit": true,
@@ -24,9 +22,16 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true
   },
   "exclude": [
     "node_modules/"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

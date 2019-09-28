@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextContext } from 'next';
+import { NextPageContext } from 'next';
 import Router from 'next/router';
 import { ServerResponse } from 'http';
 import Layout from 'components/Layout';
@@ -13,7 +13,7 @@ const Admin = () => {
   );
 };
 
-Admin.getInitialProps = async (ctx: NextContext) => {
+Admin.getInitialProps = async (ctx: NextPageContext) => {
   const route = '/admin/dashboard';
   if (ctx.res) {
     (ctx.res as ServerResponse).writeHead(302, {

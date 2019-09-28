@@ -1,5 +1,5 @@
 import React from 'react';
-import NextApp, { Container } from 'next/app';
+import NextApp from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import ApolloClient from 'apollo-client';
@@ -19,11 +19,9 @@ class App extends NextApp<Props> {
       <>
         <BaseCSS />
 
-        <Container>
-          <ApolloProvider client={apollo}>
-            <Component {...pageProps} />
-          </ApolloProvider>
-        </Container>
+        <ApolloProvider client={apollo}>
+          <Component {...pageProps} />
+        </ApolloProvider>
       </>
     );
   }

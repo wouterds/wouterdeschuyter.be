@@ -1,17 +1,15 @@
 require('dotenv').config();
 const path = require('path');
 const withPlugins = require('next-compose-plugins');
-const typescript = require('@zeit/next-typescript');
 const css = require('@zeit/next-css');
 const optimizedImages = require('next-optimized-images');
 const dotenv = require('dotenv-webpack');
 
 const config = {
-  distDir: '../dist',
+  distDir: 'dist',
 };
 
 module.exports = withPlugins([
-  [typescript],
   [css],
   [optimizedImages],
 ], {

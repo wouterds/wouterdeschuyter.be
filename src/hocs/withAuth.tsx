@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextContext } from 'next';
+import { NextPageContext } from 'next';
 import Router from 'next/router';
 import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
@@ -14,7 +14,7 @@ export interface AuthProps {
   };
 }
 
-interface Context extends NextContext {
+interface Context extends NextPageContext {
   apolloClient: ApolloClient<any>;
 }
 
@@ -29,7 +29,7 @@ const withAuth = (WrappedComponent: any) => {
           <h2>Not authenticated</h2>
           <p>
             You can sign in{' '}
-            <Link href="/admin/sign-in" prefetch>
+            <Link href="/admin/sign-in">
               <a>here</a>
             </Link>
             .

@@ -35,27 +35,27 @@ export const Header = (props: Props) => {
       </Title>
       <Nav>
         <NavItem active={active === 'dashboard'}>
-          <Link href="/admin/dashboard" prefetch>
+          <Link href="/admin/dashboard">
             <a>Dashboard</a>
           </Link>
         </NavItem>
         <NavItem active={active === 'posts'}>
-          <Link href="/admin/posts" prefetch>
+          <Link href="/admin/posts">
             <a>Posts</a>
           </Link>
         </NavItem>
         <NavItem active={active === 'media'}>
-          <Link href="/admin/media" prefetch>
+          <Link href="/admin/media">
             <a>Media</a>
           </Link>
         </NavItem>
         <NavItem active={active === 'users'}>
-          <Link href="/admin/users" prefetch>
+          <Link href="/admin/users">
             <a>Users</a>
           </Link>
         </NavItem>
         <NavItem active={active === 'settings'}>
-          <Link href="/admin/settings" prefetch>
+          <Link href="/admin/settings">
             <a>Settings</a>
           </Link>
         </NavItem>
