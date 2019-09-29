@@ -7,6 +7,7 @@ export const Container = styled.textarea<{ hasError?: boolean }>`
   padding: 0.5em;
   transition: border ease-in-out 200ms;
   width: 100%;
+  color: #42494f;
 
   ${({ hasError }) =>
     hasError &&
