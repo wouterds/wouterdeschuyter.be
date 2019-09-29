@@ -6,7 +6,7 @@ const Landing = () => {
   return (
     <Layout>
       <Header />
-      <Layout.Content>
+      <Layout.Content centered>
         <h1>Hello world!</h1>
       </Layout.Content>
     </Layout>
