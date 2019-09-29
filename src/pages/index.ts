@@ -1,3 +1,1 @@
-import Landing from 'components/pages/Landing';
-
-export default Landing;
+export { default } from 'components/pages/Landing';
