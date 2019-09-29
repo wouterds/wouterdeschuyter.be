@@ -13,11 +13,11 @@ export const Title = styled.div`
     border: 0;
     color: #2b2f33;
     display: inline-block;
-    line-height: 1;
   }
 
   h1 {
     font-size: 1.8em;
+    line-height: 1;
     font-weight: 600;
     padding: 10px;
     margin: 0;

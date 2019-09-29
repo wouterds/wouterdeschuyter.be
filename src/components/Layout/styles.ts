@@ -31,19 +31,22 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     margin-bottom: 0.75em;
     font-weight: 600;
     color: #2b2f33;
+    line-height: 1.4;
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    margin-bottom: 0.75em;
   }
 
   h2 {
-    font-size: 1.6em;
+    font-size: 2em;
     margin-bottom: 0.5em;
   }
 
   h3 {
-    font-size: 1.4em;
+    font-size: 1.6em;
+    margin-bottom: 0.25em;
   }
 
   a {
