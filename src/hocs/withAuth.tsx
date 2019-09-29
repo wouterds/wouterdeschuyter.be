@@ -1,10 +1,11 @@
 import React from 'react';
 import { NextPageContext } from 'next';
 import Router from 'next/router';
+import Link from 'next/link';
 import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
 import Layout from 'components/Layout';
-import Link from 'next/link';
+import { useCookie, Cookies } from 'hooks/cookie';
 
 export interface AuthProps {
   user: {
@@ -21,9 +22,10 @@ interface Context extends NextPageContext {
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/27805
 const withAuth = (WrappedComponent: any) => {
   const Component = (props: AuthProps) => {
+    const [jwt] = useCookie(Cookies.JWT);
     const { user } = props;
 
-    if (!user) {
+    if (!user || !jwt) {
       return (
         <Layout.Modal>
           <h2>Not authenticated</h2>
