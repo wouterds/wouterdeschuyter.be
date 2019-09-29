@@ -13,7 +13,7 @@ export const Container = styled.div`
 
   input,
   button {
-    max-width: 100%;
+    width: 100%;
   }
 
   @media (max-width: 480px) {

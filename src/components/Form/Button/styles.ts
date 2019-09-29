@@ -6,9 +6,8 @@ export const Container = styled.button<{ isLoading?: boolean }>`
   background: #5882d4;
   color: #fff;
   border-radius: 3px;
-  padding: 0.5em;
+  padding: 0.55em 1em 0.65em;
   transition: border ease-in-out 200ms, background ease-in-out 200ms;
-  width: 100%;
   font-weight: 500;
   cursor: pointer;
   position: relative;
