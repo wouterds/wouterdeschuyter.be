@@ -13,7 +13,11 @@ export const Header = (props: Props) => {
   return (
     <Container>
       <Title>
-        <h1>Wouter De Schuyter</h1>
+        <Link href="/">
+          <a>
+            <h1>Wouter De Schuyter</h1>
+          </a>
+        </Link>
       </Title>
       <Nav>
         <Link href="/about">

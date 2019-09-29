@@ -9,13 +9,19 @@ export const Title = styled.div`
   padding: 25px;
   flex: 1;
 
+  a {
+    border: 0;
+    color: #2b2f33;
+    display: inline-block;
+    line-height: 1;
+  }
+
   h1 {
     font-size: 1.8em;
-    line-height: 1;
     font-weight: 600;
-    color: #2b2f33;
     padding: 10px;
     margin: 0;
+    display: inline-block;
   }
 `;
 
