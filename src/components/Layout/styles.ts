@@ -17,7 +17,7 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   textarea,
   button,
   select {
-    font-size: 1.6rem;
+    font-size: inherit;
     line-height: 1;
   }
 
