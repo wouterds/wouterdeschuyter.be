@@ -1,17 +1,13 @@
 import React from 'react';
 import Layout from 'components/Layout';
-import Link from 'next/link';
+import Header from 'components/Header';
 
 const Landing = () => {
   return (
     <Layout>
+      <Header />
       <Layout.Content>
         <h1>Hello world!</h1>
-        <p>
-          <Link href="/admin">
-            <a>Admin</a>
-          </Link>
-        </p>
       </Layout.Content>
     </Layout>
   );
