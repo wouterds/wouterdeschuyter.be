@@ -1,10 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { Container, Title, Nav } from './styles';
+import { withRouter, NextRouter } from 'next/router';
 
-export const Header = () => {
-  const router = useRouter();
+interface Props {
+  router: NextRouter;
+}
+
+export const Header = (props: Props) => {
+  const { router } = props;
 
   return (
     <Container>
@@ -44,4 +48,4 @@ export const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);
