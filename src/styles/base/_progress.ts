@@ -5,7 +5,7 @@ export default css`
     pointer-events: none;
 
     .bar {
-      background: linear-gradient(90deg, #ef50ae, #5783d8);
+      background: #eee;
       position: fixed;
       z-index: 1031;
       top: 0;
