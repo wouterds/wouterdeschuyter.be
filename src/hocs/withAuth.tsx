@@ -5,7 +5,7 @@ import Link from 'next/link';
 import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
 import Layout from 'components/Layout';
-import { useCookie, Cookies } from 'hooks/cookie';
+import { useCookie, Cookies } from 'hooks/useCookie';
 
 export interface AuthProps {
   user: {

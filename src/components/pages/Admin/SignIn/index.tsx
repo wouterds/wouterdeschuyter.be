@@ -5,7 +5,7 @@ import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 import Form from 'components/Form';
 import Layout from 'components/Layout';
-import { useCookie, Cookies } from 'hooks/cookie';
+import { useCookie, Cookies } from 'hooks/useCookie';
 
 const SIGN_IN = gql`
   mutation SignIn($email: String!, $password: String!) {
