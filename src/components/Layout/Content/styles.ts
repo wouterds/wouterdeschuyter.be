@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const backgroundColor = '#F3F6F8';
 
-export const Container = styled.div<{
+export const Container = styled.section<{
   centered?: boolean;
   editorial?: boolean;
 }>`
@@ -25,7 +25,7 @@ export const Container = styled.div<{
           display: block;
           background: #2b2f33;
           height: 0.1em;
-          width: 2em;
+          width: 1.5em;
           margin-top: 0.5em;
           margin-bottom: 1em;
         }

@@ -56,10 +56,14 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     margin-bottom: 0.25em;
   }
 
+  p + p {
+    margin-top: 1em;
+  }
+
   a {
     text-decoration: none;
-    padding-bottom: 2px;
-    border-bottom: 2px solid #e1e1e1;
+    padding-bottom: 0.075em;
+    border-bottom: 0.125em solid #e1e1e1;
     color: #30373d;
     transition: border ease-in-out 200ms;
 
