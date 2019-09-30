@@ -1,1 +1,1 @@
-export { default } from 'components/pages/Admin/Media';
+export { default } from 'components/Pages/Admin/Media';

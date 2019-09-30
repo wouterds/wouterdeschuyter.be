@@ -1,1 +1,1 @@
-export { default } from 'components/pages/Contact';
+export { default } from 'components/Pages/Contact';

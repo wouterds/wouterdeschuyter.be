@@ -1,1 +1,1 @@
-export { default } from 'components/pages/Admin/Posts';
+export { default } from 'components/Pages/Admin/Posts';

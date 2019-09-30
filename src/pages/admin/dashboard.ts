@@ -1,1 +1,1 @@
-export { default } from 'components/pages/Admin/Dashboard';
+export { default } from 'components/Pages/Admin/Dashboard';

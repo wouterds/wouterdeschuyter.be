@@ -1,1 +1,1 @@
-export { default } from 'components/pages/Admin/Settings';
+export { default } from 'components/Pages/Admin/Settings';

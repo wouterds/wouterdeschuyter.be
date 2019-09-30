@@ -1,1 +1,1 @@
-export { default } from 'components/pages/Admin';
+export { default } from 'components/Pages/Admin';
