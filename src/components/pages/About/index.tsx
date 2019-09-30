@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { differenceInMilliseconds } from 'date-fns';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 import { Container } from './styles';
 
 const getAge = () =>
@@ -98,6 +99,7 @@ const About = () => {
           <p>Oh right, also a cat person 🐈!</p>
         </Container>
       </Layout.Content>
+      <Footer />
     </Layout>
   );
 };

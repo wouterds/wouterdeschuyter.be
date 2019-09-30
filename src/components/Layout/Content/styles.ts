@@ -6,6 +6,8 @@ export const Container = styled.section<{
   centered?: boolean;
   editorial?: boolean;
 }>`
+  flex: 1;
+  width: 100%;
   padding: 35px;
   font-size: 1.2em;
 

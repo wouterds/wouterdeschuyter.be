@@ -13,11 +13,9 @@ const Layout = (props: Props) => {
   const { children, backgroundColor } = props;
 
   return (
-    <Container backgroundColor={backgroundColor}>
-      <Twemoji options={{ className: 'twemoji', noWrapper: false }}>
-        {children}
-      </Twemoji>
-    </Container>
+    <Twemoji options={{ className: 'twemoji' }} noWrapper>
+      <Container backgroundColor={backgroundColor}>{children}</Container>
+    </Twemoji>
   );
 };
 

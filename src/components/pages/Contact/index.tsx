@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 import Form from 'components/Form';
 import { Container, Row, Col } from './styles';
 
@@ -58,6 +59,7 @@ const Contact = () => {
           </Form>
         </Container>
       </Layout.Content>
+      <Footer />
     </Layout>
   );
 };

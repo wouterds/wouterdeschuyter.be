@@ -3,6 +3,7 @@ import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const FETCH_DATA = gql`
   query fetchData {
@@ -38,6 +39,7 @@ const Blog = () => {
             </article>
           ))}
       </Layout.Content>
+      <Footer />
     </Layout>
   );
 };

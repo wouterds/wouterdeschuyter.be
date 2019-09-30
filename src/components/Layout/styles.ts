@@ -6,6 +6,8 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   line-height: 1.6;
   color: #3b454e;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 
   img.twemoji {
     height: 1em;
