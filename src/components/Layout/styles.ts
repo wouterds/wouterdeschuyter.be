@@ -7,6 +7,13 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   color: #3b454e;
   flex: 1;
 
+  img.twemoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 0.05em 0 0.1em;
+    vertical-align: -0.15em;
+  }
+
   ${({ backgroundColor }) =>
     backgroundColor &&
     css`
