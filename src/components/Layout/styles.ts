@@ -64,18 +64,18 @@ export const Container = styled.div<{ backgroundColor?: string }>`
 
   a {
     text-decoration: none;
-    padding-bottom: 0.075em;
-    border-bottom: 0.125em solid #e1e1e1;
+    padding-bottom: 0.09em;
+    border-bottom: 0.12em solid #e1e1e1;
     color: #30373d;
     transition: border ease-in-out 200ms;
 
     &:hover {
-      border-color: #ef50ae;
+      border-color: #db2756;
       outline: 0;
     }
 
     &:focus {
-      border-color: #5783d8;
+      border-color: #2b2f33;
       outline: 0;
     }
   }

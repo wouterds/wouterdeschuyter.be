@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Content = styled.div`
   background: #fff;
   padding: 25px;
+  font-size: 0.85em;
 
   h1 {
     font-size: 1.5em;

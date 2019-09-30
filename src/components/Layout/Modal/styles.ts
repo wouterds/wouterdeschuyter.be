@@ -16,6 +16,10 @@ export const Container = styled.div`
     width: 100%;
   }
 
+  button {
+    margin-top: 5px;
+  }
+
   @media (max-width: 480px) {
     margin: 0 0 25px;
     border-radius: 0;

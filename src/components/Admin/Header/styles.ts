@@ -20,7 +20,7 @@ export const Title = styled.div`
     line-height: 1;
     font-weight: 700;
     color: #fff;
-    background: #000;
+    background: #2b2f33;
     margin: 0;
     padding: 9px 10px;
   }
@@ -49,8 +49,8 @@ export const NavItem = styled.li<{ active?: boolean }>`
     active &&
     css`
       a {
-        color: #ef50ae;
-        border-bottom-color: #ef50ae;
+        color: #db2756;
+        border-bottom-color: #db2756;
       }
     `}
 `;
@@ -58,7 +58,7 @@ export const NavItem = styled.li<{ active?: boolean }>`
 export const Nav = styled.ul`
   position: absolute;
   left: 20px;
-  bottom: 6px;
+  bottom: 8px;
   height: 25px;
 
   &:hover ${NavItem} a {
@@ -66,12 +66,12 @@ export const Nav = styled.ul`
     border-bottom-color: transparent;
 
     &:hover {
-      color: #ef50ae;
-      border-bottom-color: #ef50ae;
+      color: #db2756;
+      border-bottom-color: #db2756;
 
       &:active {
-        color: #5783d8;
-        border-bottom-color: #5783d8;
+        color: #2b2f33;
+        border-bottom-color: #2b2f33;
       }
     }
   }
@@ -108,10 +108,10 @@ export const User = styled.ul`
       margin: 0 -5px -5px;
 
       &:hover {
-        color: #ef50ae;
+        color: #db2756;
 
         &:active {
-          color: #5783d8;
+          color: #2b2f33;
         }
       }
     }
