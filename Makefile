@@ -4,8 +4,10 @@ PROJECT = $(shell cat package.json | grep "\"name\"" | sed -e 's/^.*: "\(.*\)".*
 
 DOCKER_COMPOSE = ./.docker/docker-compose${ENV_SUFFIX}.yml
 DOCKERFILE_NODE = ./.docker/node/Dockerfile
+DOCKERFILE_NGINX = ./.docker/nginx/Dockerfile
 
 TAG_NODE = $(DOCKER_REGISTRY_HOST)/$(PROJECT)${ENV_SUFFIX}-node
+TAG_NGINX = $(DOCKER_REGISTRY_HOST)/$(PROJECT)${ENV_SUFFIX}-nginx
 
 all: build
 
@@ -31,16 +33,23 @@ qemu-arm-static:
 	docker run --rm -v $(PWD):/code -w /code -e API_ENDPOINT node:12-slim npm run build
 	touch .build-app
 
+.build-nginx: $(DOCKERFILE_NGINX)
+	docker build -f $(DOCKERFILE_NGINX) -t $(TAG_NGINX) .
+	touch .build-nginx
+
 .build-node: qemu-arm-static .build-app $(DOCKERFILE_NODE)
 	docker build -f $(DOCKERFILE_NODE) -t $(TAG_NODE) .
 	touch .build-node
 
-build: .build-node
+build: .build-node .build-nginx
 	docker tag $(TAG_NODE) $(TAG_NODE):$(VERSION)
+	docker tag $(TAG_NGINX) $(TAG_NGINX):$(VERSION)
 
 push: build
 	docker push $(TAG_NODE)
 	docker push $(TAG_NODE):$(VERSION)
+	docker push $(TAG_NGINX)
+	docker push $(TAG_NGINX):$(VERSION)
 
 deploy:
 	ssh ${DEPLOY_USER}@${DEPLOY_SERVER} "mkdir -p ${DEPLOY_LOCATION}${ENV_SUFFIX}"
