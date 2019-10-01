@@ -4,19 +4,17 @@ import { useQuery } from 'react-apollo';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Posts from 'components/Posts';
+import { Container } from './styles';
 
 const FETCH_DATA = gql`
   query fetchData {
     posts {
       id
       title
-      user {
-        firstName
-        lastName
-      }
-      status
+      slug
+      excerpt
       publishedAt
-      createdAt
     }
   }
 `;
@@ -24,20 +22,11 @@ const FETCH_DATA = gql`
 const Blog = () => {
   const { data } = useQuery(FETCH_DATA);
 
-  console.log({ data });
-
   return (
     <Layout>
       <Header />
       <Layout.Content centered>
-        {data &&
-          data.posts.map((post: any, index: number) => (
-            <article key={index}>
-              <header>
-                <h2>{post.title}</h2>
-              </header>
-            </article>
-          ))}
+        <Container>{data && <Posts posts={data.posts} />}</Container>
       </Layout.Content>
       <Footer centered />
     </Layout>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.header`
   background: #fff;
   text-align: center;
-  border-bottom: 1px solid #ebeff2;
+  border-bottom: 1px solid #ebeef0;
   margin-bottom: 5em;
 
   img {
