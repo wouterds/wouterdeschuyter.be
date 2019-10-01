@@ -14,7 +14,7 @@ export const Container = styled.section<{
   ${({ centered }) =>
     centered &&
     css`
-      max-width: 1000px;
+      max-width: 960px;
       margin: 0 auto;
     `}
 

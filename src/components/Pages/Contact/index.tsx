@@ -59,7 +59,7 @@ const Contact = () => {
           </Form>
         </Container>
       </Layout.Content>
-      <Footer />
+      <Footer centered />
     </Layout>
   );
 };

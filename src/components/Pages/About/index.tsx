@@ -158,7 +158,7 @@ const About = () => {
           </Social>
         </Container>
       </Layout.Content>
-      <Footer />
+      <Footer centered />
     </Layout>
   );
 };

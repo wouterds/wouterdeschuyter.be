@@ -39,7 +39,7 @@ const Blog = () => {
             </article>
           ))}
       </Layout.Content>
-      <Footer />
+      <Footer centered />
     </Layout>
   );
 };

@@ -11,7 +11,7 @@ const Landing = () => {
       <Layout.Content centered>
         <LandingHeader />
       </Layout.Content>
-      <Footer />
+      <Footer centered />
     </Layout>
   );
 };

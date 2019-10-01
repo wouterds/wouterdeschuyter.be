@@ -1,9 +1,15 @@
 import React from 'react';
 import { Container } from './styles';
 
-export const Footer = () => {
+interface Props {
+  centered?: boolean;
+}
+
+export const Footer = (props: Props) => {
+  const { centered = false } = props;
+
   return (
-    <Container>
+    <Container centered={centered}>
       <p>&copy; Copyright {new Date().getFullYear()} Wouter De Schuyter</p>
       <p>
         Made with React, GraphQL &amp; Node.js. Running in Docker on a Raspberry
