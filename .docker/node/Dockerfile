@@ -4,7 +4,6 @@ WORKDIR /code
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
 COPY ./package*.json ./
 COPY ./dist /code/.next
-COPY ./static /code/.next/static
 
 RUN npm install --production --ignore-scripts
 
