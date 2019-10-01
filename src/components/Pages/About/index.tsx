@@ -1,9 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { differenceInMilliseconds } from 'date-fns';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faTwitter,
+  faInstagram,
+  faGithub,
+  faLinkedinIn,
+  faFacebookF,
+} from '@fortawesome/free-brands-svg-icons';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import { Container } from './styles';
+import { Container, Social, SocialLink } from './styles';
 
 const getAge = () =>
   (
@@ -97,6 +105,57 @@ const About = () => {
             banks).
           </p>
           <p>Oh right, also a cat person 🐈!</p>
+
+          <Social>
+            <h2>Connect with me</h2>
+
+            <SocialLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://twitter.com/wouterds"
+              title="Twitter"
+              twitter
+            >
+              <FontAwesomeIcon icon={faTwitter} />
+            </SocialLink>
+
+            <SocialLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://facebook.com/wouter.de.schuyter"
+              title="Facebook"
+              facebook
+            >
+              <FontAwesomeIcon icon={faFacebookF} />
+            </SocialLink>
+            <SocialLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://instagram.com/wouterds"
+              title="Instagram"
+              instagram
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </SocialLink>
+            <SocialLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://linkedin.com/in/wouterds"
+              title="Linked In"
+              linkedIn
+            >
+              <FontAwesomeIcon icon={faLinkedinIn} />
+            </SocialLink>
+            <SocialLink
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/wouterds"
+              title="Github"
+              github
+            >
+              <FontAwesomeIcon icon={faGithub} />
+            </SocialLink>
+          </Social>
         </Container>
       </Layout.Content>
       <Footer />
