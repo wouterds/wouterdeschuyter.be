@@ -1,20 +1,28 @@
 version: '2'
 
 services:
+  nginx:
+    image: docker.wouterdeschuyter.be/wouterdeschuyter-staging-nginx
+    restart: unless-stopped
+    mem_limit: 16mb
+    environment:
+      - VIRTUAL_HOST=staging.wouterdeschuyter.be
+      - LETSENCRYPT_HOST=staging.wouterdeschuyter.be
+      - LETSENCRYPT_EMAIL=wouter.de.schuyter@gmail.com
+    networks:
+      - default
+      - webproxy
+    logging:
+      options:
+        max-size: 2m
+        max-file: '5'
+
   node:
     image: docker.wouterdeschuyter.be/wouterdeschuyter-staging-node
     restart: unless-stopped
     mem_limit: 32mb
     volumes:
       - ./data:/data
-    environment:
-      - VIRTUAL_HOST=staging.wouterdeschuyter.be
-      - VIRTUAL_PORT=3000
-      - LETSENCRYPT_HOST=staging.wouterdeschuyter.be
-      - LETSENCRYPT_EMAIL=wouter.de.schuyter@gmail.com
-    networks:
-      - default
-      - webproxy
     logging:
       options:
         max-size: 2m
