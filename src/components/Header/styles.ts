@@ -7,10 +7,10 @@ export const Container = styled.header`
 
 export const Title = styled.div`
   padding: 25px;
-  flex: 1;
 
   a {
     border: 0;
+    padding: 0;
     color: #2b2f33;
     display: inline-block;
   }
@@ -31,6 +31,7 @@ export const Nav = styled.nav`
   align-items: center;
   justify-content: flex-end;
   font-weight: 500;
+  flex: 1;
 
   a {
     padding: 10px;

@@ -2,13 +2,14 @@ import React from 'react';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import LandingHeader from './Header';
 
 const Landing = () => {
   return (
     <Layout>
-      <Header />
+      <Header hideLogo />
       <Layout.Content centered>
-        <h1>Hello world!</h1>
+        <LandingHeader />
       </Layout.Content>
       <Footer />
     </Layout>
