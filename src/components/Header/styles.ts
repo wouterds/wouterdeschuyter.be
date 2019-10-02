@@ -23,6 +23,10 @@ export const Title = styled.div`
     margin: 0;
     display: inline-block;
   }
+
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 export const Nav = styled.nav`

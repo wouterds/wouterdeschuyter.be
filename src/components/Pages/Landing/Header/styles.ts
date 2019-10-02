@@ -4,11 +4,11 @@ export const Container = styled.header`
   background: #fff;
   text-align: center;
   border-bottom: 1px solid #ebeef0;
-  margin-bottom: 5em;
+  margin-bottom: 4em;
 
   img {
-    max-width: 125px;
-    border-radius: 50%;
+    width: 7em;
+    border-radius: 3.5em;
     margin-bottom: 1.25em;
   }
 

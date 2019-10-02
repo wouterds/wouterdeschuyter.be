@@ -11,6 +11,11 @@ export const Container = styled.section<{
   padding: 35px;
   font-size: 1.2em;
 
+  @media (max-width: 640px) {
+    font-size: 1em;
+    padding: 25px;
+  }
+
   ${({ centered }) =>
     centered &&
     css`

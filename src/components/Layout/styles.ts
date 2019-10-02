@@ -6,6 +6,7 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   line-height: 1.6;
   color: #3b454e;
   flex: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
 

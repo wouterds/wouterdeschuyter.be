@@ -5,6 +5,10 @@ export const Container = styled.footer<{ centered?: boolean }>`
   color: #bbc4c9;
   margin-top: 2.5em;
 
+  @media (max-width: 640px) {
+    padding: 25px;
+  }
+
   p + p {
     margin-top: 0.5em;
   }
