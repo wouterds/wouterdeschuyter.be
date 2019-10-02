@@ -1,5 +1,6 @@
-import React, { FormEvent, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import useForm from 'react-hook-form';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -7,6 +8,12 @@ import Form from 'components/Form';
 import { Container, Row, Col } from './styles';
 
 const Contact = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState({});
+  const { register, handleSubmit, errors } = useForm({
+    submitFocusError: false,
+  });
+
   const recaptcha = useRef<ReCAPTCHA>(null);
   const executeCaptcha = useCallback(() => {
     if (!recaptcha.current) {
@@ -17,17 +24,17 @@ const Contact = () => {
   }, [recaptcha]);
 
   const onSubmit = useCallback(
-    (e: FormEvent) => {
-      e.preventDefault();
-
+    handleSubmit(data => {
+      setIsLoading(true);
+      setData(data);
       executeCaptcha();
-    },
-    [executeCaptcha],
+    }),
+    [handleSubmit, executeCaptcha],
   );
 
-  const onVerify = () => {
-    console.log('✅');
-  };
+  const onVerify = useCallback(() => {
+    console.log('✅', { data });
+  }, [data]);
 
   return (
     <Layout>
@@ -46,13 +53,24 @@ const Contact = () => {
               <Col>
                 <Form.Field>
                   <Form.Label htmlFor="fullName">Full name</Form.Label>
-                  <Form.Input id="fullName" name="fullName" />
+                  <Form.Input
+                    id="fullName"
+                    name="fullName"
+                    hasError={errors.hasOwnProperty('fullName')}
+                    ref={register({ required: true })}
+                  />
                 </Form.Field>
               </Col>
               <Col>
                 <Form.Field>
                   <Form.Label htmlFor="email">Email address</Form.Label>
-                  <Form.Input id="email" name="email" type="email" />
+                  <Form.Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    hasError={errors.hasOwnProperty('email')}
+                    ref={register({ required: true })}
+                  />
                 </Form.Field>
               </Col>
             </Row>
@@ -60,7 +78,12 @@ const Contact = () => {
               <Col>
                 <Form.Field>
                   <Form.Label htmlFor="subject">Subject</Form.Label>
-                  <Form.Input id="subject" name="subject" />
+                  <Form.Input
+                    id="subject"
+                    name="subject"
+                    hasError={errors.hasOwnProperty('subject')}
+                    ref={register({ required: true })}
+                  />
                 </Form.Field>
               </Col>
             </Row>
@@ -68,14 +91,22 @@ const Contact = () => {
               <Col>
                 <Form.Field>
                   <Form.Label htmlFor="message">Message</Form.Label>
-                  <Form.Textarea id="message" name="message" rows={5} />
+                  <Form.Textarea
+                    id="message"
+                    name="message"
+                    hasError={errors.hasOwnProperty('message')}
+                    rows={5}
+                    ref={register({ required: true })}
+                  />
                 </Form.Field>
               </Col>
             </Row>
             <Row>
               <Col>
                 <Form.Field>
-                  <Form.Button type="submit">Send message</Form.Button>
+                  <Form.Button type="submit" isLoading={isLoading}>
+                    Send message
+                  </Form.Button>
                 </Form.Field>
               </Col>
             </Row>
