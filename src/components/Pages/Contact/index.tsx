@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { FormEvent, useRef, useCallback } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -6,6 +7,28 @@ import Form from 'components/Form';
 import { Container, Row, Col } from './styles';
 
 const Contact = () => {
+  const recaptcha = useRef<ReCAPTCHA>(null);
+  const executeCaptcha = useCallback(() => {
+    if (!recaptcha.current) {
+      return;
+    }
+
+    recaptcha.current.execute();
+  }, [recaptcha]);
+
+  const onSubmit = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault();
+
+      executeCaptcha();
+    },
+    [executeCaptcha],
+  );
+
+  const onVerify = () => {
+    console.log('✅');
+  };
+
   return (
     <Layout>
       <Header />
@@ -18,7 +41,7 @@ const Contact = () => {
             ...). For everything else, write as you please, I&apos;ll be more
             than happy to reply!
           </p>
-          <Form>
+          <Form onSubmit={onSubmit}>
             <Row>
               <Col>
                 <Form.Field>
@@ -56,6 +79,12 @@ const Contact = () => {
                 </Form.Field>
               </Col>
             </Row>
+            <ReCAPTCHA
+              ref={recaptcha}
+              size="invisible"
+              sitekey={`${process.env.RECAPTCHA_SITE_KEY}`}
+              onChange={onVerify}
+            />
           </Form>
         </Container>
       </Layout.Content>
