@@ -15,8 +15,8 @@ const Contact = () => {
           <p>
             If you&apos;re writing for a project or to work together, please
             include as much details as possible (idea, goal, timeline, budget,
-            ...). For everything else, write as you please. I&apos;ll be more
-            than happy to reply to your email!
+            ...). For everything else, write as you please, I&apos;ll be more
+            than happy to reply!
           </p>
           <Form>
             <Row>

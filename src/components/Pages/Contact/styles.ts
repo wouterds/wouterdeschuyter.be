@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
   form {
-    margin-top: 50px;
+    margin-top: 1.5em;
+    font-size: 0.9em;
   }
 `;
 
