@@ -4,6 +4,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
+import { toast } from 'react-toastify';
 import withApollo from 'hocs/withApollo';
 import BaseCSS from 'styles/base';
 
@@ -30,5 +31,7 @@ class App extends NextApp<Props> {
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
+
+toast.configure();
 
 export default withApollo(App);
