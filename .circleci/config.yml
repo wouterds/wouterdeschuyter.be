@@ -10,11 +10,13 @@ jobs:
           command: |
             if [ "$CIRCLE_BRANCH" == "develop" ]; then
               echo 'export ENV_SUFFIX="$STAGING_ENV_SUFFIX"' >> $BASH_ENV
+              echo 'export URL="$STAGING_URL"' >> $BASH_ENV
               echo 'export API_ENDPOINT="$STAGING_API_ENDPOINT"' >> $BASH_ENV
               echo 'export RECAPTCHA_SITE_KEY="$STAGING_RECAPTCHA_SITE_KEY"' >> $BASH_ENV
             fi
             if [ "$CIRCLE_BRANCH" == "master" ]; then
               echo 'export ENV_SUFFIX="$PRODUCTION_ENV_SUFFIX"' >> $BASH_ENV
+              echo 'export URL="$PRODUCTION_URL"' >> $BASH_ENV
               echo 'export API_ENDPOINT="$PRODUCTION_API_ENDPOINT"' >> $BASH_ENV
               echo 'export RECAPTCHA_SITE_KEY="$PRODUCTION_RECAPTCHA_SITE_KEY"' >> $BASH_ENV
             fi
