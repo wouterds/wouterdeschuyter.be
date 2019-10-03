@@ -7,7 +7,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Posts from 'components/Posts';
 import LandingHeader from './Header';
-import { MoreLink, Links } from './styles';
+import { Links } from './styles';
 
 const FETCH_DATA = gql`
   query fetchData {
@@ -32,8 +32,8 @@ const Landing = () => {
         {data && <Posts posts={data.posts} />}
 
         <Links>
-          <Link href="/blog" passHref>
-            <MoreLink>More posts</MoreLink>
+          <Link href="/blog">
+            <a>More posts</a>
           </Link>
         </Links>
       </Layout.Content>
