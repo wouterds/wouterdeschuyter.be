@@ -57,6 +57,10 @@ Blog.getInitialProps = async ({
 }: NextPageContext) => {
   let { page = 1 } = query;
 
+  if (page === '1' && res) {
+    return res.writeHead(302, { Location: '/blog' }).end();
+  }
+
   page = Number(page);
   if (Number.isNaN(page)) {
     page = 1;
