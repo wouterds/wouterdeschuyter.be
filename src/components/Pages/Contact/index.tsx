@@ -1,16 +1,35 @@
 import React, { useState, useRef, useCallback } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import useForm from 'react-hook-form';
+import gql from 'graphql-tag';
+import { useMutation } from 'react-apollo';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Form from 'components/Form';
 import { Container, Row, Col } from './styles';
 
+const CONTACT = gql`
+  mutation Contact(
+    $fullName: String!
+    $email: String!
+    $subject: String!
+    $message: String!
+  ) {
+    contact(
+      name: $fullName
+      email: $email
+      subject: $subject
+      message: $message
+    )
+  }
+`;
+
 const Contact = () => {
+  const [contact] = useMutation(CONTACT);
   const [isLoading, setIsLoading] = useState(false);
-  const [data, setData] = useState({});
-  const { register, handleSubmit, errors } = useForm({
+  const [data, setData] = useState<any>({});
+  const { register, handleSubmit, errors, reset } = useForm({
     submitFocusError: false,
   });
 
@@ -32,9 +51,19 @@ const Contact = () => {
     [handleSubmit, executeCaptcha],
   );
 
-  const onVerify = useCallback(() => {
-    console.log('✅', { data });
-  }, [data]);
+  const onVerify = useCallback(async () => {
+    const { fullName, email, subject, message } = data;
+
+    contact({ variables: { fullName, email, subject, message } })
+      .then(() => {
+        reset();
+      })
+      .finally(() => setIsLoading(false));
+  }, [contact, data, reset]);
+
+  const onError = () => {
+    setIsLoading(false);
+  };
 
   return (
     <Layout>
@@ -115,6 +144,7 @@ const Contact = () => {
               size="invisible"
               sitekey={`${process.env.RECAPTCHA_SITE_KEY}`}
               onChange={onVerify}
+              onErrored={onError}
             />
           </Form>
         </Container>
