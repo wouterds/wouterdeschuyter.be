@@ -1,16 +1,18 @@
 import React from 'react';
 import { NextPageContext } from 'next';
+import Link from 'next/link';
 import gql from 'graphql-tag';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Posts, { Post } from 'components/Posts';
-import { Container } from './styles';
+import { Container, Links } from './styles';
 
 const POSTS_PER_PAGE = 10;
 
 const FETCH_DATA = gql`
   query fetchData($limit: Int, $offset: Int) {
+    postCount
     posts(limit: $limit, offset: $offset) {
       id
       title
@@ -24,10 +26,14 @@ const FETCH_DATA = gql`
 interface Props {
   page: number;
   posts: Post[];
+  postCount: number;
 }
 
 const Blog = (props: Props) => {
-  const { posts } = props;
+  const { posts, postCount, page } = props;
+
+  const hasPrevPage = page > 0;
+  const hasNextPage = page * POSTS_PER_PAGE < postCount;
 
   return (
     <Layout>
@@ -43,6 +49,23 @@ const Blog = (props: Props) => {
             </>
           )}
           {posts.length > 0 && <Posts posts={posts} />}
+
+          {(hasNextPage || hasPrevPage) && (
+            <Links>
+              {hasPrevPage ? (
+                <Link href={`/blog?page=${page}`}>
+                  <a>Newer posts</a>
+                </Link>
+              ) : (
+                <span />
+              )}
+              {hasNextPage && (
+                <Link href={`/blog?page=${page + 2}`}>
+                  <a>Older posts</a>
+                </Link>
+              )}
+            </Links>
+          )}
         </Container>
       </Layout.Content>
       <Footer centered />
@@ -79,7 +102,7 @@ Blog.getInitialProps = async ({
     }
   }
 
-  const { posts } = (await apolloClient.query({
+  const { posts, postCount } = (await apolloClient.query({
     query: FETCH_DATA,
     variables: { limit: POSTS_PER_PAGE, offset: page * POSTS_PER_PAGE },
   })).data;
@@ -88,7 +111,7 @@ Blog.getInitialProps = async ({
     res.statusCode = 404;
   }
 
-  return { page, posts };
+  return { page, posts, postCount };
 };
 
 export default Blog;
