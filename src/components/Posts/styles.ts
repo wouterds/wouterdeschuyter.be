@@ -27,7 +27,6 @@ export const Post = styled.article`
     text-overflow: ellipsis;
     white-space: nowrap;
     max-width: 100%;
-    line-height: 1.2;
     font-size: 1.6em;
     transition: color ease-in-out 200ms;
     margin-bottom: 0.25em;
