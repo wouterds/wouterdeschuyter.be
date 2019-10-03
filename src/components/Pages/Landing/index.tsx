@@ -33,7 +33,7 @@ const Landing = () => {
 
         <Links>
           <Link href="/blog">
-            <a>More posts</a>
+            <a>More posts &raquo;</a>
           </Link>
         </Links>
       </Layout.Content>

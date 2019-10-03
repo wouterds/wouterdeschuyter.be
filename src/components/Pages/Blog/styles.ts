@@ -10,7 +10,14 @@ export const Links = styled.div`
   width: 100%;
 
   a {
-    font-size: 0.9em;
-    color: #48545e !important;
+    font-size: ${16 / 19.2}em;
+    font-weight: 500;
+    border: 0;
+    color: #939aa3;
+    transition: color ease-in-out 200ms;
+
+    &:hover {
+      color: #2b2f33;
+    }
   }
 `;

@@ -54,14 +54,14 @@ const Blog = (props: Props) => {
             <Links>
               {hasPrevPage ? (
                 <Link href={`/blog?page=${page}`}>
-                  <a>Newer posts</a>
+                  <a>&laquo; Newer posts</a>
                 </Link>
               ) : (
                 <span />
               )}
               {hasNextPage && (
                 <Link href={`/blog?page=${page + 2}`}>
-                  <a>Older posts</a>
+                  <a>Older posts &raquo;</a>
                 </Link>
               )}
             </Links>
