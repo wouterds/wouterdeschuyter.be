@@ -3,14 +3,16 @@ import Link from 'next/link';
 import { format } from 'date-fns';
 import { Container, Post } from './styles';
 
+export type Post = {
+  id: string;
+  title: string;
+  slug: string;
+  excerpt: string;
+  publishedAt: string;
+};
+
 interface Props {
-  posts: Array<{
-    id: string;
-    title: string;
-    slug: string;
-    excerpt: string;
-    publishedAt: string;
-  }>;
+  posts: Post[];
 }
 
 const Posts = (props: Props) => {

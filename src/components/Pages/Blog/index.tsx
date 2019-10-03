@@ -1,11 +1,10 @@
 import React from 'react';
 import { NextPageContext } from 'next';
 import gql from 'graphql-tag';
-import { useQuery } from 'react-apollo';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Posts from 'components/Posts';
+import Posts, { Post } from 'components/Posts';
 import { Container } from './styles';
 
 const POSTS_PER_PAGE = 10;
@@ -24,26 +23,24 @@ const FETCH_DATA = gql`
 
 interface Props {
   page: number;
+  posts: Post[];
 }
 
 const Blog = (props: Props) => {
-  const { page } = props;
-  const { data } = useQuery(FETCH_DATA, {
-    variables: { limit: POSTS_PER_PAGE, offset: page * POSTS_PER_PAGE },
-  });
+  const { posts } = props;
 
   return (
     <Layout>
       <Header />
       <Layout.Content centered>
-        <Container>{data && <Posts posts={data.posts} />}</Container>
+        <Container>{posts && <Posts posts={posts} />}</Container>
       </Layout.Content>
       <Footer centered />
     </Layout>
   );
 };
 
-Blog.getInitialProps = async ({ query }: NextPageContext) => {
+Blog.getInitialProps = async ({ query, apolloClient }: NextPageContext) => {
   let { page = 1 } = query;
 
   page = Number(page);
@@ -56,7 +53,12 @@ Blog.getInitialProps = async ({ query }: NextPageContext) => {
     page = 0;
   }
 
-  return { page };
+  const { posts } = (await apolloClient.query({
+    query: FETCH_DATA,
+    variables: { limit: POSTS_PER_PAGE, offset: page * POSTS_PER_PAGE },
+  })).data;
+
+  return { page, posts };
 };
 
 export default Blog;
