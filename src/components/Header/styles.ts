@@ -19,7 +19,7 @@ export const Title = styled.div`
     font-size: 1.8em;
     line-height: 1;
     font-weight: 500;
-    padding: 10px;
+    padding: 8px 10px;
     margin: 0;
     display: inline-block;
   }
