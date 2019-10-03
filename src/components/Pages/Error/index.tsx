@@ -2,11 +2,13 @@ import React from 'react';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Meta from 'components/Meta';
 import { Container } from './styles';
 
 const Error = () => {
   return (
     <Layout>
+      <Meta title="Something went wrong" />
       <Header />
       <Layout.Content centered editorial>
         <Container>

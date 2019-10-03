@@ -6,6 +6,7 @@ import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Posts, { Post } from 'components/Posts';
+import Meta from 'components/Meta';
 import { Container, Links } from './styles';
 
 const POSTS_PER_PAGE = 10;
@@ -37,6 +38,7 @@ const Blog = (props: Props) => {
 
   return (
     <Layout>
+      <Meta title="Blog" />
       <Header />
       <Layout.Content centered editorial={posts.length === 0}>
         <Container>

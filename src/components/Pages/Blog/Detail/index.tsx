@@ -5,6 +5,7 @@ import { useQuery } from 'react-apollo';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Meta from 'components/Meta';
 import { Container } from './styles';
 
 const FETCH_DATA = gql`
@@ -29,6 +30,7 @@ const Detail = (props: Props) => {
 
   return (
     <Layout>
+      {data && data.post && data.post.title && <Meta title={data.post.title} />}
       <Header />
       <Layout.Content centered editorial>
         <Container>{data && data.post && <h1>{data.post.title}</h1>}</Container>

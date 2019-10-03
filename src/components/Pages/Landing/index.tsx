@@ -7,6 +7,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Posts from 'components/Posts';
 import LandingHeader from './Header';
+import Meta from 'components/Meta';
 import { Links } from './styles';
 
 const FETCH_DATA = gql`
@@ -26,6 +27,7 @@ const Landing = () => {
 
   return (
     <Layout>
+      <Meta title="Wouter De Schuyter" />
       <Header hideLogo />
       <Layout.Content centered>
         <LandingHeader />

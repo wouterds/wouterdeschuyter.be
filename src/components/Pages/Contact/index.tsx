@@ -8,6 +8,7 @@ import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Form from 'components/Form';
+import Meta from 'components/Meta';
 import { Container, Row, Col } from './styles';
 
 const CONTACT = gql`
@@ -81,6 +82,7 @@ const Contact = () => {
 
   return (
     <Layout>
+      <Meta title="Contact" />
       <Header />
       <Layout.Content centered editorial>
         <Container>

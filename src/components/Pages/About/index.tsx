@@ -11,6 +11,7 @@ import {
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Meta from 'components/Meta';
 import { Container, Social, SocialLink } from './styles';
 
 const getAge = () =>
@@ -33,6 +34,7 @@ const About = () => {
 
   return (
     <Layout>
+      <Meta title="About" />
       <Header />
       <Layout.Content centered editorial>
         <Container>
