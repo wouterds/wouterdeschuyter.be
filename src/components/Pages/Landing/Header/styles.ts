@@ -7,9 +7,11 @@ export const Container = styled.header`
   margin-bottom: 4em;
 
   img {
+    height: 7em;
     width: 7em;
     border-radius: 3.5em;
     margin-bottom: 1.25em;
+    background: #10151f;
   }
 
   h1 {
