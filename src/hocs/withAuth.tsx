@@ -2,7 +2,6 @@ import React from 'react';
 import { NextPageContext } from 'next';
 import Router from 'next/router';
 import Link from 'next/link';
-import ApolloClient from 'apollo-client';
 import gql from 'graphql-tag';
 import Layout from 'components/Layout';
 import { useCookie, Cookies } from 'hooks/useCookie';
@@ -13,10 +12,6 @@ export interface AuthProps {
     lastName: string;
     email: string;
   };
-}
-
-interface Context extends NextPageContext {
-  apolloClient: ApolloClient<any>;
 }
 
 // https://github.com/DefinitelyTyped/DefinitelyTyped/issues/27805
@@ -43,7 +38,7 @@ const withAuth = (WrappedComponent: any) => {
     return <WrappedComponent {...(props as any)} />;
   };
 
-  Component.getInitialProps = async (ctx: Context) => {
+  Component.getInitialProps = async (ctx: NextPageContext) => {
     const failed = () => {
       const route = '/admin/sign-in';
 
