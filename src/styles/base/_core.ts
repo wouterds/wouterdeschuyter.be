@@ -18,4 +18,10 @@ export default css`
     font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI',
       'Helvetica Neue', 'Lucida Grande', sans-serif;
   }
+
+  code,
+  pre {
+    font-family: 'Source Code Pro', Hack, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+  }
 `;
