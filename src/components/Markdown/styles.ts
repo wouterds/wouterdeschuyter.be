@@ -20,6 +20,10 @@ export const Container = styled.div`
     margin: 0.5em 0 1em;
   }
 
+  ul {
+    list-style: disc inside;
+  }
+
   .media {
     position: relative;
     background: #fafafa;

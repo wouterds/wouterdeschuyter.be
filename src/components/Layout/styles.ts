@@ -45,10 +45,12 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   }
 
   p,
-  pre {
+  pre,
+  ul {
     & + h1,
     & + h2,
-    & + h3 {
+    & + h3,
+    & + h4 {
       margin-top: 1em;
     }
   }
@@ -68,12 +70,27 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     margin-bottom: 0.25em;
   }
 
+  h4 {
+    font-size: 1.2em;
+    margin-bottom: 0.1em;
+  }
+
   p + p,
-  pre + p {
+  pre + p,
+  ul + p {
     margin-top: 1em;
   }
 
-  p + pre {
+  h1 + pre,
+  h1 + ul,
+  h2 + pre,
+  h2 + ul,
+  h3 + pre,
+  h3 + ul,
+  h4 + pre,
+  h4 + ul,
+  p + pre,
+  p + ul {
     margin-top: 0.5em;
   }
 
