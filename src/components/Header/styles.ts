@@ -15,7 +15,7 @@ export const Logo = styled.div`
   mask-size: cover;
   width: 1em;
   height: 1.91em;
-  margin: 0 0.525em -1em;
+  margin: 0 0.525em;
   background: #2b2f33;
   display: inline-block;
 `;
@@ -27,6 +27,7 @@ export const Title = styled.div<{ transparent: boolean }>`
     border: 0;
     padding: 0;
     display: inline-block;
+    line-height: 1;
 
     &:hover {
       h1 {
@@ -87,6 +88,9 @@ export const Title = styled.div<{ transparent: boolean }>`
   }
 
   @media (max-width: 640px) {
+    margin-top: 0.3em;
+    align-self: center;
+
     h1 {
       display: none;
     }

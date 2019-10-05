@@ -10,6 +10,10 @@ export const Container = styled.div`
   right: 0;
   background: #111;
 
+  @media (max-width: 640px) {
+    height: 35vh;
+  }
+
   &:after {
     position: absolute;
     top: 0;

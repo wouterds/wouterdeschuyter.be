@@ -16,6 +16,10 @@ export const Links = styled.div`
     color: #939aa3;
     transition: color ease-in-out 200ms;
 
+    @media (max-width: 640px) {
+      font-size: 1em;
+    }
+
     &:hover {
       color: #2b2f33;
       text-decoration: none;

@@ -2,6 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   margin-top: 65vh;
+
+  @media (max-width: 640px) {
+    margin-top: 30vh;
+  }
 `;
 
 export const Body = styled.div`
