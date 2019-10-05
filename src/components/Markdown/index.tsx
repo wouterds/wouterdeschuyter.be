@@ -48,7 +48,9 @@ const generateHtmlFromMarkdown = (
     if (mediaAsset.fileName) {
       html = html.replace(
         `:media:${mediaAsset.id}:`,
-        `<img src="/static/media/${mediaAsset.fileName}" />`,
+        `<div class="media media--image" style="padding-bottom: ${(mediaAsset.height /
+          mediaAsset.width) *
+          100}%"><img src="/static/media/${mediaAsset.fileName}" /></div>`,
       );
     }
 
@@ -60,7 +62,9 @@ const generateHtmlFromMarkdown = (
 
         html = html.replace(
           `:media:${mediaAsset.id}:`,
-          `<iframe src="https://youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen>${url}</iframe>`,
+          `<div class="media media--video" style="padding-bottom: ${(mediaAsset.height /
+            mediaAsset.width) *
+            100}%"><iframe src="https://youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen>${url}</iframe></div>`,
         );
       }
     }

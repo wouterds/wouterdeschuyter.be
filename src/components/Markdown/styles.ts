@@ -19,4 +19,30 @@ export const Container = styled.div`
     overflow-x: scroll;
     margin: 0.5em 0 1em;
   }
+
+  .media {
+    position: relative;
+    background: #fafafa;
+
+    &--image {
+      img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 0;
+      }
+    }
+
+    &--video {
+      iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
 `;
