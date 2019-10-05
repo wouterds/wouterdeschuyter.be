@@ -3,6 +3,8 @@ import { NextPageContext } from 'next';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo';
 import mediumZoom from 'medium-zoom';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/github.css';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -38,6 +40,10 @@ const Detail = (props: Props) => {
 
   useEffect(() => {
     mediumZoom('.media--image img', { margin: 25 });
+
+    document
+      .querySelectorAll('pre code')
+      .forEach(block => hljs.highlightBlock(block));
   }, []);
 
   return (
