@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { NextPageContext } from 'next';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo';
+import mediumZoom from 'medium-zoom';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -32,6 +33,10 @@ interface Props {
 const Detail = (props: Props) => {
   const { slug } = props;
   const { data } = useQuery(FETCH_DATA, { variables: { slug } });
+
+  useEffect(() => {
+    mediumZoom('.media--image img', { margin: 25 });
+  }, []);
 
   return (
     <Layout>
