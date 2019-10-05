@@ -26,6 +26,7 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-unfetch": "^3.0.0",
     "marked": "^0.7.0",
+    "medium-zoom": "^1.0.4",
     "next": "^9.0.8-canary.0",
     "next-with-apollo": "^4.2.0",
     "nprogress": "^0.2.0",
