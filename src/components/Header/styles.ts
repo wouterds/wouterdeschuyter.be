@@ -10,6 +10,16 @@ export const Container = styled.header`
   }
 `;
 
+export const Logo = styled.div`
+  mask: url('/static/logo.svg') no-repeat center;
+  mask-size: cover;
+  width: 1em;
+  height: 1.91em;
+  margin: 0 0.525em -1em;
+  background: #2b2f33;
+  display: inline-block;
+`;
+
 export const Title = styled.div<{ transparent: boolean }>`
   padding: 1.3em;
 
@@ -18,26 +28,49 @@ export const Title = styled.div<{ transparent: boolean }>`
     padding: 0;
     display: inline-block;
 
-    &:hover h1 {
-      color: #000;
+    &:hover {
+      h1 {
+        color: #000;
+      }
+
+      ${Logo} {
+        background: #000;
+      }
 
       ${({ transparent }) =>
         transparent &&
         css`
-          color: #fff;
+          h1 {
+            color: #fff;
+          }
+
+          ${Logo} {
+            background: #fff;
+          }
         `}
     }
 
     h1 {
       color: #2b2f33;
       transition: color ease-in-out 200ms;
-
-      ${({ transparent }) =>
-        transparent &&
-        css`
-          color: rgba(255, 255, 255, 0.9);
-        `}
     }
+
+    ${Logo} {
+      background: #2b2f33;
+      transition: background ease-in-out 200ms;
+    }
+
+    ${({ transparent }) =>
+      transparent &&
+      css`
+        h1 {
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        ${Logo} {
+          background: rgba(255, 255, 255, 0.9);
+        }
+      `}
   }
 
   h1 {
@@ -49,8 +82,18 @@ export const Title = styled.div<{ transparent: boolean }>`
     display: inline-block;
   }
 
-  @media (max-width: 640px) {
+  ${Logo} {
     display: none;
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      display: none;
+    }
+
+    ${Logo} {
+      display: inline-block;
+    }
   }
 `;
 

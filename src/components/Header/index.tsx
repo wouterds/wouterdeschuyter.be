@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Container, Title, Nav } from './styles';
+import { Container, Title, Nav, Logo } from './styles';
 import { withRouter, NextRouter } from 'next/router';
 
 interface Props {
@@ -18,6 +18,7 @@ export const Header = (props: Props) => {
         <Title transparent={transparent}>
           <Link href="/">
             <a>
+              <Logo />
               <h1>Wouter De Schuyter</h1>
             </a>
           </Link>
