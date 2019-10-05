@@ -8,12 +8,11 @@ export const Container = styled.section<{
 }>`
   flex: 1;
   width: 100%;
-  padding: 35px;
+  padding: 1.825em;
   font-size: 1.2em;
 
   @media (max-width: 640px) {
     font-size: 1em;
-    padding: 25px;
   }
 
   ${({ centered }) =>

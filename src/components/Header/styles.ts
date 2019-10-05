@@ -11,7 +11,7 @@ export const Container = styled.header`
 `;
 
 export const Title = styled.div<{ transparent: boolean }>`
-  padding: 25px;
+  padding: 1.3em;
 
   a {
     border: 0;
@@ -44,7 +44,7 @@ export const Title = styled.div<{ transparent: boolean }>`
     font-size: 1.8em;
     line-height: 1;
     font-weight: 500;
-    padding: 8px 10px;
+    padding: 0.25em 0.525em;
     margin: 0;
     display: inline-block;
   }
@@ -55,7 +55,7 @@ export const Title = styled.div<{ transparent: boolean }>`
 `;
 
 export const Nav = styled.nav<{ transparent: boolean }>`
-  padding: 25px;
+  padding: 1.3em;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -63,7 +63,7 @@ export const Nav = styled.nav<{ transparent: boolean }>`
   flex: 1;
 
   a {
-    padding: 10px;
+    padding: 0.525em;
     border: 0;
     color: #888;
     transition: color ease-in-out 200ms;
