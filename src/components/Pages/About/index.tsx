@@ -38,7 +38,7 @@ const About = () => {
         title="About"
         description={`Hey 👋, I'm Wouter! Currently ${Math.round(
           parseInt(getAge()),
-        )} years old and passionate about all things digital really. I studied Digital Design & Development 🎓 at Howest University College and am currently working as a Senior Full Stack Developer at a smaller startup; Delta.`}
+        )} years old and passionate about all things digital really. I studied Digital Design & Development 🎓 at Howest University College and am currently working as a Senior Full Stack Developer at a small crypto startup; Delta.`}
       />
       <Header />
       <Layout.Content centered editorial>
@@ -59,7 +59,7 @@ const About = () => {
               Digital Design &amp; Development
             </a>{' '}
             🎓 at Howest University College and am currently working as a Senior
-            Full Stack Developer at a smaller startup;{' '}
+            Full Stack Developer at a small crypto startup;{' '}
             <a
               href="https://delta.app"
               target="_blank"
