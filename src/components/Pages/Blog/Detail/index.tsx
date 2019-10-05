@@ -16,6 +16,7 @@ const FETCH_DATA = gql`
     post(slug: $slug) {
       id
       title
+      excerpt
       slug
       body
       publishedAt
@@ -40,7 +41,36 @@ const Detail = (props: Props) => {
 
   return (
     <Layout>
-      {data && data.post && <Meta title={data.post.title} />}
+      {data && data.post && (
+        <Meta
+          title={data.post.title}
+          description={data.post.excerpt}
+          extra={
+            <>
+              <meta
+                property="article:published_time"
+                content={new Date(
+                  parseInt(data.post.publishedAt),
+                ).toISOString()}
+              />
+              <meta property="og:type" content="article" />
+              <meta
+                property="og:image"
+                content={`${process.env.URL}/static/media/${data.post.mediaAsset.fileName}`}
+              />
+              <meta name="twitter:card" content="summary_large_image" />
+              <meta
+                name="twitter:image"
+                content={`${process.env.URL}/static/media/${data.post.mediaAsset.fileName}`}
+              />
+              <link
+                rel="canonical"
+                href={`${process.env.URL}/blog/${data.post.slug}`}
+              />
+            </>
+          }
+        />
+      )}
       <Header transparent={true} />
       {data && data.post && <LocalHeader mediaAsset={data.post.mediaAsset} />}
       <Layout.Content centered editorial>
