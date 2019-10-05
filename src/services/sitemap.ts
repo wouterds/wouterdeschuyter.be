@@ -62,6 +62,10 @@ class Sitemap {
   public getXml = () => {
     return this.sitemap.toXML();
   };
+
+  public getCompressedXml = () => {
+    return this.sitemap.toGzip();
+  };
 }
 
 export default new Sitemap();
