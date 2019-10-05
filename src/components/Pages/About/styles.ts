@@ -21,31 +21,39 @@ export const SocialLink = styled.a<{
   linkedIn?: boolean;
   github?: boolean;
 }>`
-  font-size: 1.5em;
-  height: 46px;
-  width: 46px;
-  border-radius: 23px;
+  font-size: 26px;
+  height: 48px;
+  width: 48px;
+  border-radius: 24px;
+  line-height: 47px;
   border: 0 !important;
   display: inline-block;
   color: #fff !important;
   text-align: center;
+  transition: background ease-in-out 200ms;
 
   + a {
-    margin-left: 20px;
+    margin-left: 16px;
   }
 
   ${({ twitter }) =>
     twitter &&
     css`
       background: #00aced;
-      padding-left: 2px;
+
+      &:hover {
+        background: #0099d4;
+      }
     `}
 
   ${({ facebook }) =>
     facebook &&
     css`
       background: #354e8b;
-      padding-right: 1px;
+
+      &:hover {
+        background: #2e4479;
+      }
     `}
 
   ${({ instagram }) =>
@@ -58,19 +66,35 @@ export const SocialLink = styled.a<{
         #f77638 70%,
         #fec66d 100%
       );
+
+      &:hover {
+        background: linear-gradient(
+          #5346c4,
+          #a82c80 30%,
+          #e0294c 50%,
+          #f6651f 70%,
+          #febc54 100%
+        );
+      }
     `}
 
     ${({ linkedIn }) =>
       linkedIn &&
       css`
         background: #0f6baa;
-        padding-left: 1px;
+
+        &:hover {
+          background: #0d5c93;
+        }
       `}
 
     ${({ github }) =>
       github &&
       css`
         background: #2d2d2d;
-        padding-left: 1px;
+
+        &:hover {
+          background: #202020;
+        }
       `}
 `;
