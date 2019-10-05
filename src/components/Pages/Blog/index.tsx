@@ -52,7 +52,7 @@ const Blog = (props: Props) => {
         )}
       </Head>
       <Header />
-      <Layout.Content centered editorial={posts.length === 0}>
+      <Layout.Content centered editorial>
         <Container>
           {posts.length === 0 && (
             <>
@@ -62,7 +62,12 @@ const Blog = (props: Props) => {
               </p>
             </>
           )}
-          {posts.length > 0 && <Posts posts={posts} />}
+          {posts.length > 0 && (
+            <>
+              <h1>Blog</h1>
+              <Posts posts={posts} />
+            </>
+          )}
 
           {(hasNextPage || hasPrevPage) && (
             <Links>
