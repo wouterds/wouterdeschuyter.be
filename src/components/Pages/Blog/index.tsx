@@ -39,7 +39,10 @@ const Blog = (props: Props) => {
 
   return (
     <Layout>
-      <Meta title="Blog" />
+      <Meta
+        title="Blog"
+        description="This is my primary place on the internet where I collect things I made for myself, others or clients. I also write sometimes about things I like, things I experienced, guides, tutorials and more."
+      />
       <Head>
         {hasPrevPage && (
           <link rel="prev" href={`${process.env.URL}/blog?page=${page}`} />

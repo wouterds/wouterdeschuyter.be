@@ -27,7 +27,10 @@ const Landing = () => {
 
   return (
     <Layout>
-      <Meta title="Wouter De Schuyter" />
+      <Meta
+        title="Wouter De Schuyter"
+        description="An ambitious, passionate Full Stack Developer."
+      />
       <Header hideLogo />
       <Layout.Content centered>
         <LandingHeader />

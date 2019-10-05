@@ -82,7 +82,10 @@ const Contact = () => {
 
   return (
     <Layout>
-      <Meta title="Contact" />
+      <Meta
+        title="Contact"
+        description="If you're writing for a project or to work together, please include as much details as possible (idea, goal, timeline, budget, ...). For everything else, write as you please, I'll be more than happy to reply!"
+      />
       <Header />
       <Layout.Content centered editorial>
         <Container>
