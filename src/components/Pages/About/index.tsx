@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useAmp } from 'next/amp';
 import { differenceInMilliseconds } from 'date-fns';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -14,6 +15,8 @@ import Footer from 'components/Footer';
 import Meta from 'components/Meta';
 import { Container, Social, SocialLink } from './styles';
 
+export const config = { amp: 'hybrid' };
+
 const getAge = () =>
   (
     differenceInMilliseconds(new Date(), new Date('13 December 1992')) /
@@ -23,6 +26,7 @@ const getAge = () =>
 
 const About = () => {
   const [age, setAge] = useState(getAge);
+  const isAmp = useAmp();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -113,56 +117,58 @@ const About = () => {
           </p>
           <p>Oh right, also a cat person 🐈!</p>
 
-          <Social>
-            <h2>Connect with me</h2>
+          {!isAmp && (
+            <Social>
+              <h2>Connect with me</h2>
 
-            <SocialLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://twitter.com/wouterds"
-              title="Twitter"
-              twitter
-            >
-              <FontAwesomeIcon icon={faTwitter} />
-            </SocialLink>
+              <SocialLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://twitter.com/wouterds"
+                title="Twitter"
+                twitter
+              >
+                <FontAwesomeIcon icon={faTwitter} />
+              </SocialLink>
 
-            <SocialLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://facebook.com/wouter.de.schuyter"
-              title="Facebook"
-              facebook
-            >
-              <FontAwesomeIcon icon={faFacebookF} />
-            </SocialLink>
-            <SocialLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://instagram.com/wouterds"
-              title="Instagram"
-              instagram
-            >
-              <FontAwesomeIcon icon={faInstagram} />
-            </SocialLink>
-            <SocialLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://linkedin.com/in/wouterds"
-              title="Linked In"
-              linkedIn
-            >
-              <FontAwesomeIcon icon={faLinkedinIn} />
-            </SocialLink>
-            <SocialLink
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://github.com/wouterds"
-              title="Github"
-              github
-            >
-              <FontAwesomeIcon icon={faGithub} />
-            </SocialLink>
-          </Social>
+              <SocialLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://facebook.com/wouter.de.schuyter"
+                title="Facebook"
+                facebook
+              >
+                <FontAwesomeIcon icon={faFacebookF} />
+              </SocialLink>
+              <SocialLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://instagram.com/wouterds"
+                title="Instagram"
+                instagram
+              >
+                <FontAwesomeIcon icon={faInstagram} />
+              </SocialLink>
+              <SocialLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://linkedin.com/in/wouterds"
+                title="Linked In"
+                linkedIn
+              >
+                <FontAwesomeIcon icon={faLinkedinIn} />
+              </SocialLink>
+              <SocialLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://github.com/wouterds"
+                title="Github"
+                github
+              >
+                <FontAwesomeIcon icon={faGithub} />
+              </SocialLink>
+            </Social>
+          )}
         </Container>
       </Layout.Content>
       <Footer centered />
