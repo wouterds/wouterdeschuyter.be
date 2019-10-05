@@ -7,6 +7,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Meta from 'components/Meta';
 import Markdown from 'components/Markdown';
+import LocalHeader from './Header';
 import { Container, Body } from './styles';
 
 const FETCH_DATA = gql`
@@ -17,6 +18,9 @@ const FETCH_DATA = gql`
       slug
       body
       publishedAt
+      mediaAsset {
+        fileName
+      }
     }
   }
 `;
@@ -31,8 +35,9 @@ const Detail = (props: Props) => {
 
   return (
     <Layout>
-      {data && data.post && data.post.title && <Meta title={data.post.title} />}
-      <Header />
+      {data && data.post && <Meta title={data.post.title} />}
+      <Header transparent={true} />
+      {data && data.post && <LocalHeader mediaAsset={data.post.mediaAsset} />}
       <Layout.Content centered editorial>
         <Container>
           {data && data.post && (

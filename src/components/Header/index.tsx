@@ -6,15 +6,16 @@ import { withRouter, NextRouter } from 'next/router';
 interface Props {
   router: NextRouter;
   hideLogo?: boolean;
+  transparent?: boolean;
 }
 
 export const Header = (props: Props) => {
-  const { router, hideLogo } = props;
+  const { router, hideLogo, transparent = false } = props;
 
   return (
     <Container>
       {hideLogo !== true && (
-        <Title>
+        <Title transparent={transparent}>
           <Link href="/">
             <a>
               <h1>Wouter De Schuyter</h1>
@@ -22,7 +23,7 @@ export const Header = (props: Props) => {
           </Link>
         </Title>
       )}
-      <Nav>
+      <Nav transparent={transparent}>
         <Link href="/about">
           <a
             className={

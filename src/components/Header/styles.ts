@@ -1,22 +1,43 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.header`
-  background: #fff;
   display: flex;
+  position: relative;
+  z-index: 1;
 
   a:hover {
     text-decoration: none;
   }
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ transparent: boolean }>`
   padding: 25px;
 
   a {
     border: 0;
     padding: 0;
-    color: #2b2f33;
     display: inline-block;
+
+    &:hover h1 {
+      color: #000;
+
+      ${({ transparent }) =>
+        transparent &&
+        css`
+          color: #fff;
+        `}
+    }
+
+    h1 {
+      color: #2b2f33;
+      transition: color ease-in-out 200ms;
+
+      ${({ transparent }) =>
+        transparent &&
+        css`
+          color: rgba(255, 255, 255, 0.9);
+        `}
+    }
   }
 
   h1 {
@@ -33,7 +54,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Nav = styled.nav`
+export const Nav = styled.nav<{ transparent: boolean }>`
   padding: 25px;
   display: flex;
   align-items: center;
@@ -47,9 +68,20 @@ export const Nav = styled.nav`
     color: #888;
     transition: color ease-in-out 200ms;
 
+    ${({ transparent }) =>
+      transparent &&
+      css`
+        color: rgba(255, 255, 255, 0.8);
+      `}
+
     &.active,
     &:hover {
       color: #2b2f33;
+      ${({ transparent }) =>
+        transparent &&
+        css`
+          color: #fff;
+        `}
     }
 
     + a {
