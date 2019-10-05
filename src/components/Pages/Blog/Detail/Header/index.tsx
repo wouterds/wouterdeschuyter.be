@@ -9,9 +9,11 @@ interface Props {
 }
 
 export const Header = ({ mediaAsset }: Props) => {
+  const image = `/static/media/${mediaAsset.fileName}`;
+
   return (
-    <Container>
-      <img src={`/static/media/${mediaAsset.fileName}`} alt={mediaAsset.name} />
+    <Container image={image}>
+      <img src={image} alt={mediaAsset.name} />
     </Container>
   );
 };

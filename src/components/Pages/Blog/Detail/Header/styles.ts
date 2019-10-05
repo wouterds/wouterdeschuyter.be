@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Container = styled.div<{ image: string }>`
   width: 100%;
   height: 65vh;
   overflow: hidden;
@@ -8,7 +8,9 @@ export const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
-  background: #111;
+  background: #111 url('${({ image }) => image}');
+  background-size: cover;
+  background-position: center;
 
   @media (max-width: 640px) {
     height: 35vh;
@@ -27,12 +29,6 @@ export const Container = styled.div`
 
   img {
     position: absolute;
-    top: -9999px;
-    right: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    margin: auto;
-    min-width: 100%;
-    min-height: 100%;
+    opacity: 0;
   }
 `;
