@@ -13,9 +13,7 @@ interface Props {
 const Meta = (props: Props) => {
   const { title, description, extra, router } = props;
 
-  const url = `${process.env.URL}${
-    router.pathname !== '/' ? router.pathname : ''
-  }`;
+  const url = `${process.env.URL}${router.asPath !== '/' ? router.asPath : ''}`;
 
   const extraMetaHtml = extra ? renderToString(extra) : '';
   const extraOgType = extraMetaHtml.indexOf('og:type') > -1;
