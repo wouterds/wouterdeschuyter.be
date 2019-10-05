@@ -38,6 +38,7 @@
     "react-hook-form": "^3.23.18",
     "react-toastify": "^5.4.0",
     "react-twemoji": "^0.2.3",
+    "sitemap": "^4.1.1",
     "styled-components": "^4.4.0",
     "universal-cookie": "^4.0.2"
   },
