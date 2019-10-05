@@ -1,5 +1,6 @@
 import React from 'react';
 import { NextPageContext } from 'next';
+import Head from 'next/head';
 import Link from 'next/link';
 import gql from 'graphql-tag';
 import Layout from 'components/Layout';
@@ -39,6 +40,14 @@ const Blog = (props: Props) => {
   return (
     <Layout>
       <Meta title="Blog" />
+      <Head>
+        {hasPrevPage && (
+          <link rel="prev" href={`${process.env.URL}/blog?page=${page}`} />
+        )}
+        {hasNextPage && (
+          <link rel="next" href={`${process.env.URL}/blog?page=${page + 2}`} />
+        )}
+      </Head>
       <Header />
       <Layout.Content centered editorial={posts.length === 0}>
         <Container>
