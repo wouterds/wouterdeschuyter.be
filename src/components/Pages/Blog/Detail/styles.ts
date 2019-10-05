@@ -4,4 +4,16 @@ export const Container = styled.div`
   margin-top: 65vh;
 `;
 
-export const Body = styled.div``;
+export const Body = styled.div`
+  > header {
+    time {
+      color: #ced5d9;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1em;
+      margin-bottom: 0.5em;
+      display: inline-block;
+      transition: color ease-in-out 200ms;
+    }
+  }
+`;

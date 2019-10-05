@@ -10,6 +10,7 @@ import Meta from 'components/Meta';
 import Markdown from 'components/Markdown';
 import LocalHeader from './Header';
 import { Container, Body } from './styles';
+import { format } from 'date-fns';
 
 const FETCH_DATA = gql`
   query fetchData($slug: String!) {
@@ -77,6 +78,18 @@ const Detail = (props: Props) => {
         <Container>
           {data && data.post && (
             <Body>
+              <header>
+                <time
+                  dateTime={new Date(
+                    parseInt(data.post.publishedAt),
+                  ).toISOString()}
+                >
+                  {format(
+                    new Date(parseInt(data.post.publishedAt)),
+                    'MMM d, yyyy',
+                  )}
+                </time>
+              </header>
               <h1>{data.post.title}</h1>
               <Markdown markdown={data.post.body} />
             </Body>
