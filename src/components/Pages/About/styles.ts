@@ -12,6 +12,10 @@ export const Social = styled.div`
   h2 {
     margin-bottom: 0.75em;
   }
+
+  a {
+    color: #fff;
+  }
 `;
 
 export const SocialLink = styled.a<{
@@ -26,9 +30,7 @@ export const SocialLink = styled.a<{
   width: 48px;
   border-radius: 24px;
   line-height: 47px;
-  border: 0 !important;
   display: inline-block;
-  color: #fff !important;
   text-align: center;
   transition: background ease-in-out 200ms;
 
