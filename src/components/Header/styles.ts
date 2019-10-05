@@ -3,6 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.header`
   background: #fff;
   display: flex;
+
+  a:hover {
+    text-decoration: none;
+  }
 `;
 
 export const Title = styled.div`

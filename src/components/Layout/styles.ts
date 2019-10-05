@@ -41,7 +41,16 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     margin-bottom: 0.75em;
     font-weight: 600;
     color: #2b2f33;
-    line-height: 1.4;
+    line-height: 1.2;
+  }
+
+  p,
+  pre {
+    & + h1,
+    & + h2,
+    & + h3 {
+      margin-top: 1em;
+    }
   }
 
   h1 {
@@ -59,25 +68,29 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     margin-bottom: 0.25em;
   }
 
-  p + p {
+  p + p,
+  pre + p {
     margin-top: 1em;
+  }
+
+  p + pre {
+    margin-top: 0.5em;
   }
 
   a {
     text-decoration: none;
     padding-bottom: 0.09em;
-    border-bottom: 0.12em solid #e1e1e1;
-    color: #30373d;
-    transition: border ease-in-out 200ms;
+    color: #db2756;
+    outline-color: #db2756;
 
     &:hover {
-      border-color: #db2756;
-      outline: 0;
+      text-decoration: underline;
     }
+  }
 
-    &:focus {
-      border-color: #2b2f33;
-      outline: 0;
-    }
+  hr {
+    border: 0;
+    border-top: 1px solid #ebeef0;
+    margin: 1em 0;
   }
 `;

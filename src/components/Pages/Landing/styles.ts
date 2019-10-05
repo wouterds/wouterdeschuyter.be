@@ -13,6 +13,7 @@ export const Links = styled.div`
 
     &:hover {
       color: #2b2f33;
+      text-decoration: none;
     }
   }
 `;

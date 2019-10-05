@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  a:hover {
+    text-decoration: none;
+  }
+`;
 
 export const Post = styled.article`
   a {
@@ -37,12 +41,13 @@ export const Post = styled.article`
     font-weight: 600;
     text-transform: uppercase;
     font-size: 0.75em;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.25em;
     display: inline-block;
     transition: color ease-in-out 200ms;
   }
 
   p {
+    margin-top: 0;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;

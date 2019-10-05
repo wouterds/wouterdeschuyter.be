@@ -5,9 +5,9 @@ export const Container = styled.input<{ hasError?: boolean }>`
   border: 1px solid #cfd4db;
   border-radius: 3px;
   padding: 0.5em;
-  transition: border ease-in-out 200ms;
+  transition: border ease-in-out 200ms, color ease-in-out 200ms;
   width: 100%;
-  color: #48545e;
+  color: #74818b;
 
   ${({ hasError }) =>
     hasError &&
@@ -17,5 +17,6 @@ export const Container = styled.input<{ hasError?: boolean }>`
 
   &:focus {
     border: 1px solid #838f9e;
+    color: #48545e;
   }
 `;
