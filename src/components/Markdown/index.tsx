@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { useAmp } from 'next/amp';
 import marked from 'marked';
 import { useQuery } from 'react-apollo';
@@ -68,9 +69,11 @@ const generateHtmlFromMarkdown = (
 
         html = html.replace(
           `:media:${mediaAsset.id}:`,
-          `<div class="media media--video" style="padding-bottom: ${(mediaAsset.height /
-            mediaAsset.width) *
-            100}%"><iframe src="https://youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen>${url}</iframe></div>`,
+          isAmp
+            ? `<amp-youtube data-videoid="${youtubeId}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}"></amp-youtube>`
+            : `<div class="media media--video" style="padding-bottom: ${(mediaAsset.height /
+                mediaAsset.width) *
+                100}%"><iframe src="https://youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen>${url}</iframe></div>`,
         );
       }
     }
@@ -87,7 +90,20 @@ const Markdown = ({ markdown }: Props) => {
 
   const html = generateHtmlFromMarkdown(markdown, mediaAssets, isAmp);
 
-  return <Container dangerouslySetInnerHTML={{ __html: html }} />;
+  return (
+    <>
+      {html.indexOf('amp-youtube') > -1 && (
+        <Head>
+          <script
+            async
+            custom-element="amp-youtube"
+            src="https://cdn.ampproject.org/v0/amp-youtube-0.1.js"
+          ></script>
+        </Head>
+      )}
+      <Container dangerouslySetInnerHTML={{ __html: html }} />
+    </>
+  );
 };
 
 export default Markdown;
