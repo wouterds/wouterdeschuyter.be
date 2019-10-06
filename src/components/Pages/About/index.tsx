@@ -71,7 +71,7 @@ const About = () => {
             >
               Delta
             </a>
-            . Before this I also worked at a few other companies such as
+            . Before this I also worked at a few other companies such as the
             scale-up{' '}
             <a
               href="https://teamleader.eu"
