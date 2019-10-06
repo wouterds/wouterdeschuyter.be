@@ -35,19 +35,24 @@ const Landing = () => {
         title="Wouter De Schuyter"
         description="An ambitious, passionate Full Stack Developer."
         extra={
-          <script type="application/ld+json">{`
-          {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "url": "${process.env.URL}",
-            "logo": "${process.env.URL}/static/wouterds.jpg",
-            "contactPoint": [{
-              "@type": "ContactPoint",
-              "telephone": "+32479228210",
-              "contactType": "sales"
-            }]
-          }
-          `}</script>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: JSON.stringify({
+                '@context': 'https://schema.org',
+                '@type': 'Organization',
+                url: process.env.URL,
+                logo: `${process.env.URL}/static/wouterds.jpg`,
+                contactPoint: [
+                  {
+                    '@type': 'ContactPoint',
+                    telephone: '+32479228210',
+                    contactType: 'sales',
+                  },
+                ],
+              }),
+            }}
+          />
         }
       />
       <Header hideLogo />
