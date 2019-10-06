@@ -26,6 +26,10 @@ const FETCH_DATA = gql`
       mediaAsset {
         fileName
       }
+      user {
+        firstName
+        lastName
+      }
     }
   }
 `;
@@ -76,6 +80,32 @@ const Detail = (props: Props) => {
                 rel="canonical"
                 href={`${process.env.URL}/blog/${data.post.slug}`}
               />
+              <script type="application/ld+json">{`
+                {
+                  "@context": "https://schema.org",
+                  "@type": "NewsArticle",
+                  "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "${process.env.article}/blog/${data.post.slug}"
+                  },
+                  "headline": "${data.post.title}",
+                  "description": "${data.post.excerpt}",
+                  "image": [
+                    "${process.env.URL}/static/media/${
+                data.post.mediaAsset.fileName
+              }"
+                   ],
+                  "datePublished": "${new Date(
+                    parseInt(data.post.publishedAt),
+                  ).toISOString()}",
+                  "author": {
+                    "@type": "Person",
+                    "name": "${data.post.user.firstName} ${
+                data.post.user.lastName
+              }"
+                  }
+                }
+              `}</script>
             </>
           }
         />

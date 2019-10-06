@@ -34,6 +34,21 @@ const Landing = () => {
       <Meta
         title="Wouter De Schuyter"
         description="An ambitious, passionate Full Stack Developer."
+        extra={
+          <script type="application/ld+json">{`
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "url": "${process.env.URL}",
+            "logo": "${process.env.URL}/static/wouterds.jpg",
+            "contactPoint": [{
+              "@type": "ContactPoint",
+              "telephone": "+32479228210",
+              "contactType": "sales"
+            }]
+          }
+          `}</script>
+        }
       />
       <Header hideLogo />
       <Layout.Content centered>
