@@ -17,28 +17,28 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   const fileName = `${parts[0]}.${parts[parts.length - 1]}`;
   const size = parts.length > 2 ? parts[1] : null;
 
-  const response = await fetch(
+  const apiRes = await fetch(
     `${process.env.API_ENDPOINT}/media-asset/${fileName}`,
   );
 
-  if (response.status === 404) {
+  if (apiRes.status === 404) {
     res.status(404);
     return;
   }
 
-  if (response.status !== 200) {
+  if (apiRes.status !== 200) {
     res.status(400);
     return;
   }
 
-  if (!response.body) {
+  if (!apiRes.body) {
     res.status(400);
     return;
   }
 
   if (size === 'embed') {
     res.setHeader('Content-Type', 'image/jpeg');
-    response.body
+    apiRes.body
       .pipe(
         sharp()
           .resize(1200, 630, { fit: sharp.fit.cover })
@@ -48,6 +48,6 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
     return;
   }
 
-  res.setHeader('Content-Type', response.headers.get('content-type') as string);
-  res.send(response.body);
+  res.setHeader('Content-Type', apiRes.headers.get('content-type') as string);
+  res.send(apiRes.body);
 };
