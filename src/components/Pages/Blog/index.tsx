@@ -31,6 +31,8 @@ interface Props {
   postCount: number;
 }
 
+export const config = { amp: 'hybrid' };
+
 const Blog = (props: Props) => {
   const { posts, postCount, page } = props;
 
@@ -50,6 +52,10 @@ const Blog = (props: Props) => {
         {hasNextPage && (
           <link rel="next" href={`${process.env.URL}/blog?page=${page + 2}`} />
         )}
+        <link
+          rel="canonical"
+          href={`${process.env.URL}/blog${page > 0 ? `?page=${page + 1}` : ''}`}
+        />
       </Head>
       <Header />
       <Layout.Content centered editorial>
