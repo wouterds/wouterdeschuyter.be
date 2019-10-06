@@ -67,7 +67,7 @@
     ts-invariant "^0.4.4"
     tslib "^1.10.0"
 
-"@apollo/react-ssr@^3.0.1", "@apollo/react-ssr@^3.1.1", "@apollo/react-ssr@^3.1.2":
+"@apollo/react-ssr@^3.1.1", "@apollo/react-ssr@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@apollo/react-ssr/-/react-ssr-3.1.2.tgz#ebb79bf94a5ab760e5152ab5f0371e64ec4041ad"
   integrity sha512-kBuinaib6+QBoDfc5n/bvRxu+6QnuvQl1mZ5ThBSO+6aL5aJtQYZsblJyC5R/Zx6koJilq6+oZfL510wOlFeEw==
@@ -5447,12 +5447,11 @@ next-optimized-images@^2.5.3:
     raw-loader "^2.0.0"
     url-loader "^1.1.2"
 
-next-with-apollo@^4.2.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-4.3.0.tgz#d496923900bbc3531638e1863aa2fced5066fc73"
-  integrity sha512-sponVO+ii44K1Ua2mMeDLTX3BEdHPwQI2R6xhJB7qQG8JUnU1kaZSmrYonQFHcDSf0vEcO87vecZpcMUye8MtA==
+next-with-apollo@4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/next-with-apollo/-/next-with-apollo-4.2.0.tgz#ae2ed034a4a436e0cd9b9180f953a8b200758b2e"
+  integrity sha512-Z655t9uudwlVgwkGUSjsSHfOlzOTnOp0CUihiY+vV1TD2QQyRB2e3mn/sWBRZ3HjcZjkU89Exxlah1AOni07JA==
   dependencies:
-    "@apollo/react-ssr" "^3.0.1"
     isomorphic-unfetch "^3.0.0"
 
 next@^9.0.8:
