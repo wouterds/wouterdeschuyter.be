@@ -2,6 +2,7 @@ import React from 'react';
 import { NextPageContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useAmp } from 'next/amp';
 import gql from 'graphql-tag';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
@@ -34,8 +35,8 @@ interface Props {
 export const config = { amp: 'hybrid' };
 
 const Blog = (props: Props) => {
+  const isAmp = useAmp();
   const { posts, postCount, page } = props;
-
   const hasPrevPage = page > 0;
   const hasNextPage = page * POSTS_PER_PAGE < postCount;
 
@@ -78,14 +79,14 @@ const Blog = (props: Props) => {
           {(hasNextPage || hasPrevPage) && (
             <Links>
               {hasPrevPage ? (
-                <Link href={`/blog?page=${page}`}>
+                <Link href={`/blog?page=${page}${isAmp ? '&amp=1' : ''}`}>
                   <a>&laquo; previous</a>
                 </Link>
               ) : (
                 <span />
               )}
               {hasNextPage && (
-                <Link href={`/blog?page=${page + 2}`}>
+                <Link href={`/blog?page=${page + 2}${isAmp ? '&amp=1' : ''}`}>
                   <a>next &raquo;</a>
                 </Link>
               )}

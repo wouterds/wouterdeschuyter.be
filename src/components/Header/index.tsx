@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import { useAmp } from 'next/amp';
 import { Container, Title, Nav, Logo } from './styles';
 import { withRouter, NextRouter } from 'next/router';
 
@@ -11,12 +12,13 @@ interface Props {
 
 export const Header = (props: Props) => {
   const { router, hideLogo, transparent = false } = props;
+  const isAmp = useAmp();
 
   return (
     <Container>
       {hideLogo !== true && (
         <Title transparent={transparent}>
-          <Link href="/">
+          <Link href={`/${isAmp ? '?amp=1' : ''}`}>
             <a>
               <Logo />
               <h1>Wouter De Schuyter</h1>
@@ -25,7 +27,7 @@ export const Header = (props: Props) => {
         </Title>
       )}
       <Nav transparent={transparent}>
-        <Link href="/about">
+        <Link href={`/about${isAmp ? '?amp=1' : ''}`}>
           <a
             className={
               router.pathname.indexOf('/about') !== -1 ? 'active' : undefined
@@ -34,7 +36,7 @@ export const Header = (props: Props) => {
             About
           </a>
         </Link>
-        <Link href="/blog">
+        <Link href={`/blog${isAmp ? '?amp=1' : ''}`}>
           <a
             className={
               router.pathname.indexOf('/blog') !== -1 ? 'active' : undefined

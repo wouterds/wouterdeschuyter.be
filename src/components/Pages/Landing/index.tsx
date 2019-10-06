@@ -2,6 +2,7 @@ import React from 'react';
 import gql from 'graphql-tag';
 import { useQuery } from 'react-apollo';
 import Link from 'next/link';
+import { useAmp } from 'next/amp';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -26,6 +27,7 @@ export const config = { amp: 'hybrid' };
 
 const Landing = () => {
   const { data } = useQuery(FETCH_DATA);
+  const isAmp = useAmp();
 
   return (
     <Layout>
@@ -39,7 +41,7 @@ const Landing = () => {
         {data && <Posts posts={data.posts} />}
 
         <Links>
-          <Link href="/blog">
+          <Link href={`/blog${isAmp ? '?amp=1' : ''}`}>
             <a>more &raquo;</a>
           </Link>
         </Links>
