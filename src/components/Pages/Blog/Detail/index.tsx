@@ -96,6 +96,9 @@ const Detail = (props: Props) => {
                     datePublished: new Date(
                       parseInt(data.post.publishedAt),
                     ).toISOString(),
+                    dateModified: new Date(
+                      parseInt(data.post.publishedAt),
+                    ).toISOString(),
                     author: {
                       '@type': 'Person',
                       name: `${data.post.user.firstName} ${data.post.user.lastName}`,
