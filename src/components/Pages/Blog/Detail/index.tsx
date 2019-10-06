@@ -100,6 +100,15 @@ const Detail = (props: Props) => {
                       '@type': 'Person',
                       name: `${data.post.user.firstName} ${data.post.user.lastName}`,
                     },
+                    publisher: {
+                      '@type': 'Organization',
+                      name: 'Wouter De Schuyter',
+                      url: process.env.URL,
+                      logo: {
+                        '@type': 'ImageObject',
+                        url: `${process.env.URL}/static/wouterds.jpg`,
+                      },
+                    },
                   }),
                 }}
               />

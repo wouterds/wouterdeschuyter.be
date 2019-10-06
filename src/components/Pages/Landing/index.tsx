@@ -41,8 +41,12 @@ const Landing = () => {
               __html: JSON.stringify({
                 '@context': 'https://schema.org',
                 '@type': 'Organization',
+                name: 'Wouter De Schuyter',
                 url: process.env.URL,
-                logo: `${process.env.URL}/static/wouterds.jpg`,
+                logo: {
+                  '@type': 'ImageObject',
+                  url: `${process.env.URL}/static/wouterds.jpg`,
+                },
                 contactPoint: [
                   {
                     '@type': 'ContactPoint',
