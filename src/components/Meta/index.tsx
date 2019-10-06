@@ -37,7 +37,7 @@ const Meta = (props: Props) => {
       {description && <meta property="og:description" content={description} />}
       {!extraOgType && <meta property="og:type" content="website" />}
       <meta property="og:url" content={url} />
-      <meta property="og:site_name" content="wouterdeschuyter.be" />
+      <meta property="og:site_name" content="Wouter De Schuyter" />
       {!extraOgImage && (
         <meta
           property="og:image"
