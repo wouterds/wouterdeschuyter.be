@@ -1,0 +1,33 @@
+version: '2'
+
+services:
+  nginx:
+    image: docker.wouterdeschuyter.be/wouterdeschuyter-nginx
+    restart: unless-stopped
+    mem_limit: 16mb
+    environment:
+      - VIRTUAL_HOST=wouterdeschuyter.be
+      - LETSENCRYPT_HOST=wouterdeschuyter.be
+      - LETSENCRYPT_EMAIL=wouter.de.schuyter@gmail.com
+    networks:
+      - default
+      - webproxy
+    logging:
+      options:
+        max-size: 2m
+        max-file: '5'
+
+  node:
+    image: docker.wouterdeschuyter.be/wouterdeschuyter-node
+    restart: unless-stopped
+    mem_limit: 64mb
+    volumes:
+      - ./data:/data
+    logging:
+      options:
+        max-size: 2m
+        max-file: '5'
+
+networks:
+  webproxy:
+    external: true
