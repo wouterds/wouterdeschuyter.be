@@ -24,7 +24,10 @@ const Posts = (props: Props) => {
     <Container>
       {posts.map(post => (
         <Post key={post.id}>
-          <Link href={`/blog/${post.slug}${isAmp ? '?amp=1' : ''}`}>
+          <Link
+            href="/blog/[slug]"
+            as={`/blog/${post.slug}${isAmp ? '?amp=1' : ''}`}
+          >
             <a>
               <header>
                 <time
