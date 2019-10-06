@@ -34,6 +34,8 @@ interface Props {
   slug: string;
 }
 
+export const config = { amp: 'hybrid' };
+
 const Detail = (props: Props) => {
   const { slug } = props;
   const { data } = useQuery(FETCH_DATA, { variables: { slug } });

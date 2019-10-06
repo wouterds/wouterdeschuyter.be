@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAmp } from 'next/amp';
 import marked from 'marked';
 import { useQuery } from 'react-apollo';
 import gql from 'graphql-tag';
@@ -41,6 +42,7 @@ const generateHtmlFromMarkdown = (
     width: number;
     height: number;
   }>,
+  isAmp: boolean = false,
 ): string => {
   let html = marked(markdown);
 
@@ -48,9 +50,13 @@ const generateHtmlFromMarkdown = (
     if (mediaAsset.fileName) {
       html = html.replace(
         `:media:${mediaAsset.id}:`,
-        `<div class="media media--image" style="padding-bottom: ${(mediaAsset.height /
-          mediaAsset.width) *
-          100}%"><img src="/static/media/${mediaAsset.fileName}" /></div>`,
+        isAmp
+          ? `<amp-img src="/static/media/${mediaAsset.fileName}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}" alt="${mediaAsset.fileName}" />`
+          : `<div class="media media--image" style="padding-bottom: ${(mediaAsset.height /
+              mediaAsset.width) *
+              100}%"><img src="/static/media/${mediaAsset.fileName}" alt="${
+              mediaAsset.fileName
+            }" /></div>`,
       );
     }
 
@@ -74,11 +80,12 @@ const generateHtmlFromMarkdown = (
 };
 
 const Markdown = ({ markdown }: Props) => {
+  const isAmp = useAmp();
   const mediaIds = extractMediaIds(markdown);
   const { data } = useQuery(FETCH_MEDIA, { variables: { ids: mediaIds } });
   const mediaAssets = (data && data.mediaAssets) || [];
 
-  const html = generateHtmlFromMarkdown(markdown, mediaAssets);
+  const html = generateHtmlFromMarkdown(markdown, mediaAssets, isAmp);
 
   return <Container dangerouslySetInnerHTML={{ __html: html }} />;
 };
