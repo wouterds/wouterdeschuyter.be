@@ -43,7 +43,7 @@ const Blog = (props: Props) => {
   return (
     <Layout>
       <Meta
-        title="Blog"
+        title="Blog - Wouter De Schuyter"
         description="This is my primary place on the internet where I collect things I made for myself, others or clients. I also write sometimes about things I like, things I experienced, guides, tutorials and more."
       />
       <Head>

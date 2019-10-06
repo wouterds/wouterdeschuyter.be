@@ -39,7 +39,7 @@ const About = () => {
   return (
     <Layout>
       <Meta
-        title="About"
+        title="About - Wouter De Schuyter"
         description={`Hey 👋, I'm Wouter! Currently ${Math.round(
           parseInt(getAge()),
         )} years old and passionate about all things digital really. I studied Digital Design & Development 🎓 at Howest University College and am currently working as a Senior Full Stack Developer at a small crypto startup; Delta.`}
