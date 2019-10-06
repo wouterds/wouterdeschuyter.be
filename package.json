@@ -38,6 +38,7 @@
     "react-hook-form": "^3.23.18",
     "react-toastify": "^5.4.0",
     "react-twemoji": "^0.2.3",
+    "sharp": "^0.23.1",
     "sitemap": "^4.1.1",
     "styled-components": "^4.4.0",
     "universal-cookie": "^4.0.2"
@@ -50,6 +51,7 @@
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
     "@types/react-google-recaptcha": "^1.1.0",
+    "@types/sharp": "^0.22.3",
     "@types/styled-components": "^4.1.19",
     "@typescript-eslint/eslint-plugin": "^2.3.2",
     "@typescript-eslint/parser": "^2.3.2",
