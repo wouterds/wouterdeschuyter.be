@@ -22,6 +22,8 @@ const FETCH_DATA = gql`
   }
 `;
 
+export const config = { amp: 'hybrid' };
+
 const Landing = () => {
   const { data } = useQuery(FETCH_DATA);
 

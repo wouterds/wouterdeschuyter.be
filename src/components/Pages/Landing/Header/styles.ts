@@ -6,12 +6,20 @@ export const Container = styled.header`
   border-bottom: 1px solid #ebeef0;
   margin-bottom: 4em;
 
-  img {
+  .image {
     height: 7em;
     width: 7em;
     border-radius: 3.5em;
-    margin-bottom: 1.25em;
     background: #10151f;
+    overflow: hidden;
+    margin-bottom: 1.25em;
+    display: inline-block;
+
+    img {
+      border-radius: 3.5em;
+      height: 7em;
+      width: 7em;
+    }
   }
 
   h1 {
