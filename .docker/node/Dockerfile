@@ -2,10 +2,11 @@ FROM arm32v6/node:12-alpine
 WORKDIR /code
 
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
-COPY ./package*.json ./
+COPY ./package.json ./
+COPY ./yarn.lock ./
 COPY ./dist /code/.next
 
-RUN npm install --production --ignore-scripts
+RUN yarn install --production --ignore-scripts
 
 FROM arm32v6/node:12-alpine
 WORKDIR /code
