@@ -20,7 +20,7 @@ services:
   node:
     image: docker.wouterdeschuyter.be/wouterdeschuyter-staging-node
     restart: unless-stopped
-    mem_limit: 32mb
+    mem_limit: 64mb
     volumes:
       - ./data:/data
     logging:
