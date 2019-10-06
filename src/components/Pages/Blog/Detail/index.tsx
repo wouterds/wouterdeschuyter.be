@@ -52,6 +52,12 @@ const Detail = (props: Props) => {
       .forEach(block => hljs.highlightBlock(block));
   }, []);
 
+  const parts =
+    (data && data.post && data.post.mediaAsset.fileName.split('.')) || null;
+  const image = parts
+    ? `${process.env.URL}/static/media/${parts[0]}.embed.${parts[1]}`
+    : undefined;
+
   return (
     <Layout>
       {data && data.post && (
@@ -67,15 +73,9 @@ const Detail = (props: Props) => {
                 ).toISOString()}
               />
               <meta property="og:type" content="article" />
-              <meta
-                property="og:image"
-                content={`${process.env.URL}/static/media/${data.post.mediaAsset.fileName}`}
-              />
+              <meta property="og:image" content={image} />
               <meta name="twitter:card" content="summary_large_image" />
-              <meta
-                name="twitter:image"
-                content={`${process.env.URL}/static/media/${data.post.mediaAsset.fileName}`}
-              />
+              <meta name="twitter:image" content={image} />
               <link
                 rel="canonical"
                 href={`${process.env.URL}/blog/${data.post.slug}`}
@@ -91,9 +91,7 @@ const Detail = (props: Props) => {
                   "headline": "${data.post.title}",
                   "description": "${data.post.excerpt}",
                   "image": [
-                    "${process.env.URL}/static/media/${
-                data.post.mediaAsset.fileName
-              }"
+                    "${image}"
                    ],
                   "datePublished": "${new Date(
                     parseInt(data.post.publishedAt),
