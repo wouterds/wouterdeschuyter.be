@@ -96,7 +96,6 @@ export const Container = styled.div<{ backgroundColor?: string }>`
 
   a {
     text-decoration: none;
-    padding-bottom: 0.09em;
     color: #db2756;
     outline-color: #db2756;
 
