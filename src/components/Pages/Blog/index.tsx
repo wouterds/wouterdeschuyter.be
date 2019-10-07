@@ -11,7 +11,7 @@ import Posts, { Post } from 'components/Posts';
 import Meta from 'components/Meta';
 import { Container, Links } from './styles';
 
-const POSTS_PER_PAGE = 10;
+const POSTS_PER_PAGE = 7;
 
 const FETCH_DATA = gql`
   query fetchData($limit: Int, $offset: Int) {
