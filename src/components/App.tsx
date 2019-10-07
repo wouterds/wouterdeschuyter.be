@@ -6,6 +6,7 @@ import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { toast } from 'react-toastify';
 import withApollo from 'hocs/withApollo';
+import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
 import GoogleAnalytics from 'services/google-analytics';
 import BaseCSS from 'styles/base';
 
@@ -20,7 +21,7 @@ class App extends NextApp<Props> {
     return (
       <>
         <BaseCSS />
-
+        <GoogleAnalyticsSDK />
         <ApolloProvider client={apollo}>
           <Component {...pageProps} />
         </ApolloProvider>
