@@ -43,10 +43,7 @@ const Landing = () => {
                 '@type': 'Organization',
                 name: 'Wouter De Schuyter',
                 url: process.env.URL,
-                logo: {
-                  '@type': 'ImageObject',
-                  url: `${process.env.URL}/static/wouterds.jpg`,
-                },
+                logo: `${process.env.URL}/static/wouterds.jpg`,
                 contactPoint: [
                   {
                     '@type': 'ContactPoint',
