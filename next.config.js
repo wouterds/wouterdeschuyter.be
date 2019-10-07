@@ -1,3 +1,4 @@
+/* eslint-disable */
 require('dotenv').config();
 const path = require('path');
 const withPlugins = require('next-compose-plugins');
