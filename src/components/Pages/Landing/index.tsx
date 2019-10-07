@@ -48,8 +48,16 @@ const Landing = () => {
                   {
                     '@type': 'ContactPoint',
                     telephone: '+32479228210',
+                    email: 'wouter.de.schuyter@gmail.com',
                     contactType: 'sales',
                   },
+                ],
+                sameAs: [
+                  'https://twitter.com/wouterds',
+                  'https://instagram.com/wouterds',
+                  'https://facebook.com/wouter.de.schuyter',
+                  'https://linkedin.com/in/wouterds',
+                  'https://github.com/wouterds',
                 ],
               }),
             }}
