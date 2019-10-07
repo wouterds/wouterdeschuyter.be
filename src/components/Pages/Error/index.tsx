@@ -30,7 +30,7 @@ const ErrorComponent = ({
           <h1>Oh darn!</h1>
           <p>It looks like something went wrong 😢...</p>
 
-          <img src="/static/error.gif" alt="error.gif" />
+          <img loading="lazy" src="/static/error.gif" alt="error.gif" />
         </Container>
       </Layout.Content>
       <Footer centered />

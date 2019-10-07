@@ -55,9 +55,9 @@ const generateHtmlFromMarkdown = (
           ? `<amp-img src="/static/media/${mediaAsset.fileName}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}" alt="${mediaAsset.fileName}" />`
           : `<div class="media media--image" style="padding-bottom: ${(mediaAsset.height /
               mediaAsset.width) *
-              100}%"><img src="/static/media/${mediaAsset.fileName}" alt="${
+              100}%"><img loading="lazy" src="/static/media/${
               mediaAsset.fileName
-            }" /></div>`,
+            }" alt="${mediaAsset.fileName}" /></div>`,
       );
     }
 
@@ -73,7 +73,7 @@ const generateHtmlFromMarkdown = (
             ? `<amp-youtube data-videoid="${youtubeId}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}"></amp-youtube>`
             : `<div class="media media--video" style="padding-bottom: ${(mediaAsset.height /
                 mediaAsset.width) *
-                100}%"><iframe src="https://youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen>${url}</iframe></div>`,
+                100}%"><iframe loading="lazy" src="https://youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen>${url}</iframe></div>`,
         );
       }
     }

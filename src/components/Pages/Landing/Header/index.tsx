@@ -17,7 +17,7 @@ export const Header = () => {
             width="7em"
           />
         ) : (
-          <img src="/static/wouterds.jpg" alt="wouterds.jpg" />
+          <img loading="lazy" src="/static/wouterds.jpg" alt="wouterds.jpg" />
         )}
       </div>
 

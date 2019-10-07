@@ -16,7 +16,7 @@ export const Header = ({ mediaAsset }: Props) => {
 
   return (
     <Container image={image}>
-      {!isAmp && <img src={image} alt={mediaAsset.name} />}
+      {!isAmp && <img loading="lazy" src={image} alt={mediaAsset.name} />}
     </Container>
   );
 };
