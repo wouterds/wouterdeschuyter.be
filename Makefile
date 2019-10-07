@@ -19,10 +19,10 @@ clean:
 	-rm -rf qemu-arm-static
 
 node_modules: yarn.lock
-	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn install
+	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn
 
 lint: node_modules
-	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn run lint
+	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn lint
 
 qemu-arm-static:
 	docker run --rm --privileged multiarch/qemu-user-static:register --reset
@@ -30,7 +30,7 @@ qemu-arm-static:
 	chmod +x qemu-arm-static
 
 .build-app: node_modules
-	docker run --rm -v $(PWD):/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID node:12-slim yarn run build
+	docker run --rm -v $(PWD):/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID node:12-slim yarn build
 	touch .build-app
 
 .build-nginx: $(DOCKERFILE_NGINX)

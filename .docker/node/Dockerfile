@@ -8,7 +8,7 @@ COPY ./qemu-arm-static /usr/bin/qemu-arm-static
 RUN apk add vips-dev fftw-dev build-base python --update-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/community/ \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/main
-RUN yarn install --production
+RUN yarn --production
 
 FROM arm32v6/node:12-alpine
 WORKDIR /code
