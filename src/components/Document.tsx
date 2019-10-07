@@ -6,7 +6,7 @@ import { ServerStyleSheet } from 'styled-components';
 const GASDK = () => {
   const isAmp = useAmp();
 
-  if (!isAmp) {
+  if (isAmp) {
     return null;
   }
 
