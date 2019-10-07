@@ -13,7 +13,7 @@ all: build
 
 clean:
 	-rm -rf node_modules
-	-rm -rf dist
+	-rm -rf .next
 	-rm -rf .env
 	-rm -rf .build-*
 	-rm -rf qemu-arm-static

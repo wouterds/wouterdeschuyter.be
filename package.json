@@ -5,11 +5,11 @@
   "repository": "github:wouterds/wouterdeschuyter.be",
   "author": "Wouter De Schuyter <wouter.de.schuyter@gmail.com>",
   "scripts": {
+    "build": "next build",
     "start": "next start",
     "dev": "next",
     "lint": "eslint '**/*.{ts,tsx}' && tsc",
-    "lint:fix": "eslint '**/*.{ts,tsx}' --fix",
-    "build": "next build"
+    "lint:fix": "eslint '**/*.{ts,tsx}' --fix"
   },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.1",

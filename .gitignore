@@ -2,5 +2,5 @@
 .env
 .build-*
 node_modules/
-dist/
+.next/
 qemu-arm-static

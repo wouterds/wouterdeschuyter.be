@@ -3,7 +3,8 @@ WORKDIR /code
 
 COPY ./package.json ./
 COPY ./yarn.lock ./
-COPY ./dist /code/.next
+COPY ./.next ./.next
+COPY ./public ./public
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
 RUN apk add vips-dev fftw-dev build-base python --update-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/community/ \
