@@ -88,7 +88,7 @@ const Detail = (props: Props) => {
                     '@type': 'NewsArticle',
                     mainEntityOfPage: {
                       '@type': 'WebPage',
-                      '@id': `${process.env.article}/blog/${data.post.slug}`,
+                      '@id': `${process.env.URL}/blog/${data.post.slug}`,
                     },
                     headline: data.post.title,
                     description: data.post.excerpt,
