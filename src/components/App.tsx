@@ -12,18 +12,22 @@ import BaseCSS from 'styles/base';
 
 interface Props {
   apollo: ApolloClient<any>;
+  err?: any;
 }
 
 class App extends NextApp<Props> {
   public render() {
     const { Component, pageProps, apollo } = this.props;
 
+    // https://github.com/zeit/next.js/issues/8592
+    const { err } = this.props;
+
     return (
       <>
         <BaseCSS />
         <GoogleAnalyticsSDK />
         <ApolloProvider client={apollo}>
-          <Component {...pageProps} />
+          <Component {...pageProps} err={err} />
         </ApolloProvider>
       </>
     );
