@@ -18,8 +18,8 @@ clean:
 	-rm -rf .build-*
 	-rm -rf qemu-arm-static
 
-node_modules: package.json
-	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn install --loglevel verbose
+node_modules: yarn.lock
+	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn install
 
 lint: node_modules
 	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn run lint
