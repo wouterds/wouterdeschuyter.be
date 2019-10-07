@@ -31,8 +31,8 @@ class App extends NextApp<Props> {
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', (path: string) => {
-  GoogleAnalytics.pageView(path);
   NProgress.done();
+  GoogleAnalytics.pageView(path);
 });
 Router.events.on('routeChangeError', () => NProgress.done());
 
