@@ -11,7 +11,8 @@ interface Props {
 
 export const Header = ({ mediaAsset }: Props) => {
   const isAmp = useAmp();
-  const image = `/static/media/${mediaAsset.fileName}`;
+  const parts = mediaAsset.fileName.split('.');
+  const image = `/static/media/${parts[0]}.embed.${parts[1]}`;
 
   return (
     <Container image={image}>
