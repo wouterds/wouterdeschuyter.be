@@ -13,7 +13,10 @@ class GoogleAnalytics {
 
   public pageView = (path: string) => {
     if (!this.isSDKAvailable) {
-      throw new Error('GA SDK not available');
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('GA SDK not available');
+      }
+      return;
     }
 
     // eslint-disable-next-line @typescript-eslint/camelcase
