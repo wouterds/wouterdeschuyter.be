@@ -13,7 +13,7 @@ import { Links } from './styles';
 
 const FETCH_DATA = gql`
   query fetchData {
-    posts(limit: 5) {
+    posts(limit: 3) {
       id
       title
       slug
