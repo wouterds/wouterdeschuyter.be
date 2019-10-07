@@ -8,7 +8,6 @@ export default (_req: NextApiRequest, res: NextApiResponse) => {
   body += 'Disallow: /admin/*\n';
   body += '\n';
   body += `Sitemap: ${process.env.URL}/sitemap.xml\n`;
-  body += `Sitemap: ${process.env.URL}/sitemap.xml.gz\n`;
 
   res.setHeader('Content-Type', 'text/plain');
   res.send(body);
