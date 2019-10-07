@@ -74,6 +74,11 @@ const Meta = (props: Props) => {
       <link rel="manifest" href="/site.webmanifest" />
       <meta name="msapplication-TileColor" content="#111520" />
       <meta name="theme-color" content="#ffffff" />
+      <link
+        rel="alternate"
+        type="application/rss+xml"
+        href={`${process.env.URL}/feed.xml`}
+      />
     </Head>
   );
 };
