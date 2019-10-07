@@ -72,6 +72,8 @@ const Meta = (props: Props) => {
         href="/favicon-16x16.png"
       />
       <link rel="manifest" href="/site.webmanifest" />
+      <meta name="msapplication-TileColor" content="#111520" />
+      <meta name="theme-color" content="#ffffff" />
     </Head>
   );
 };
