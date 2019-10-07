@@ -14,6 +14,7 @@ jobs:
               echo 'export API_ENDPOINT="$STAGING_API_ENDPOINT"' >> $BASH_ENV
               echo 'export RECAPTCHA_SITE_KEY="$STAGING_RECAPTCHA_SITE_KEY"' >> $BASH_ENV
               echo 'export GA_TRACKING_ID="$STAGING_GA_TRACKING_ID"' >> $BASH_ENV
+              echo 'export SENTRY_DSN="$STAGING_SENTRY_DSN"' >> $BASH_ENV
             fi
             if [ "$CIRCLE_BRANCH" == "master" ]; then
               echo 'export ENV_SUFFIX="$PRODUCTION_ENV_SUFFIX"' >> $BASH_ENV
@@ -21,6 +22,7 @@ jobs:
               echo 'export API_ENDPOINT="$PRODUCTION_API_ENDPOINT"' >> $BASH_ENV
               echo 'export RECAPTCHA_SITE_KEY="$PRODUCTION_RECAPTCHA_SITE_KEY"' >> $BASH_ENV
               echo 'export GA_TRACKING_ID="$PRODUCTION_GA_TRACKING_ID"' >> $BASH_ENV
+              echo 'export SENTRY_DSN="$PRODUCTION_SENTRY_DSN"' >> $BASH_ENV
             fi
       - restore_cache:
           keys:
