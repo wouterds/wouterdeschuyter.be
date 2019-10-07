@@ -3,6 +3,7 @@ require('dotenv').config();
 const path = require('path');
 const withPlugins = require('next-compose-plugins');
 const css = require('@zeit/next-css');
+const withSourceMaps = require('@zeit/next-source-maps')({ devtool: 'hidden-source-map' });
 const optimizedImages = require('next-optimized-images');
 const dotenv = require('dotenv-webpack');
 
@@ -13,8 +14,8 @@ const config = {
 module.exports = withPlugins([
   [css],
   [optimizedImages],
-], {
-  webpack: (config) => {
+], withSourceMaps({
+  webpack: (config, options) => {
     config.plugins = config.plugins || [];
 
     config.plugins = [
@@ -25,7 +26,11 @@ module.exports = withPlugins([
       })
     ];
 
+    if (!options.isServer) {
+      config.resolve.alias['@sentry/node'] = '@sentry/browser'
+    }
+
     return config;
   },
   ...config,
-});
+}));
