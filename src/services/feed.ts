@@ -22,8 +22,8 @@ const FETCH_POSTS = gql`
   }
 `;
 
-class Feed {
-  private feed = new Rss({
+const createFeed = () =>
+  new Rss({
     title: 'Wouter De Schuyter',
     description:
       'This is my primary place on the internet where I collect things I made for myself, others or clients. I also write sometimes about things I like, things I experienced, guides, tutorials and more.',
@@ -44,6 +44,9 @@ class Feed {
       'development',
     ],
   });
+
+class Feed {
+  private feed = createFeed();
 
   public build = async () => {
     const apolloClient = Apollo.getClient();
@@ -72,7 +75,11 @@ class Feed {
   };
 
   public getXml = () => {
-    return this.feed.xml();
+    const xml = this.feed.xml();
+
+    this.feed = createFeed();
+
+    return xml;
   };
 }
 
