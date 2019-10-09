@@ -45,7 +45,10 @@ build: .build-node .build-nginx
 	docker tag $(TAG_NODE) $(TAG_NODE):$(VERSION)
 	docker tag $(TAG_NGINX) $(TAG_NGINX):$(VERSION)
 
-push: build
+docker-login:
+	docker login ${DOCKER_REGISTRY_HOST} -u ${DOCKER_REGISTRY_USER} -p ${DOCKER_REGISTRY_PASS}
+
+push: docker-login build
 	docker push $(TAG_NODE)
 	docker push $(TAG_NODE):$(VERSION)
 	docker push $(TAG_NGINX)
