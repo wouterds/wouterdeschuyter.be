@@ -13,7 +13,7 @@ class GoogleAnalytics {
 
   public pageView = (path: string) => {
     if (!this.isSDKAvailable) {
-      if (process.env.NODE_ENV !== 'production') {
+      if (process.env.ENV !== 'production') {
         console.warn('GA SDK not available');
       }
       return;
