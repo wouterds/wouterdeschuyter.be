@@ -20,12 +20,12 @@ module.exports = withPlugins([
       ...config.plugins,
       new dotenv({
         path: path.join(__dirname, '.env'),
-        systemvars: true
+        systemvars: true,
       })
     ];
 
     if (!options.isServer) {
-      config.resolve.alias['@sentry/node'] = '@sentry/browser'
+      config.resolve.alias['@sentry/node'] = '@sentry/browser';
     }
 
     return config;
