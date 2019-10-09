@@ -31,7 +31,12 @@ const Meta = (props: Props) => {
           content="width=device-width, initial-scale=1, minimum-scale=1"
         />
       )}
-      <meta name="robots" content="index, follow" />
+      {process.env.ENV === 'production' && (
+        <meta name="robots" content="index, follow" />
+      )}
+      {process.env.ENV !== 'production' && (
+        <meta name="robots" content="noindex" />
+      )}
       {description && <meta name="description" content={description} />}
       <meta property="og:title" content={title} />
       {description && <meta property="og:description" content={description} />}
