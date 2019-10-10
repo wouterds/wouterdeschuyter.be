@@ -62,6 +62,9 @@ const Blog = (props: Props) => {
                 page > 0 ? `?page=${page + 1}` : ''
               }`}
             />
+            {page !== 0 && process.env.ENV === 'production' && (
+              <meta name="robots" content="noindex, follow" />
+            )}
           </>
         }
       />
