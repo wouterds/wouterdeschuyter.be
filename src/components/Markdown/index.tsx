@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import { useAmp } from 'next/amp';
 import marked from 'marked';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import { Container } from './styles';
 

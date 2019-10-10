@@ -1,6 +1,6 @@
 import React from 'react';
 import gql from 'graphql-tag';
-import { useQuery } from 'react-apollo';
+import { useQuery } from '@apollo/react-hooks';
 import { format } from 'date-fns';
 import withAuth, { AuthProps } from 'hocs/withAuth';
 import Layout from 'components/Layout';

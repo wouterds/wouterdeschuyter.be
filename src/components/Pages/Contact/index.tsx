@@ -2,7 +2,7 @@ import React, { useState, useRef, useCallback } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
-import { useMutation } from 'react-apollo';
+import { useMutation } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
