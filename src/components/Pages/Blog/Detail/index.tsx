@@ -5,6 +5,7 @@ import gql from 'graphql-tag';
 import mediumZoom from 'medium-zoom';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
+import Sentry from 'services/sentry';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -31,6 +32,12 @@ const FETCH_DATA = gql`
         lastName
       }
     }
+  }
+`;
+
+const INCREASE_VIEW_COUNT = gql`
+  mutation increaseViewCount($id: String!) {
+    increaseViewCount(id: $id)
   }
 `;
 
@@ -155,6 +162,16 @@ Detail.getInitialProps = async ({
 
   if (!post && res) {
     res.statusCode = 404;
+  }
+
+  // Fire & forget
+  try {
+    apolloClient.mutate({
+      mutation: INCREASE_VIEW_COUNT,
+      variables: { id: post.id },
+    });
+  } catch (e) {
+    Sentry.captureException(e);
   }
 
   return { post };
