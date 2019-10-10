@@ -11,6 +11,11 @@
     "lint": "eslint '**/*.{ts,tsx}' && tsc",
     "lint:fix": "eslint '**/*.{ts,tsx}' --fix"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn lint"
+    }
+  },
   "dependencies": {
     "@apollo/react-hooks": "^3.1.1",
     "@apollo/react-ssr": "^3.1.1",
