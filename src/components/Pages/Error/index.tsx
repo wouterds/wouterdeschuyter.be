@@ -12,9 +12,9 @@ const ErrorComponent = ({
   hasGetInitialPropsRun,
   err,
 }: {
-  statusCode: number;
-  hasGetInitialPropsRun: boolean;
-  err: any;
+  statusCode?: number;
+  hasGetInitialPropsRun?: boolean;
+  err?: any;
 }) => {
   if (!hasGetInitialPropsRun && err) {
     // https://github.com/zeit/next.js/issues/8592
