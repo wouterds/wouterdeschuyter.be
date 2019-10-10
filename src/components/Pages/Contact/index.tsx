@@ -4,6 +4,7 @@ import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 import { toast } from 'react-toastify';
+import Sentry from 'services/sentry';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
@@ -64,11 +65,12 @@ const Contact = () => {
         );
         reset();
       })
-      .catch(() =>
+      .catch(e => {
         toast('Something went wrong while trying to send your message 😟', {
           type: 'error',
         }),
-      )
+          Sentry.captureException(e);
+      })
       .finally(() => setIsLoading(false));
   }, [contact, data, reset]);
 
