@@ -23,7 +23,10 @@ const ErrorComponent = ({
 
   return (
     <Layout>
-      <Meta title="Something went wrong" />
+      <Meta
+        title="Something went wrong"
+        extra={<meta name="robots" content="noindex, follow" />}
+      />
       <Header />
       <Layout.Content centered editorial>
         <Container>
