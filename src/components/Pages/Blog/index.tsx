@@ -1,6 +1,5 @@
 import React from 'react';
 import { NextPageContext } from 'next';
-import Head from 'next/head';
 import Link from 'next/link';
 import { useAmp } from 'next/amp';
 import gql from 'graphql-tag';
