@@ -45,19 +45,26 @@ const Blog = (props: Props) => {
       <Meta
         title="Blog - Wouter De Schuyter"
         description="This is my primary place on the internet where I collect things I made for myself, others or clients. I also write sometimes about things I like, things I experienced, guides, tutorials and more."
+        extra={
+          <>
+            {hasPrevPage && (
+              <link rel="prev" href={`${process.env.URL}/blog?page=${page}`} />
+            )}
+            {hasNextPage && (
+              <link
+                rel="next"
+                href={`${process.env.URL}/blog?page=${page + 2}`}
+              />
+            )}
+            <link
+              rel="canonical"
+              href={`${process.env.URL}/blog${
+                page > 0 ? `?page=${page + 1}` : ''
+              }`}
+            />
+          </>
+        }
       />
-      <Head>
-        {hasPrevPage && (
-          <link rel="prev" href={`${process.env.URL}/blog?page=${page}`} />
-        )}
-        {hasNextPage && (
-          <link rel="next" href={`${process.env.URL}/blog?page=${page + 2}`} />
-        )}
-        <link
-          rel="canonical"
-          href={`${process.env.URL}/blog${page > 0 ? `?page=${page + 1}` : ''}`}
-        />
-      </Head>
       <Header />
       <Layout.Content centered editorial>
         <Container>
