@@ -76,10 +76,12 @@ const Detail = (props: Props) => {
         description={post.excerpt}
         extra={
           <>
-            <meta
-              property="article:published_time"
-              content={new Date(parseInt(post.publishedAt)).toISOString()}
-            />
+            {post.publishedAt && (
+              <meta
+                property="article:published_time"
+                content={new Date(parseInt(post.publishedAt)).toISOString()}
+              />
+            )}
             <meta property="og:type" content="article" />
             <meta property="og:image" content={image} />
             <meta name="twitter:card" content="summary_large_image" />
@@ -101,12 +103,12 @@ const Detail = (props: Props) => {
                   headline: post.title,
                   description: post.excerpt,
                   image: [image],
-                  datePublished: new Date(
-                    parseInt(post.publishedAt),
-                  ).toISOString(),
-                  dateModified: new Date(
-                    parseInt(post.publishedAt),
-                  ).toISOString(),
+                  datePublished: post.publishedAt
+                    ? new Date(parseInt(post.publishedAt)).toISOString()
+                    : undefined,
+                  dateModified: post.publishedAt
+                    ? new Date(parseInt(post.publishedAt)).toISOString()
+                    : undefined,
                   author: {
                     '@type': 'Person',
                     name: `${post.user.firstName} ${post.user.lastName}`,
@@ -133,9 +135,16 @@ const Detail = (props: Props) => {
           <Body>
             <header>
               <time
-                dateTime={new Date(parseInt(post.publishedAt)).toISOString()}
+                dateTime={new Date(
+                  post.publishedAt ? parseInt(post.publishedAt) : undefined,
+                ).toISOString()}
               >
-                {format(new Date(parseInt(post.publishedAt)), 'MMM d, yyyy')}
+                {format(
+                  new Date(
+                    post.publishedAt ? parseInt(post.publishedAt) : undefined,
+                  ),
+                  'MMM d, yyyy',
+                )}
               </time>
             </header>
             <h1>{post.title}</h1>
