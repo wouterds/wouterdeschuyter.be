@@ -50,7 +50,20 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     & + h1,
     & + h2,
     & + h3,
-    & + h4 {
+    & + h4,
+    & + p {
+      margin-top: 1em;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    & + img,
+    & + ul,
+    & + pre {
       margin-top: 1em;
     }
   }
@@ -73,25 +86,6 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   h4 {
     font-size: 1.2em;
     margin-bottom: 0.1em;
-  }
-
-  p + p,
-  pre + p,
-  ul + p {
-    margin-top: 1em;
-  }
-
-  h1 + pre,
-  h1 + ul,
-  h2 + pre,
-  h2 + ul,
-  h3 + pre,
-  h3 + ul,
-  h4 + pre,
-  h4 + ul,
-  p + pre,
-  p + ul {
-    margin-top: 0.5em;
   }
 
   a {
