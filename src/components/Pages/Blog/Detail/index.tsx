@@ -135,14 +135,15 @@ const Detail = (props: Props) => {
           <Body>
             <header>
               <time
-                dateTime={new Date(
-                  post.publishedAt ? parseInt(post.publishedAt) : undefined,
+                dateTime={(post.publishedAt
+                  ? new Date(parseInt(post.publishedAt))
+                  : new Date()
                 ).toISOString()}
               >
                 {format(
-                  new Date(
-                    post.publishedAt ? parseInt(post.publishedAt) : undefined,
-                  ),
+                  post.publishedAt
+                    ? new Date(parseInt(post.publishedAt))
+                    : new Date(),
                   'MMM d, yyyy',
                 )}
               </time>
