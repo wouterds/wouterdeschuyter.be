@@ -4,6 +4,7 @@ export const Container = styled.header`
   display: flex;
   position: relative;
   z-index: 1;
+  overflow: hidden;
 
   a:hover {
     text-decoration: none;
