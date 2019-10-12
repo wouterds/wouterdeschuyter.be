@@ -165,6 +165,12 @@ Detail.getInitialProps = async ({
 }: NextPageContext) => {
   const { slug } = query;
 
+  const parts = (slug as string).split('-');
+  const lastPart = parts.pop();
+  if (!isNaN(lastPart as any) && res) {
+    return res.writeHead(301, { Location: `/blog/${parts.join('-')}` }).end();
+  }
+
   const { post } = (await apolloClient.query({
     query: FETCH_DATA,
     variables: { slug },
