@@ -14,7 +14,7 @@ import Meta from 'components/Meta';
 import Markdown from 'components/Markdown';
 import Error from 'components/Pages/Error';
 import LocalHeader from './Header';
-import { Container, Body } from './styles';
+import { Container, Body, Webmentions } from './styles';
 
 const FETCH_DATA = gql`
   query fetchData($slug: String!) {
@@ -48,9 +48,21 @@ interface Props {
 
 export const config = { amp: 'hybrid' };
 
+interface Webmention {
+  type: string;
+  author: {
+    name: string;
+    photo: string;
+    url: string;
+  };
+  published: Date;
+  url: string;
+  ['wm-property']: 'repost-of' | 'like-of' | 'in-reply-to';
+}
+
 const Detail = (props: Props) => {
   const { post } = props;
-  const [webmentions, setWebMentions] = useState();
+  const [webmentions, setWebMentions] = useState<Webmention[]>([]);
 
   useEffect(() => {
     if (post) {
@@ -71,14 +83,20 @@ const Detail = (props: Props) => {
           return;
         }
 
-        setWebMentions(children);
+        setWebMentions(
+          children
+            .filter((entry: Webmention) => entry.type === 'entry')
+            .map((entry: Webmention) => ({
+              ...entry,
+              published: new Date(entry.published),
+            }))
+            .sort((a: Webmention, b: Webmention) =>
+              a.published > b.published ? -1 : 1,
+            ),
+        );
       });
     }
   }, [post]);
-
-  useEffect(() => {
-    console.log({ webmentions });
-  }, [webmentions]);
 
   if (!post) {
     return <Error statusCode={404} />;
@@ -170,6 +188,43 @@ const Detail = (props: Props) => {
             </header>
             <h1>{post.title}</h1>
             <Markdown markdown={post.body} />
+            {webmentions.length > 0 && (
+              <Webmentions>
+                <h2>Webmentions</h2>
+                <ul>
+                  {webmentions.map((webmention: Webmention, index: number) => (
+                    <li key={index}>
+                      <a
+                        className="author"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={webmention.url}
+                      >
+                        <img
+                          src={webmention.author.photo}
+                          alt={webmention.author.name}
+                        />
+                        <strong>{webmention.author.name}</strong>
+                      </a>
+                      <a
+                        className="content"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={webmention.url}
+                      >
+                        {webmention['wm-property'] === 'like-of' && 'liked'}
+                        {webmention['wm-property'] === 'in-reply-to' &&
+                          'replied'}
+                        {webmention['wm-property'] === 'repost-of' &&
+                          'retweeted'}
+                        {webmention.published.getTime() > 0 &&
+                          ` on ${format(webmention.published, 'MMM d, yyyy')}`}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </Webmentions>
+            )}
           </Body>
         </Container>
       </Layout.Content>
