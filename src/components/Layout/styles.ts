@@ -37,11 +37,32 @@ export const Container = styled.div<{ backgroundColor?: string }>`
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     margin-bottom: 0.75em;
     font-weight: 600;
     color: #2b2f33;
     line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.75em;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  h3 {
+    font-size: 1.6em;
+    margin-bottom: 0.25em;
+  }
+
+  h4 {
+    font-size: 1.2em;
+    margin-bottom: 0.1em;
   }
 
   p,
@@ -66,26 +87,6 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     & + pre {
       margin-top: 1em;
     }
-  }
-
-  h1 {
-    font-size: 2.5em;
-    margin-bottom: 0.75em;
-  }
-
-  h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-  }
-
-  h3 {
-    font-size: 1.6em;
-    margin-bottom: 0.25em;
-  }
-
-  h4 {
-    font-size: 1.2em;
-    margin-bottom: 0.1em;
   }
 
   a {
