@@ -87,6 +87,14 @@ const Meta = (props: Props) => {
       <link href="https://github.com/wouterds" rel="me" />
       <link href="https://twitter.com/wouterds" rel="me" />
       <link href="https://instagram.com/wouterds" rel="me" />
+      <link
+        rel="webmention"
+        href="https://webmention.io/wouterdeschuyter.be/webmention"
+      />
+      <link
+        rel="pingback"
+        href="https://webmention.io/wouterdeschuyter.be/xmlrpc"
+      />
     </Head>
   );
 };
