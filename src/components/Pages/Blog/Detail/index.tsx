@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NextPageContext } from 'next';
 import { format } from 'date-fns';
 import gql from 'graphql-tag';
 import mediumZoom from 'medium-zoom';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
+import fetch from 'isomorphic-unfetch';
 import Sentry from 'services/sentry';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
@@ -49,6 +50,7 @@ export const config = { amp: 'hybrid' };
 
 const Detail = (props: Props) => {
   const { post } = props;
+  const [webmentions, setWebMentions] = useState();
 
   useEffect(() => {
     if (post) {
@@ -57,8 +59,26 @@ const Detail = (props: Props) => {
       document
         .querySelectorAll('pre code')
         .forEach(block => hljs.highlightBlock(block));
+
+      fetch(
+        `https://webmention.io/api/mentions.jf2?target=${encodeURI(
+          `${process.env.URL}/blog/${post.slug}`,
+        )}`,
+      ).then(async response => {
+        const { children } = (await response.json()) || {};
+
+        if (!Array.isArray(children)) {
+          return;
+        }
+
+        setWebMentions(children);
+      });
     }
   }, [post]);
+
+  useEffect(() => {
+    console.log({ webmentions });
+  }, [webmentions]);
 
   if (!post) {
     return <Error statusCode={404} />;
