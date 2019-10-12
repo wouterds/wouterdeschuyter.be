@@ -84,6 +84,9 @@ const Meta = (props: Props) => {
         type="application/rss+xml"
         href={`${process.env.URL}/feed.xml`}
       />
+      <link href="https://github.com/wouterds" rel="me" />
+      <link href="https://twitter.com/wouterds" rel="me" />
+      <link href="https://instagram.com/wouterds" rel="me" />
     </Head>
   );
 };
