@@ -35,6 +35,10 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     line-height: 1.4;
   }
 
+  strong {
+    font-weight: 600;
+  }
+
   h1,
   h2,
   h3,
