@@ -100,6 +100,10 @@ const Detail = (props: Props) => {
           });
         }
 
+        cleanedWebmentions.sort((a: Webmention, b: Webmention) =>
+          a.published > b.published ? -1 : 1,
+        );
+
         setWebMentions(cleanedWebmentions);
       });
     }
