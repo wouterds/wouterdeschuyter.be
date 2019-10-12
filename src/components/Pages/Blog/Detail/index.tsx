@@ -57,7 +57,7 @@ interface Webmention {
   };
   published: Date;
   url: string;
-  ['wm-property']: 'repost-of' | 'like-of' | 'in-reply-to';
+  ['wm-property']: 'repost-of' | 'like-of' | 'in-reply-to' | 'mention-of';
 }
 
 const Detail = (props: Props) => {
@@ -213,6 +213,8 @@ const Detail = (props: Props) => {
                         href={webmention.url}
                       >
                         {webmention['wm-property'] === 'like-of' && 'liked'}
+                        {webmention['wm-property'] === 'mention-of' &&
+                          'mentioned'}
                         {webmention['wm-property'] === 'in-reply-to' &&
                           'replied'}
                         {webmention['wm-property'] === 'repost-of' &&
