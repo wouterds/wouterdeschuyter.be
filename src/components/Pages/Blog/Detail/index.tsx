@@ -83,17 +83,24 @@ const Detail = (props: Props) => {
           return;
         }
 
-        setWebMentions(
-          children
-            .filter((entry: Webmention) => entry.type === 'entry')
-            .map((entry: Webmention) => ({
-              ...entry,
-              published: new Date(entry.published),
-            }))
-            .sort((a: Webmention, b: Webmention) =>
-              a.published > b.published ? -1 : 1,
-            ),
-        );
+        const cleanedWebmentions: Webmention[] = [];
+        for (const webmention of children) {
+          if (webmention.type !== 'entry') {
+            continue;
+          }
+
+          const urls = cleanedWebmentions.map(webmention => webmention.url);
+          if (urls.includes(webmention.url)) {
+            continue;
+          }
+
+          cleanedWebmentions.push({
+            ...webmention,
+            published: new Date(webmention.published),
+          });
+        }
+
+        setWebMentions(cleanedWebmentions);
       });
     }
   }, [post]);
