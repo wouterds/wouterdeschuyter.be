@@ -39,6 +39,30 @@ export const Container = styled.div<{ backgroundColor?: string }>`
     font-weight: 600;
   }
 
+  blockquote {
+    position: relative;
+    font-style: italic;
+    padding: 0.25em 1em;
+    opacity: 0.75;
+
+    p:last-child {
+      margin: 0;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      width: 4px;
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background: #eee;
+      border-radius: 2px;
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -71,7 +95,8 @@ export const Container = styled.div<{ backgroundColor?: string }>`
 
   p,
   pre,
-  ul {
+  ul,
+  blockquote {
     & + h1,
     & + h2,
     & + h3,
