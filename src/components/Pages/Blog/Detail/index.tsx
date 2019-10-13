@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
 import { format } from 'date-fns';
 import gql from 'graphql-tag';
-import mediumZoom from 'medium-zoom';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
 import Sentry from 'services/sentry';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
@@ -15,6 +13,9 @@ import Webmentions from 'components/Webmentions';
 import Error from 'components/Pages/Error';
 import LocalHeader from './Header';
 import { Container, Body } from './styles';
+
+const MediumZoomHelper = dynamic(() => import('./Helpers/MediumZoom'));
+const HighlightjsHelper = dynamic(() => import('./Helpers/Highlightjs'));
 
 const FETCH_DATA = gql`
   query fetchData($slug: String!) {
@@ -50,16 +51,6 @@ export const config = { amp: 'hybrid' };
 
 const Detail = (props: Props) => {
   const { post } = props;
-
-  useEffect(() => {
-    if (post) {
-      mediumZoom('.media--image img', { margin: 25 });
-
-      document
-        .querySelectorAll('pre code')
-        .forEach(block => hljs.highlightBlock(block));
-    }
-  }, [post]);
 
   if (!post) {
     return <Error statusCode={404} />;
@@ -156,6 +147,8 @@ const Detail = (props: Props) => {
         </Container>
       </Layout.Content>
       <Footer centered />
+      <MediumZoomHelper />
+      <HighlightjsHelper />
     </Layout>
   );
 };
