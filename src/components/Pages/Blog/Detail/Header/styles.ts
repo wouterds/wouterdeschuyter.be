@@ -8,12 +8,13 @@ export const Container = styled.div<{ image: string }>`
   top: 0;
   left: 0;
   right: 0;
-  background: #f7f7f9 url('${({ image }) => image}');
+  background-color: #f7f7f9;
+  background-image: url('${({ image }) => image}');
   background-size: cover;
   background-position: center;
 
   @media (prefers-color-scheme: dark) {
-    background: #374252;
+    background-color: #374252;
   }
 
   @media (max-width: 640px) {
