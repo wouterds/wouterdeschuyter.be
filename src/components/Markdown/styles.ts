@@ -4,16 +4,16 @@ export const Container = styled.div`
   p code {
     background: #f7f7f9;
     border: 1px solid #e1e1e8;
-    color: #db2756;
+    color: var(--color-tint);
     padding: 0.15em 0.3em;
     border-radius: 3px;
     font-size: 0.8em;
   }
 
   pre code {
-    background: #f8f8f8;
+    background: #f7f7f9;
+    color: var(--color-text-light);
     padding: 0.75em 1em;
-    color: #333;
     font-size: 0.8em;
     display: block;
     overflow-x: scroll;
@@ -26,7 +26,7 @@ export const Container = styled.div`
 
   .media {
     position: relative;
-    background: #fafafa;
+    background: #f7f7f9;
 
     &--image {
       img {

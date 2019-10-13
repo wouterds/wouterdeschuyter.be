@@ -17,7 +17,7 @@ export const Logo = styled.div`
   width: 1em;
   height: 1.91em;
   margin: 0 0.525em;
-  background: #2b2f33;
+  background: var(--color-text-dark);
   display: inline-block;
 `;
 
@@ -30,35 +30,13 @@ export const Title = styled.div<{ transparent: boolean }>`
     display: inline-block;
     line-height: 1;
 
-    &:hover {
-      h1 {
-        color: #000;
-      }
-
-      ${Logo} {
-        background: #000;
-      }
-
-      ${({ transparent }) =>
-        transparent &&
-        css`
-          h1 {
-            color: #fff;
-          }
-
-          ${Logo} {
-            background: #fff;
-          }
-        `}
-    }
-
     h1 {
-      color: #2b2f33;
+      color: var(--color-text-dark);
       transition: color ease-in-out 200ms;
     }
 
     ${Logo} {
-      background: #2b2f33;
+      background: var(--color-text-dark);
       transition: background ease-in-out 200ms;
     }
 
@@ -113,7 +91,7 @@ export const Nav = styled.nav<{ transparent: boolean }>`
   a {
     padding: 0.525em;
     border: 0;
-    color: #888;
+    color: var(--color-alternative-link);
     transition: color ease-in-out 200ms;
 
     ${({ transparent }) =>
@@ -124,7 +102,7 @@ export const Nav = styled.nav<{ transparent: boolean }>`
 
     &.active,
     &:hover {
-      color: #2b2f33;
+      color: var(--color-text-dark);
       ${({ transparent }) =>
         transparent &&
         css`

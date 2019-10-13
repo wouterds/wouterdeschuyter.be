@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
 export const Container = styled.div<{ backgroundColor?: string }>`
-  background: #fff;
+  background: var(--color-background);
   font-size: 1.6rem;
   line-height: 1.6;
-  color: #3b454e;
+  color: var(--color-text);
   flex: 1;
   width: 100%;
   display: flex;
@@ -58,7 +58,7 @@ export const Container = styled.div<{ backgroundColor?: string }>`
       left: 0;
       top: 0;
       bottom: 0;
-      background: #eee;
+      background: #e1e1e8;
       border-radius: 2px;
     }
   }
@@ -69,7 +69,7 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   h4 {
     margin-bottom: 0.75em;
     font-weight: 600;
-    color: #2b2f33;
+    color: var(--color-text-dark);
     line-height: 1.2;
   }
 
@@ -120,8 +120,8 @@ export const Container = styled.div<{ backgroundColor?: string }>`
 
   a {
     text-decoration: none;
-    color: #db2756;
-    outline-color: #db2756;
+    color: var(--color-tint);
+    outline-color: var(--color-tint);
 
     &:hover {
       text-decoration: underline;

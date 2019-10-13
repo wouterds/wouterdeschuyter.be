@@ -13,8 +13,8 @@ export const Container = styled.button<{ isLoading?: boolean }>`
   position: relative;
 
   &:hover {
-    border-color: #db2756;
-    background: #db2756;
+    border-color: var(--color-tint);
+    background: var(--color-tint);
   }
 
   ${({ isLoading }) =>
@@ -22,8 +22,8 @@ export const Container = styled.button<{ isLoading?: boolean }>`
     css`
       text-align: left;
       text-indent: -9999px;
-      background: #db2756;
-      border-color: #db2756;
+      background: var(--color-tint);
+      border-color: var(--color-tint);
       cursor: default;
 
       @keyframes spinner {
@@ -44,7 +44,7 @@ export const Container = styled.button<{ isLoading?: boolean }>`
         margin-left: -10px;
         border-radius: 50%;
         border: 2px solid rgba(255, 255, 255, 0.5);
-        border-top-color: #fff;
+        border-top-color: rgba(255, 255, 255, 0.9);
         animation: spinner 0.6s linear infinite;
       }
     `}

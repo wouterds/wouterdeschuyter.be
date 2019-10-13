@@ -15,13 +15,13 @@ export const Post = styled.article`
 
     &:hover {
       h2 {
-        color: #db2756;
+        color: var(--color-tint);
       }
     }
 
     &:focus {
       h2 {
-        color: #2b2f33;
+        color: var(--color-text-dark);
       }
     }
   }

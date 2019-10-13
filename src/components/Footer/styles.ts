@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.footer<{ centered?: boolean }>`
   padding: 1.825em;
-  color: #bbc4c9;
+  color: var(--color-text-lightest);
   margin-top: 1.5em;
 
   @media (max-width: 640px) {

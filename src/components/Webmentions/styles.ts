@@ -44,7 +44,7 @@ export const Container = styled.div`
     }
 
     .content {
-      color: #74818b;
+      color: var(--color-text-lighter);
       padding: 0.25em;
     }
   }

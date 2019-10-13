@@ -8,7 +8,7 @@ export const Links = styled.div`
     font-size: ${16 / 19.2}em;
     font-weight: 500;
     border: 0;
-    color: #939aa3;
+    color: var(--color-alternative-link);
     transition: color ease-in-out 200ms;
 
     @media (max-width: 640px) {
@@ -16,7 +16,7 @@ export const Links = styled.div`
     }
 
     &:hover {
-      color: #2b2f33;
+      color: var(--color-text-dark);
       text-decoration: none;
     }
   }

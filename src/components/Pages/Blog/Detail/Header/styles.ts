@@ -8,7 +8,7 @@ export const Container = styled.div<{ image: string }>`
   top: 0;
   left: 0;
   right: 0;
-  background: #111 url('${({ image }) => image}');
+  background: #f7f7f9 url('${({ image }) => image}');
   background-size: cover;
   background-position: center;
 

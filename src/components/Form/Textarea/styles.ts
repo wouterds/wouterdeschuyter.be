@@ -7,16 +7,16 @@ export const Container = styled.textarea<{ hasError?: boolean }>`
   padding: 0.5em;
   transition: border ease-in-out 200ms, color ease-in-out 200ms;
   width: 100%;
-  color: #74818b;
+  color: var(--color-text-lighter);
 
   ${({ hasError }) =>
     hasError &&
     css`
-      border-color: #db2756;
+      border-color: var(--color-tint);
     `}
 
   &:focus {
     border: 1px solid #838f9e;
-    color: #48545e;
+    color: #cfd4db;
   }
 `;

@@ -29,7 +29,7 @@ export const Container = styled.section<{
         &:after {
           content: '';
           display: block;
-          background: #2b2f33;
+          background: var(--color-text-dark);
           height: 0.1em;
           width: 1.5em;
           margin-top: 0.5em;

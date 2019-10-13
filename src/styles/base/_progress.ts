@@ -5,7 +5,7 @@ export default css`
     pointer-events: none;
 
     .bar {
-      background: #db2756;
+      background: var(--color-tint);
       position: fixed;
       z-index: 1031;
       top: 0;

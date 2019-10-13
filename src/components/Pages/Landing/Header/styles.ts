@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  background: #fff;
   text-align: center;
   border-bottom: 1px solid #ebeef0;
   margin-bottom: 4em;
@@ -30,7 +29,7 @@ export const Container = styled.header`
 
   h2 {
     font-weight: 300;
-    color: #bbc4c9;
+    color: var(--color-text-lightest);
     font-size: 1.4em;
     margin-bottom: 1.5em;
   }
