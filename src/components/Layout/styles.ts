@@ -60,6 +60,10 @@ export const Container = styled.div<{ backgroundColor?: string }>`
       bottom: 0;
       background: #e1e1e8;
       border-radius: 2px;
+
+      @media (prefers-color-scheme: dark) {
+        background: #4f5969;
+      }
     }
   }
 

@@ -1,15 +1,15 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
+import CSS from './styles';
 
-const MediumZoom = () => {
+const HighlightJS = () => {
   useEffect(() => {
     document
       .querySelectorAll('pre code')
       .forEach(block => hljs.highlightBlock(block));
   }, []);
 
-  return null;
+  return <CSS />;
 };
 
-export default MediumZoom;
+export default HighlightJS;

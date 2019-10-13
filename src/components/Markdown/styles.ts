@@ -8,16 +8,28 @@ export const Container = styled.div`
     padding: 0.15em 0.3em;
     border-radius: 3px;
     font-size: 0.8em;
+
+    @media (prefers-color-scheme: dark) {
+      border-color: #354052;
+      background: #232c3b;
+    }
   }
 
-  pre code {
-    background: #f7f7f9;
+  pre {
     color: var(--color-text-light);
-    padding: 0.75em 1em;
-    font-size: 0.8em;
-    display: block;
-    overflow-x: scroll;
-    margin: 0.5em 0 1em;
+
+    code {
+      background: #f7f7f9;
+      padding: 0.75em 1em;
+      font-size: 0.8em;
+      display: block;
+      overflow-x: scroll;
+      margin: 0.5em 0 1em;
+
+      @media (prefers-color-scheme: dark) {
+        background: #283140;
+      }
+    }
   }
 
   ul {
@@ -27,6 +39,10 @@ export const Container = styled.div`
   .media {
     position: relative;
     background: #f7f7f9;
+
+    @media (prefers-color-scheme: dark) {
+      background: #222a36;
+    }
 
     &--image {
       img {

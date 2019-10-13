@@ -12,6 +12,11 @@ export const Container = styled.button<{ isLoading?: boolean }>`
   cursor: pointer;
   position: relative;
 
+  @media (prefers-color-scheme: dark) {
+    background: #2f3847;
+    border-color: #2f3847;
+  }
+
   &:hover {
     border-color: var(--color-tint);
     background: var(--color-tint);

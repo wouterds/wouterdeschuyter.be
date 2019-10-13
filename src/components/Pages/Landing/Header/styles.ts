@@ -5,6 +5,10 @@ export const Container = styled.header`
   border-bottom: 1px solid #ebeef0;
   margin-bottom: 4em;
 
+  @media (prefers-color-scheme: dark) {
+    border-color: #2d3442;
+  }
+
   .image {
     height: 7em;
     width: 7em;
