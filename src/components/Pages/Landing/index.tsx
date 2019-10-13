@@ -33,7 +33,7 @@ const Landing = () => {
     <Layout>
       <Meta
         title="Wouter De Schuyter"
-        description="An ambitious, passionate Full Stack Developer."
+        description="Hi 👋, I'm Wouter. I'm an ambitious, passionate Full Stack Developer. I create apps, websites and slick digital experiences."
         extra={
           <script
             type="application/ld+json"
