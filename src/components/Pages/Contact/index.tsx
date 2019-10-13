@@ -3,7 +3,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
-import { toast } from 'react-toastify';
+import toast from 'services/toast';
 import Sentry from 'services/sentry';
 import Layout from 'components/Layout';
 import Header from 'components/Header';

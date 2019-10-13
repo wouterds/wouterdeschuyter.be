@@ -4,7 +4,6 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
-import { toast } from 'react-toastify';
 import withApollo from 'hocs/withApollo';
 import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
 import GoogleAnalytics from 'services/google-analytics';
@@ -40,7 +39,5 @@ Router.events.on('routeChangeComplete', (path: string) => {
   GoogleAnalytics.pageView(path);
 });
 Router.events.on('routeChangeError', () => NProgress.done());
-
-toast.configure();
 
 export default withApollo(App);
