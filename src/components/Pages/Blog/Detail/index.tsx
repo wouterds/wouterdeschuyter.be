@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { NextPageContext } from 'next';
 import { format } from 'date-fns';
 import gql from 'graphql-tag';
 import mediumZoom from 'medium-zoom';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
-import fetch from 'isomorphic-unfetch';
 import Sentry from 'services/sentry';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Meta from 'components/Meta';
 import Markdown from 'components/Markdown';
+import Webmentions from 'components/Webmentions';
 import Error from 'components/Pages/Error';
 import LocalHeader from './Header';
-import { Container, Body, Webmentions } from './styles';
+import { Container, Body } from './styles';
 
 const FETCH_DATA = gql`
   query fetchData($slug: String!) {
@@ -48,21 +48,8 @@ interface Props {
 
 export const config = { amp: 'hybrid' };
 
-interface Webmention {
-  type: string;
-  author: {
-    name: string;
-    photo: string;
-    url: string;
-  };
-  published: Date;
-  url: string;
-  ['wm-property']: 'repost-of' | 'like-of' | 'in-reply-to' | 'mention-of';
-}
-
 const Detail = (props: Props) => {
   const { post } = props;
-  const [webmentions, setWebMentions] = useState<Webmention[]>([]);
 
   useEffect(() => {
     if (post) {
@@ -71,41 +58,6 @@ const Detail = (props: Props) => {
       document
         .querySelectorAll('pre code')
         .forEach(block => hljs.highlightBlock(block));
-
-      fetch(
-        `https://webmention.io/api/mentions.jf2?target=${encodeURI(
-          `${process.env.URL}/blog/${post.slug}`,
-        )}`,
-      ).then(async response => {
-        const { children } = (await response.json()) || {};
-
-        if (!Array.isArray(children)) {
-          return;
-        }
-
-        const cleanedWebmentions: Webmention[] = [];
-        for (const webmention of children) {
-          if (webmention.type !== 'entry') {
-            continue;
-          }
-
-          const urls = cleanedWebmentions.map(webmention => webmention.url);
-          if (urls.includes(webmention.url)) {
-            continue;
-          }
-
-          cleanedWebmentions.push({
-            ...webmention,
-            published: new Date(webmention.published),
-          });
-        }
-
-        cleanedWebmentions.sort((a: Webmention, b: Webmention) =>
-          a.published > b.published ? -1 : 1,
-        );
-
-        setWebMentions(cleanedWebmentions);
-      });
     }
   }, [post]);
 
@@ -199,45 +151,7 @@ const Detail = (props: Props) => {
             </header>
             <h1>{post.title}</h1>
             <Markdown markdown={post.body} />
-            {webmentions.length > 0 && (
-              <Webmentions>
-                <h2>Webmentions</h2>
-                <ul>
-                  {webmentions.map((webmention: Webmention, index: number) => (
-                    <li key={index}>
-                      <a
-                        className="author"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={webmention.url}
-                      >
-                        <img
-                          src={webmention.author.photo}
-                          alt={webmention.author.name}
-                        />
-                        <strong>{webmention.author.name}</strong>
-                      </a>
-                      <a
-                        className="content"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={webmention.url}
-                      >
-                        {webmention['wm-property'] === 'like-of' && 'liked'}
-                        {webmention['wm-property'] === 'mention-of' &&
-                          'mentioned'}
-                        {webmention['wm-property'] === 'in-reply-to' &&
-                          'replied'}
-                        {webmention['wm-property'] === 'repost-of' &&
-                          'retweeted'}
-                        {webmention.published.getTime() > 0 &&
-                          ` on ${format(webmention.published, 'MMM d, yyyy')}`}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </Webmentions>
-            )}
+            <Webmentions url={`${process.env.URL}/blog/${post.slug}`} />
           </Body>
         </Container>
       </Layout.Content>
