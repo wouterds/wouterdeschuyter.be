@@ -16,7 +16,7 @@ export const Logo = styled.div`
   mask-size: cover;
   width: 1em;
   height: 1.91em;
-  margin: 0 0.525em;
+  margin: 0 0.25em 0 0.525em;
   background: var(--color-text-dark);
   display: inline-block;
 `;
@@ -81,7 +81,7 @@ export const Title = styled.div<{ transparent: boolean }>`
 `;
 
 export const Nav = styled.nav<{ transparent: boolean }>`
-  padding: 1.3em;
+  padding: 1.3em 1.3em 1.3em 1em;
   display: flex;
   align-items: center;
   justify-content: flex-end;
