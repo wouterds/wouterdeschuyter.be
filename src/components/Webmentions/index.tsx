@@ -13,6 +13,7 @@ interface Webmention {
   published: Date;
   url: string;
   ['wm-property']: 'repost-of' | 'like-of' | 'in-reply-to' | 'mention-of';
+  ['wm-received']: string;
 }
 
 interface Props {
@@ -46,7 +47,9 @@ const Webmentions = (props: Props) => {
 
         cleanedWebmentions.push({
           ...webmention,
-          published: new Date(webmention.published),
+          published: new Date(
+            webmention.published || webmention['wm-received'],
+          ),
         });
       }
 
