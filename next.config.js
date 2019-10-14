@@ -7,7 +7,9 @@ const withSourceMaps = require('@zeit/next-source-maps')({ devtool: 'hidden-sour
 const optimizedImages = require('next-optimized-images');
 const dotenv = require('dotenv-webpack');
 
-const config = {};
+const config = {
+  poweredByHeader: false,
+};
 
 module.exports = withPlugins([
   [css],
