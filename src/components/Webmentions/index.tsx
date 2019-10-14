@@ -26,7 +26,9 @@ const Webmentions = (props: Props) => {
 
   useEffect(() => {
     fetch(
-      `https://webmention.io/api/mentions.jf2?target=${encodeURI(url)}`,
+      `https://webmention.io/api/mentions.jf2?per-page=100&page=0&target=${encodeURI(
+        url,
+      )}`,
     ).then(async response => {
       const { children } = (await response.json()) || {};
 
