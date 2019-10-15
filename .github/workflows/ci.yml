@@ -7,6 +7,21 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      ENV: staging
+      ENV_SUFFIX: -staging
+      URL: ${{ secrets.STAGING_URL }}
+      API_ENDPOINT: ${{ secrets.STAGING_API_ENDPOINT }}
+      RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
+      GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+      DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+      DOCKER_REGISTRY_HOST: ${{ secrets.DOCKER_REGISTRY_HOST }}
+      DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_REGISTRY_USER }}
+      DOCKER_REGISTRY_PASS: ${{ secrets.DOCKER_REGISTRY_PASS }}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v1
