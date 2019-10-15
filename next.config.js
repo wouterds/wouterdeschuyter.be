@@ -6,10 +6,7 @@ const css = require('@zeit/next-css');
 const withSourceMaps = require('@zeit/next-source-maps')({ devtool: 'hidden-source-map' });
 const optimizedImages = require('next-optimized-images');
 const dotenv = require('dotenv-webpack');
-
-const config = {
-  poweredByHeader: false,
-};
+const config = require('./config');
 
 module.exports = withPlugins([
   [css],
