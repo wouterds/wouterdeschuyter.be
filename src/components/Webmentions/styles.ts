@@ -30,12 +30,29 @@ export const Container = styled.div`
       }
     }
 
-    .author {
+    .likes {
+      strong {
+        padding: 0 0.25em;
+      }
+
+      .heads {
+        position: relative;
+        height: 2.25em;
+        width: 2.25em;
+
+        img {
+          position: absolute;
+        }
+      }
+    }
+
+    .author,
+    .likes {
       display: flex;
       align-items: center;
       color: inherit;
 
-      > img {
+      img {
         height: 2.25em;
         width: 2.25em;
         border-radius: 1.125em;
