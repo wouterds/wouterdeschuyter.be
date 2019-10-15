@@ -96,7 +96,7 @@ const Webmentions = (props: Props) => {
               >
                 {likes
                   .reverse()
-                  .slice(0, 7)
+                  .slice(likes.length > 7 ? likes.length - 7 : 0, likes.length)
                   .map((webmention: Webmention, index: number) => (
                     <img
                       style={{ left: `${index * 1.15}em` }}
