@@ -89,7 +89,7 @@ const Webmentions = (props: Props) => {
             >
               <div
                 className="heads"
-                style={{ paddingLeft: `${likes.length * 1.25 + 1.75}em` }}
+                style={{ paddingLeft: `${likes.length * 1.25 + 1.65}em` }}
               >
                 {likes
                   .reverse()
