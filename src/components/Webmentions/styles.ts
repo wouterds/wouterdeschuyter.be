@@ -23,11 +23,17 @@ export const Container = styled.div`
     }
 
     a {
+      color: var(--color-text-lighter);
       display: block;
 
       &:hover {
         text-decoration: none;
       }
+    }
+
+    .likes strong,
+    .author {
+      color: var(--color-text);
     }
 
     .likes {
@@ -50,7 +56,6 @@ export const Container = styled.div`
     .likes {
       display: flex;
       align-items: center;
-      color: inherit;
 
       img {
         height: 2.25em;
@@ -61,7 +66,6 @@ export const Container = styled.div`
     }
 
     .content {
-      color: var(--color-text-lighter);
       padding: 0.25em;
     }
   }
