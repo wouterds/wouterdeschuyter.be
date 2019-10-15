@@ -103,7 +103,7 @@ const Webmentions = (props: Props) => {
                     />
                   ))}
               </div>
-              Liked by <strong>{likes.reverse()[0].author.name}</strong>
+              liked by <strong>{likes.reverse()[0].author.name}</strong>
               {likes.length === 2 && 'and 1 other'}
               {likes.length > 2 && `and ${likes.length - 1} others`}
             </a>
