@@ -25,18 +25,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
-
     - name: Dependencies
       run: make node_modules
-
     - name: Linting
       run: make lint
-
     - name: Build
       run: make build
-
     - name: Push images
       run: make push
-
     - name: Deploy
       run: make deploy
