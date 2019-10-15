@@ -89,14 +89,17 @@ const Webmentions = (props: Props) => {
             >
               <div
                 className="heads"
-                style={{ paddingLeft: `${likes.length * 1.25 + 1.65}em` }}
+                style={{
+                  paddingLeft: `${(likes.length > 7 ? 7 : likes.length) * 1.15 +
+                    1.75}em`,
+                }}
               >
                 {likes
                   .reverse()
                   .slice(0, 7)
                   .map((webmention: Webmention, index: number) => (
                     <img
-                      style={{ left: `${index * 1.25}em` }}
+                      style={{ left: `${index * 1.15}em` }}
                       key={index}
                       src={webmention.author.photo}
                       alt={webmention.author.name}
