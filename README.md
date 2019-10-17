@@ -1,6 +1,5 @@
 # wouterdeschuyter.be
 
-![circleci](https://circleci.com/gh/wouterds/wouterdeschuyter.be/tree/develop.svg?style=shield)
 ![dependencies](https://img.shields.io/david/wouterds/wouterdeschuyter.be)
 ![tag](https://img.shields.io/github/tag/wouterds/wouterdeschuyter.be.svg)
 ![repo size](https://img.shields.io/github/repo-size/wouterds/wouterdeschuyter.be)
