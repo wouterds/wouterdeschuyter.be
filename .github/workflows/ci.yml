@@ -1,0 +1,42 @@
+name: CI
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      ENV: production
+      URL: ${{ secrets.PRODUCTION_URL }}
+      API_ENDPOINT: ${{ secrets.PRODUCTION_API_ENDPOINT }}
+      RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
+      GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+      DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
+      DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
+      DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
+      DOCKER_REGISTRY_HOST: ${{ secrets.DOCKER_REGISTRY_HOST }}
+      DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_REGISTRY_USER }}
+      DOCKER_REGISTRY_PASS: ${{ secrets.DOCKER_REGISTRY_PASS }}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Dependencies
+      run: make node_modules
+    - name: Linting
+      run: make lint
+    - name: Build
+      run: make build
+    - name: Push images
+      run: make push
+    - name: Configure SSH agent
+      uses: webfactory/ssh-agent@v0.1.1
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+    - name: Deploy
+      run: |
+        for ip in $(dig @8.8.8.8 ${DEPLOY_HOST} +short); do ssh-keyscan ${DEPLOY_HOST},$ip; ssh-keyscan $ip; done 2>/dev/null >> ~/.ssh/known_hosts
+        make deploy

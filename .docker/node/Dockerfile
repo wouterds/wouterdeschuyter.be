@@ -5,11 +5,11 @@ COPY ./package.json ./
 COPY ./yarn.lock ./
 COPY ./.next ./.next
 COPY ./public ./public
+COPY ./config.js ./next.config.js
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
 RUN apk add vips-dev fftw-dev build-base python --update-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/community/ \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/main
-RUN yarn config set network-timeout 300000
 RUN yarn --production
 
 FROM arm32v6/node:12-alpine
