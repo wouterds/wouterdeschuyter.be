@@ -6,8 +6,9 @@ DOCKER_COMPOSE = ./.docker/docker-compose${ENV_SUFFIX}.yml
 DOCKERFILE_NODE = ./.docker/node/Dockerfile
 DOCKERFILE_NGINX = ./.docker/nginx/Dockerfile
 
-TAG_NODE = $(DOCKER_REGISTRY_HOST)/$(PROJECT)${ENV_SUFFIX}-node
-TAG_NGINX = $(DOCKER_REGISTRY_HOST)/$(PROJECT)${ENV_SUFFIX}-nginx
+TAG_PREFIX = docker.pkg.github.com/wouterds/wouterdeschuyter.be
+TAG_NODE = ${TAG_PREFIX}/node
+TAG_NGINX = ${TAG_PREFIX}/nginx
 
 all: build
 
@@ -34,25 +35,25 @@ qemu-arm-static:
 	touch .build-app
 
 .build-nginx: $(DOCKERFILE_NGINX)
-	docker build -f $(DOCKERFILE_NGINX) -t $(TAG_NGINX) .
+	docker build -f $(DOCKERFILE_NGINX) -t $(TAG_NGINX):latest${ENV_SUFFIX} .
 	touch .build-nginx
 
 .build-node: qemu-arm-static .build-app $(DOCKERFILE_NODE)
-	docker build -f $(DOCKERFILE_NODE) -t $(TAG_NODE) .
+	docker build -f $(DOCKERFILE_NODE) -t $(TAG_NODE):latest${ENV_SUFFIX} .
 	touch .build-node
 
 build: .build-node .build-nginx
-	docker tag $(TAG_NODE) $(TAG_NODE):$(VERSION)
-	docker tag $(TAG_NGINX) $(TAG_NGINX):$(VERSION)
+	docker tag $(TAG_NODE):latest${ENV_SUFFIX} $(TAG_NODE):$(VERSION)${ENV_SUFFIX}
+	docker tag $(TAG_NGINX):latest${ENV_SUFFIX} $(TAG_NGINX):$(VERSION)${ENV_SUFFIX}
 
 docker-login:
-	docker login ${DOCKER_REGISTRY_HOST} -u ${DOCKER_REGISTRY_USER} -p ${DOCKER_REGISTRY_PASS}
+	docker login docker.pkg.github.com -u wouterds -p ${GITHUB_TOKEN}
 
 push: docker-login build
-	docker push $(TAG_NODE)
-	docker push $(TAG_NODE):$(VERSION)
-	docker push $(TAG_NGINX)
-	docker push $(TAG_NGINX):$(VERSION)
+	docker push $(TAG_NODE):latest${ENV_SUFFIX}
+	docker push $(TAG_NODE):$(VERSION)${ENV_SUFFIX}
+	docker push $(TAG_NGINX):latest${ENV_SUFFIX}
+	docker push $(TAG_NGINX):$(VERSION)${ENV_SUFFIX}
 
 deploy:
 	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "mkdir -p ${DEPLOY_PATH}${ENV_SUFFIX}"
