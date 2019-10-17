@@ -12,10 +12,6 @@ services:
     networks:
       - default
       - webproxy
-    logging:
-      options:
-        max-size: 2m
-        max-file: '5'
 
   node:
     image: docker.wouterdeschuyter.be/wouterdeschuyter-node
@@ -23,10 +19,6 @@ services:
     mem_limit: 64mb
     volumes:
       - ./data:/data
-    logging:
-      options:
-        max-size: 2m
-        max-file: '5'
 
 networks:
   webproxy:
