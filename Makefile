@@ -20,10 +20,10 @@ clean:
 	-rm -rf qemu-arm-static
 
 node_modules: yarn.lock
-	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn
+	docker run --rm -v ${PWD}:/code -w /code node:12-slim yarn
 
 lint: node_modules
-	docker run --rm -v $(PWD):/code -w /code node:12-slim yarn lint
+	docker run --rm -v ${PWD}:/code -w /code node:12-slim yarn lint
 
 qemu-arm-static:
 	docker run --rm --privileged multiarch/qemu-user-static:register --reset
@@ -31,29 +31,29 @@ qemu-arm-static:
 	chmod +x qemu-arm-static
 
 .build-app: node_modules
-	docker run --rm -v $(PWD):/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID -e ENV node:12-slim yarn build
+	docker run --rm -v ${PWD}:/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID -e ENV node:12-slim yarn build
 	touch .build-app
 
-.build-nginx: $(DOCKERFILE_NGINX)
-	docker build -f $(DOCKERFILE_NGINX) -t $(TAG_NGINX):latest${ENV_SUFFIX} .
+.build-nginx: ${DOCKERFILE_NGINX}
+	docker build -f ${DOCKERFILE_NGINX} -t ${TAG_NGINX}:latest${ENV_SUFFIX} .
 	touch .build-nginx
 
-.build-node: qemu-arm-static .build-app $(DOCKERFILE_NODE)
-	docker build -f $(DOCKERFILE_NODE) -t $(TAG_NODE):latest${ENV_SUFFIX} .
+.build-node: qemu-arm-static .build-app ${DOCKERFILE_NODE}
+	docker build -f ${DOCKERFILE_NODE} -t ${TAG_NODE}:latest${ENV_SUFFIX} .
 	touch .build-node
 
 build: .build-node .build-nginx
-	docker tag $(TAG_NODE):latest${ENV_SUFFIX} $(TAG_NODE):$(VERSION)${ENV_SUFFIX}
-	docker tag $(TAG_NGINX):latest${ENV_SUFFIX} $(TAG_NGINX):$(VERSION)${ENV_SUFFIX}
+	docker tag ${TAG_NODE}:latest${ENV_SUFFIX} ${TAG_NODE}:${VERSION}${ENV_SUFFIX}
+	docker tag ${TAG_NGINX}:latest${ENV_SUFFIX} ${TAG_NGINX}:${VERSION}${ENV_SUFFIX}
 
 docker-login:
 	docker login docker.pkg.github.com -u wouterds -p ${GITHUB_TOKEN}
 
 push: docker-login build
-	docker push $(TAG_NODE):latest${ENV_SUFFIX}
-	docker push $(TAG_NODE):$(VERSION)${ENV_SUFFIX}
-	docker push $(TAG_NGINX):latest${ENV_SUFFIX}
-	docker push $(TAG_NGINX):$(VERSION)${ENV_SUFFIX}
+	docker push ${TAG_NODE}:latest${ENV_SUFFIX}
+	docker push ${TAG_NODE}:${VERSION}${ENV_SUFFIX}
+	docker push ${TAG_NGINX}:latest${ENV_SUFFIX}
+	docker push ${TAG_NGINX}:${VERSION}${ENV_SUFFIX}
 
 deploy:
 	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "mkdir -p ${DEPLOY_PATH}${ENV_SUFFIX}"
