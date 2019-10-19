@@ -41,8 +41,7 @@ export const Container = styled.div`
 
       .heads {
         position: relative;
-        height: 2.5em;
-        width: 2.5em;
+        height: 3em;
 
         @media (max-width: 500px) {
           margin-bottom: 0.5em;
