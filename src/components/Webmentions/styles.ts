@@ -66,11 +66,12 @@ export const Container = styled.div`
       }
 
       .head {
-        height: 2.5em;
-        width: 2.5em;
-        border-radius: 1.25em;
+        height: 3em;
+        width: 3em;
+        border-radius: 1.5em;
         margin-right: 0.5em;
         border: 0.125em solid #fff;
+        background-color: #fff;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -80,12 +81,6 @@ export const Container = styled.div`
     .author {
       @media (max-width: 500px) {
         width: auto;
-
-        .head {
-          height: 3em;
-          width: 3em;
-          border-radius: 1.5em;
-        }
 
         strong {
           display: none;
