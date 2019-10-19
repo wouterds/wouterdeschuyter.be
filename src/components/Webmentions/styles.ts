@@ -3,10 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   margin-top: 2.5em;
 
-  @media (max-width: 640px) {
-    display: none;
-  }
-
   ul {
     margin-top: 1.5em;
   }
@@ -37,14 +33,20 @@ export const Container = styled.div`
     }
 
     .likes {
+      margin-bottom: 0.25em;
+
       strong {
-        padding: 0 0.25em;
+        padding: 0 0.25em 0 0;
       }
 
       .heads {
         position: relative;
         height: 2.5em;
         width: 2.5em;
+
+        @media (max-width: 500px) {
+          margin-bottom: 0.5em;
+        }
 
         .head {
           position: absolute;
@@ -56,6 +58,12 @@ export const Container = styled.div`
     .likes {
       display: flex;
       align-items: center;
+
+      @media (max-width: 500px) {
+        align-items: flex-start;
+        flex-direction: column;
+        width: 100%;
+      }
 
       .head {
         height: 2.5em;
@@ -69,8 +77,36 @@ export const Container = styled.div`
       }
     }
 
+    .author {
+      @media (max-width: 500px) {
+        width: auto;
+
+        .head {
+          height: 3em;
+          width: 3em;
+          border-radius: 1.5em;
+        }
+
+        strong {
+          display: none;
+        }
+      }
+    }
+
     .content {
       padding: 0.25em;
+      line-height: 1.4;
+
+      strong {
+        display: none;
+        color: var(--color-text);
+      }
+
+      @media (max-width: 500px) {
+        strong {
+          display: block;
+        }
+      }
     }
   }
 `;

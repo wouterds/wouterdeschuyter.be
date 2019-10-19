@@ -108,9 +108,11 @@ const Webmentions = (props: Props) => {
                     />
                   ))}
               </div>
-              liked by <strong>{likes.reverse()[0].author.name}</strong>
-              {likes.length === 2 && 'and 1 other'}
-              {likes.length > 2 && `and ${likes.length - 1} others`}
+              <div>
+                liked by <strong>{likes.reverse()[0].author.name}</strong>
+                {likes.length === 2 && 'and 1 other'}
+                {likes.length > 2 && `and ${likes.length - 1} others`}
+              </div>
             </a>
           </li>
         )}
@@ -134,6 +136,7 @@ const Webmentions = (props: Props) => {
               rel="noopener noreferrer"
               href={webmention.url}
             >
+              <strong>{webmention.author.name}</strong>
               {webmention['wm-property'] === 'mention-of' && 'mentioned'}
               {webmention['wm-property'] === 'in-reply-to' && 'replied'}
               {webmention['wm-property'] === 'repost-of' && 'retweeted'}
