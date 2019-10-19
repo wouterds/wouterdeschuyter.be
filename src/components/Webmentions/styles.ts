@@ -43,10 +43,10 @@ export const Container = styled.div`
 
       .heads {
         position: relative;
-        height: 2.25em;
-        width: 2.25em;
+        height: 2.5em;
+        width: 2.5em;
 
-        img {
+        .head {
           position: absolute;
         }
       }
@@ -57,11 +57,15 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
 
-      img {
-        height: 2.25em;
-        width: 2.25em;
-        border-radius: 1.125em;
-        margin-right: 0.75em;
+      .head {
+        height: 2.5em;
+        width: 2.5em;
+        border-radius: 1.25em;
+        margin-right: 0.5em;
+        border: 0.125em solid #fff;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
       }
     }
 

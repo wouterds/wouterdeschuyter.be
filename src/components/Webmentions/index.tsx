@@ -90,7 +90,7 @@ const Webmentions = (props: Props) => {
               <div
                 className="heads"
                 style={{
-                  paddingLeft: `${(likes.length > 7 ? 7 : likes.length) * 1.15 +
+                  paddingLeft: `${(likes.length > 7 ? 7 : likes.length) * 1.25 +
                     1.75}em`,
                 }}
               >
@@ -98,11 +98,13 @@ const Webmentions = (props: Props) => {
                   .reverse()
                   .slice(likes.length > 7 ? likes.length - 7 : 0, likes.length)
                   .map((webmention: Webmention, index: number) => (
-                    <img
-                      style={{ left: `${index * 1.15}em` }}
-                      key={index}
-                      src={webmention.author.photo}
-                      alt={webmention.author.name}
+                    <span
+                      className="head"
+                      style={{
+                        left: `${index * 1.25}em`,
+                        backgroundImage: `url(${webmention.author.photo})`,
+                      }}
+                      key={`like-${index}`}
                     />
                   ))}
               </div>
@@ -120,7 +122,10 @@ const Webmentions = (props: Props) => {
               rel="noopener noreferrer"
               href={webmention.url}
             >
-              <img src={webmention.author.photo} alt={webmention.author.name} />
+              <span
+                className="head"
+                style={{ backgroundImage: `url(${webmention.author.photo})` }}
+              />
               <strong>{webmention.author.name}</strong>
             </a>
             <a
