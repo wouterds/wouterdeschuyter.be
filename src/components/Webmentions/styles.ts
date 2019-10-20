@@ -69,8 +69,8 @@ export const Container = styled.div`
         width: 3em;
         border-radius: 1.5em;
         margin-right: 0.5em;
-        border: 0.125em solid #fff;
-        background-color: #fff;
+        border: 0.125em solid var(--color-background);
+        background-color: var(--color-background);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
