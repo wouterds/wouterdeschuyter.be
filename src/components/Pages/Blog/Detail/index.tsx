@@ -160,10 +160,12 @@ Detail.getInitialProps = async ({
 }: NextPageContext) => {
   const { slug } = query;
 
-  const { post } = (await apolloClient.query({
-    query: FETCH_DATA,
-    variables: { slug },
-  })).data;
+  const { post } = (
+    await apolloClient.query({
+      query: FETCH_DATA,
+      variables: { slug },
+    })
+  ).data;
 
   if (!post && res) {
     const parts = (slug as string).split('-');
@@ -172,10 +174,12 @@ Detail.getInitialProps = async ({
     if (!isNaN(lastPart as any)) {
       const newSlug = parts.join('-');
 
-      const { post: fallbackPost } = (await apolloClient.query({
-        query: FETCH_DATA,
-        variables: { slug: newSlug },
-      })).data;
+      const { post: fallbackPost } = (
+        await apolloClient.query({
+          query: FETCH_DATA,
+          variables: { slug: newSlug },
+        })
+      ).data;
 
       if (fallbackPost) {
         return res

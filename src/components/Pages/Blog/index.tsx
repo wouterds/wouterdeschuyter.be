@@ -137,10 +137,12 @@ Blog.getInitialProps = async ({
     }
   }
 
-  const { posts, postCount } = (await apolloClient.query({
-    query: FETCH_DATA,
-    variables: { limit: POSTS_PER_PAGE, offset: page * POSTS_PER_PAGE },
-  })).data;
+  const { posts, postCount } = (
+    await apolloClient.query({
+      query: FETCH_DATA,
+      variables: { limit: POSTS_PER_PAGE, offset: page * POSTS_PER_PAGE },
+    })
+  ).data;
 
   if (posts.length === 0 && res) {
     res.statusCode = 404;
