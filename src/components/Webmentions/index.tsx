@@ -90,8 +90,9 @@ const Webmentions = (props: Props) => {
               <div
                 className="heads"
                 style={{
-                  paddingLeft: `${(likes.length > 7 ? 7 : likes.length) * 1.5 +
-                    0.75}em`,
+                  paddingLeft: `${(likes.length > 7 ? 7 : likes.length) * 1.25 +
+                    1.75 +
+                    0.5}em`,
                 }}
               >
                 {likes
