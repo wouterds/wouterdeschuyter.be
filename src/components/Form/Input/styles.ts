@@ -12,21 +12,7 @@ export const Container = styled.input<{ hasError?: boolean }>`
 
   &:focus {
     border-color: #838f9e;
-    color: #cfd4db;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    border-color: #2f3847;
-
-    &:focus {
-      border-color: #444f61;
-    }
-
-    ${({ hasError }) =>
-      hasError &&
-      css`
-        border-color: var(--color-tint);
-      `}
+    color: var(--color-text-light);
   }
 
   ${({ hasError }) =>

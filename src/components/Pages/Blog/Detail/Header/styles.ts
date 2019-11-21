@@ -13,10 +13,6 @@ export const Container = styled.div<{ image: string }>`
   background-size: cover;
   background-position: center;
 
-  @media (prefers-color-scheme: dark) {
-    background-color: #374252;
-  }
-
   @media (max-width: 640px) {
     height: 35vh;
   }

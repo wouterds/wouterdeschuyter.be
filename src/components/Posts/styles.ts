@@ -44,10 +44,6 @@ export const Post = styled.article`
     margin-bottom: 0.25em;
     display: inline-block;
     transition: color ease-in-out 200ms;
-
-    @media (prefers-color-scheme: dark) {
-      color: #3c4552;
-    }
   }
 
   p {
@@ -62,9 +58,5 @@ export const Post = styled.article`
     border-top: 1px solid #f0f3f5;
     margin-top: 1.5em;
     padding-top: 1.5em;
-
-    @media (prefers-color-scheme: dark) {
-      border-color: #272e3b;
-    }
   }
 `;

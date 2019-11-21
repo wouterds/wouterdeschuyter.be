@@ -18,10 +18,6 @@ export const Body = styled.div`
       margin-bottom: 0.5em;
       display: inline-block;
       transition: color ease-in-out 200ms;
-
-      @media (prefers-color-scheme: dark) {
-        color: #3c4552;
-      }
     }
   }
 `;

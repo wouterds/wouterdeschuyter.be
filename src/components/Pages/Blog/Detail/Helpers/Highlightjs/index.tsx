@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import hljs from 'highlight.js';
-import CSS from './styles';
+import 'highlight.js/styles/github.css';
 
 const HighlightJS = () => {
   useEffect(() => {
@@ -9,7 +9,7 @@ const HighlightJS = () => {
       .forEach(block => hljs.highlightBlock(block));
   }, []);
 
-  return <CSS />;
+  return null;
 };
 
 export default HighlightJS;

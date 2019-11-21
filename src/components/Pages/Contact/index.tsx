@@ -3,7 +3,6 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import useForm from 'react-hook-form';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
-import useDarkMode from 'hooks/useDarkMode';
 import toast from 'services/toast';
 import Sentry from 'services/sentry';
 import Layout from 'components/Layout';
@@ -30,7 +29,6 @@ const CONTACT = gql`
 `;
 
 const Contact = () => {
-  const darkMode = useDarkMode();
   const [contact] = useMutation(CONTACT);
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<any>({});
@@ -168,7 +166,6 @@ const Contact = () => {
               sitekey={`${process.env.RECAPTCHA_SITE_KEY}`}
               onChange={onVerify}
               onErrored={onError}
-              theme={darkMode ? 'dark' : 'light'}
             />
           </Form>
         </Container>
