@@ -2,6 +2,9 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import sharp from 'sharp';
 import fetch from 'node-fetch';
 
+// https://github.com/lovell/sharp/blob/master/docs/install.md#alpine-linux
+sharp.cache(false);
+
 export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   if (typeof query.input !== 'string') {
     res.status(400);
