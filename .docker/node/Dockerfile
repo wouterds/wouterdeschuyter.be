@@ -7,7 +7,7 @@ COPY ./.next ./.next
 COPY ./public ./public
 COPY ./config.js ./next.config.js
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
-RUN apk add vips-dev fftw-dev build-base python --update-cache \
+RUN apk add vips-dev build-base --update-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/community/ \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/main
 RUN yarn --production
