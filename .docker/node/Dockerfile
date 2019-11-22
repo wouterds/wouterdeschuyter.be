@@ -7,7 +7,7 @@ COPY ./.next ./.next
 COPY ./public ./public
 COPY ./config.js ./next.config.js
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
-RUN apk add vips-dev build-base --update-cache \
+RUN apk add vips-dev build-base --upgrade --no-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/community/ \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/main
 RUN yarn --production
@@ -17,10 +17,9 @@ WORKDIR /code
 
 COPY --from=0 /code /code
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
-RUN apk add vips --update-cache \
+RUN apk add vips --upgrade --no-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/community/ \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/main && \
-    rm -rf /var/cache/apk/* && \
     rm /usr/bin/qemu-arm-static
 
 EXPOSE 3000
