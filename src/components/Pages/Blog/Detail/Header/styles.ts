@@ -30,6 +30,9 @@ export const Container = styled.div<{ image: string }>`
 
   img {
     position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
     opacity: 0;
   }
 `;
