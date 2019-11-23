@@ -46,7 +46,7 @@ build: .build-node .build-nginx
 	docker tag ${TAG_NGINX}:latest${ENV_SUFFIX} ${TAG_NGINX}:${VERSION}${ENV_SUFFIX}
 
 docker-login:
-	docker login ${DOCKER_REGISTRY_HOST} -u ${DOCKER_REGISTRY_USER} -p ${DOCKER_REGISTRY_PASS}
+	docker login docker.wouterdeschuyter.be -u ${DOCKER_REGISTRY_USER} -p ${DOCKER_REGISTRY_PASS}
 
 push: docker-login build
 	docker push ${TAG_NODE}:latest${ENV_SUFFIX}
