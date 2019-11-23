@@ -5,7 +5,7 @@ DOCKER_COMPOSE = ./.docker/docker-compose${ENV_SUFFIX}.yml
 DOCKERFILE_NODE = ./.docker/node/Dockerfile
 DOCKERFILE_NGINX = ./.docker/nginx/Dockerfile
 
-TAG_PREFIX = docker.pkg.github.com/wouterds/wouterdeschuyter.be
+TAG_PREFIX = docker.wouterdeschuyter.be/wouterdeschuyter.be
 TAG_NODE = ${TAG_PREFIX}/node
 TAG_NGINX = ${TAG_PREFIX}/nginx
 
@@ -46,7 +46,7 @@ build: .build-node .build-nginx
 	docker tag ${TAG_NGINX}:latest${ENV_SUFFIX} ${TAG_NGINX}:${VERSION}${ENV_SUFFIX}
 
 docker-login:
-	docker login docker.pkg.github.com -u wouterds -p ${GITHUB_TOKEN}
+	docker login ${DOCKER_REGISTRY_HOST} -u ${DOCKER_REGISTRY_USER} -p ${DOCKER_REGISTRY_PASS}
 
 push: docker-login build
 	docker push ${TAG_NODE}:latest${ENV_SUFFIX}
