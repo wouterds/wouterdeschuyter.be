@@ -40,7 +40,9 @@ const About = () => {
     <Layout>
       <Meta
         title="About - Wouter De Schuyter"
-        description={`Hi, I'm Wouter! I'm an ambitious, passionate Full Stack Developer. I create apps, websites and digital experiences you've been dreaming of.`}
+        description={`Hey, I'm Wouter! Currently ${Math.round(
+          parseInt(getAge()),
+        )} years old and passionate about all things digital really. When not creating kickass web or mobile applications I'm probably fiddling around with electronics.`}
       />
       <Header />
       <Layout.Content centered editorial>
