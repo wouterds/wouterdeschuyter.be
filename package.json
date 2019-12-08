@@ -5,7 +5,7 @@
   "repository": "github:wouterds/wouterdeschuyter.be",
   "author": "Wouter De Schuyter <wouter.de.schuyter@gmail.com>",
   "scripts": {
-    "build": "next build",
+    "build": "next build && webpack --config ./webpack.config.js",
     "start": "next start",
     "dev": "next",
     "lint": "eslint '**/*.{ts,tsx}' && tsc",
