@@ -1,7 +1,7 @@
 .vscode/
 .env
 .build-*
-node_modules/
 .next/
+node_modules/
 dist/
 qemu-arm-static
