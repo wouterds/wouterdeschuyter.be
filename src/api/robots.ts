@@ -5,6 +5,7 @@ export default (_req: NextApiRequest, res: NextApiResponse) => {
   body += 'User-Agent: *\n';
   if (process.env.ENV === 'production') {
     body += 'Allow: /\n';
+    body += 'Disallow: /ping\n';
     body += 'Disallow: /api/*\n';
     body += 'Disallow: /admin\n';
     body += 'Disallow: /admin/*\n';
