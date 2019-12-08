@@ -6,6 +6,7 @@ COPY ./yarn.lock ./
 COPY ./.next ./.next
 COPY ./public ./public
 COPY ./config.js ./next.config.js
+COPY ./dist/healthcheck.js /code/healthcheck.js
 COPY ./qemu-arm-static /usr/bin/qemu-arm-static
 RUN apk add build-base vips-dev --upgrade --no-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/community/ \
@@ -23,5 +24,7 @@ RUN apk add vips --upgrade --no-cache \
     rm /usr/bin/qemu-arm-static
 
 EXPOSE 3000
+
+HEALTHCHECK CMD node ./healthcheck
 
 CMD ["npm", "start"]
