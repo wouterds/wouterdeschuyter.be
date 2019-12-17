@@ -12,8 +12,8 @@ export const Footer = (props: Props) => {
     <Container centered={centered}>
       <p>&copy; Copyright {new Date().getFullYear()} Wouter De Schuyter</p>
       <p>
-        Made with React, GraphQL &amp; Node.js. Running in Docker on a Raspberry
-        Pi 4 ❤️.
+        Made with React, GraphQL &amp; Node.js - running in Docker on a
+        Raspberry Pi 4 ❤️
       </p>
     </Container>
   );
