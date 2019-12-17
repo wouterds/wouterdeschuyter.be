@@ -24,6 +24,7 @@ export const SocialLink = styled.a<{
   instagram?: boolean;
   linkedIn?: boolean;
   github?: boolean;
+  spotify?: boolean;
 }>`
   font-size: 26px;
   height: 48px;
@@ -83,6 +84,20 @@ export const SocialLink = styled.a<{
         );
       }
     `}
+
+    ${({ spotify }) =>
+      spotify &&
+      css`
+        background: #00d165;
+
+        &:hover {
+          background: #00b85f;
+        }
+
+        @media (max-width: 640px) {
+          display: none;
+        }
+      `}
 
     ${({ linkedIn }) =>
       linkedIn &&

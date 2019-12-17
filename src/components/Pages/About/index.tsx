@@ -8,6 +8,7 @@ import {
   faGithub,
   faLinkedinIn,
   faFacebookF,
+  faSpotify,
 } from '@fortawesome/free-brands-svg-icons';
 import Layout from 'components/Layout';
 import Header from 'components/Header';
@@ -153,6 +154,15 @@ const About = () => {
                 instagram
               >
                 <FontAwesomeIcon icon={faInstagram} />
+              </SocialLink>
+              <SocialLink
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://open.spotify.com/user/wouterds"
+                title="Spotify"
+                spotify
+              >
+                <FontAwesomeIcon icon={faSpotify} />
               </SocialLink>
               <SocialLink
                 target="_blank"
