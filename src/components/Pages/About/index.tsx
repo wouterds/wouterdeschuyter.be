@@ -63,15 +63,23 @@ const About = () => {
               Digital Design &amp; Development
             </a>{' '}
             🎓 at Howest University College and am currently working as a Senior
-            Full Stack Developer at a small crypto startup;{' '}
+            Full Stack Developer at a crypto startup;{' '}
             <a
               href="https://delta.app"
               target="_blank"
               rel="noopener noreferrer"
             >
               Delta
+            </a>{' '}
+            (recently been{' '}
+            <a
+              href="https://techcrunch.com/2019/11/06/investment-platform-etoro-acquires-crypto-portfolio-tracker-app-delta/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              acquired by eToro
             </a>
-            . Before this I also worked at a few other companies such as the
+            ). Before this I also worked at a few other companies such as the
             scale-up{' '}
             <a
               href="https://teamleader.eu"
@@ -99,21 +107,18 @@ const About = () => {
             .
           </p>
           <p>
-            When I&apos;m not creating kickass web applications I&apos;m
-            fiddling around with electronics, making tracking devices, robots,
-            drones and other (useless 🤔?) fun projects using Arduino and
-            Raspberry Pi ⚡️. Besides all of that I love travelling, nature,
-            trying new things and pushing my own limits. I&apos;m also a data
-            geek, graphs &amp; stats are real motivators for me 📈 (loyal Fitbit
+            When I&apos;m not creating web apps I&apos;m most likely fiddling
+            around with electronics; working on fun projects using Arduino and
+            Raspberry Pi ⚡️. Besides all of that I really love travelling,
+            trying new things and pushing my own limits. Also kind of a data
+            geek, charts &amp; stats are real motivators for me 📈 (loyal Fitbit
             user over here).
           </p>
           <p>
             Since 2017 I&apos;m also involved in the crypto space, it&apos;s
             probably one of the most interesting things I&apos;ve come across
-            ever since I discovered how to make websites and apps. To me,
-            Bitcoin really is a magical thing 🔮. It&apos;s transparent, secure,
-            uncensorable &amp; relatively quick (comparing to traditional
-            banks).
+            ever since I learned programming. To me, Bitcoin really is a magical
+            thing 🔮.
           </p>
           <p>Oh right, also a cat person 🐈!</p>
 
