@@ -72,14 +72,17 @@ const Experiments = () => {
   return (
     <Layout>
       <Meta
-        title="Experiments ⚗️🧪 - Wouter De Schuyter"
-        description="Yo, not sure what this is. Just some random stuff 🤪!"
+        title="Experiments 🧪 - Wouter De Schuyter"
+        description="Yo, not sure what this is. Just a bunch of random things and experiments 🤪!"
       />
       <Header />
       <Layout.Content centered editorial>
         <Container>
-          <h1>Experiments ⚗️🧪</h1>
-          <p>Yo, not sure what this is. Just some random stuff 🤪!</p>
+          <h1>Experiments 🧪</h1>
+          <p>
+            Yo, not sure what this is. Just a bunch of random things and
+            experiments 🤪!
+          </p>
           <p>
             {sensors && (
               <>
