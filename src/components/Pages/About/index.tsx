@@ -40,7 +40,7 @@ const About = () => {
   return (
     <Layout>
       <Meta
-        title="About - Wouter De Schuyter"
+        title="About"
         description={`Hey, I'm Wouter! Currently ${Math.round(
           parseInt(getAge()),
         )} years old and passionate about all things digital really. When not creating kickass web or mobile applications I'm probably fiddling around with electronics.`}

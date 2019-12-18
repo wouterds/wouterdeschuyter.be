@@ -72,7 +72,7 @@ const Experiments = () => {
   return (
     <Layout>
       <Meta
-        title="Experiments 🧪 - Wouter De Schuyter"
+        title="Experiments 🧪"
         description="Yo, not sure what this is. Just a bunch of random things and experiments 🤪!"
       />
       <Header />
