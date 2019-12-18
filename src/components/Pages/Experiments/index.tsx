@@ -38,7 +38,9 @@ type Sensors = {
 const Experiments = () => {
   const [sensors, setSensors] = useState<Sensors | null>(null);
 
-  const { data }: { data?: { sensors?: Sensor[] } } = useQuery(FETCH_DATA);
+  const { data }: { data?: { sensors?: Sensor[] } } = useQuery(FETCH_DATA, {
+    pollInterval: 1000,
+  });
 
   useEffect(() => {
     if (data?.sensors && Array.isArray(data?.sensors)) {
@@ -79,9 +81,19 @@ const Experiments = () => {
           <h1>Experiments ⚗️🧪</h1>
           <p>Yo, not sure what this is. Just some random stuff 🤪!</p>
           <p>
-            Just some random stuff.
-            {sensors &&
-              ` At my apartment the temperature is currently ${sensors.temperature}ºC, the humidity is at ${sensors.humidity}% and the air pressure is ${sensors.pressure} hPa. The light measures ${sensors.illuminance.full} lx of which ${sensors.illuminance.ir} lx is infrared light and ${sensors.illuminance.visible} lx is visible light.`}
+            {sensors && (
+              <>
+                At my apartment the temperature is currently{' '}
+                <strong>{sensors.temperature.toFixed(2)}ºC</strong>, the
+                humidity is at <strong>{sensors.humidity.toFixed(2)}%</strong>{' '}
+                and the air pressure is{' '}
+                <strong>{sensors.pressure.toFixed(2)} hPa</strong>. The light
+                measures <strong>{sensors.illuminance.full} lx</strong> of which{' '}
+                <strong>{sensors.illuminance.ir} lx</strong> is infrared light{' '}
+                and <strong>{sensors.illuminance.visible} lx</strong> is visible
+                light.
+              </>
+            )}
           </p>
         </Container>
       </Layout.Content>
