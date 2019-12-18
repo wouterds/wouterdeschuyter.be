@@ -30,7 +30,7 @@ export const Container = styled.section<{
           content: '';
           display: block;
           background: var(--color-text-dark);
-          height: 0.1em;
+          height: 0.125em;
           width: 1.5em;
           margin-top: 0.5em;
           margin-bottom: 1em;
