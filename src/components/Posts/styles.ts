@@ -32,6 +32,7 @@ export const Post = styled.article`
     white-space: nowrap;
     max-width: 100%;
     font-size: 1.6em;
+    line-height: 1.25;
     transition: color ease-in-out 200ms;
     margin-bottom: 0.25em;
   }
