@@ -35,6 +35,11 @@ class Sitemap {
       changefreq: EnumChangefreq.WEEKLY,
       priority: 0.7,
     });
+    this.sitemap.add({
+      url: '/experiments',
+      changefreq: EnumChangefreq.WEEKLY,
+      priority: 0.7,
+    });
   };
 
   private buildDynamic = async () => {
