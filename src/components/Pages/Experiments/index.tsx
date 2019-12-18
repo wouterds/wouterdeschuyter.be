@@ -71,12 +71,13 @@ const Experiments = () => {
     <Layout>
       <Meta
         title="Experiments ⚗️🧪 - Wouter De Schuyter"
-        description="Not sure what this is, a collection of random things. Let's call them experiments!"
+        description="Yo, not sure what this is. Just some random stuff 🤪!"
       />
       <Header />
       <Layout.Content centered editorial>
         <Container>
           <h1>Experiments ⚗️🧪</h1>
+          <p>Yo, not sure what this is. Just some random stuff 🤪!</p>
           <p>
             Just some random stuff.
             {sensors &&
