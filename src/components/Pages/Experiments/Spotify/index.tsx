@@ -84,16 +84,15 @@ const Spotify = () => {
 
   return (
     <p>
-      I was listening{' '}
-      {formatDistanceToNow(new Date(parseInt(spotifyListeningTo.time)))} ago to{' '}
+      I was listening to{' '}
       <a
         href={spotifyListeningTo.spotifyUri}
         target="_blank"
         rel="noopener noreferrer"
       >
         {spotifyListeningTo.title} - {spotifyListeningTo.artist}
-      </a>
-      .
+      </a>{' '}
+      {formatDistanceToNow(new Date(parseInt(spotifyListeningTo.time)))} ago.
     </p>
   );
 };
