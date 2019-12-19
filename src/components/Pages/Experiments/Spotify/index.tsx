@@ -1,21 +1,50 @@
 import React from 'react';
 import { useQuery } from 'react-apollo';
 import gql from 'graphql-tag';
+import { formatDistanceToNow } from 'date-fns';
 
 export const config = { amp: 'hybrid' };
 
-const FETCH_DATA = gql`
+const CHECK_IF_CONNECTED = gql`
   query spotify {
     spotifyIsConnected
   }
 `;
 
-const Spotify = () => {
-  const { data }: { data?: { spotifyIsConnected?: boolean } } = useQuery(
-    FETCH_DATA,
-  );
+const FETCH_DATA = gql`
+  query spotify {
+    spotifyListeningTo {
+      artist
+      title
+      isPlaying
+      time
+      spotifyUri
+    }
+  }
+`;
 
-  const { spotifyIsConnected } = data || {};
+interface Song {
+  artist: string;
+  title: string;
+  spotifyUri: string;
+  isPlaying: boolean;
+  time: string;
+}
+
+const Spotify = () => {
+  const {
+    data: checkIfConnected,
+  }: {
+    data?: { spotifyIsConnected?: boolean };
+  } = useQuery(CHECK_IF_CONNECTED);
+
+  const { spotifyIsConnected } = checkIfConnected || {};
+
+  const {
+    data,
+  }: {
+    data?: { spotifyListeningTo?: Song };
+  } = useQuery(FETCH_DATA, { pollInterval: 5000 });
 
   if (!spotifyIsConnected) {
     return (
@@ -31,7 +60,42 @@ const Spotify = () => {
     );
   }
 
-  return null;
+  const { spotifyListeningTo } = data || {};
+
+  if (!spotifyListeningTo) {
+    return null;
+  }
+
+  if (spotifyListeningTo.isPlaying) {
+    return (
+      <p>
+        I am currently listening to{' '}
+        <a
+          href={spotifyListeningTo.spotifyUri}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {spotifyListeningTo.title} - {spotifyListeningTo.artist}
+        </a>
+        .
+      </p>
+    );
+  }
+
+  return (
+    <p>
+      I was listening{' '}
+      {formatDistanceToNow(new Date(parseInt(spotifyListeningTo.time)))} ago to{' '}
+      <a
+        href={spotifyListeningTo.spotifyUri}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {spotifyListeningTo.title} - {spotifyListeningTo.artist}
+      </a>
+      .
+    </p>
+  );
 };
 
 export default Spotify;
