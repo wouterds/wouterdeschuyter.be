@@ -1,21 +1,42 @@
 import React from 'react';
 import { NextPageContext } from 'next';
-import Url from 'url-parse';
 import ErrorComponent from 'components/Pages/Error';
+import gql from 'graphql-tag';
 
 const ConnectSpotify = () => {
   return <ErrorComponent />;
 };
 
-ConnectSpotify.getInitialProps = async ({ req }: NextPageContext) => {
-  if (!req?.url) {
-    throw new Error("Couldn't parse url from request");
+const AUTHORIZE_SPOTIFY = gql`
+  mutation spotifyAuthorize(
+    $authorizationCode: String!
+    $redirectUri: String!
+  ) {
+    spotifyAuthorize(
+      authorizationCode: $authorizationCode
+      redirectUri: $redirectUri
+    )
   }
+`;
 
-  const url = new Url(req.url, true);
-  const { code } = url.query;
+ConnectSpotify.getInitialProps = async ({
+  res,
+  query,
+  apolloClient,
+}: NextPageContext) => {
+  const { code } = query;
 
-  console.log({ code });
+  await apolloClient.mutate({
+    mutation: AUTHORIZE_SPOTIFY,
+    variables: {
+      authorizationCode: code,
+      redirectUri: `${process.env.URL}/experiments/connect-spotify`,
+    },
+  });
+
+  if (res) {
+    return res.writeHead(302, { Location: '/experiments' }).end();
+  }
 
   return {};
 };
