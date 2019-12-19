@@ -6,6 +6,7 @@ export default (_req: NextApiRequest, res: NextApiResponse) => {
   if (process.env.ENV === 'production') {
     body += 'Allow: /\n';
     body += 'Disallow: /ping\n';
+    body += 'Disallow: /experiments/connect-spotify\n';
     body += 'Disallow: /api/*\n';
     body += 'Disallow: /admin\n';
     body += 'Disallow: /admin/*\n';
