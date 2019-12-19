@@ -25,6 +25,7 @@
     "@fortawesome/react-fontawesome": "^0.1.5",
     "@sentry/browser": "^5.6.3",
     "@sentry/node": "^5.6.2",
+    "@types/url-parse": "^1.4.3",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link-http": "^1.5.16",
@@ -51,7 +52,8 @@
     "sharp": "^0.23.1",
     "sitemap": "^5.0.0",
     "styled-components": "^4.4.0",
-    "universal-cookie": "^4.0.2"
+    "universal-cookie": "^4.0.2",
+    "url-parse": "^1.4.7"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
