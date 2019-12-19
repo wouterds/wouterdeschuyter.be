@@ -14,6 +14,7 @@ jobs:
       API_ENDPOINT: ${{ secrets.PRODUCTION_API_ENDPOINT }}
       RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
       GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+      SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
       DEPLOY_USER: ${{ secrets.DEPLOY_USER }}
       DEPLOY_HOST: ${{ secrets.DEPLOY_HOST }}
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}

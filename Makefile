@@ -30,7 +30,7 @@ qemu-arm-static:
 	chmod +x qemu-arm-static
 
 .build-app: node_modules
-	docker run --rm -v ${PWD}:/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID -e ENV node:12-slim yarn build
+	docker run --rm -v ${PWD}:/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID -e ENV -e SPOTIFY_CLIENT_ID node:12-slim yarn build
 	touch .build-app
 
 .build-nginx: ${DOCKERFILE_NGINX}
