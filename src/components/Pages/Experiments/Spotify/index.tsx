@@ -13,9 +13,6 @@ const FETCH_DATA = gql`
 const Spotify = () => {
   const { data }: { data?: { spotifyIsConnected?: boolean } } = useQuery(
     FETCH_DATA,
-    {
-      pollInterval: 5000,
-    },
   );
 
   const { spotifyIsConnected } = data || {};
