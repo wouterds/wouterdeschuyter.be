@@ -5,6 +5,7 @@ import Footer from 'components/Footer';
 import Meta from 'components/Meta';
 import { Container } from './styles';
 import Sensors from './Sensors';
+import Spotify from './Spotify';
 
 export const config = { amp: 'hybrid' };
 
@@ -24,6 +25,7 @@ const Experiments = () => {
             experiments 🤪!
           </p>
           <Sensors />
+          <Spotify />
         </Container>
       </Layout.Content>
       <Footer centered />
