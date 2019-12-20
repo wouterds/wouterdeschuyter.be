@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-apollo';
 import gql from 'graphql-tag';
-import { formatDistanceToNow } from 'date-fns';
+import { formatDistanceStrict } from 'date-fns';
 
 export const config = { amp: 'hybrid' };
 
@@ -92,7 +92,11 @@ const Spotify = () => {
       >
         {spotifyListeningTo.title} - {spotifyListeningTo.artist}
       </a>{' '}
-      {formatDistanceToNow(new Date(parseInt(spotifyListeningTo.time)))} ago.
+      {formatDistanceStrict(
+        new Date(),
+        new Date(parseInt(spotifyListeningTo.time)),
+      )}{' '}
+      ago.
     </p>
   );
 };
