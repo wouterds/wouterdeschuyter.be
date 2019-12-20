@@ -15,7 +15,9 @@ import {
   faTint,
   faWind,
   faSun,
+  faMusic,
 } from '@fortawesome/free-solid-svg-icons';
+import { formatDistanceStrict } from 'date-fns';
 
 const FETCH_SENSORS = gql`
   query sensors {
@@ -26,8 +28,30 @@ const FETCH_SENSORS = gql`
   }
 `;
 
+const SPOTIFY_IS_CONNECTED = gql`
+  query spotify {
+    spotifyIsConnected
+  }
+`;
+
+const SPOTIFY_LISTENING_TO = gql`
+  query spotify {
+    spotifyListeningTo {
+      artist
+      title
+      isPlaying
+      time
+      spotifyUri
+    }
+  }
+`;
+
 export const DataFooter = () => {
   const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
+  const spotifyIsConnectedQuery = useQuery(SPOTIFY_IS_CONNECTED);
+  const spotifyListeningToQuery = useQuery(SPOTIFY_LISTENING_TO, {
+    pollInterval: 5000,
+  });
 
   const temperature = find(sensorsQuery?.data?.sensors, {
     type: 'temperature',
@@ -41,6 +65,9 @@ export const DataFooter = () => {
   const light = find(sensorsQuery?.data?.sensors, {
     type: 'illuminance:full',
   });
+  const spotifyIsConnected =
+    spotifyIsConnectedQuery?.data?.spotifyIsConnected || false;
+  const spotifyListeningTo = spotifyListeningToQuery?.data?.spotifyListeningTo;
 
   return (
     <Container>
@@ -78,6 +105,60 @@ export const DataFooter = () => {
           </MetricIcon>
           <MetricValue>{light.value}</MetricValue>
           <MetricUnit>lx</MetricUnit>
+        </Metric>
+      )}
+
+      {(spotifyListeningTo || spotifyIsConnected === false) && (
+        <Metric>
+          <MetricIcon>
+            <FontAwesomeIcon icon={faMusic} />
+          </MetricIcon>
+          <MetricValue>
+            {spotifyIsConnected === false && (
+              <a
+                href={`https://accounts.spotify.com/authorize?client_id=${
+                  process.env.SPOTIFY_CLIENT_ID
+                }&response_type=code&redirect_uri=${encodeURI(
+                  `${process.env.URL}/experiments/connect-spotify`,
+                )}&scope=user-read-currently-playing%20user-read-recently-played`}
+              >
+                Connect Spotify
+              </a>
+            )}
+            {spotifyListeningTo && (
+              <>
+                {spotifyListeningTo.isPlaying && (
+                  <>
+                    <span>Playing</span>{' '}
+                  </>
+                )}
+                {!spotifyListeningTo.isPlaying && (
+                  <>
+                    <span>Played</span>{' '}
+                  </>
+                )}
+                <a
+                  href={spotifyListeningTo.spotifyUri}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {spotifyListeningTo.title} - {spotifyListeningTo.artist}
+                </a>
+                {!spotifyListeningTo.isPlaying && (
+                  <>
+                    {' '}
+                    <span>
+                      {formatDistanceStrict(
+                        new Date(),
+                        new Date(parseInt(spotifyListeningTo.time)),
+                      )}{' '}
+                      ago
+                    </span>
+                  </>
+                )}
+              </>
+            )}
+          </MetricValue>
         </Metric>
       )}
     </Container>
