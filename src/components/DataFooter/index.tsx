@@ -27,7 +27,7 @@ const FETCH_SENSORS = gql`
 `;
 
 export const DataFooter = () => {
-  const sensors = useQuery(FETCH_SENSORS);
+  const sensors = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
 
   const temperature = find(sensors?.data?.sensors, { type: 'temperature' });
   const humidity = find(sensors?.data?.sensors, { type: 'humidity' });
