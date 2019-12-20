@@ -34,7 +34,7 @@ export const MetricIcon = styled.span`
   opacity: 0.75;
   padding-right: 0.5em;
   font-size: 1.2em;
-  margin-top: -0.15em;
+  margin-top: -0.1em;
 `;
 
 export const MetricValue = styled.span`
