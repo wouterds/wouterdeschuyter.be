@@ -3,15 +3,18 @@ import styled from 'styled-components';
 export const Container = styled.div`
   background: #1f1f1f;
   display: flex;
-  height: 4em;
+  height: 3.2em;
   align-items: center;
   min-width: 100%;
   font-size: 0.8em;
   color: #fff;
-  overflow-x: scroll;
   padding: 0 0.75em;
-  margin-bottom: -1.2em;
   scroll-snap-type: x proximity;
+  overflow-x: hidden;
+
+  @media (max-width: 960px) {
+    overflow-x: scroll;
+  }
 `;
 
 export const Metric = styled.div`
