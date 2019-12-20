@@ -2,17 +2,25 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background: #1f1f1f;
-  padding: 0.6em 1em;
-  width: 100%;
+  display: flex;
+  height: 4em;
+  align-items: center;
+  min-width: 100%;
   font-size: 0.8em;
   color: #fff;
+  overflow-x: scroll;
+  padding: 0 0.75em;
+  margin-bottom: -1.2em;
+  scroll-snap-type: x proximity;
 `;
 
-export const Metric = styled.span`
+export const Metric = styled.div`
+  display: flex;
+  white-space: nowrap;
   font-weight: 600;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 1.25em;
+  align-items: center;
+  padding: 0 0.75em;
+  scroll-snap-align: start;
 
   a {
     color: #fff;
@@ -23,6 +31,7 @@ export const MetricIcon = styled.span`
   opacity: 0.75;
   padding-right: 0.5em;
   font-size: 1.2em;
+  margin-top: -0.15em;
 `;
 
 export const MetricValue = styled.span`
