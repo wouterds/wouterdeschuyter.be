@@ -3,7 +3,6 @@ import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Meta from 'components/Meta';
-import Spotify from './Spotify';
 import DataFooter from 'components/DataFooter';
 import { Container } from './styles';
 
@@ -24,7 +23,6 @@ const Experiments = () => {
             Yo, not sure what this is. Just a bunch of random things and
             experiments 🤪!
           </p>
-          <Spotify />
         </Container>
       </Layout.Content>
       <Footer centered />
