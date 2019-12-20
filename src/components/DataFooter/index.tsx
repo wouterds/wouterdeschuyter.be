@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Container,
   Metric,
@@ -16,8 +16,9 @@ import {
   faWind,
   faSun,
   faMusic,
+  faBirthdayCake,
 } from '@fortawesome/free-solid-svg-icons';
-import { formatDistanceStrict } from 'date-fns';
+import { formatDistanceStrict, differenceInMilliseconds } from 'date-fns';
 
 const FETCH_SENSORS = gql`
   query sensors {
@@ -46,6 +47,13 @@ const SPOTIFY_LISTENING_TO = gql`
   }
 `;
 
+const getAge = () =>
+  (
+    differenceInMilliseconds(new Date(), new Date('13 December 1992')) /
+    (365 * 24 * 60 * 60) /
+    1000
+  ).toFixed(9);
+
 export const DataFooter = () => {
   const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
   const spotifyIsConnectedQuery = useQuery(SPOTIFY_IS_CONNECTED);
@@ -68,6 +76,16 @@ export const DataFooter = () => {
   const spotifyIsConnected =
     spotifyIsConnectedQuery?.data?.spotifyIsConnected || false;
   const spotifyListeningTo = spotifyListeningToQuery?.data?.spotifyListeningTo;
+
+  const [age, setAge] = useState(getAge);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAge(getAge());
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Container>
@@ -159,6 +177,15 @@ export const DataFooter = () => {
               </>
             )}
           </MetricValue>
+        </Metric>
+      )}
+      {age && (
+        <Metric title="How old I am">
+          <MetricIcon>
+            <FontAwesomeIcon icon={faBirthdayCake} />
+          </MetricIcon>
+          <MetricValue>{age}</MetricValue>
+          <MetricUnit>years old</MetricUnit>
         </Metric>
       )}
     </Container>
