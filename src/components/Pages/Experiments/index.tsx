@@ -4,7 +4,6 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Meta from 'components/Meta';
 import { Container } from './styles';
-import Sensors from './Sensors';
 import Spotify from './Spotify';
 
 export const config = { amp: 'hybrid' };
@@ -24,7 +23,6 @@ const Experiments = () => {
             Yo, not sure what this is. Just a bunch of random things and
             experiments 🤪!
           </p>
-          <Sensors />
           <Spotify />
         </Container>
       </Layout.Content>
