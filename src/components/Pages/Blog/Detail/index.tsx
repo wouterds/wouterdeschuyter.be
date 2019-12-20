@@ -13,7 +13,6 @@ import Webmentions from 'components/Webmentions';
 import Error from 'components/Pages/Error';
 import LocalHeader from './Header';
 import { Container, Body } from './styles';
-import DataFooter from 'components/DataFooter';
 
 const MediumZoomHelper = dynamic(() => import('./Helpers/MediumZoom'));
 const HighlightjsHelper = dynamic(() => import('./Helpers/Highlightjs'));
@@ -148,7 +147,6 @@ const Detail = (props: Props) => {
         </Container>
       </Layout.Content>
       <Footer centered />
-      <DataFooter />
       <MediumZoomHelper />
       <HighlightjsHelper />
     </Layout>
