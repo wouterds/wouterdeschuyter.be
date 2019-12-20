@@ -10,6 +10,7 @@ import Posts from 'components/Posts';
 import LandingHeader from './Header';
 import Meta from 'components/Meta';
 import { Links } from './styles';
+import DataFooter from 'components/DataFooter';
 
 const FETCH_DATA = gql`
   query fetchData {
@@ -76,6 +77,7 @@ const Landing = () => {
         </Links>
       </Layout.Content>
       <Footer centered />
+      <DataFooter />
     </Layout>
   );
 };

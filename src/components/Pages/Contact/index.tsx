@@ -11,6 +11,7 @@ import Footer from 'components/Footer';
 import Form from 'components/Form';
 import Meta from 'components/Meta';
 import { Container, Row, Col } from './styles';
+import DataFooter from 'components/DataFooter';
 
 const CONTACT = gql`
   mutation Contact(
@@ -171,6 +172,7 @@ const Contact = () => {
         </Container>
       </Layout.Content>
       <Footer centered />
+      <DataFooter />
     </Layout>
   );
 };

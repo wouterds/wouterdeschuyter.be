@@ -9,6 +9,7 @@ import Footer from 'components/Footer';
 import Posts, { Post } from 'components/Posts';
 import Meta from 'components/Meta';
 import { Container, Links } from './styles';
+import DataFooter from 'components/DataFooter';
 
 const POSTS_PER_PAGE = 7;
 
@@ -104,6 +105,7 @@ const Blog = (props: Props) => {
         </Container>
       </Layout.Content>
       <Footer centered />
+      <DataFooter />
     </Layout>
   );
 };

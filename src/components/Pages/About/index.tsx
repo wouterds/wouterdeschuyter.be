@@ -15,6 +15,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Meta from 'components/Meta';
 import { Container, Social, SocialLink } from './styles';
+import DataFooter from 'components/DataFooter';
 
 export const config = { amp: 'hybrid' };
 
@@ -187,6 +188,7 @@ const About = () => {
         </Container>
       </Layout.Content>
       <Footer centered />
+      <DataFooter />
     </Layout>
   );
 };
