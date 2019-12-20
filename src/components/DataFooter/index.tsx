@@ -72,7 +72,7 @@ export const DataFooter = () => {
   return (
     <Container>
       {temperature && (
-        <Metric>
+        <Metric title="Temperature at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faThermometerThreeQuarters} />
           </MetricIcon>
@@ -81,7 +81,7 @@ export const DataFooter = () => {
         </Metric>
       )}
       {humidity && (
-        <Metric>
+        <Metric title="Humidity at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faTint} />
           </MetricIcon>
@@ -90,7 +90,7 @@ export const DataFooter = () => {
         </Metric>
       )}
       {pressure && (
-        <Metric>
+        <Metric title="Pressure at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faWind} />
           </MetricIcon>
@@ -99,7 +99,7 @@ export const DataFooter = () => {
         </Metric>
       )}
       {light && (
-        <Metric>
+        <Metric title="Light at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faSun} />
           </MetricIcon>
@@ -109,7 +109,7 @@ export const DataFooter = () => {
       )}
 
       {(spotifyListeningTo || spotifyIsConnected === false) && (
-        <Metric>
+        <Metric title="Music I'm listening to">
           <MetricIcon>
             <FontAwesomeIcon icon={faMusic} />
           </MetricIcon>
