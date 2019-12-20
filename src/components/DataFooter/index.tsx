@@ -19,6 +19,7 @@ import {
   faBirthdayCake,
 } from '@fortawesome/free-solid-svg-icons';
 import { formatDistanceStrict, differenceInMilliseconds } from 'date-fns';
+import { useAmp } from 'next/amp';
 
 const FETCH_SENSORS = gql`
   query sensors {
@@ -55,6 +56,8 @@ const getAge = () =>
   ).toFixed(9);
 
 export const DataFooter = () => {
+  const isAmp = useAmp();
+
   const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
   const spotifyIsConnectedQuery = useQuery(SPOTIFY_IS_CONNECTED);
   const spotifyListeningToQuery = useQuery(SPOTIFY_LISTENING_TO, {
@@ -86,6 +89,10 @@ export const DataFooter = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (isAmp) {
+    return null;
+  }
 
   return (
     <Container>
