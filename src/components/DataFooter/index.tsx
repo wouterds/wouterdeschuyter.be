@@ -27,12 +27,20 @@ const FETCH_SENSORS = gql`
 `;
 
 export const DataFooter = () => {
-  const sensors = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
+  const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
 
-  const temperature = find(sensors?.data?.sensors, { type: 'temperature' });
-  const humidity = find(sensors?.data?.sensors, { type: 'humidity' });
-  const pressure = find(sensors?.data?.sensors, { type: 'pressure' });
-  const light = find(sensors?.data?.sensors, { type: 'illuminance:full' });
+  const temperature = find(sensorsQuery?.data?.sensors, {
+    type: 'temperature',
+  });
+  const humidity = find(sensorsQuery?.data?.sensors, {
+    type: 'humidity',
+  });
+  const pressure = find(sensorsQuery?.data?.sensors, {
+    type: 'pressure',
+  });
+  const light = find(sensorsQuery?.data?.sensors, {
+    type: 'illuminance:full',
+  });
 
   return (
     <Container>
