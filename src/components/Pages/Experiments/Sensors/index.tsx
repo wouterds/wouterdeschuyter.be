@@ -27,6 +27,9 @@ const Sensors = () => {
   const light = find(sensorValuesQuery?.data?.sensors, {
     type: 'illuminance:full',
   });
+  const pressure = find(sensorValuesQuery?.data?.sensors, {
+    type: 'pressure',
+  });
 
   return (
     <Container>
@@ -49,6 +52,11 @@ const Sensors = () => {
 
       <h3>Light {light && <span>{light.value.toFixed(2)} lx</span>}</h3>
       <Chart color="#f1c40f" />
+
+      <h3>
+        Pressure {pressure && <span>{pressure.value.toFixed(2)} hPa</span>}
+      </h3>
+      <Chart color="#9b59b6" />
     </Container>
   );
 };
