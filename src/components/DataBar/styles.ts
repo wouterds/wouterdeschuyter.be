@@ -27,6 +27,7 @@ export const Section = styled.div`
 
   a {
     color: #fff;
+    cursor: pointer;
   }
 `;
 

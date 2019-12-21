@@ -5,6 +5,7 @@ import UniversalCookie, {
 
 export enum Cookies {
   JWT = 'jwt',
+  DATA_BAR = 'data-bar',
 }
 
 export type CookieGetOptions = _CookieGetOptions;

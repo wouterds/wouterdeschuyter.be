@@ -23,6 +23,7 @@ import {
 import { formatDistanceStrict, differenceInMilliseconds } from 'date-fns';
 import { useAmp } from 'next/amp';
 import { useRouter } from 'next/router';
+import { useCookie, Cookies } from 'hooks/useCookie';
 
 const FETCH_SENSORS = gql`
   query sensors {
@@ -61,12 +62,23 @@ const getAge = () =>
 export const DataBar = () => {
   const isAmp = useAmp();
   const router = useRouter();
-  const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
+  const sensorsQuery = useQuery(FETCH_SENSORS);
   const spotifyIsConnectedQuery = useQuery(SPOTIFY_IS_CONNECTED);
-  const spotifyListeningToQuery = useQuery(SPOTIFY_LISTENING_TO, {
-    pollInterval: 5000,
-  });
+  const spotifyListeningToQuery = useQuery(SPOTIFY_LISTENING_TO);
   const [age, setAge] = useState(getAge);
+
+  const isExperiments = router.pathname.indexOf('/experiments') > -1;
+  const [isVisible, setIsVisible] = useCookie(Cookies.DATA_BAR);
+
+  useEffect(() => {
+    if (isVisible === 'true' || isExperiments) {
+      sensorsQuery.startPolling(1000);
+      spotifyListeningToQuery.startPolling(5000);
+    } else {
+      sensorsQuery.stopPolling();
+      spotifyListeningToQuery.stopPolling();
+    }
+  }, [isExperiments, isVisible, sensorsQuery, spotifyListeningToQuery]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -75,6 +87,14 @@ export const DataBar = () => {
 
     return () => clearInterval(interval);
   }, []);
+
+  if (isAmp) {
+    return null;
+  }
+
+  if (isVisible !== 'true' && !isExperiments) {
+    return null;
+  }
 
   const temperature = find(sensorsQuery?.data?.sensors, {
     type: 'temperature',
@@ -91,11 +111,6 @@ export const DataBar = () => {
   const spotifyIsConnected =
     spotifyIsConnectedQuery?.data?.spotifyIsConnected || false;
   const spotifyListeningTo = spotifyListeningToQuery?.data?.spotifyListeningTo;
-  const isExperiments = router.pathname.indexOf('/experiments') > -1;
-
-  if (isAmp) {
-    return null;
-  }
 
   return (
     <Container>
@@ -206,6 +221,11 @@ export const DataBar = () => {
               <Link href="/experiments">
                 <a>Experiments</a>
               </Link>
+            </MetricValue>
+          </Section>
+          <Section>
+            <MetricValue>
+              <a onClick={() => setIsVisible('false')}>Close</a>
             </MetricValue>
           </Section>
         </>
