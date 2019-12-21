@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import {
   Container,
   Section,
+  Spacer,
   MetricIcon,
   MetricValue,
   MetricUnit,
 } from './styles';
 import { useQuery } from 'react-apollo';
+import Link from 'next/link';
 import gql from 'graphql-tag';
 import find from 'lodash/find';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,6 +22,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { formatDistanceStrict, differenceInMilliseconds } from 'date-fns';
 import { useAmp } from 'next/amp';
+import { useRouter } from 'next/router';
 
 const FETCH_SENSORS = gql`
   query sensors {
@@ -57,6 +60,7 @@ const getAge = () =>
 
 export const DataBar = () => {
   const isAmp = useAmp();
+  const router = useRouter();
 
   const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
   const spotifyIsConnectedQuery = useQuery(SPOTIFY_IS_CONNECTED);
@@ -194,6 +198,18 @@ export const DataBar = () => {
           <MetricValue>{age}</MetricValue>
           <MetricUnit>years old</MetricUnit>
         </Section>
+      )}
+      {router.pathname.indexOf('/experiments') === -1 && (
+        <>
+          <Spacer />
+          <Section>
+            <MetricValue>
+              <Link href="/experiments">
+                <a>Experiments</a>
+              </Link>
+            </MetricValue>
+          </Section>
+        </>
       )}
     </Container>
   );

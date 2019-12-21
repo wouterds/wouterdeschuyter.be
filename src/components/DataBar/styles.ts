@@ -30,6 +30,10 @@ export const Section = styled.div`
   }
 `;
 
+export const Spacer = styled.div`
+  flex: 1;
+`;
+
 export const MetricIcon = styled.span`
   opacity: 0.75;
   padding-right: 0.5em;
