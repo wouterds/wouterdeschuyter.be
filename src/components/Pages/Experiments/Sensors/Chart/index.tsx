@@ -1,5 +1,6 @@
 import React from 'react';
 import { AreaChart, Area, YAxis } from 'recharts';
+import uuid from 'uuid';
 
 interface Props {
   // data: Array<{ data: number }>;
@@ -23,6 +24,8 @@ const Chart = (props: Props) => {
     { data: 22.38 },
   ];
 
+  const id = uuid();
+
   return (
     <AreaChart
       width={200}
@@ -36,7 +39,7 @@ const Chart = (props: Props) => {
       }}
     >
       <defs>
-        <linearGradient id="chartColor" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id={id} x1="0" y1="0" x2="0" y2="1">
           <stop offset="10%" stopColor={color} stopOpacity={0.5} />
           <stop offset="90%" stopColor={color} stopOpacity={0} />
         </linearGradient>
@@ -46,7 +49,7 @@ const Chart = (props: Props) => {
         dataKey="data"
         stroke={color}
         strokeWidth={1.5}
-        fill="url(#chartColor)"
+        fill={`url(#${id})`}
       />
 
       <YAxis domain={['auto', 'auto']} hide={true} />
