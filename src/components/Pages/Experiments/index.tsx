@@ -3,7 +3,6 @@ import Layout from 'components/Layout';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Meta from 'components/Meta';
-import DataBar from 'components/DataBar';
 import { Container } from './styles';
 
 export const config = { amp: 'hybrid' };
@@ -26,7 +25,6 @@ const Experiments = () => {
         </Container>
       </Layout.Content>
       <Footer centered />
-      <DataBar />
     </Layout>
   );
 };
