@@ -41,9 +41,7 @@ const Sensors = () => {
       </h3>
       <Chart color="#e74c3c" />
 
-      <h3>
-        Humidity {humidity && <span>{humidity.value.toFixed(2)} ºC</span>}
-      </h3>
+      <h3>Humidity {humidity && <span>{humidity.value.toFixed(2)} %</span>}</h3>
       <Chart color="#3498db" />
     </Container>
   );
