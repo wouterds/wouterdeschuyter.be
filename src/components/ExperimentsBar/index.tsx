@@ -63,7 +63,7 @@ interface Props {
   onClose: () => void;
 }
 
-export const DataBar = (props: Props) => {
+export const ExperimentsBar = (props: Props) => {
   const { onClose } = props;
   const router = useRouter();
   const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
@@ -229,4 +229,4 @@ export const DataBar = (props: Props) => {
   );
 };
 
-export default DataBar;
+export default ExperimentsBar;

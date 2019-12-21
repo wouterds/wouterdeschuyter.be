@@ -1,7 +1,7 @@
 import React from 'react';
 import Twemoji from 'react-twemoji';
 import { Container } from './styles';
-import DataBar from 'components/DataBar';
+import ExperimentsBar from 'components/ExperimentsBar';
 import { useCookie, Cookies } from 'hooks/useCookie';
 import { useAmp } from 'next/amp';
 import { useRouter } from 'next/router';
@@ -38,7 +38,7 @@ export const Footer = (props: Props) => {
         </p>
       </Container>
       {!isAmp && (isVisible === 'true' || isExperiments) && (
-        <DataBar onClose={() => setIsVisible('false')} />
+        <ExperimentsBar onClose={() => setIsVisible('false')} />
       )}
     </>
   );
