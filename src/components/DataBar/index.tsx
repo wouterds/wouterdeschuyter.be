@@ -61,12 +61,20 @@ const getAge = () =>
 export const DataBar = () => {
   const isAmp = useAmp();
   const router = useRouter();
-
   const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
   const spotifyIsConnectedQuery = useQuery(SPOTIFY_IS_CONNECTED);
   const spotifyListeningToQuery = useQuery(SPOTIFY_LISTENING_TO, {
     pollInterval: 5000,
   });
+  const [age, setAge] = useState(getAge);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAge(getAge());
+    }, 100);
+
+    return () => clearInterval(interval);
+  }, []);
 
   const temperature = find(sensorsQuery?.data?.sensors, {
     type: 'temperature',
@@ -83,16 +91,7 @@ export const DataBar = () => {
   const spotifyIsConnected =
     spotifyIsConnectedQuery?.data?.spotifyIsConnected || false;
   const spotifyListeningTo = spotifyListeningToQuery?.data?.spotifyListeningTo;
-
-  const [age, setAge] = useState(getAge);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setAge(getAge());
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
+  const isExperiments = router.pathname.indexOf('/experiments') > -1;
 
   if (isAmp) {
     return null;
@@ -199,7 +198,7 @@ export const DataBar = () => {
           <MetricUnit>years old</MetricUnit>
         </Section>
       )}
-      {router.pathname.indexOf('/experiments') === -1 && (
+      {!isExperiments && (
         <>
           <Spacer />
           <Section>
