@@ -54,7 +54,8 @@
     "sitemap": "^5.0.0",
     "styled-components": "^4.4.0",
     "universal-cookie": "^4.0.2",
-    "url-parse": "^1.4.7"
+    "url-parse": "^1.4.7",
+    "uuid": "^3.3.3"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -70,6 +71,7 @@
     "@types/rss": "^0.0.28",
     "@types/sharp": "^0.23.0",
     "@types/styled-components": "^4.1.19",
+    "@types/uuid": "^3.4.6",
     "@typescript-eslint/eslint-plugin": "^2.3.2",
     "@typescript-eslint/parser": "^2.3.2",
     "@zeit/next-css": "^1.0.1",
