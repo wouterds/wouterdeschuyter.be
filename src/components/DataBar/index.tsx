@@ -19,11 +19,11 @@ import {
   faSun,
   faMusic,
   faBirthdayCake,
+  faVial,
+  faTimesCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { formatDistanceStrict, differenceInMilliseconds } from 'date-fns';
-import { useAmp } from 'next/amp';
 import { useRouter } from 'next/router';
-import { useCookie, Cookies } from 'hooks/useCookie';
 
 const FETCH_SENSORS = gql`
   query sensors {
@@ -59,26 +59,21 @@ const getAge = () =>
     1000
   ).toFixed(9);
 
-export const DataBar = () => {
-  const isAmp = useAmp();
+interface Props {
+  onClose: () => void;
+}
+
+export const DataBar = (props: Props) => {
+  const { onClose } = props;
   const router = useRouter();
-  const sensorsQuery = useQuery(FETCH_SENSORS);
+  const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
   const spotifyIsConnectedQuery = useQuery(SPOTIFY_IS_CONNECTED);
-  const spotifyListeningToQuery = useQuery(SPOTIFY_LISTENING_TO);
+  const spotifyListeningToQuery = useQuery(SPOTIFY_LISTENING_TO, {
+    pollInterval: 5000,
+  });
   const [age, setAge] = useState(getAge);
 
   const isExperiments = router.pathname.indexOf('/experiments') > -1;
-  const [isVisible, setIsVisible] = useCookie(Cookies.DATA_BAR);
-
-  useEffect(() => {
-    if (isVisible === 'true' || isExperiments) {
-      sensorsQuery.startPolling(1000);
-      spotifyListeningToQuery.startPolling(5000);
-    } else {
-      sensorsQuery.stopPolling();
-      spotifyListeningToQuery.stopPolling();
-    }
-  }, [isExperiments, isVisible, sensorsQuery, spotifyListeningToQuery]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -87,14 +82,6 @@ export const DataBar = () => {
 
     return () => clearInterval(interval);
   }, []);
-
-  if (isAmp) {
-    return null;
-  }
-
-  if (isVisible !== 'true' && !isExperiments) {
-    return null;
-  }
 
   const temperature = find(sensorsQuery?.data?.sensors, {
     type: 'temperature',
@@ -217,15 +204,23 @@ export const DataBar = () => {
         <>
           <Spacer />
           <Section>
+            <MetricIcon>
+              <FontAwesomeIcon icon={faVial} />
+            </MetricIcon>
             <MetricValue>
               <Link href="/experiments">
-                <a>Experiments</a>
+                <a title="More experiments">More Experiments</a>
               </Link>
             </MetricValue>
           </Section>
           <Section>
+            <MetricIcon>
+              <FontAwesomeIcon icon={faTimesCircle} />
+            </MetricIcon>
             <MetricValue>
-              <a onClick={() => setIsVisible('false')}>Close</a>
+              <a title="Close experiments bar" onClick={onClose}>
+                Close
+              </a>
             </MetricValue>
           </Section>
         </>
