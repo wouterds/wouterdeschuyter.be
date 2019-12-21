@@ -22,6 +22,11 @@ const Experiments = () => {
             Yo, not sure what this is. Just a bunch of random things and
             experiments 🤪!
           </p>
+
+          <img
+            src="https://media2.giphy.com/media/J2CA80sYEpeLgsDqCr/giphy.gif?cid=790b76111c5e9c0de363262200178be2e73c45efc95d737e&rid=giphy.gif"
+            width="100%"
+          />
         </Container>
       </Layout.Content>
       <Footer centered />
