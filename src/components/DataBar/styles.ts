@@ -17,7 +17,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Metric = styled.div`
+export const Section = styled.div`
   display: flex;
   white-space: nowrap;
   font-weight: 600;

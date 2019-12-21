@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {
   Container,
-  Metric,
+  Section,
   MetricIcon,
   MetricValue,
   MetricUnit,
@@ -97,44 +97,44 @@ export const DataBar = () => {
   return (
     <Container>
       {temperature && (
-        <Metric title="Temperature at my apartment">
+        <Section title="Temperature at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faThermometerThreeQuarters} />
           </MetricIcon>
           <MetricValue>{temperature.value.toFixed(2)}</MetricValue>
           <MetricUnit>ºC</MetricUnit>
-        </Metric>
+        </Section>
       )}
       {humidity && (
-        <Metric title="Humidity at my apartment">
+        <Section title="Humidity at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faTint} />
           </MetricIcon>
           <MetricValue>{humidity.value.toFixed(2)}</MetricValue>
           <MetricUnit>%</MetricUnit>
-        </Metric>
+        </Section>
       )}
       {pressure && (
-        <Metric title="Pressure at my apartment">
+        <Section title="Pressure at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faWind} />
           </MetricIcon>
           <MetricValue>{pressure.value.toFixed(2)}</MetricValue>
           <MetricUnit>hPa</MetricUnit>
-        </Metric>
+        </Section>
       )}
       {light && (
-        <Metric title="Light at my apartment">
+        <Section title="Light at my apartment">
           <MetricIcon>
             <FontAwesomeIcon icon={faSun} />
           </MetricIcon>
           <MetricValue>{light.value}</MetricValue>
           <MetricUnit>lx</MetricUnit>
-        </Metric>
+        </Section>
       )}
 
       {(spotifyListeningTo || spotifyIsConnected === false) && (
-        <Metric title="Music I'm listening to">
+        <Section title="Music I'm listening to">
           <MetricIcon>
             <FontAwesomeIcon icon={faMusic} />
           </MetricIcon>
@@ -184,16 +184,16 @@ export const DataBar = () => {
               </>
             )}
           </MetricValue>
-        </Metric>
+        </Section>
       )}
       {age && (
-        <Metric title="How old I am">
+        <Section title="How old I am">
           <MetricIcon>
             <FontAwesomeIcon icon={faBirthdayCake} />
           </MetricIcon>
           <MetricValue>{age}</MetricValue>
           <MetricUnit>years old</MetricUnit>
-        </Metric>
+        </Section>
       )}
     </Container>
   );
