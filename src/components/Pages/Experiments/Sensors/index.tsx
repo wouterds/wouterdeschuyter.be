@@ -21,6 +21,9 @@ const Sensors = () => {
   const temperature = find(sensorValuesQuery?.data?.sensors, {
     type: 'temperature',
   });
+  const humidity = find(sensorValuesQuery?.data?.sensors, {
+    type: 'humidity',
+  });
 
   return (
     <Container>
@@ -37,6 +40,11 @@ const Sensors = () => {
         {temperature && <span>{temperature.value.toFixed(2)} ºC</span>}
       </h3>
       <Chart color="#e74c3c" />
+
+      <h3>
+        Humidity {humidity && <span>{humidity.value.toFixed(2)} ºC</span>}
+      </h3>
+      <Chart color="#3498db" />
     </Container>
   );
 };

@@ -7,6 +7,7 @@ export const Container = styled.div`
   }
 
   h3 {
+    margin-top: 1.5em;
     margin-bottom: 1em;
     font-size: 1.4em;
 
