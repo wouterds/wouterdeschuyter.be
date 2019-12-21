@@ -55,7 +55,7 @@ const getAge = () =>
     1000
   ).toFixed(9);
 
-export const DataFooter = () => {
+export const DataBar = () => {
   const isAmp = useAmp();
 
   const sensorsQuery = useQuery(FETCH_SENSORS, { pollInterval: 1000 });
@@ -199,4 +199,4 @@ export const DataFooter = () => {
   );
 };
 
-export default DataFooter;
+export default DataBar;
