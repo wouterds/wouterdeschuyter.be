@@ -14,14 +14,7 @@ export const Container = styled.footer<{ centered?: boolean }>`
 
     a {
       cursor: pointer;
-      opacity: 0.75;
-      transition: opacity ease-in-out 100ms;
-      flex: 1;
-      margin-left: 0.25em;
-
-      &:hover {
-        opacity: 1;
-      }
+      margin-left: 0.2em;
     }
   }
 
