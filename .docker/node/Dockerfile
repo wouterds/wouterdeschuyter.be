@@ -26,6 +26,6 @@ RUN apk add vips --upgrade --no-cache \
 
 EXPOSE 3000
 
-HEALTHCHECK CMD node ./healthcheck
+HEALTHCHECK CMD ["node", "./healthcheck.js"]
 
 CMD ["npm", "start"]

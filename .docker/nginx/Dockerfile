@@ -6,4 +6,4 @@ COPY ./qemu-arm-static /usr/bin/qemu-arm-static
 
 RUN apk add curl --no-cache
 
-HEALTHCHECK CMD curl --fail http://localhost/ping || exit 1
+HEALTHCHECK CMD ["curl --fail http://localhost/ping || exit 1"]
