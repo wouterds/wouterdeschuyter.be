@@ -53,7 +53,7 @@
     "sharp": "^0.23.1",
     "sitemap": "^5.0.0",
     "styled-components": "^4.4.0",
-    "universal-cookie": "^4.0.2",
+    "universal-cookie": "^4.0.3",
     "url-parse": "^1.4.7",
     "uuid": "^3.3.3"
   },
