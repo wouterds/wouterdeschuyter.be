@@ -1398,10 +1398,10 @@
   resolved "https://registry.yarnpkg.com/@types/recharts-scale/-/recharts-scale-1.0.0.tgz#348c9220d6d9062c44a9d585d686644a97f7e25d"
   integrity sha512-HR/PrCcxYb2YHviTqH7CMdL1TUhUZLTUKzfrkMhxm1HTa5mg/QtP8XMiuSPz6dZ6wecazAOu8aYZ5DqkNlgHHQ==
 
-"@types/recharts@^1.8.3":
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/@types/recharts/-/recharts-1.8.3.tgz#c66618dd9d170bd22b2eff23f09d65883728ae4a"
-  integrity sha512-Rv6O2tfS5VLhOO6zvSkzPv6o6J4wq81QLnj/lc2MbUhQMISb4046rvf2RSqqMNWi2+qG32AnND7JlsLipMDn+A==
+"@types/recharts@^1.8.4":
+  version "1.8.4"
+  resolved "https://registry.yarnpkg.com/@types/recharts/-/recharts-1.8.4.tgz#b71ab1815721314b9b4646ad958a0c9176160175"
+  integrity sha512-VpYC+zK5idu3nX1dGAoy885SRdRdFO7hNlU/p4Ah9j1RBzZnDTnTOMBSI5DaTBMLh+T3ff1E/F+9y/J3RbvG+A==
   dependencies:
     "@types/d3-shape" "*"
     "@types/react" "*"
@@ -1426,10 +1426,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/styled-components@^4.1.19":
-  version "4.4.1"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.4.1.tgz#bc40cf5ce0708032f4b148b04ab3c470d3e74026"
-  integrity sha512-cQXT4pkAkM0unk/s26UBrJx9RmJ2rNUn2aDTgzp1rtu+tTkScebE78jbxNWhlqkA43XF3d41CcDlyl9Ldotm2g==
+"@types/styled-components@^4.4.2":
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-4.4.2.tgz#709fa7afd7dc0963b8316a0159240f0fe19a026d"
+  integrity sha512-dngFx2PuGoy0MGE68eHayAmJvLSqWrnTe9w+DnQruu8PS+waWEsKmoBRhkzL2h2pK1OJhzJhVfuiz+oZa4etpA==
   dependencies:
     "@types/hoist-non-react-statics" "*"
     "@types/react" "*"
