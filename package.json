@@ -46,7 +46,7 @@
     "react-dom": "^16.10.2",
     "react-google-recaptcha": "^2.0.1",
     "react-hook-form": "^3.23.18",
-    "react-toastify": "^5.4.0",
+    "react-toastify": "^5.5.0",
     "react-twemoji": "^0.2.3",
     "recharts": "^2.0.0-beta.1",
     "rss": "^1.2.2",
