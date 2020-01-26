@@ -58,7 +58,7 @@
     "uuid": "^3.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.2",
+    "@babel/core": "^7.8.3",
     "@types/highlight.js": "^9.12.3",
     "@types/lodash": "^4.14.149",
     "@types/marked": "^0.7.2",
