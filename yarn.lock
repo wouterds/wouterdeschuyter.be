@@ -1457,10 +1457,10 @@
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
   integrity sha512-ce5d3q03Ex0sy4R14722Rmt6MT07Ua+k4FwDfdcToYJcMKNtRVQvJ6JCAPdAmAnbRb6CsX6aYb9m96NGod9uTw==
 
-"@types/react-dom@^16.9.1":
-  version "16.9.4"
-  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.4.tgz#0b58df09a60961dcb77f62d4f1832427513420df"
-  integrity sha512-fya9xteU/n90tda0s+FtN5Ym4tbgxpq/hb/Af24dvs6uYnYn+fspaxw5USlw0R8apDNwxsqumdRoCoKitckQqw==
+"@types/react-dom@^16.9.5":
+  version "16.9.5"
+  resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.9.5.tgz#5de610b04a35d07ffd8f44edad93a71032d9aaa7"
+  integrity sha512-BX6RQ8s9D+2/gDhxrj8OW+YD4R+8hj7FEM/OJHGNR0KipE1h1mSsf39YeyC81qafkq+N3rU3h3RFbLSwE5VqUg==
   dependencies:
     "@types/react" "*"
 
@@ -1487,10 +1487,10 @@
     "@types/prop-types" "*"
     csstype "^2.2.0"
 
-"@types/react@^16.9.5":
-  version "16.9.17"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.17.tgz#58f0cc0e9ec2425d1441dd7b623421a867aa253e"
-  integrity sha512-UP27In4fp4sWF5JgyV6pwVPAQM83Fj76JOcg02X5BZcpSu5Wx+fP9RMqc2v0ssBoQIFvD5JdKY41gjJJKmw6Bg==
+"@types/react@^16.9.19":
+  version "16.9.19"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.19.tgz#c842aa83ea490007d29938146ff2e4d9e4360c40"
+  integrity sha512-LJV97//H+zqKWMms0kvxaKYJDG05U2TtQB3chRLF8MPNs+MQh/H1aGlyDUxjaHvu08EAGerdX2z4LTBc7ns77A==
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -1500,10 +1500,10 @@
   resolved "https://registry.yarnpkg.com/@types/recharts-scale/-/recharts-scale-1.0.0.tgz#348c9220d6d9062c44a9d585d686644a97f7e25d"
   integrity sha512-HR/PrCcxYb2YHviTqH7CMdL1TUhUZLTUKzfrkMhxm1HTa5mg/QtP8XMiuSPz6dZ6wecazAOu8aYZ5DqkNlgHHQ==
 
-"@types/recharts@^1.8.4":
-  version "1.8.4"
-  resolved "https://registry.yarnpkg.com/@types/recharts/-/recharts-1.8.4.tgz#b71ab1815721314b9b4646ad958a0c9176160175"
-  integrity sha512-VpYC+zK5idu3nX1dGAoy885SRdRdFO7hNlU/p4Ah9j1RBzZnDTnTOMBSI5DaTBMLh+T3ff1E/F+9y/J3RbvG+A==
+"@types/recharts@^1.8.5":
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/@types/recharts/-/recharts-1.8.5.tgz#5436ae742485cd033910c611eeb9e4c13cbf55f7"
+  integrity sha512-3h/hVNnyOxDyAGhzRpa5y/QBp30vqDw7mUyV0JNoxWnjKM1h8SdgoYru3robamxsXkVa18rz/SVJ+MWDQw8GLg==
   dependencies:
     "@types/d3-shape" "*"
     "@types/react" "*"
@@ -1521,10 +1521,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/sharp@^0.23.0":
-  version "0.23.1"
-  resolved "https://registry.yarnpkg.com/@types/sharp/-/sharp-0.23.1.tgz#1e02560371d6603adc121389512f0745028aa507"
-  integrity sha512-iBRM9RjRF9pkIkukk6imlxfaKMRuiRND8L0yYKl5PJu5uLvxuNzp5f0x8aoTG5VX85M8O//BwbttzFVZL1j/FQ==
+"@types/sharp@^0.24.0":
+  version "0.24.0"
+  resolved "https://registry.yarnpkg.com/@types/sharp/-/sharp-0.24.0.tgz#28abfeac45b4dcb472305503105322e97a6c2672"
+  integrity sha512-+0WeyJajTSoIacBzonsq856whNJC+cN9FNEs0yZ6hFq/V1CZmlqM8vBRy7TKZunH+gIO7SwDCzgXYWRRbzqfDA==
   dependencies:
     "@types/node" "*"
 
