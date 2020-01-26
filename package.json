@@ -39,7 +39,7 @@
     "marked": "^0.8.0",
     "medium-zoom": "^1.0.4",
     "next": "^9.1.7",
-    "next-with-apollo": "^4.3.0",
+    "next-with-apollo": "^5.0.0",
     "node-fetch": "^2.6.0",
     "nprogress": "^0.2.0",
     "react": "^16.10.2",
