@@ -3,8 +3,10 @@ import NextApp from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import ApolloClient from 'apollo-client';
-import { ApolloProvider } from 'react-apollo';
-import withApollo from 'hocs/withApollo';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { getDataFromTree } from '@apollo/react-ssr';
+import withApollo from 'next-with-apollo';
+import Apollo from 'services/apollo';
 import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
 import GoogleAnalytics from 'services/google-analytics';
 import BaseCSS from 'styles/base';
@@ -40,4 +42,11 @@ Router.events.on('routeChangeComplete', (path: string) => {
 });
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export default withApollo(App);
+export default withApollo(
+  ({ initialState }) => {
+    Apollo.init(initialState);
+
+    return Apollo.getClient();
+  },
+  { getDataFromTree },
+)(App);
