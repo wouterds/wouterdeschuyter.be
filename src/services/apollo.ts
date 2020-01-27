@@ -13,6 +13,8 @@ class Apollo {
 
   public init(initialState = {}, jwtToken?: string) {
     this.client = this.createApolloClient(initialState, jwtToken);
+
+    return this.client;
   }
 
   public getClient() {
