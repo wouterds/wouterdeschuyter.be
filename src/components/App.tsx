@@ -42,11 +42,6 @@ Router.events.on('routeChangeComplete', (path: string) => {
 });
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export default withApollo(
-  ({ initialState }) => {
-    Apollo.init(initialState);
-
-    return Apollo.getClient();
-  },
-  { getDataFromTree },
-)(App);
+export default withApollo(({ initialState }) => Apollo.init(initialState), {
+  getDataFromTree,
+})(App);
