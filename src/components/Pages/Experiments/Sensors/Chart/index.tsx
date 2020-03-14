@@ -1,6 +1,6 @@
 import React from 'react';
 import { AreaChart, Area, YAxis } from 'recharts';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
   // data: Array<{ data: number }>;
@@ -24,7 +24,7 @@ const Chart = (props: Props) => {
     { data: 22.38 },
   ];
 
-  const id = uuid.v4();
+  const id = uuidv4();
 
   return (
     <AreaChart
