@@ -26,4 +26,4 @@ EXPOSE 3000
 
 HEALTHCHECK CMD ["node", "./healthcheck.js"]
 
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
