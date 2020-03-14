@@ -94,7 +94,7 @@
     "imagemin-optipng": "^7.1.0",
     "imagemin-svgo": "^7.1.0",
     "next-compose-plugins": "^2.2.0",
-    "next-optimized-images": "^2.5.3",
+    "next-optimized-images": "^2.5.5",
     "prettier": "^1.18.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
