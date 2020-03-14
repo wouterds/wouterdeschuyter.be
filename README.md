@@ -1,6 +1,6 @@
 # wouterdeschuyter.be
 
-![production](https://github.com/wouterds/wouterdeschuyter.be/workflows/production/badge.svg)
+![release](https://github.com/wouterds/wouterdeschuyter.be/workflows/release/badge.svg)
 ![linting](https://github.com/wouterds/wouterdeschuyter.be/workflows/linting/badge.svg)
 ![dependencies](https://img.shields.io/david/wouterds/wouterdeschuyter.be)
 ![tag](https://img.shields.io/github/tag/wouterds/wouterdeschuyter.be.svg)
