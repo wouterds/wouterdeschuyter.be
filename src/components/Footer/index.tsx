@@ -23,7 +23,7 @@ export const Footer = (props: Props) => {
       <Container centered={centered}>
         <p>&copy; Copyright {new Date().getFullYear()} Wouter De Schuyter</p>
         <p>
-          Made using React, GraphQL &amp; Node.js and some other packages ✨
+          Made using React, GraphQL, Node.js &amp; a few other packages ✨
           {isVisible !== 'true' && !isAmp && !isExperiments && (
             <Twemoji options={{ className: 'twemoji' }} noWrapper>
               <a
