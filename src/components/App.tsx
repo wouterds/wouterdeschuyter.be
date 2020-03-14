@@ -6,7 +6,7 @@ import ApolloClient from 'apollo-client';
 import { ApolloProvider } from '@apollo/react-hooks';
 import { getDataFromTree } from '@apollo/react-ssr';
 import withApollo from 'next-with-apollo';
-import Apollo from 'services/apollo';
+import NetworkService from 'services/network';
 import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
 import GoogleAnalytics from 'services/google-analytics';
 import BaseCSS from 'styles/base';
@@ -18,7 +18,7 @@ interface Props {
 
 class App extends NextApp<Props> {
   public render() {
-    const { Component, pageProps, apollo } = this.props;
+    const { Component, pageProps } = this.props;
 
     // https://github.com/zeit/next.js/issues/8592
     const { err } = this.props;
@@ -27,7 +27,7 @@ class App extends NextApp<Props> {
       <>
         <BaseCSS />
         <GoogleAnalyticsSDK />
-        <ApolloProvider client={apollo}>
+        <ApolloProvider client={NetworkService.apollo}>
           <Component {...pageProps} err={err} />
         </ApolloProvider>
       </>
@@ -42,6 +42,9 @@ Router.events.on('routeChangeComplete', (path: string) => {
 });
 Router.events.on('routeChangeError', () => NProgress.done());
 
-export default withApollo(({ initialState }) => Apollo.init(initialState), {
-  getDataFromTree,
-})(App);
+export default withApollo(
+  ({ initialState }) => NetworkService.init(initialState),
+  {
+    getDataFromTree,
+  },
+)(App);

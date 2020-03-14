@@ -1,5 +1,5 @@
 import { createSitemap, EnumChangefreq } from 'sitemap';
-import Apollo from 'services/apollo';
+import NetworkService from 'services/network';
 import gql from 'graphql-tag';
 
 const FETCH_POSTS = gql`
@@ -43,9 +43,9 @@ class Sitemap {
   };
 
   private buildDynamic = async () => {
-    const apolloClient = Apollo.getClient();
-
-    const { posts } = (await apolloClient.query({ query: FETCH_POSTS })).data;
+    const { posts } = (
+      await NetworkService.apollo.query({ query: FETCH_POSTS })
+    ).data;
 
     for (const post of posts) {
       this.sitemap.add({

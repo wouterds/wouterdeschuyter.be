@@ -1,5 +1,5 @@
 import Rss from 'rss';
-import Apollo from 'services/apollo';
+import NetworkService from 'services/network';
 import gql from 'graphql-tag';
 
 const FETCH_POSTS = gql`
@@ -49,9 +49,9 @@ class Feed {
   private feed = createFeed();
 
   public build = async () => {
-    const apolloClient = Apollo.getClient();
-
-    const { posts } = (await apolloClient.query({ query: FETCH_POSTS })).data;
+    const { posts } = (
+      await NetworkService.apollo.query({ query: FETCH_POSTS })
+    ).data;
 
     for (const post of posts) {
       const parts = post.mediaAsset.fileName.split('.');
