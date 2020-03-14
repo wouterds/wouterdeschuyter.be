@@ -25,6 +25,8 @@ services:
     container_name: be.wouterdeschuyter--node
     restart: unless-stopped
     mem_limit: 128mb
+    volumes:
+      - ./data:/data
 
 networks:
   reverse-proxy:
