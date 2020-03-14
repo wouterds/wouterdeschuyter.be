@@ -116,10 +116,10 @@ const About = () => {
             user over here).
           </p>
           <p>
-            Since 2017 I&apos;m also involved in the crypto space, it&apos;s
-            probably one of the most interesting things I&apos;ve come across
-            ever since I learned programming. To me, Bitcoin really is a magical
-            thing 🔮.
+            Since 2017 I&apos;m also involved in the crypto space. I&apos;ve
+            really started to appreciate the power of decentralized applications
+            and to be honest, it&apos;s probably one of the most interesting
+            things I&apos;ve come across lately 👀!
           </p>
           <p>Oh right, also a cat person 🐈!</p>
 
