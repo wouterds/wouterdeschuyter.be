@@ -1,25 +1,31 @@
-version: '2'
+version: '2.1'
 
 services:
   nginx:
     image: docker.wouterdeschuyter.be/wouterdeschuyter.be/nginx:latest
+    container_name: be.wouterdeschuyter--nginx
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=reverse-proxy'
+      - 'traefik.http.middlewares.bewouterdeschuyter.redirectscheme.scheme=https'
+      - 'traefik.http.routers.bewouterdeschuyter-http.entrypoints=web'
+      - 'traefik.http.routers.bewouterdeschuyter-http.rule=Host(`wouterdeschuyter.be`)'
+      - 'traefik.http.routers.bewouterdeschuyter-http.middlewares=bewouterdeschuyter'
+      - 'traefik.http.routers.bewouterdeschuyter-https.entrypoints=websecure'
+      - 'traefik.http.routers.bewouterdeschuyter-https.rule=Host(`wouterdeschuyter.be`)'
+      - 'traefik.http.routers.bewouterdeschuyter-https.tls.certresolver=myhttpchallenge'
     restart: unless-stopped
-    mem_limit: 16mb
-    environment:
-      - VIRTUAL_HOST=wouterdeschuyter.be
-      - LETSENCRYPT_HOST=wouterdeschuyter.be
-      - LETSENCRYPT_EMAIL=wouter.de.schuyter@gmail.com
+    mem_limit: 8mb
     networks:
       - default
-      - webproxy
+      - reverse-proxy
 
   node:
     image: docker.wouterdeschuyter.be/wouterdeschuyter.be/node:latest
+    container_name: be.wouterdeschuyter--node
     restart: unless-stopped
-    mem_limit: 64mb
-    volumes:
-      - ./data:/data
+    mem_limit: 128mb
 
 networks:
-  webproxy:
+  reverse-proxy:
     external: true
