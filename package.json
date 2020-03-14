@@ -32,7 +32,7 @@
     "apollo-link-http": "^1.5.16",
     "date-fns": "^2.11.0",
     "graphql": "^14.6.0",
-    "graphql-tag": "^2.10.1",
+    "graphql-tag": "^2.10.3",
     "highlight.js": "^9.18.0",
     "isomorphic-unfetch": "^3.0.0",
     "lodash": "^4.17.15",
