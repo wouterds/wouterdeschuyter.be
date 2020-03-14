@@ -24,7 +24,7 @@ const Chart = (props: Props) => {
     { data: 22.38 },
   ];
 
-  const id = uuid();
+  const id = uuid.v4();
 
   return (
     <AreaChart
