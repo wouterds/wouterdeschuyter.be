@@ -7,7 +7,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     env:
       ENV: production
       URL: ${{ secrets.PRODUCTION_URL }}
@@ -20,7 +19,6 @@ jobs:
       DEPLOY_PATH: ${{ secrets.DEPLOY_PATH }}
       DOCKER_REGISTRY_USER: ${{ secrets.DOCKER_REGISTRY_USER }}
       DOCKER_REGISTRY_PASS: ${{ secrets.DOCKER_REGISTRY_PASS }}
-
     steps:
     - name: Checkout
       uses: actions/checkout@v1
