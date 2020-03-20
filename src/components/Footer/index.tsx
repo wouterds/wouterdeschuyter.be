@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Twemoji from 'react-twemoji';
 import { Container } from './styles';
 import ExperimentsBar from 'components/ExperimentsBar';
-import { useCookie, Cookies } from 'hooks/useCookie';
+// import { useCookie, Cookies } from 'hooks/useCookie';
 import { useAmp } from 'next/amp';
 import { useRouter } from 'next/router';
 
@@ -14,9 +14,14 @@ export const Footer = (props: Props) => {
   const { centered = false } = props;
   const isAmp = useAmp();
   const router = useRouter();
-  const [isVisible, setIsVisible] = useCookie(Cookies.DATA_BAR);
+  // const [isVisible, setIsVisible] = useCookie(Cookies.DATA_BAR);
+  const [isVisible, setIsVisible] = useState('false');
 
   const isExperiments = router.pathname.indexOf('/experiments') > -1;
+
+  useEffect(() => {
+    setIsVisible('true');
+  }, []);
 
   return (
     <>
