@@ -200,7 +200,7 @@ export const ExperimentsBar = (props: Props) => {
           <MetricUnit>years old</MetricUnit>
         </Section>
       )}
-      {!isExperiments && (
+      {!isExperiments && false && (
         <>
           <Spacer />
           <Section>

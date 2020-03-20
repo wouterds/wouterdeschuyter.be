@@ -36,7 +36,7 @@ export const Footer = (props: Props) => {
           )}
         </p>
       </Container>
-      {!isAmp && (isVisible === 'true' || isExperiments) && (
+      {!isAmp && (isVisible === 'true' || isExperiments || true) && (
         <ExperimentsBar onClose={() => setIsVisible('false')} />
       )}
     </>
