@@ -1,5 +1,5 @@
 import React from 'react';
-import Twemoji from 'react-twemoji';
+// import Twemoji from 'react-twemoji';
 import { Container } from './styles';
 import ExperimentsBar from 'components/ExperimentsBar';
 import { useCookie, Cookies } from 'hooks/useCookie';
@@ -24,7 +24,7 @@ export const Footer = (props: Props) => {
         <p>&copy; Copyright {new Date().getFullYear()} Wouter De Schuyter</p>
         <p>
           Made using React, GraphQL, Node.js and a few other packages ✨
-          {isVisible !== 'true' && !isAmp && !isExperiments && (
+          {/* {isVisible !== 'true' && !isAmp && !isExperiments && (
             <Twemoji options={{ className: 'twemoji' }} noWrapper>
               <a
                 title="Ooooooooh, what would happen if you click?"
@@ -33,7 +33,7 @@ export const Footer = (props: Props) => {
                 🧪
               </a>
             </Twemoji>
-          )}
+          )} */}
         </p>
       </Container>
       {!isAmp && (isVisible === 'true' || isExperiments || true) && (
