@@ -29,7 +29,7 @@ const Webmentions = (props: Props) => {
       `https://webmention.io/api/mentions.jf2?per-page=100&page=0&target=${encodeURI(
         url,
       )}`,
-    ).then(async response => {
+    ).then(async (response) => {
       const { children } = (await response.json()) || {};
 
       if (!Array.isArray(children)) {
@@ -42,7 +42,7 @@ const Webmentions = (props: Props) => {
           continue;
         }
 
-        const urls = cleanedWebmentions.map(webmention => webmention.url);
+        const urls = cleanedWebmentions.map((webmention) => webmention.url);
         if (urls.includes(webmention.url)) {
           continue;
         }
@@ -68,11 +68,11 @@ const Webmentions = (props: Props) => {
   }
 
   const likes = webmentions.filter(
-    webmention => webmention['wm-property'] === 'like-of',
+    (webmention) => webmention['wm-property'] === 'like-of',
   );
 
   const other = webmentions.filter(
-    webmention => webmention['wm-property'] !== 'like-of',
+    (webmention) => webmention['wm-property'] !== 'like-of',
   );
 
   return (
@@ -90,9 +90,9 @@ const Webmentions = (props: Props) => {
               <div
                 className="heads"
                 style={{
-                  paddingLeft: `${(likes.length > 7 ? 7 : likes.length) * 1.25 +
-                    1.75 +
-                    0.5}em`,
+                  paddingLeft: `${
+                    (likes.length > 7 ? 7 : likes.length) * 1.25 + 1.75 + 0.5
+                  }em`,
                 }}
               >
                 {likes

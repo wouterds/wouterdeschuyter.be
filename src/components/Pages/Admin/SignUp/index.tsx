@@ -31,7 +31,7 @@ const SignUp = () => {
   const [signUp] = useMutation(SIGN_UP);
   const [, setJwt] = useCookie(Cookies.JWT);
 
-  const onSubmit = handleSubmit(data => {
+  const onSubmit = handleSubmit((data) => {
     const { firstName, lastName, email, password } = data;
 
     setIsLoading(true);
@@ -42,7 +42,7 @@ const SignUp = () => {
         setJwt(jwt);
         window.location.pathname = '/admin';
       })
-      .catch(e => {
+      .catch((e) => {
         console.error(e.message);
         setIsLoading(false);
       });

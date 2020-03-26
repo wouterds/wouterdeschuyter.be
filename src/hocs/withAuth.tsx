@@ -63,7 +63,7 @@ const withAuth = (WrappedComponent: any) => {
     `;
 
     const { apolloClient } = ctx;
-    const user = await new Promise(resolve => {
+    const user = await new Promise((resolve) => {
       apolloClient
         .query({ query: ME })
         .then(({ data }) => resolve(data.me))

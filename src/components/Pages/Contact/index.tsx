@@ -46,7 +46,7 @@ const Contact = () => {
   }, [recaptcha]);
 
   const onSubmit = useCallback(
-    handleSubmit(data => {
+    handleSubmit((data) => {
       setIsLoading(true);
       setData(data);
       executeCaptcha();
@@ -65,7 +65,7 @@ const Contact = () => {
         );
         reset();
       })
-      .catch(e => {
+      .catch((e) => {
         toast('Something went wrong while trying to send your message 😟', {
           type: 'error',
         }),

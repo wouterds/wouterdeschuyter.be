@@ -22,7 +22,7 @@ const Posts = (props: Props) => {
 
   return (
     <Container>
-      {posts.map(post => (
+      {posts.map((post) => (
         <Post key={post.id}>
           <Link
             href="/blog/[slug]"

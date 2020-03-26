@@ -6,7 +6,7 @@ const HighlightJS = () => {
   useEffect(() => {
     document
       .querySelectorAll('pre code')
-      .forEach(block => hljs.highlightBlock(block));
+      .forEach((block) => hljs.highlightBlock(block));
   }, []);
 
   return null;

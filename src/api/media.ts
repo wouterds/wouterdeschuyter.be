@@ -42,11 +42,7 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   if (size === 'embed') {
     res.setHeader('Content-Type', 'image/jpeg');
     apiRes.body
-      .pipe(
-        sharp()
-          .resize(1200, 630, { fit: sharp.fit.cover })
-          .jpeg(),
-      )
+      .pipe(sharp().resize(1200, 630, { fit: sharp.fit.cover }).jpeg())
       .pipe(res);
     return;
   }
