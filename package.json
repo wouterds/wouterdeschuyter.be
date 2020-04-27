@@ -71,7 +71,7 @@
     "@types/react-google-recaptcha": "^1.1.0",
     "@types/recharts": "^1.8.10",
     "@types/rss": "^0.0.28",
-    "@types/sharp": "^0.24.0",
+    "@types/sharp": "^0.25.0",
     "@types/styled-components": "^5.0.1",
     "@types/uuid": "^7.0.0",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
