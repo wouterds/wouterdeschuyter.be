@@ -121,7 +121,6 @@ export const Container = styled.div<{ backgroundColor?: string }>`
   a {
     text-decoration: none;
     color: var(--color-tint);
-    outline-color: var(--color-tint);
 
     &:hover {
       text-decoration: underline;
