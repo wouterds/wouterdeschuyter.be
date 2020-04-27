@@ -5,13 +5,13 @@ export default css`
     pointer-events: none;
 
     .bar {
-      background: var(--color-tint);
+      background: #e9edf0;
       position: fixed;
       z-index: 1031;
       top: 0;
       left: 0;
       width: 100%;
-      height: 2px;
+      height: 3px;
     }
   }
 `;
