@@ -22,23 +22,6 @@ class GoogleAnalytics {
     // eslint-disable-next-line @typescript-eslint/camelcase
     window.gtag('config', process.env.GA_TRACKING_ID, { page_path: path });
   };
-
-  public event = (
-    action: string,
-    category: string,
-    label: string,
-    value: string,
-  ) => {
-    if (!this.isSDKAvailable) {
-      throw new Error('GA SDK not available');
-    }
-
-    window.gtag('event', action, {
-      event_category: category, // eslint-disable-line @typescript-eslint/camelcase
-      event_label: label, // eslint-disable-line @typescript-eslint/camelcase
-      value,
-    });
-  };
 }
 
 export default new GoogleAnalytics();
