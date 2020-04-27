@@ -1554,10 +1554,10 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.150.tgz#649fe44684c3f1fcb6164d943c5a61977e8cf0bd"
   integrity sha512-kMNLM5JBcasgYscD9x/Gvr6lTAv2NVgsKtet/hm93qMyf/D1pt+7jeEZklKJKxMVmXjxbRVQQGfqDSfipYCO6w==
 
-"@types/marked@^0.7.3":
-  version "0.7.3"
-  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.7.3.tgz#3859f6fea52a2b73f42283018bd34b03f3c4fb3f"
-  integrity sha512-WXdEKuT3azHxLTThd5dwnpLt2Q9QiC8iKj09KZRtVqro3pX8hhY+GbD8FZOae6SBBEJ22yKJn3c7ejL0aucAcA==
+"@types/marked@^0.7.4":
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/@types/marked/-/marked-0.7.4.tgz#607685669bb1bbde2300bc58ba43486cbbee1f0a"
+  integrity sha512-fdg0NO4qpuHWtZk6dASgsrBggY+8N4dWthl1bAQG9ceKUNKFjqpHaDKCAhRUI6y8vavG7hLSJ4YBwJtZyZEXqw==
 
 "@types/node-fetch@^2.5.5":
   version "2.5.5"
