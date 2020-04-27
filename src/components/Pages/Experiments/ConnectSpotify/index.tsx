@@ -1,7 +1,7 @@
-import React from 'react';
-import { NextPageContext } from 'next';
 import ErrorComponent from 'components/Pages/Error';
 import gql from 'graphql-tag';
+import { NextPageContext } from 'next';
+import React from 'react';
 
 const ConnectSpotify = () => {
   return <ErrorComponent />;

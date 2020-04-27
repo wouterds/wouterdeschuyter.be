@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
-import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
+
+import hljs from 'highlight.js';
+import { useEffect } from 'react';
 
 const HighlightJS = () => {
   useEffect(() => {

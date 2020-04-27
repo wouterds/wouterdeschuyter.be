@@ -4,7 +4,7 @@ export { Cookies } from 'services/cookie';
 
 export const useCookie = (
   key: Cookies,
-  initialValue: string = '',
+  initialValue = '',
 ): [string, (item: string, options?: CookieSetOptions) => void] => {
   const [value, setInnerValue] = useState(Cookie.get(key) || initialValue);
 

@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import sharp from 'sharp';
 import fetch from 'node-fetch';
+import sharp from 'sharp';
 
 // https://github.com/lovell/sharp/blob/master/docs/install.md#alpine-linux
 sharp.cache(false);

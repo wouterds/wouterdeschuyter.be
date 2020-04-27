@@ -1,29 +1,30 @@
-import React, { useEffect, useState } from 'react';
 import {
-  Container,
-  Section,
-  Spacer,
-  MetricIcon,
-  MetricValue,
-  MetricUnit,
-} from './styles';
-import { useQuery } from 'react-apollo';
-import Link from 'next/link';
+  faBirthdayCake,
+  faMusic,
+  faSun,
+  faThermometerThreeQuarters,
+  faTimesCircle,
+  faTint,
+  faVial,
+  faWind,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { differenceInMilliseconds, formatDistanceStrict } from 'date-fns';
 import gql from 'graphql-tag';
 import find from 'lodash/find';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faThermometerThreeQuarters,
-  faTint,
-  faWind,
-  faSun,
-  faMusic,
-  faBirthdayCake,
-  faVial,
-  faTimesCircle,
-} from '@fortawesome/free-solid-svg-icons';
-import { formatDistanceStrict, differenceInMilliseconds } from 'date-fns';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import { useQuery } from 'react-apollo';
+
+import {
+  Container,
+  MetricIcon,
+  MetricUnit,
+  MetricValue,
+  Section,
+  Spacer,
+} from './styles';
 
 const FETCH_SENSORS = gql`
   query sensors {

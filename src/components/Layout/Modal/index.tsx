@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react';
-import { Container, backgroundColor, Footer } from './styles';
 import Layout from 'components/Layout';
+import React, { ReactNode } from 'react';
+
+import { backgroundColor, Container, Footer } from './styles';
 
 interface Props {
   children: ReactNode;

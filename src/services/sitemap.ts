@@ -1,6 +1,6 @@
-import { createSitemap, EnumChangefreq } from 'sitemap';
-import NetworkService from 'services/network';
 import gql from 'graphql-tag';
+import NetworkService from 'services/network';
+import { createSitemap, EnumChangefreq } from 'sitemap';
 
 const FETCH_POSTS = gql`
   query fetchData {

@@ -1,6 +1,6 @@
+import gql from 'graphql-tag';
 import Rss from 'rss';
 import NetworkService from 'services/network';
-import gql from 'graphql-tag';
 
 const FETCH_POSTS = gql`
   query fetchData {

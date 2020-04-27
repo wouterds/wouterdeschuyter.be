@@ -1,10 +1,11 @@
 import React, { FormHTMLAttributes } from 'react';
-import { Container } from './styles';
-import Field from './Field';
-import Label from './Label';
-import Input from './Input';
-import Textarea from './Textarea';
+
 import Button from './Button';
+import Field from './Field';
+import Input from './Input';
+import Label from './Label';
+import { Container } from './styles';
+import Textarea from './Textarea';
 
 const Form = (props: FormHTMLAttributes<HTMLFormElement>) => {
   return <Container {...props} />;

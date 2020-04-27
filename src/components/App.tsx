@@ -1,14 +1,14 @@
-import React from 'react';
+import { ApolloProvider } from '@apollo/react-hooks';
+import { getDataFromTree } from '@apollo/react-ssr';
+import ApolloClient from 'apollo-client';
+import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
+import withApollo from 'next-with-apollo';
 import NextApp from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
-import ApolloClient from 'apollo-client';
-import { ApolloProvider } from '@apollo/react-hooks';
-import { getDataFromTree } from '@apollo/react-ssr';
-import withApollo from 'next-with-apollo';
-import NetworkService from 'services/network';
-import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
+import React from 'react';
 import GoogleAnalytics from 'services/google-analytics';
+import NetworkService from 'services/network';
 import BaseCSS from 'styles/base';
 
 interface Props {

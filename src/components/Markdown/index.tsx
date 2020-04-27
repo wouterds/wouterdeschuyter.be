@@ -1,9 +1,10 @@
-import React from 'react';
-import Head from 'next/head';
-import { useAmp } from 'next/amp';
-import marked from 'marked';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
+import marked from 'marked';
+import { useAmp } from 'next/amp';
+import Head from 'next/head';
+import React from 'react';
+
 import { Container } from './styles';
 
 interface Props {
@@ -43,7 +44,7 @@ const generateHtmlFromMarkdown = (
     width: number;
     height: number;
   }>,
-  isAmp: boolean = false,
+  isAmp = false,
 ): string => {
   let html = marked(markdown);
 

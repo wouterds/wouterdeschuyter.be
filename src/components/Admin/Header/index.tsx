@@ -1,10 +1,11 @@
-import React, { useCallback, MouseEvent, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AuthProps } from 'hocs/withAuth';
-import { useCookie, Cookies } from 'hooks/useCookie';
-import { Container, Title, Nav, NavItem, User } from './styles';
+import { Cookies, useCookie } from 'hooks/useCookie';
 import Link from 'next/link';
+import React, { MouseEvent, useCallback, useEffect } from 'react';
+
+import { Container, Nav, NavItem, Title, User } from './styles';
 
 interface Props extends AuthProps {
   active: string;

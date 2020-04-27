@@ -1,5 +1,6 @@
-import React from 'react';
 import { useAmp } from 'next/amp';
+import React from 'react';
+
 import { Container } from './styles';
 
 interface Props {

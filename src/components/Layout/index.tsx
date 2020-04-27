@@ -1,8 +1,9 @@
 import React, { ReactNode } from 'react';
 import Twemoji from 'react-twemoji';
-import { Container } from './styles';
-import Modal from './Modal';
+
 import Content from './Content';
+import Modal from './Modal';
+import { Container } from './styles';
 
 interface Props {
   children: ReactNode;

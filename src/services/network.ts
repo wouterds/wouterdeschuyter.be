@@ -1,7 +1,7 @@
-import ApolloClient from 'apollo-client';
 import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
+import ApolloClient from 'apollo-client';
 import { setContext } from 'apollo-link-context';
+import { HttpLink } from 'apollo-link-http';
 import fetch from 'isomorphic-unfetch';
 import Cookie, { Cookies } from 'services/cookie';
 

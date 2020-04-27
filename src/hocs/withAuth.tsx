@@ -1,10 +1,10 @@
-import React from 'react';
-import { NextPageContext } from 'next';
-import Router from 'next/router';
-import Link from 'next/link';
-import gql from 'graphql-tag';
 import Layout from 'components/Layout';
-import { useCookie, Cookies } from 'hooks/useCookie';
+import gql from 'graphql-tag';
+import { Cookies, useCookie } from 'hooks/useCookie';
+import { NextPageContext } from 'next';
+import Link from 'next/link';
+import Router from 'next/router';
+import React from 'react';
 
 export interface AuthProps {
   user: {

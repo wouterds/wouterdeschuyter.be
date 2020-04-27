@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import Link from 'next/link';
-import useForm from 'react-hook-form';
-import gql from 'graphql-tag';
 import { useMutation } from '@apollo/react-hooks';
 import Form from 'components/Form';
 import Layout from 'components/Layout';
-import { useCookie, Cookies } from 'hooks/useCookie';
+import gql from 'graphql-tag';
+import { Cookies, useCookie } from 'hooks/useCookie';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import useForm from 'react-hook-form';
 
 const SIGN_UP = gql`
   mutation SignUp(

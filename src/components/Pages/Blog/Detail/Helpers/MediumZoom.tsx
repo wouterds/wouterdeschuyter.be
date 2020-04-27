@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import mediumZoom from 'medium-zoom';
+import { useEffect } from 'react';
 
 const MediumZoom = () => {
   useEffect(() => {

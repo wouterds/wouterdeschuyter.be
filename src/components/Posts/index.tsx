@@ -1,7 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import { useAmp } from 'next/amp';
 import { format } from 'date-fns';
+import { useAmp } from 'next/amp';
+import Link from 'next/link';
+import React from 'react';
+
 import { Container, Post } from './styles';
 
 export type Post = {

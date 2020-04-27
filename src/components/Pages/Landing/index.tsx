@@ -1,14 +1,15 @@
-import React from 'react';
-import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-import Link from 'next/link';
-import { useAmp } from 'next/amp';
-import Layout from 'components/Layout';
-import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Posts from 'components/Posts';
-import LandingHeader from './Header';
+import Header from 'components/Header';
+import Layout from 'components/Layout';
 import Meta from 'components/Meta';
+import Posts from 'components/Posts';
+import gql from 'graphql-tag';
+import { useAmp } from 'next/amp';
+import Link from 'next/link';
+import React from 'react';
+
+import LandingHeader from './Header';
 import { Links } from './styles';
 
 const FETCH_DATA = gql`

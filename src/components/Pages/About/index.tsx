@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { useAmp } from 'next/amp';
-import { differenceInMilliseconds } from 'date-fns';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTwitter,
-  faInstagram,
-  faGithub,
-  faLinkedinIn,
   faFacebookF,
+  faGithub,
+  faInstagram,
+  faLinkedinIn,
   faSpotify,
+  faTwitter,
 } from '@fortawesome/free-brands-svg-icons';
-import Layout from 'components/Layout';
-import Header from 'components/Header';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Footer from 'components/Footer';
+import Header from 'components/Header';
+import Layout from 'components/Layout';
 import Meta from 'components/Meta';
+import { differenceInMilliseconds } from 'date-fns';
+import { useAmp } from 'next/amp';
+import React, { useEffect, useState } from 'react';
+
 import { Container, Social, SocialLink } from './styles';
 
 export const config = { amp: 'hybrid' };

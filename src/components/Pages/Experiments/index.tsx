@@ -1,8 +1,9 @@
-import React from 'react';
-import Layout from 'components/Layout';
-import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Header from 'components/Header';
+import Layout from 'components/Layout';
 import Meta from 'components/Meta';
+import React from 'react';
+
 import Sensors from './Sensors';
 import { Container } from './styles';
 

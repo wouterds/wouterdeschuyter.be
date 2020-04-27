@@ -1,9 +1,10 @@
 import React, {
-  forwardRef,
   DetailedHTMLProps,
-  TextareaHTMLAttributes,
+  forwardRef,
   Ref,
+  TextareaHTMLAttributes,
 } from 'react';
+
 import { Container } from './styles';
 
 interface Props

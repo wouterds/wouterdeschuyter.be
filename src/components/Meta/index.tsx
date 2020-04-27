@@ -1,8 +1,8 @@
+import { useAmp } from 'next/amp';
+import Head from 'next/head';
+import { NextRouter, withRouter } from 'next/router';
 import React, { ReactElement } from 'react';
 import { renderToString } from 'react-dom/server';
-import Head from 'next/head';
-import { withRouter, NextRouter } from 'next/router';
-import { useAmp } from 'next/amp';
 
 interface Props {
   title: string;

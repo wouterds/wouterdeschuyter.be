@@ -1,8 +1,9 @@
-import React from 'react';
-import Link from 'next/link';
 import { useAmp } from 'next/amp';
-import { Container, Title, Nav, Logo } from './styles';
-import { withRouter, NextRouter } from 'next/router';
+import Link from 'next/link';
+import { NextRouter, withRouter } from 'next/router';
+import React from 'react';
+
+import { Container, Logo, Nav, Title } from './styles';
 
 interface Props {
   router: NextRouter;

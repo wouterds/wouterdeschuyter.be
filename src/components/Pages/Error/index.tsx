@@ -1,11 +1,12 @@
-import React from 'react';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import Layout from 'components/Layout';
+import Meta from 'components/Meta';
 import { NextPageContext } from 'next';
 import NextErrorComponent from 'next/error';
+import React from 'react';
 import Sentry from 'services/sentry';
-import Layout from 'components/Layout';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Meta from 'components/Meta';
+
 import { Container } from './styles';
 
 const ErrorComponent = ({

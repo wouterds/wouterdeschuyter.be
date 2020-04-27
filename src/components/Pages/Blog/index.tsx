@@ -1,13 +1,14 @@
-import React from 'react';
-import { NextPageContext } from 'next';
-import Link from 'next/link';
-import { useAmp } from 'next/amp';
-import gql from 'graphql-tag';
-import Layout from 'components/Layout';
-import Header from 'components/Header';
 import Footer from 'components/Footer';
-import Posts, { Post } from 'components/Posts';
+import Header from 'components/Header';
+import Layout from 'components/Layout';
 import Meta from 'components/Meta';
+import Posts, { Post } from 'components/Posts';
+import gql from 'graphql-tag';
+import { NextPageContext } from 'next';
+import { useAmp } from 'next/amp';
+import Link from 'next/link';
+import React from 'react';
+
 import { Container, Links } from './styles';
 
 const POSTS_PER_PAGE = 7;

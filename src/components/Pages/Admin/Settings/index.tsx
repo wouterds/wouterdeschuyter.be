@@ -1,7 +1,8 @@
-import React from 'react';
+import Header from 'components/Admin/Header';
 import Layout from 'components/Layout';
 import withAuth, { AuthProps } from 'hocs/withAuth';
-import Header from 'components/Admin/Header';
+import React from 'react';
+
 import { backgroundColor, Content } from './styles';
 
 const Settings = (props: AuthProps) => {

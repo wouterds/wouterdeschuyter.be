@@ -1,9 +1,10 @@
-import React from 'react';
-import { Container } from './styles';
 import gql from 'graphql-tag';
 import find from 'lodash/find';
+import React from 'react';
 import { useQuery } from 'react-apollo';
+
 import Chart from './Chart';
+import { Container } from './styles';
 
 const FETCH_SENSOR_VALUES = gql`
   query sensors {

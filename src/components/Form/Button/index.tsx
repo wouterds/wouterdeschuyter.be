@@ -1,11 +1,12 @@
 import React, {
-  forwardRef,
-  DetailedHTMLProps,
   ButtonHTMLAttributes,
+  DetailedHTMLProps,
+  forwardRef,
+  MouseEvent,
   Ref,
   useCallback,
-  MouseEvent,
 } from 'react';
+
 import { Container } from './styles';
 
 interface Props

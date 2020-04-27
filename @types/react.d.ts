@@ -1,6 +1,6 @@
 import {
-  ImgHTMLAttributes as _ImgHTMLAttributes,
   IframeHTMLAttributes as _IframeHTMLAttributes,
+  ImgHTMLAttributes as _ImgHTMLAttributes,
 } from 'react';
 
 declare module 'react' {

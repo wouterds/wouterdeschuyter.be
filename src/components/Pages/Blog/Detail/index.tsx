@@ -1,18 +1,19 @@
-import React from 'react';
-import { NextPageContext } from 'next';
-import dynamic from 'next/dynamic';
+import Footer from 'components/Footer';
+import Header from 'components/Header';
+import Layout from 'components/Layout';
+import Markdown from 'components/Markdown';
+import Meta from 'components/Meta';
+import Error from 'components/Pages/Error';
+import Webmentions from 'components/Webmentions';
 import { format } from 'date-fns';
 import gql from 'graphql-tag';
+import { NextPageContext } from 'next';
+import dynamic from 'next/dynamic';
+import React from 'react';
 import Sentry from 'services/sentry';
-import Layout from 'components/Layout';
-import Header from 'components/Header';
-import Footer from 'components/Footer';
-import Meta from 'components/Meta';
-import Markdown from 'components/Markdown';
-import Webmentions from 'components/Webmentions';
-import Error from 'components/Pages/Error';
+
 import LocalHeader from './Header';
-import { Container, Body } from './styles';
+import { Body, Container } from './styles';
 
 const MediumZoomHelper = dynamic(() => import('./Helpers/MediumZoom'));
 const HighlightjsHelper = dynamic(() => import('./Helpers/Highlightjs'));

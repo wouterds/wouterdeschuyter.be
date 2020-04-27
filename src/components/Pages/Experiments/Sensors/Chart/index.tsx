@@ -1,5 +1,5 @@
 import React from 'react';
-import { AreaChart, Area, YAxis } from 'recharts';
+import { Area, AreaChart, YAxis } from 'recharts';
 import { v4 as uuidv4 } from 'uuid';
 
 interface Props {

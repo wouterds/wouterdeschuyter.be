@@ -1,10 +1,11 @@
-import React from 'react';
-import gql from 'graphql-tag';
 import { useQuery } from '@apollo/react-hooks';
-import { format } from 'date-fns';
-import withAuth, { AuthProps } from 'hocs/withAuth';
-import Layout from 'components/Layout';
 import Header from 'components/Admin/Header';
+import Layout from 'components/Layout';
+import { format } from 'date-fns';
+import gql from 'graphql-tag';
+import withAuth, { AuthProps } from 'hocs/withAuth';
+import React from 'react';
+
 import { backgroundColor, Content } from './styles';
 
 const FETCH_DATA = gql`

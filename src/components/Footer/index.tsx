@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Twemoji from 'react-twemoji';
-import { Container } from './styles';
 import ExperimentsBar from 'components/ExperimentsBar';
 // import { useCookie, Cookies } from 'hooks/useCookie';
 import { useAmp } from 'next/amp';
 import { useRouter } from 'next/router';
+import React, { useEffect, useState } from 'react';
+import Twemoji from 'react-twemoji';
+
+import { Container } from './styles';
 
 interface Props {
   centered?: boolean;

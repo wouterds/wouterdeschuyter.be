@@ -1,6 +1,6 @@
-import React from 'react';
-import Head from 'next/head';
 import { useAmp } from 'next/amp';
+import Head from 'next/head';
+import React from 'react';
 
 const GoogleAnalyticsSDK = () => {
   const isAmp = useAmp();
