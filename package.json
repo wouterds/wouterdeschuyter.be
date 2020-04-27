@@ -73,7 +73,7 @@
     "@types/rss": "^0.0.28",
     "@types/sharp": "^0.25.0",
     "@types/styled-components": "^5.1.0",
-    "@types/uuid": "^7.0.0",
+    "@types/uuid": "^7.0.3",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
     "@zeit/next-css": "^1.0.1",
