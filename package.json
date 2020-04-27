@@ -54,7 +54,7 @@
     "rss": "^1.2.2",
     "sharp": "^0.25.1",
     "sitemap": "^5.0.0",
-    "styled-components": "^5.0.1",
+    "styled-components": "^5.1.0",
     "universal-cookie": "^4.0.3",
     "url-parse": "^1.4.7",
     "uuid": "^7.0.2"
