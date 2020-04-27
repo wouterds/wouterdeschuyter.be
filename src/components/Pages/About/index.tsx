@@ -24,7 +24,7 @@ const getAge = () =>
     differenceInMilliseconds(new Date(), new Date('13 December 1992')) /
     (365 * 24 * 60 * 60) /
     1000
-  ).toFixed(9);
+  ).toFixed(8);
 
 const About = () => {
   const [age, setAge] = useState(getAge);
@@ -52,7 +52,7 @@ const About = () => {
           <h1>About</h1>
           <p>
             Hey 👋, I&apos;m Wouter! Currently{' '}
-            <span className="age">{age}</span> years old and passionate about
+            <code className="age">{age}</code> years old and passionate about
             all things digital really.
           </p>
           <p>
