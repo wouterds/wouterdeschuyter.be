@@ -27,8 +27,8 @@ export const Footer = (props: Props) => {
     <>
       <Container centered={centered}>
         <p>
-          &copy; Copyright {new Date().getFullYear()} Wouter De Schuyter - BE
-          0745.964.642
+          &copy; Copyright {new Date().getFullYear()} Wouter De Schuyter,
+          BE0745.964.642
         </p>
         <p>
           Made using React, GraphQL, Node.js and a few other packages ✨
