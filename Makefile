@@ -18,13 +18,13 @@ clean:
 	-rm -rf .build-*
 
 node_modules: yarn.lock
-	docker run --rm -v ${PWD}:/code -w /code node:12-slim yarn
+	docker run --rm -v ${PWD}:/code -w /code node:14-slim yarn
 
 lint: node_modules
-	docker run --rm -v ${PWD}:/code -w /code node:12-slim yarn lint
+	docker run --rm -v ${PWD}:/code -w /code node:14-slim yarn lint
 
 .build-app: node_modules
-	docker run --rm -v ${PWD}:/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID -e ENV -e SPOTIFY_CLIENT_ID node:12-slim yarn build
+	docker run --rm -v ${PWD}:/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID -e ENV -e SPOTIFY_CLIENT_ID node:14-slim yarn build
 	touch .build-app
 
 .build-nginx: ${DOCKERFILE_NGINX}
