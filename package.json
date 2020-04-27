@@ -23,7 +23,7 @@
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-fontawesome": "^0.1.9",
-    "@sentry/browser": "^5.14.2",
+    "@sentry/browser": "^5.15.5",
     "@sentry/node": "^5.14.2",
     "@types/url-parse": "^1.4.3",
     "add": "^2.0.6",
