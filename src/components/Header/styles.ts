@@ -91,22 +91,22 @@ export const Nav = styled.nav<{ transparent: boolean }>`
   a {
     padding: 0.525em;
     border: 0;
-    color: var(--color-alternative-link);
+    color: var(--color-alternative-link) !important;
     transition: color ease-in-out 200ms;
 
     ${({ transparent }) =>
       transparent &&
       css`
-        color: rgba(255, 255, 255, 0.8);
+        color: rgba(255, 255, 255, 0.8) !important;
       `}
 
     &.active,
     &:hover {
-      color: var(--color-text-dark);
+      color: var(--color-text-dark) !important;
       ${({ transparent }) =>
         transparent &&
         css`
-          color: #fff;
+          color: #fff !important;
         `}
     }
 
