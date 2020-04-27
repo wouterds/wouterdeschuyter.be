@@ -1,7 +1,7 @@
 PWD = $(shell pwd)
 VERSION = $(shell cat package.json | grep "\"version\"" | sed -e 's/^.*: "\(.*\)".*/\1/')
 
-DOCKER_COMPOSE = ./.docker/docker-compose${ENV_SUFFIX}.yml
+DOCKER_COMPOSE = ./.docker/docker-compose.yml
 DOCKERFILE_NODE = ./.docker/node/Dockerfile
 DOCKERFILE_NGINX = ./.docker/nginx/Dockerfile
 
@@ -28,28 +28,28 @@ lint: node_modules
 	touch .build-app
 
 .build-nginx: ${DOCKERFILE_NGINX}
-	docker build -f ${DOCKERFILE_NGINX} -t ${TAG_NGINX}:latest${ENV_SUFFIX} .
+	docker build -f ${DOCKERFILE_NGINX} -t ${TAG_NGINX}:latest .
 	touch .build-nginx
 
 .build-node: .build-app ${DOCKERFILE_NODE}
-	docker build -f ${DOCKERFILE_NODE} -t ${TAG_NODE}:latest${ENV_SUFFIX} .
+	docker build -f ${DOCKERFILE_NODE} -t ${TAG_NODE}:latest .
 	touch .build-node
 
 build: .build-node .build-nginx
-	docker tag ${TAG_NODE}:latest${ENV_SUFFIX} ${TAG_NODE}:${VERSION}${ENV_SUFFIX}
-	docker tag ${TAG_NGINX}:latest${ENV_SUFFIX} ${TAG_NGINX}:${VERSION}${ENV_SUFFIX}
+	docker tag ${TAG_NODE}:latest ${TAG_NODE}:${VERSION}
+	docker tag ${TAG_NGINX}:latest ${TAG_NGINX}:${VERSION}
 
 docker-login:
 	docker login docker.wouterdeschuyter.be -u ${DOCKER_REGISTRY_USER} -p ${DOCKER_REGISTRY_PASS}
 
 push: docker-login build
-	docker push ${TAG_NODE}:latest${ENV_SUFFIX}
-	docker push ${TAG_NODE}:${VERSION}${ENV_SUFFIX}
-	docker push ${TAG_NGINX}:latest${ENV_SUFFIX}
-	docker push ${TAG_NGINX}:${VERSION}${ENV_SUFFIX}
+	docker push ${TAG_NODE}:latest
+	docker push ${TAG_NODE}:${VERSION}
+	docker push ${TAG_NGINX}:latest
+	docker push ${TAG_NGINX}:${VERSION}
 
 deploy:
-	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "mkdir -p ${DEPLOY_PATH}${ENV_SUFFIX}"
-	scp ${DOCKER_COMPOSE} ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}${ENV_SUFFIX}/docker-compose.yml
-	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "cd ${DEPLOY_PATH}${ENV_SUFFIX}; docker-compose pull"
-	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "cd ${DEPLOY_PATH}${ENV_SUFFIX}; docker-compose up -d"
+	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "mkdir -p ${DEPLOY_PATH}"
+	scp ${DOCKER_COMPOSE} ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/docker-compose.yml
+	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "cd ${DEPLOY_PATH}; docker-compose pull"
+	ssh ${DEPLOY_USER}@${DEPLOY_HOST} "cd ${DEPLOY_PATH}; docker-compose up -d"
