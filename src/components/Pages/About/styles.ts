@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   .age {
-    font-size: 0.9em;
+    font-variant-numeric: tabular-nums;
   }
 `;
 
@@ -30,7 +30,7 @@ export const SocialLink = styled.a<{
   height: 48px;
   width: 48px;
   border-radius: 24px;
-  line-height: 48px;
+  line-height: 46px;
   display: inline-block;
   text-align: center;
   transition: background ease-in-out 200ms;

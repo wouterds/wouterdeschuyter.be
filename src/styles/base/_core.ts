@@ -15,8 +15,8 @@ export default css`
   }
 
   body {
-    font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, 'Helvetica Neue', 'Lucida Grande', Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'San Francisco', 'Segoe UI',
+      'Helvetica Neue', 'Lucida Grande', sans-serif;
   }
 
   code,
