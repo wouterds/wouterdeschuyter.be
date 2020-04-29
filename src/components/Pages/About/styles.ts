@@ -30,14 +30,10 @@ export const SocialLink = styled.a<{
   height: 48px;
   width: 48px;
   border-radius: 24px;
-  line-height: 46px;
+  line-height: 48px;
   display: inline-block;
   text-align: center;
   transition: background ease-in-out 200ms;
-
-  @media (max-width: 640px) {
-    line-height: 48px;
-  }
 
   + a {
     margin-left: 16px;
