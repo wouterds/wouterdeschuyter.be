@@ -4,11 +4,6 @@ module.exports = {
   env: {
     browser: true,
   },
-  settings:  {
-    react:  {
-      version:  'detect',
-    },
-  },
   plugins: [
     '@typescript-eslint',
     'react',
@@ -32,5 +27,10 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'warn',
     '@typescript-eslint/ban-ts-ignore': 'warn',
     'simple-import-sort/sort': 'error',
+  },
+  settings: {
+    react: {
+      version: 'detect',
+    },
   },
 };
