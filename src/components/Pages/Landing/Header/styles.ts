@@ -22,13 +22,13 @@ export const Container = styled.header`
   }
 
   h1 {
-    font-weight: 600;
+    font-weight: 500;
     font-size: 2em;
     margin-bottom: 0.25em;
   }
 
   h2 {
-    font-weight: 400;
+    font-weight: 300;
     color: var(--color-text-lightest);
     font-size: 1.4em;
     margin-bottom: 1.5em;

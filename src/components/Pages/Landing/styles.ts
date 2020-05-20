@@ -6,7 +6,7 @@ export const Links = styled.div`
 
   a {
     font-size: ${16 / 19.2}em;
-    font-weight: 600;
+    font-weight: 500;
     border: 0;
     color: var(--color-alternative-link);
     transition: color ease-in-out 200ms;
