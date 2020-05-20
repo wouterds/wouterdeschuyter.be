@@ -35,6 +35,7 @@ export const Post = styled.article`
     line-height: 1.25;
     transition: color ease-in-out 200ms;
     margin-bottom: 0.25em;
+    font-weight: 700;
   }
 
   time {

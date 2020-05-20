@@ -20,4 +20,8 @@ export const Body = styled.div`
       transition: color ease-in-out 200ms;
     }
   }
+
+  > h1 {
+    font-weight: 700;
+  }
 `;

@@ -56,7 +56,7 @@ export const Title = styled.div<{ transparent: boolean }>`
   h1 {
     font-size: 1.8em;
     line-height: 1;
-    font-weight: 500;
+    font-weight: 600;
     padding: 0.25em 0.525em;
     margin: 0;
     display: inline-block;
