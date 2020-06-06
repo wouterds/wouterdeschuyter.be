@@ -22,10 +22,12 @@ module.exports = {
   rules: {
     'no-unused-vars': 'error',
     'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'error',
-    '@typescript-eslint/explicit-function-return-type': 'off',
+    'react-hooks/exhaustive-deps': [
+      'error',
+      { enableDangerousAutofixThisMayCauseInfiniteLoops: true },
+    ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'warn',
-    '@typescript-eslint/ban-ts-ignore': 'warn',
     'simple-import-sort/sort': 'error',
   },
   settings: {
