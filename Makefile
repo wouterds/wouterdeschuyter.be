@@ -29,7 +29,6 @@ lint: node_modules
 			-e NEXT_PUBLIC_API_ENDPOINT \
 			-e NEXT_PUBLIC_RECAPTCHA_SITE_KEY \
 			-e NEXT_PUBLIC_GA_TRACKING_ID \
-			-e NEXT_PUBLIC_ENV \
 			-e NEXT_PUBLIC_SPOTIFY_CLIENT_ID \
 		node:14.3 yarn build
 	touch .build-app
