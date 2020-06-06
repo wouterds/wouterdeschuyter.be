@@ -27,7 +27,7 @@ ConnectSpotify.getInitialProps = async ({ res, query }: NextPageContext) => {
     mutation: AUTHORIZE_SPOTIFY,
     variables: {
       authorizationCode: code,
-      redirectUri: `${process.env.NEXT_PUBLIC_URL}/experiments/connect-spotify`,
+      redirectUri: `${process.env.NEXT_PUBLIC_APP_URL}/experiments/connect-spotify`,
     },
   });
 

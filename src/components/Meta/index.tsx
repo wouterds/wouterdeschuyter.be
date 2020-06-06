@@ -15,7 +15,7 @@ const Meta = (props: Props) => {
   const isAmp = useAmp();
   const { title, description, extra, router } = props;
 
-  const url = `${process.env.NEXT_PUBLIC_URL}${
+  const url = `${process.env.NEXT_PUBLIC_APP_URL}${
     router.asPath !== '/' ? router.asPath : ''
   }`;
 
@@ -43,13 +43,13 @@ const Meta = (props: Props) => {
       {!extraOgImage && (
         <meta
           property="og:image"
-          content={`${process.env.NEXT_PUBLIC_URL}/static/wouterds.jpg`}
+          content={`${process.env.NEXT_PUBLIC_APP_URL}/static/wouterds.jpg`}
         />
       )}
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:image"
-        content={`${process.env.NEXT_PUBLIC_URL}/static/wouterds.jpg`}
+        content={`${process.env.NEXT_PUBLIC_APP_URL}/static/wouterds.jpg`}
       />
       <meta name="twitter:creator" content="@wouterds" />
       <meta name="twitter:title" content={title} />
@@ -79,7 +79,7 @@ const Meta = (props: Props) => {
       <link
         rel="alternate"
         type="application/rss+xml"
-        href={`${process.env.NEXT_PUBLIC_URL}/feed.xml`}
+        href={`${process.env.NEXT_PUBLIC_APP_URL}/feed.xml`}
       />
       <link href="https://github.com/wouterds" rel="me" />
       <link href="https://twitter.com/wouterds" rel="me" />

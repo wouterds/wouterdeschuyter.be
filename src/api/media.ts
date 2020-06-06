@@ -20,7 +20,7 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   const size = parts.length > 2 ? parts[1] : null;
 
   const apiRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_ENDPOINT}/media-asset/${fileName}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/media-asset/${fileName}`,
   );
 
   if (apiRes.status === 404) {

@@ -17,7 +17,9 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Content-Type', 'application/xml');
   res.setHeader('Content-Encoding', 'gzip');
 
-  const sitemap = new SitemapStream({ hostname: process.env.NEXT_PUBLIC_URL });
+  const sitemap = new SitemapStream({
+    hostname: process.env.NEXT_PUBLIC_APP_URL,
+  });
   const pipeline = sitemap.pipe(createGzip());
 
   // static

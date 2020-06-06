@@ -25,8 +25,8 @@ lint: node_modules
 
 .build-app: node_modules
 	docker run --rm -v ${PWD}:/code -w /code \
-			-e NEXT_PUBLIC_URL \
-			-e NEXT_PUBLIC_API_ENDPOINT \
+			-e NEXT_PUBLIC_APP_URL \
+			-e NEXT_PUBLIC_API_URL \
 			-e NEXT_PUBLIC_RECAPTCHA_SITE_KEY \
 			-e NEXT_PUBLIC_GA_TRACKING_ID \
 			-e NEXT_PUBLIC_SPOTIFY_CLIENT_ID \

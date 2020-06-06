@@ -59,7 +59,7 @@ const Detail = (props: Props) => {
 
   const parts = post.mediaAsset.fileName.split('.');
   const image = parts
-    ? `${process.env.NEXT_PUBLIC_URL}/static/media/${parts[0]}.embed.${parts[1]}`
+    ? `${process.env.NEXT_PUBLIC_APP_URL}/static/media/${parts[0]}.embed.${parts[1]}`
     : undefined;
 
   return (
@@ -81,7 +81,7 @@ const Detail = (props: Props) => {
             <meta name="twitter:image" content={image} />
             <link
               rel="canonical"
-              href={`${process.env.NEXT_PUBLIC_URL}/blog/${post.slug}`}
+              href={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`}
             />
             <script
               type="application/ld+json"
@@ -91,7 +91,7 @@ const Detail = (props: Props) => {
                   '@type': 'NewsArticle',
                   mainEntityOfPage: {
                     '@type': 'WebPage',
-                    '@id': `${process.env.NEXT_PUBLIC_URL}/blog/${post.slug}`,
+                    '@id': `${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`,
                   },
                   headline: post.title,
                   description: post.excerpt,
@@ -109,10 +109,10 @@ const Detail = (props: Props) => {
                   publisher: {
                     '@type': 'Organization',
                     name: 'Wouter De Schuyter',
-                    url: process.env.NEXT_PUBLIC_URL,
+                    url: process.env.NEXT_PUBLIC_APP_URL,
                     logo: {
                       '@type': 'ImageObject',
-                      url: `${process.env.NEXT_PUBLIC_URL}/static/wouterds.jpg`,
+                      url: `${process.env.NEXT_PUBLIC_APP_URL}/static/wouterds.jpg`,
                     },
                   },
                 }),
@@ -144,7 +144,7 @@ const Detail = (props: Props) => {
             <h1>{post.title}</h1>
             <Markdown markdown={post.body} />
             <Webmentions
-              url={`${process.env.NEXT_PUBLIC_URL}/blog/${post.slug}`}
+              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`}
             />
           </Body>
         </Container>

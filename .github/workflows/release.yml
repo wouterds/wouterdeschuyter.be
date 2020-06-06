@@ -8,8 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_URL: ${{ secrets.PRODUCTION_URL }}
-      NEXT_PUBLIC_API_ENDPOINT: ${{ secrets.PRODUCTION_API_ENDPOINT }}
+      NEXT_PUBLIC_APP_URL: ${{ secrets.PRODUCTION_APP_URL }}
+      NEXT_PUBLIC_API_URL: ${{ secrets.PRODUCTION_API_URL }}
       NEXT_PUBLIC_RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
       NEXT_PUBLIC_GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
       NEXT_PUBLIC_SPOTIFY_CLIENT_ID: ${{ secrets.SPOTIFY_CLIENT_ID }}
