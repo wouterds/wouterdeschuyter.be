@@ -24,7 +24,14 @@ lint: node_modules
 	docker run --rm -v ${PWD}:/code -w /code node:14-slim yarn lint
 
 .build-app: node_modules
-	docker run --rm -v ${PWD}:/code -w /code -e URL -e API_ENDPOINT -e RECAPTCHA_SITE_KEY -e GA_TRACKING_ID -e ENV -e SPOTIFY_CLIENT_ID node:14-slim yarn build
+	docker run --rm -v ${PWD}:/code -w /code \
+			-e NEXT_PUBLIC_URL \
+			-e NEXT_PUBLIC_API_ENDPOINT \
+			-e NEXT_PUBLIC_RECAPTCHA_SITE_KEY \
+			-e NEXT_PUBLIC_GA_TRACKING_ID \
+			-e NEXT_PUBLIC_ENV \
+			-e NEXT_PUBLIC_SPOTIFY_CLIENT_ID \
+		node:14-slim yarn build
 	touch .build-app
 
 .build-nginx: ${DOCKERFILE_NGINX}
