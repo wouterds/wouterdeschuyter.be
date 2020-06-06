@@ -12,7 +12,7 @@ module.exports = withPlugins([
   [css],
   [optimizedImages],
 ], withSourceMaps({
-  webpack: (config, options) => {
+  webpack: (config) => {
     config.plugins = config.plugins || [];
 
     config.plugins = [
@@ -22,10 +22,6 @@ module.exports = withPlugins([
         systemvars: true,
       })
     ];
-
-    if (!options.isServer) {
-      config.resolve.alias['@sentry/node'] = '@sentry/browser';
-    }
 
     return config;
   },
