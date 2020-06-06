@@ -1,26 +1,37 @@
-class GoogleAnalytics {
-  private get isSDKAvailable() {
-    if (typeof window === 'undefined') {
-      return false;
+const isSDKAvailable = () => {
+  if (typeof window === 'undefined') {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('GA SDK not available');
     }
-
-    if (!window.gtag) {
-      return false;
-    }
-
-    return true;
+    return false;
   }
 
-  public pageView = (path: string) => {
-    if (!this.isSDKAvailable) {
-      if (process.env.ENV !== 'production') {
-        console.warn('GA SDK not available');
-      }
-      return;
+  if (!window.gtag) {
+    if (process.env.NODE_ENV !== 'production') {
+      console.warn('GA SDK not available');
     }
+    return false;
+  }
 
-    window.gtag('config', process.env.GA_TRACKING_ID, { page_path: path });
-  };
-}
+  return true;
+};
 
-export default new GoogleAnalytics();
+const pageView = (path: string) => {
+  if (!isSDKAvailable()) {
+    return;
+  }
+
+  if (process.env.NODE_ENV !== 'production') {
+    return;
+  }
+
+  window.gtag('config', process.env.GA_TRACKING_ID, {
+    page_path: path,
+  });
+};
+
+const GoogleAnalytics = {
+  pageView,
+};
+
+export default GoogleAnalytics;
