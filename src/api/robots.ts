@@ -1,8 +1,8 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export default (_req: NextApiRequest, res: NextApiResponse) => {
-  let body = '';
-  body += 'User-Agent: *\n';
+  let body = 'User-Agent: *\n';
+
   if (process.env.ENV === 'production') {
     body += 'Allow: /\n';
     body += 'Disallow: /ping\n';
