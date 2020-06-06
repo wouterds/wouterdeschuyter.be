@@ -10,6 +10,7 @@ import gql from 'graphql-tag';
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import React from 'react';
+import Network from 'services/network';
 
 import LocalHeader from './Header';
 import { Body, Container } from './styles';
@@ -155,15 +156,11 @@ const Detail = (props: Props) => {
   );
 };
 
-Detail.getInitialProps = async ({
-  query,
-  apolloClient,
-  res,
-}: NextPageContext) => {
+Detail.getInitialProps = async ({ query, res }: NextPageContext) => {
   const { slug } = query;
 
   const { post } = (
-    await apolloClient.query({
+    await Network.apollo.query({
       query: FETCH_DATA,
       variables: { slug },
     })
@@ -177,7 +174,7 @@ Detail.getInitialProps = async ({
       const newSlug = parts.join('-');
 
       const { post: fallbackPost } = (
-        await apolloClient.query({
+        await Network.apollo.query({
           query: FETCH_DATA,
           variables: { slug: newSlug },
         })
@@ -194,7 +191,7 @@ Detail.getInitialProps = async ({
   }
 
   try {
-    apolloClient.mutate({
+    Network.apollo.mutate({
       mutation: INCREASE_VIEW_COUNT,
       variables: { id: post.id },
     });

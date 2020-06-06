@@ -8,6 +8,7 @@ import { NextPageContext } from 'next';
 import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import React from 'react';
+import Network from 'services/network';
 
 import { Container, Links } from './styles';
 
@@ -110,11 +111,7 @@ const Blog = (props: Props) => {
   );
 };
 
-Blog.getInitialProps = async ({
-  query,
-  apolloClient,
-  res,
-}: NextPageContext) => {
+Blog.getInitialProps = async ({ query, res }: NextPageContext) => {
   let { page = 1 } = query;
 
   if (page === '1' && res) {
@@ -140,7 +137,7 @@ Blog.getInitialProps = async ({
   }
 
   const { posts, postCount } = (
-    await apolloClient.query({
+    await Network.apollo.query({
       query: FETCH_DATA,
       variables: { limit: POSTS_PER_PAGE, offset: page * POSTS_PER_PAGE },
     })
