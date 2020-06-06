@@ -57,7 +57,9 @@ const Blog = (props: Props) => {
             {hasNextPage && (
               <link
                 rel="next"
-                href={`${process.env.NEXT_PUBLIC_APP_URL}/blog?page=${page + 2}`}
+                href={`${process.env.NEXT_PUBLIC_APP_URL}/blog?page=${
+                  page + 2
+                }`}
               />
             )}
             <link
