@@ -8,8 +8,6 @@ export default (_req: NextApiRequest, res: NextApiResponse) => {
     body += 'Disallow: /ping\n';
     body += 'Disallow: /experiments/connect-spotify\n';
     body += 'Disallow: /api/*\n';
-    body += 'Disallow: /admin\n';
-    body += 'Disallow: /admin/*\n';
     body += '\n';
     body += `Sitemap: ${process.env.URL}/sitemap.xml\n`;
   } else {
