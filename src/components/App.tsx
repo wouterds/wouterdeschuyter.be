@@ -10,23 +10,16 @@ import GoogleAnalytics from 'services/google-analytics';
 import Network from 'services/network';
 import BaseCSS from 'styles/base';
 
-interface Props {
-  err?: any;
-}
-
-class App extends NextApp<Props> {
+class App extends NextApp {
   public render() {
     const { Component, pageProps } = this.props;
-
-    // https://github.com/zeit/next.js/issues/8592
-    const { err } = this.props;
 
     return (
       <>
         <BaseCSS />
         <GoogleAnalyticsSDK />
         <ApolloProvider client={Network.apollo}>
-          <Component {...pageProps} err={err} />
+          <Component {...pageProps} />
         </ApolloProvider>
       </>
     );
