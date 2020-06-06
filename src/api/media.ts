@@ -1,5 +1,4 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import fetch from 'node-fetch';
 import sharp from 'sharp';
 
 // https://github.com/lovell/sharp/blob/master/docs/install.md#alpine-linux
@@ -41,7 +40,7 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
 
   if (size === 'embed') {
     res.setHeader('Content-Type', 'image/jpeg');
-    apiRes.body
+    (apiRes.body as any) // investigate what's wrong here with the typing
       .pipe(sharp().resize(1200, 630, { fit: sharp.fit.cover }).jpeg())
       .pipe(res);
     return;
