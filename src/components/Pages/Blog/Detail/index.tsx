@@ -10,7 +10,6 @@ import gql from 'graphql-tag';
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import React from 'react';
-import Sentry from 'services/sentry';
 
 import LocalHeader from './Header';
 import { Body, Container } from './styles';
@@ -198,9 +197,7 @@ Detail.getInitialProps = async ({
       mutation: INCREASE_VIEW_COUNT,
       variables: { id: post.id },
     });
-  } catch (e) {
-    Sentry.captureException(e);
-  }
+  } catch (e) {}
 
   return { post };
 };

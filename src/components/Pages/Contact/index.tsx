@@ -8,7 +8,6 @@ import gql from 'graphql-tag';
 import React, { useCallback, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import useForm from 'react-hook-form';
-import Sentry from 'services/sentry';
 import toast from 'services/toast';
 
 import { Col, Container, Row } from './styles';
@@ -67,7 +66,6 @@ const Contact = () => {
         toast('Something went wrong while trying to send your message 😟', {
           type: 'error',
         }),
-          Sentry.captureException(e);
       })
       .finally(() => setIsLoading(false));
   }, [contact, data, reset]);
