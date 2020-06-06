@@ -62,11 +62,11 @@ const Contact = () => {
         );
         reset();
       })
-      .catch((e) => {
+      .catch(() =>
         toast('Something went wrong while trying to send your message 😟', {
           type: 'error',
         }),
-      })
+      )
       .finally(() => setIsLoading(false));
   }, [contact, data, reset]);
 
