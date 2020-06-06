@@ -32,7 +32,6 @@ cp .env.example .env
     "source.fixAll.eslint": true
   },
 }
-
 ```
 
 ## Running
