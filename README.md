@@ -6,6 +6,12 @@
 ![tag](https://img.shields.io/github/tag/wouterds/wouterdeschuyter.be.svg)
 ![repo size](https://img.shields.io/github/repo-size/wouterds/wouterdeschuyter.be)
 
+## Running
+
+```bash
+yarn dev
+```
+
 ## Setup
 
 ```bash
@@ -32,10 +38,4 @@ cp .env.example .env
     "source.fixAll.eslint": true
   },
 }
-```
-
-## Running
-
-```bash
-docker-compose -f .docker/docker-compose-dev.yml up
 ```
