@@ -44,7 +44,7 @@ class NetworkService {
     });
   };
 
-  public init = (cache: {}) => {
+  public init = (cache = {}) => {
     this._apollo = NetworkService.createApolloClient(cache);
 
     return this._apollo;

@@ -19,7 +19,6 @@ class GoogleAnalytics {
       return;
     }
 
-    // eslint-disable-next-line @typescript-eslint/camelcase
     window.gtag('config', process.env.GA_TRACKING_ID, { page_path: path });
   };
 }

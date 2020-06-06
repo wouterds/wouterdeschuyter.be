@@ -46,14 +46,11 @@ const Contact = () => {
     recaptcha.current.execute();
   }, [recaptcha]);
 
-  const onSubmit = useCallback(
-    handleSubmit((data) => {
-      setIsLoading(true);
-      setData(data);
-      executeCaptcha();
-    }),
-    [handleSubmit, executeCaptcha],
-  );
+  const onSubmit = handleSubmit((data) => {
+    setIsLoading(true);
+    setData(data);
+    executeCaptcha();
+  });
 
   const onVerify = useCallback(async () => {
     const { fullName, email, subject, message } = data;

@@ -21,7 +21,6 @@ const GoogleAnalyticsSDK = () => {
             dangerouslySetInnerHTML={{
               __html: JSON.stringify({
                 vars: {
-                  // eslint-disable-next-line @typescript-eslint/camelcase
                   gtag_id: `${process.env.GA_TRACKING_ID}`,
                   config: {
                     [`${process.env.GA_TRACKING_ID}`]: { groups: 'default' },
