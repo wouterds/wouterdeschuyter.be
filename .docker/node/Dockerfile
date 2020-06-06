@@ -1,4 +1,4 @@
-FROM node:14-alpine
+FROM node:14.3-alpine
 WORKDIR /code
 
 COPY ./package.json ./package.json
@@ -13,7 +13,7 @@ RUN apk add build-base vips-dev --upgrade --no-cache \
     --repository https://alpine.global.ssl.fastly.net/alpine/edge/main
 RUN yarn --production
 
-FROM node:14-alpine
+FROM node:14.3-alpine
 WORKDIR /code
 
 COPY --from=0 /code /code

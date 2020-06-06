@@ -18,10 +18,10 @@ clean:
 	-rm -rf .build-*
 
 node_modules: yarn.lock
-	docker run --rm -v ${PWD}:/code -w /code node:14-slim yarn
+	docker run --rm -v ${PWD}:/code -w /code node:14.3 yarn
 
 lint: node_modules
-	docker run --rm -v ${PWD}:/code -w /code node:14-slim yarn lint
+	docker run --rm -v ${PWD}:/code -w /code node:14.3 yarn lint
 
 .build-app: node_modules
 	docker run --rm -v ${PWD}:/code -w /code \
@@ -31,7 +31,7 @@ lint: node_modules
 			-e NEXT_PUBLIC_GA_TRACKING_ID \
 			-e NEXT_PUBLIC_ENV \
 			-e NEXT_PUBLIC_SPOTIFY_CLIENT_ID \
-		node:14-slim yarn build
+		node:14.3 yarn build
 	touch .build-app
 
 .build-nginx: ${DOCKERFILE_NGINX}
