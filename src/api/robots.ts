@@ -8,7 +8,7 @@ export default (_req: NextApiRequest, res: NextApiResponse) => {
   body += 'Disallow: /ping\n';
   body += 'Disallow: /experiments/connect-spotify\n';
   body += 'Disallow: /api/*\n\n';
-  body += `Sitemap: ${process.env.NEXT_PUBLIC_URL}/sitemap.xml\n`;
+  body += `Sitemap: ${process.env.NEXT_PUBLIC_URL}/sitemap.xml.gz\n`;
 
   res.setHeader('Content-Type', 'text/plain');
   res.send(body);
