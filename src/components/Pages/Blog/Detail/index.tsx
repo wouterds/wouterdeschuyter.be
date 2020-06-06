@@ -191,7 +191,6 @@ Detail.getInitialProps = async ({
     res.statusCode = 404;
   }
 
-  // Fire & forget
   try {
     apolloClient.mutate({
       mutation: INCREASE_VIEW_COUNT,
