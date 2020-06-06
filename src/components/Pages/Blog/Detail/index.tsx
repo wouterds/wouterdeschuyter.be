@@ -53,7 +53,7 @@ const Detail = (props: Props) => {
   const { post } = props;
 
   if (!post) {
-    return <Error statusCode={404} />;
+    return <Error />;
   }
 
   const parts = post.mediaAsset.fileName.split('.');
