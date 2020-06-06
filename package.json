@@ -29,6 +29,7 @@
     "apollo-client": "^2.6.4",
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
+    "classnames": "^2.2.6",
     "date-fns": "^2.12.0",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
@@ -56,6 +57,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.8.7",
+    "@types/classnames": "^2.2.10",
     "@types/highlight.js": "^9.12.3",
     "@types/lodash": "^4.14.150",
     "@types/marked": "^0.7.4",
