@@ -1,13 +1,13 @@
 const isSDKAvailable = () => {
   if (typeof window === 'undefined') {
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NEXT_PUBLIC_ENV !== 'production') {
       console.warn('GA SDK not available');
     }
     return false;
   }
 
   if (!window.gtag) {
-    if (process.env.NODE_ENV !== 'production') {
+    if (process.env.NEXT_PUBLIC_ENV !== 'production') {
       console.warn('GA SDK not available');
     }
     return false;
@@ -21,11 +21,11 @@ const pageView = (path: string) => {
     return;
   }
 
-  if (process.env.NODE_ENV !== 'production') {
+  if (process.env.NEXT_PUBLIC_ENV !== 'production') {
     return;
   }
 
-  window.gtag('config', process.env.GA_TRACKING_ID, {
+  window.gtag('config', process.env.NEXT_PUBLIC_GA_TRACKING_ID, {
     page_path: path,
   });
 };

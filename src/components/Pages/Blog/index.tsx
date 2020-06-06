@@ -48,21 +48,24 @@ const Blog = (props: Props) => {
         extra={
           <>
             {hasPrevPage && (
-              <link rel="prev" href={`${process.env.URL}/blog?page=${page}`} />
+              <link
+                rel="prev"
+                href={`${process.env.NEXT_PUBLIC_URL}/blog?page=${page}`}
+              />
             )}
             {hasNextPage && (
               <link
                 rel="next"
-                href={`${process.env.URL}/blog?page=${page + 2}`}
+                href={`${process.env.NEXT_PUBLIC_URL}/blog?page=${page + 2}`}
               />
             )}
             <link
               rel="canonical"
-              href={`${process.env.URL}/blog${
+              href={`${process.env.NEXT_PUBLIC_URL}/blog${
                 page > 0 ? `?page=${page + 1}` : ''
               }`}
             />
-            {page !== 0 && process.env.ENV === 'production' && (
+            {page !== 0 && process.env.NEXT_PUBLIC_ENV === 'production' && (
               <meta name="robots" content="noindex, follow" />
             )}
           </>

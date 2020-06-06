@@ -4,7 +4,7 @@ import { HttpLink } from 'apollo-link-http';
 
 const createApolloClient = (cache = {}) => {
   const link = new HttpLink({
-    uri: process.env.API_URL,
+    uri: process.env.NEXT_PUBLIC_API_URL,
   });
 
   return new ApolloClient({

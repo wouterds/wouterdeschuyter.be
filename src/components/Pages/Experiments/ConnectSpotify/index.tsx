@@ -30,7 +30,7 @@ ConnectSpotify.getInitialProps = async ({
     mutation: AUTHORIZE_SPOTIFY,
     variables: {
       authorizationCode: code,
-      redirectUri: `${process.env.URL}/experiments/connect-spotify`,
+      redirectUri: `${process.env.NEXT_PUBLIC_URL}/experiments/connect-spotify`,
     },
   });
 

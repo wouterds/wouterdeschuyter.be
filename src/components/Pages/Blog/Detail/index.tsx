@@ -58,7 +58,7 @@ const Detail = (props: Props) => {
 
   const parts = post.mediaAsset.fileName.split('.');
   const image = parts
-    ? `${process.env.URL}/static/media/${parts[0]}.embed.${parts[1]}`
+    ? `${process.env.NEXT_PUBLIC_URL}/static/media/${parts[0]}.embed.${parts[1]}`
     : undefined;
 
   return (
@@ -80,7 +80,7 @@ const Detail = (props: Props) => {
             <meta name="twitter:image" content={image} />
             <link
               rel="canonical"
-              href={`${process.env.URL}/blog/${post.slug}`}
+              href={`${process.env.NEXT_PUBLIC_URL}/blog/${post.slug}`}
             />
             <script
               type="application/ld+json"
@@ -90,7 +90,7 @@ const Detail = (props: Props) => {
                   '@type': 'NewsArticle',
                   mainEntityOfPage: {
                     '@type': 'WebPage',
-                    '@id': `${process.env.URL}/blog/${post.slug}`,
+                    '@id': `${process.env.NEXT_PUBLIC_URL}/blog/${post.slug}`,
                   },
                   headline: post.title,
                   description: post.excerpt,
@@ -108,10 +108,10 @@ const Detail = (props: Props) => {
                   publisher: {
                     '@type': 'Organization',
                     name: 'Wouter De Schuyter',
-                    url: process.env.URL,
+                    url: process.env.NEXT_PUBLIC_URL,
                     logo: {
                       '@type': 'ImageObject',
-                      url: `${process.env.URL}/static/wouterds.jpg`,
+                      url: `${process.env.NEXT_PUBLIC_URL}/static/wouterds.jpg`,
                     },
                   },
                 }),
@@ -142,7 +142,9 @@ const Detail = (props: Props) => {
             </header>
             <h1>{post.title}</h1>
             <Markdown markdown={post.body} />
-            <Webmentions url={`${process.env.URL}/blog/${post.slug}`} />
+            <Webmentions
+              url={`${process.env.NEXT_PUBLIC_URL}/blog/${post.slug}`}
+            />
           </Body>
         </Container>
       </Layout.Content>

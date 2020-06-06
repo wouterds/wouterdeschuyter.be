@@ -12,7 +12,7 @@ const FETCH_POSTS = gql`
 `;
 
 class Sitemap {
-  private sitemap = createSitemap({ hostname: process.env.URL });
+  private sitemap = createSitemap({ hostname: process.env.NEXT_PUBLIC_URL });
 
   private buildStatic = () => {
     this.sitemap.add({

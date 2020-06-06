@@ -43,8 +43,8 @@ const Landing = () => {
                 '@context': 'https://schema.org',
                 '@type': 'Organization',
                 name: 'Wouter De Schuyter',
-                url: process.env.URL,
-                logo: `${process.env.URL}/static/wouterds.jpg`,
+                url: process.env.NEXT_PUBLIC_URL,
+                logo: `${process.env.NEXT_PUBLIC_URL}/static/wouterds.jpg`,
                 contactPoint: [
                   {
                     '@type': 'ContactPoint',

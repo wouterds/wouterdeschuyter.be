@@ -15,7 +15,9 @@ const Meta = (props: Props) => {
   const isAmp = useAmp();
   const { title, description, extra, router } = props;
 
-  const url = `${process.env.URL}${router.asPath !== '/' ? router.asPath : ''}`;
+  const url = `${process.env.NEXT_PUBLIC_URL}${
+    router.asPath !== '/' ? router.asPath : ''
+  }`;
 
   const extraMetaHtml = extra ? renderToString(extra) : '';
   const extraOgType = extraMetaHtml.indexOf('og:type') > -1;
@@ -31,10 +33,10 @@ const Meta = (props: Props) => {
           content="width=device-width, initial-scale=1, minimum-scale=1"
         />
       )}
-      {process.env.ENV === 'production' && (
+      {process.env.NEXT_PUBLIC_ENV === 'production' && (
         <meta name="robots" content="index, follow" />
       )}
-      {process.env.ENV !== 'production' && (
+      {process.env.NEXT_PUBLIC_ENV !== 'production' && (
         <meta name="robots" content="noindex" />
       )}
       {description && <meta name="description" content={description} />}
@@ -46,13 +48,13 @@ const Meta = (props: Props) => {
       {!extraOgImage && (
         <meta
           property="og:image"
-          content={`${process.env.URL}/static/wouterds.jpg`}
+          content={`${process.env.NEXT_PUBLIC_URL}/static/wouterds.jpg`}
         />
       )}
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:image"
-        content={`${process.env.URL}/static/wouterds.jpg`}
+        content={`${process.env.NEXT_PUBLIC_URL}/static/wouterds.jpg`}
       />
       <meta name="twitter:creator" content="@wouterds" />
       <meta name="twitter:title" content={title} />
@@ -82,7 +84,7 @@ const Meta = (props: Props) => {
       <link
         rel="alternate"
         type="application/rss+xml"
-        href={`${process.env.URL}/feed.xml`}
+        href={`${process.env.NEXT_PUBLIC_URL}/feed.xml`}
       />
       <link href="https://github.com/wouterds" rel="me" />
       <link href="https://twitter.com/wouterds" rel="me" />

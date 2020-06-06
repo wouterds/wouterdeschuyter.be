@@ -148,9 +148,9 @@ export const ExperimentsBar = (props: Props) => {
             {spotifyIsConnected === false && (
               <a
                 href={`https://accounts.spotify.com/authorize?client_id=${
-                  process.env.SPOTIFY_CLIENT_ID
+                  process.env.NEXT_PUBLIC_SPOTIFY_CLIENT_ID
                 }&response_type=code&redirect_uri=${encodeURI(
-                  `${process.env.URL}/experiments/connect-spotify`,
+                  `${process.env.NEXT_PUBLIC_URL}/experiments/connect-spotify`,
                 )}&scope=user-read-currently-playing%20user-read-recently-played`}
               >
                 Connect Spotify

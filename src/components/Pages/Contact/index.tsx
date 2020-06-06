@@ -159,7 +159,7 @@ const Contact = () => {
             <ReCAPTCHA
               ref={recaptcha}
               size="invisible"
-              sitekey={`${process.env.RECAPTCHA_SITE_KEY}`}
+              sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
               onChange={onVerify}
               onErrored={onError}
             />
