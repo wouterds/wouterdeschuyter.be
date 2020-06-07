@@ -16,7 +16,6 @@ import LocalHeader from './Header';
 import styles from './styles.module.scss';
 
 const MediumZoomHelper = dynamic(() => import('./Helpers/MediumZoom'));
-const HighlightjsHelper = dynamic(() => import('./Helpers/Highlightjs'));
 
 const FETCH_DATA = gql`
   query fetchData($slug: String!) {
@@ -149,7 +148,6 @@ const Detail = (props: Props) => {
       </Layout.Content>
       <Footer centered />
       <MediumZoomHelper />
-      <HighlightjsHelper />
     </Layout>
   );
 };
