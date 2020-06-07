@@ -8,7 +8,6 @@ import gql from 'graphql-tag';
 import React, { useCallback, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import useForm from 'react-hook-form';
-import toast from 'services/toast';
 
 import styles from './styles.module.scss';
 
@@ -56,26 +55,20 @@ const Contact = () => {
 
     contact({ variables: { fullName, email, subject, message } })
       .then(() => {
-        toast(
+        alert(
           "Your message has been sent, I'll get back to you as soon as possible!",
-          { type: 'success' },
         );
         reset();
       })
       .catch(() =>
-        toast('Something went wrong while trying to send your message 😟', {
-          type: 'error',
-        }),
+        alert('Something went wrong while trying to send your message 😟'),
       )
       .finally(() => setIsLoading(false));
   }, [contact, data, reset]);
 
   const onError = () => {
     setIsLoading(false);
-
-    toast('ReCAPTCHA failed 🤔...', {
-      type: 'error',
-    });
+    alert('ReCAPTCHA failed 🤔...');
   };
 
   return (
