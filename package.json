@@ -33,7 +33,6 @@
     "next-with-apollo": "^5.0.1",
     "nprogress": "^0.2.0",
     "react": "^16.13.0",
-    "react-apollo": "^3.1.5",
     "react-dom": "^16.13.0",
     "react-google-recaptcha": "^2.0.1",
     "react-hook-form": "^3.23.18",
