@@ -1,7 +1,7 @@
 .button {
   outline: 0;
-  border: 1px solid #2b2f33;
-  background: #2b2f33;
+  border: 1px solid var(--color-text-dark);
+  background: var(--color-text-dark);
   color: #fff;
   border-radius: 3px;
   padding: 0.55em 1em 0.6em;
@@ -11,15 +11,15 @@
   position: relative;
 
   &:hover {
-    border-color: var(--color-tint);
-    background: var(--color-tint);
+    border-color: #000;
+    background: #000;
   }
 
   &.loading {
     text-align: left;
     text-indent: -9999px;
-    background: var(--color-tint);
-    border-color: var(--color-tint);
+    background: #000;
+    border-color: #000;
     cursor: default;
 
     @keyframes spinner {
