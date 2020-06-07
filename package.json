@@ -19,7 +19,6 @@
   "dependencies": {
     "@apollo/react-hooks": "^3.1.5",
     "@apollo/react-ssr": "^3.1.5",
-    "@types/url-parse": "^1.4.3",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
     "apollo-link-context": "^1.0.20",
@@ -47,7 +46,6 @@
     "sharp": "^0.25.1",
     "sitemap": "^6.1.5",
     "universal-cookie": "^4.0.3",
-    "url-parse": "^1.4.7",
     "uuid": "^7.0.3"
   },
   "devDependencies": {
