@@ -21,7 +21,6 @@
     "@apollo/react-ssr": "^3.1.5",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
-    "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
     "classnames": "^2.2.6",
     "date-fns": "^2.12.0",
