@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import React, {
   ButtonHTMLAttributes,
   DetailedHTMLProps,
@@ -7,7 +8,7 @@ import React, {
   useCallback,
 } from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 interface Props
   extends DetailedHTMLProps<
@@ -35,7 +36,17 @@ const Button = (props: Props, ref: Ref<HTMLButtonElement>) => {
     [onClick, isLoading],
   );
 
-  return <Container {...props} ref={ref} onClick={onClickProxy} />;
+  return (
+    <button
+      {...props}
+      ref={ref}
+      onClick={onClickProxy}
+      className={cx({
+        [styles.button]: true,
+        [styles.loading]: isLoading,
+      })}
+    />
+  );
 };
 
 export default forwardRef<HTMLButtonElement, Props>(Button);

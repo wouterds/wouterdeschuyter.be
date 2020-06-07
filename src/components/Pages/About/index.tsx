@@ -1,23 +1,11 @@
-import {
-  faFacebookF,
-  faGithub,
-  faInstagram,
-  faLinkedinIn,
-  faSpotify,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import { differenceInMilliseconds } from 'date-fns';
-import { useAmp } from 'next/amp';
 import React, { useEffect, useState } from 'react';
 
-import { Container, Social, SocialLink } from './styles';
-
-export const config = { amp: 'hybrid' };
+import styles from './styles.module.scss';
 
 const getAge = () =>
   (
@@ -28,7 +16,6 @@ const getAge = () =>
 
 const About = () => {
   const [age, setAge] = useState(getAge);
-  const isAmp = useAmp();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -48,12 +35,12 @@ const About = () => {
       />
       <Header />
       <Layout.Content centered editorial>
-        <Container>
+        <div className={styles.about}>
           <h1>About</h1>
           <p>
             Hey 👋, I&apos;m Wouter! Currently{' '}
-            <span className="age">{age}</span> years old and passionate about
-            all things digital really.
+            <span className={styles.age}>{age}</span> years old and passionate
+            about all things digital really.
           </p>
           <p>
             I studied{' '}
@@ -123,69 +110,7 @@ const About = () => {
             things I&apos;ve come across lately 👀!
           </p>
           <p>Oh right, also a cat person 🐈!</p>
-
-          {!isAmp && (
-            <Social>
-              <h2>Connect with me</h2>
-
-              <SocialLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://twitter.com/wouterds"
-                title="Twitter"
-                twitter
-              >
-                <FontAwesomeIcon icon={faTwitter} />
-              </SocialLink>
-
-              <SocialLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://facebook.com/wouter.de.schuyter"
-                title="Facebook"
-                facebook
-              >
-                <FontAwesomeIcon icon={faFacebookF} />
-              </SocialLink>
-              <SocialLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://instagram.com/wouterds"
-                title="Instagram"
-                instagram
-              >
-                <FontAwesomeIcon icon={faInstagram} />
-              </SocialLink>
-              <SocialLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://open.spotify.com/user/wouterds"
-                title="Spotify"
-                spotify
-              >
-                <FontAwesomeIcon icon={faSpotify} />
-              </SocialLink>
-              <SocialLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://linkedin.com/in/wouterds"
-                title="Linked In"
-                linkedIn
-              >
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </SocialLink>
-              <SocialLink
-                target="_blank"
-                rel="noopener noreferrer"
-                href="https://github.com/wouterds"
-                title="Github"
-                github
-              >
-                <FontAwesomeIcon icon={faGithub} />
-              </SocialLink>
-            </Social>
-          )}
-        </Container>
+        </div>
       </Layout.Content>
       <Footer centered />
     </Layout>

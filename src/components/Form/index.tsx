@@ -4,11 +4,10 @@ import Button from './Button';
 import Field from './Field';
 import Input from './Input';
 import Label from './Label';
-import { Container } from './styles';
 import Textarea from './Textarea';
 
 const Form = (props: FormHTMLAttributes<HTMLFormElement>) => {
-  return <Container {...props} />;
+  return <form {...props} />;
 };
 
 Form.Field = Field;

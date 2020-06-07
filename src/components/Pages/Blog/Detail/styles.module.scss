@@ -1,14 +1,10 @@
-import styled from 'styled-components';
-
-export const Container = styled.div`
+.blog-detail {
   margin-top: 65vh;
 
   @media (max-width: 640px) {
     margin-top: 30vh;
   }
-`;
 
-export const Body = styled.div`
   > header {
     time {
       color: #ced5d9;
@@ -20,4 +16,4 @@ export const Body = styled.div`
       transition: color ease-in-out 200ms;
     }
   }
-`;
+}

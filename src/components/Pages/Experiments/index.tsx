@@ -4,9 +4,6 @@ import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import React from 'react';
 
-import Sensors from './Sensors';
-import { Container } from './styles';
-
 export const config = { amp: 'hybrid' };
 
 const Experiments = () => {
@@ -18,22 +15,13 @@ const Experiments = () => {
       />
       <Header />
       <Layout.Content centered editorial>
-        <Container>
+        <div>
           <h1>Experiments 🧪</h1>
           <p>
-            Yo, not sure what this is. Just a bunch of random things and
-            experiments 🤪!
+            Just a bunch of random things and experiments, work in progress 🚧!
           </p>
           <br />
-
-          <Sensors />
-
-          <br />
-          <img
-            src="https://media2.giphy.com/media/J2CA80sYEpeLgsDqCr/giphy.gif?cid=790b76111c5e9c0de363262200178be2e73c45efc95d737e&rid=giphy.gif"
-            width="100%"
-          />
-        </Container>
+        </div>
       </Layout.Content>
       <Footer centered />
     </Layout>

@@ -1,6 +1,7 @@
+import cx from 'classnames';
 import React, { ReactNode } from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 interface Props {
   children: ReactNode;
@@ -12,9 +13,16 @@ const Content = (props: Props) => {
   const { children, centered, editorial } = props;
 
   return (
-    <Container centered={centered} editorial={editorial}>
+    <section
+      role="main"
+      className={cx({
+        [styles.content]: true,
+        [styles.centered]: centered,
+        [styles.editorial]: editorial,
+      })}
+    >
       {children}
-    </Container>
+    </section>
   );
 };
 

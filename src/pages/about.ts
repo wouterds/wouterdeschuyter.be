@@ -1,1 +1,2 @@
-export { config, default } from 'components/Pages/About';
+export { default } from 'components/Pages/About';
+export const config = { amp: 'hybrid' };

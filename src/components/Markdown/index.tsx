@@ -5,7 +5,7 @@ import { useAmp } from 'next/amp';
 import Head from 'next/head';
 import React from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 interface Props {
   markdown: string;
@@ -54,7 +54,9 @@ const generateHtmlFromMarkdown = (
         `:media:${mediaAsset.id}:`,
         isAmp
           ? `<amp-img src="${process.env.NEXT_PUBLIC_APP_URL}/static/media/${mediaAsset.fileName}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}" alt="${mediaAsset.fileName}" />`
-          : `<div class="media media--image" style="padding-bottom: ${
+          : `<div data-markdown class="${styles.media} ${
+              styles['media-image']
+            }" style="padding-bottom: ${
               (mediaAsset.height / mediaAsset.width) * 100
             }%"><img loading="lazy" src="${
               process.env.NEXT_PUBLIC_APP_URL
@@ -74,7 +76,9 @@ const generateHtmlFromMarkdown = (
           `:media:${mediaAsset.id}:`,
           isAmp
             ? `<amp-youtube data-videoid="${youtubeId}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}"></amp-youtube>`
-            : `<div class="media media--video" style="padding-bottom: ${
+            : `<div class="${styles.media} ${
+                styles['media-video']
+              }" style="padding-bottom: ${
                 (mediaAsset.height / mediaAsset.width) * 100
               }%"><iframe loading="lazy" src="https://youtube.com/embed/${youtubeId}" frameborder="0" allowfullscreen>${url}</iframe></div>`,
         );
@@ -104,7 +108,10 @@ const Markdown = ({ markdown }: Props) => {
           ></script>
         </Head>
       )}
-      <Container dangerouslySetInnerHTML={{ __html: html }} />
+      <div
+        dangerouslySetInnerHTML={{ __html: html }}
+        className={styles.markdown}
+      />
     </>
   );
 };

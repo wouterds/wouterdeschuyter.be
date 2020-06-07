@@ -3,7 +3,7 @@ import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import React from 'react';
 
-import { Container, Post } from './styles';
+import styles from './styles.module.scss';
 
 export type Post = {
   id: string;
@@ -22,9 +22,9 @@ const Posts = (props: Props) => {
   const { posts } = props;
 
   return (
-    <Container>
+    <div className={styles.posts}>
       {posts.map((post) => (
-        <Post key={post.id}>
+        <div key={post.id} className={styles.post}>
           <Link
             href="/blog/[slug]"
             as={`/blog/${post.slug}${isAmp ? '?amp=1' : ''}`}
@@ -42,9 +42,9 @@ const Posts = (props: Props) => {
               <p>{post.excerpt}</p>
             </a>
           </Link>
-        </Post>
+        </div>
       ))}
-    </Container>
+    </div>
   );
 };
 

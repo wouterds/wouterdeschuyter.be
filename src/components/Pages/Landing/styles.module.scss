@@ -1,11 +1,9 @@
-import styled from 'styled-components';
-
-export const Links = styled.div`
+.landing {
   text-align: right;
   margin-top: 2.5em;
 
   a {
-    font-size: ${16 / 19.2}em;
+    font-size: 0.8em;
     font-weight: 500;
     border: 0;
     color: var(--color-alternative-link);
@@ -20,4 +18,4 @@ export const Links = styled.div`
       text-decoration: none;
     }
   }
-`;
+}

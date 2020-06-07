@@ -5,7 +5,7 @@ import React, {
   Ref,
 } from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 interface Props
   extends DetailedHTMLProps<
@@ -16,7 +16,7 @@ interface Props
 }
 
 const Input = (props: Props, ref: Ref<HTMLInputElement>) => {
-  return <Container {...props} ref={ref} />;
+  return <input {...props} ref={ref} className={styles.input} />;
 };
 
 export default forwardRef<HTMLInputElement, Props>(Input);

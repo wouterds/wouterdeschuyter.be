@@ -1,7 +1,7 @@
 import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 interface Webmention {
   type: string;
@@ -76,19 +76,19 @@ const Webmentions = (props: Props) => {
   );
 
   return (
-    <Container>
+    <div className={styles.webmentions}>
       <h2>Webmentions</h2>
       <ul>
         {likes.length > 0 && (
           <li>
             <a
-              className="likes"
+              className={styles.likes}
               target="_blank"
               rel="noopener noreferrer"
               href={likes[0].url}
             >
               <div
-                className="heads"
+                className={styles.heads}
                 style={{
                   paddingLeft: `${
                     (likes.length > 7 ? 7 : likes.length) * 1.25 + 1.75 + 0.5
@@ -100,7 +100,7 @@ const Webmentions = (props: Props) => {
                   .slice(likes.length > 7 ? likes.length - 7 : 0, likes.length)
                   .map((webmention: Webmention, index: number) => (
                     <span
-                      className="head"
+                      className={styles.head}
                       style={{
                         left: `${index * 1.25}em`,
                         backgroundImage: `url(${webmention.author.photo})`,
@@ -120,19 +120,19 @@ const Webmentions = (props: Props) => {
         {other.map((webmention: Webmention, index: number) => (
           <li key={index}>
             <a
-              className="author"
+              className={styles.author}
               target="_blank"
               rel="noopener noreferrer"
               href={webmention.url}
             >
               <span
-                className="head"
+                className={styles.head}
                 style={{ backgroundImage: `url(${webmention.author.photo})` }}
               />
               <strong>{webmention.author.name}</strong>
             </a>
             <a
-              className="content"
+              className={styles.content}
               target="_blank"
               rel="noopener noreferrer"
               href={webmention.url}
@@ -147,7 +147,7 @@ const Webmentions = (props: Props) => {
           </li>
         ))}
       </ul>
-    </Container>
+    </div>
   );
 };
 

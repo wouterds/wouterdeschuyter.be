@@ -5,7 +5,7 @@ import React, {
   TextareaHTMLAttributes,
 } from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 interface Props
   extends DetailedHTMLProps<
@@ -16,7 +16,7 @@ interface Props
 }
 
 const Textarea = (props: Props, ref: Ref<HTMLTextAreaElement>) => {
-  return <Container {...props} ref={ref} />;
+  return <textarea {...props} ref={ref} className={styles.textarea} />;
 };
 
 export default forwardRef<HTMLTextAreaElement, Props>(Textarea);

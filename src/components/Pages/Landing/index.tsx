@@ -10,7 +10,7 @@ import Link from 'next/link';
 import React from 'react';
 import Header from 'components/Header';
 import LandingHeader from './Header';
-import { Links } from './styles';
+import styles from './styles.module.scss';
 
 const FETCH_DATA = gql`
   query fetchData {
@@ -70,11 +70,11 @@ const Landing = () => {
         <LandingHeader />
         {data && <Posts posts={data.posts} />}
 
-        <Links>
+        <div className={styles.landing}>
           <Link href={`/blog${isAmp ? '?amp=1' : ''}`}>
             <a>more &raquo;</a>
           </Link>
-        </Links>
+        </div>
       </Layout.Content>
       <Footer centered />
     </Layout>

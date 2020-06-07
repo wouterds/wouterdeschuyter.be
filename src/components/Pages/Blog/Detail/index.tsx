@@ -13,7 +13,7 @@ import React from 'react';
 import Network from 'services/network';
 
 import LocalHeader from './Header';
-import { Body, Container } from './styles';
+import styles from './styles.module.scss';
 
 const MediumZoomHelper = dynamic(() => import('./Helpers/MediumZoom'));
 const HighlightjsHelper = dynamic(() => import('./Helpers/Highlightjs'));
@@ -124,30 +124,28 @@ const Detail = (props: Props) => {
       <Header transparent={true} />
       <LocalHeader mediaAsset={post.mediaAsset} />
       <Layout.Content centered editorial>
-        <Container>
-          <Body>
-            <header>
-              <time
-                dateTime={(post.publishedAt
+        <div className={styles['blog-detail']}>
+          <header>
+            <time
+              dateTime={(post.publishedAt
+                ? new Date(parseInt(post.publishedAt))
+                : new Date()
+              ).toISOString()}
+            >
+              {format(
+                post.publishedAt
                   ? new Date(parseInt(post.publishedAt))
-                  : new Date()
-                ).toISOString()}
-              >
-                {format(
-                  post.publishedAt
-                    ? new Date(parseInt(post.publishedAt))
-                    : new Date(),
-                  'MMM d, yyyy',
-                )}
-              </time>
-            </header>
-            <h1>{post.title}</h1>
-            <Markdown markdown={post.body} />
-            <Webmentions
-              url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`}
-            />
-          </Body>
-        </Container>
+                  : new Date(),
+                'MMM d, yyyy',
+              )}
+            </time>
+          </header>
+          <h1>{post.title}</h1>
+          <Markdown markdown={post.body} />
+          <Webmentions
+            url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`}
+          />
+        </div>
       </Layout.Content>
       <Footer centered />
       <MediumZoomHelper />

@@ -1,9 +1,10 @@
+import cx from 'classnames';
 import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import { NextRouter, withRouter } from 'next/router';
 import React from 'react';
 
-import { Container, Logo, Nav, Title } from './styles';
+import styles from './styles.module.scss';
 
 interface Props {
   router: NextRouter;
@@ -12,51 +13,56 @@ interface Props {
 }
 
 export const Header = (props: Props) => {
-  const { router, hideLogo, transparent = false } = props;
+  const { router, hideLogo, transparent } = props;
   const isAmp = useAmp();
 
   return (
-    <Container>
+    <div
+      className={cx({
+        [styles.header]: true,
+        [styles.transparent]: transparent,
+      })}
+    >
       {hideLogo !== true && (
-        <Title transparent={transparent}>
+        <div className={styles.title}>
           <Link href={`/${isAmp ? '?amp=1' : ''}`}>
             <a>
-              <Logo />
+              <div className={styles.logo} />
               <h1>Wouter De Schuyter</h1>
             </a>
           </Link>
-        </Title>
+        </div>
       )}
-      <Nav transparent={transparent}>
+      <nav className={styles.nav}>
         <Link href={`/about${isAmp ? '?amp=1' : ''}`}>
           <a
-            className={
-              router.pathname.indexOf('/about') !== -1 ? 'active' : undefined
-            }
+            className={cx({
+              [styles.active]: router.pathname.indexOf('/about') !== -1,
+            })}
           >
             About
           </a>
         </Link>
         <Link href={`/blog${isAmp ? '?amp=1' : ''}`}>
           <a
-            className={
-              router.pathname.indexOf('/blog') !== -1 ? 'active' : undefined
-            }
+            className={cx({
+              [styles.active]: router.pathname.indexOf('/blog') !== -1,
+            })}
           >
             Blog
           </a>
         </Link>
         <Link href="/contact">
           <a
-            className={
-              router.pathname.indexOf('/contact') !== -1 ? 'active' : undefined
-            }
+            className={cx({
+              [styles.active]: router.pathname.indexOf('/contact') !== -1,
+            })}
           >
             Contact
           </a>
         </Link>
-      </Nav>
-    </Container>
+      </nav>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ import Link from 'next/link';
 import React from 'react';
 import Network from 'services/network';
 
-import { Container, Links } from './styles';
+import styles from './styles.module.scss';
 
 const POSTS_PER_PAGE = 7;
 
@@ -74,7 +74,7 @@ const Blog = (props: Props) => {
       />
       <Header />
       <Layout.Content centered editorial>
-        <Container>
+        <div className={styles.blog}>
           {posts.length === 0 && (
             <>
               <h1>The end</h1>
@@ -91,7 +91,7 @@ const Blog = (props: Props) => {
           )}
 
           {(hasNextPage || hasPrevPage) && (
-            <Links>
+            <div className={styles.links}>
               {hasPrevPage ? (
                 <Link href={`/blog?page=${page}${isAmp ? '&amp=1' : ''}`}>
                   <a>&laquo; previous</a>
@@ -104,9 +104,9 @@ const Blog = (props: Props) => {
                   <a>next &raquo;</a>
                 </Link>
               )}
-            </Links>
+            </div>
           )}
-        </Container>
+        </div>
       </Layout.Content>
       <Footer centered />
     </Layout>

@@ -1,14 +1,14 @@
 import { useAmp } from 'next/amp';
 import React from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 export const Header = () => {
   const isAmp = useAmp();
 
   return (
-    <Container>
-      <div className="image">
+    <header className={styles.header}>
+      <div className={styles.image}>
         {isAmp ? (
           <amp-img
             src="/static/wouterds.jpg"
@@ -24,7 +24,7 @@ export const Header = () => {
 
       <h1>Wouter De Schuyter</h1>
       <h2>An ambitious, passionate Full Stack Developer</h2>
-    </Container>
+    </header>
   );
 };
 

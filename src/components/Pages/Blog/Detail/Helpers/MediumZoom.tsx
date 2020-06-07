@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 
 const MediumZoom = () => {
   useEffect(() => {
-    mediumZoom('.media--image img', { margin: 25 });
+    mediumZoom('[data-markdown] img', { margin: 25 });
   }, []);
 
   return null;

@@ -1,9 +1,9 @@
 import React, { LabelHTMLAttributes } from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 const Label = (props: LabelHTMLAttributes<HTMLLabelElement>) => {
-  return <Container {...props} />;
+  return <label {...props} className={styles.label} />;
 };
 
 export default Label;

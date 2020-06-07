@@ -10,7 +10,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import useForm from 'react-hook-form';
 import toast from 'services/toast';
 
-import { Col, Container, Row } from './styles';
+import styles from './styles.module.scss';
 
 const CONTACT = gql`
   mutation Contact(
@@ -86,7 +86,7 @@ const Contact = () => {
       />
       <Header />
       <Layout.Content centered editorial>
-        <Container>
+        <div className={styles.contact}>
           <h1>Contact</h1>
           <p>
             If you&apos;re writing for a project or to work together, please
@@ -95,8 +95,8 @@ const Contact = () => {
             than happy to reply!
           </p>
           <Form onSubmit={onSubmit}>
-            <Row>
-              <Col>
+            <div className={styles.row}>
+              <div className={styles.col}>
                 <Form.Field>
                   <Form.Label htmlFor="fullName">Full name</Form.Label>
                   <Form.Input
@@ -106,8 +106,8 @@ const Contact = () => {
                     ref={register({ required: true })}
                   />
                 </Form.Field>
-              </Col>
-              <Col>
+              </div>
+              <div className={styles.col}>
                 <Form.Field>
                   <Form.Label htmlFor="email">Email address</Form.Label>
                   <Form.Input
@@ -118,10 +118,10 @@ const Contact = () => {
                     ref={register({ required: true })}
                   />
                 </Form.Field>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
+              </div>
+            </div>
+            <div className={styles.row}>
+              <div className={styles.col}>
                 <Form.Field>
                   <Form.Label htmlFor="subject">Subject</Form.Label>
                   <Form.Input
@@ -131,10 +131,10 @@ const Contact = () => {
                     ref={register({ required: true })}
                   />
                 </Form.Field>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
+              </div>
+            </div>
+            <div className={styles.row}>
+              <div className={styles.col}>
                 <Form.Field>
                   <Form.Label htmlFor="message">Message</Form.Label>
                   <Form.Textarea
@@ -145,17 +145,17 @@ const Contact = () => {
                     ref={register({ required: true })}
                   />
                 </Form.Field>
-              </Col>
-            </Row>
-            <Row>
-              <Col>
+              </div>
+            </div>
+            <div className={styles.row}>
+              <div className={styles.col}>
                 <Form.Field>
                   <Form.Button type="submit" isLoading={isLoading}>
                     Send message
                   </Form.Button>
                 </Form.Field>
-              </Col>
-            </Row>
+              </div>
+            </div>
             <ReCAPTCHA
               ref={recaptcha}
               size="invisible"
@@ -164,7 +164,7 @@ const Contact = () => {
               onErrored={onError}
             />
           </Form>
-        </Container>
+        </div>
       </Layout.Content>
       <Footer centered />
     </Layout>

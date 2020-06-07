@@ -8,20 +8,16 @@ import NProgress from 'nprogress';
 import React from 'react';
 import GoogleAnalytics from 'services/google-analytics';
 import Network from 'services/network';
-import BaseCSS from 'styles/base';
 
 class App extends NextApp {
   public render() {
     const { Component, pageProps } = this.props;
 
     return (
-      <>
-        <BaseCSS />
+      <ApolloProvider client={Network.apollo}>
         <GoogleAnalyticsSDK />
-        <ApolloProvider client={Network.apollo}>
-          <Component {...pageProps} />
-        </ApolloProvider>
-      </>
+        <Component {...pageProps} />
+      </ApolloProvider>
     );
   }
 }

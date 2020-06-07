@@ -1,9 +1,9 @@
 import React, { HTMLAttributes } from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 const Field = (props: HTMLAttributes<HTMLDivElement>) => {
-  return <Container {...props} />;
+  return <div {...props} className={styles.field} />;
 };
 
 export default Field;

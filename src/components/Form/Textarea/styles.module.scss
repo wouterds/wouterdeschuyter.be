@@ -1,6 +1,4 @@
-import styled, { css } from 'styled-components';
-
-export const Container = styled.input<{ hasError?: boolean }>`
+.textarea {
   outline: 0;
   border: 1px solid #cfd4db;
   border-radius: 3px;
@@ -14,10 +12,4 @@ export const Container = styled.input<{ hasError?: boolean }>`
     border-color: #838f9e;
     color: var(--color-text-light);
   }
-
-  ${({ hasError }) =>
-    hasError &&
-    css`
-      border-color: var(--color-tint);
-    `}
-`;
+}

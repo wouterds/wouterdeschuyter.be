@@ -5,7 +5,7 @@ import Meta from 'components/Meta';
 import NextError from 'next/error';
 import React from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 const Error = () => (
   <Layout>
@@ -15,12 +15,12 @@ const Error = () => (
     />
     <Header />
     <Layout.Content centered editorial>
-      <Container>
+      <div className={styles.error}>
         <h1>Whoops!</h1>
         <p>It looks like something went wrong 😢...</p>
 
         <img src="/static/error.gif" alt="error.gif" />
-      </Container>
+      </div>
     </Layout.Content>
     <Footer centered />
   </Layout>

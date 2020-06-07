@@ -5,7 +5,6 @@ COPY ./package.json ./package.json
 COPY ./yarn.lock ./yarn.lock
 COPY ./.next ./.next
 COPY ./public ./public
-COPY ./config.js ./next.config.js
 COPY ./dist/healthcheck.js ./healthcheck.js
 
 RUN apk add build-base vips-dev --upgrade --no-cache \

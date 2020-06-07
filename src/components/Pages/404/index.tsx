@@ -4,7 +4,7 @@ import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import React from 'react';
 
-import { Container } from './styles';
+import styles from './styles.module.scss';
 
 const E404 = () => (
   <Layout>
@@ -14,12 +14,12 @@ const E404 = () => (
     />
     <Header />
     <Layout.Content centered editorial>
-      <Container>
+      <div className={styles.E404}>
         <h1>Not found</h1>
         <p>The page you were looking for could not be found.</p>
 
         <img src="/static/error.gif" alt="error.gif" />
-      </Container>
+      </div>
     </Layout.Content>
     <Footer centered />
   </Layout>
