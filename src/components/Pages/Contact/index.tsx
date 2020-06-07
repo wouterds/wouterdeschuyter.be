@@ -7,7 +7,7 @@ import Meta from 'components/Meta';
 import gql from 'graphql-tag';
 import React, { useCallback, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
-import useForm from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 import styles from './styles.module.scss';
 
