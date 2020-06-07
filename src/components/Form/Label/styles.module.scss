@@ -1,6 +1,12 @@
 .label {
   font-weight: 500;
   color: var(--color-text-dark);
+  transition: color ease-in-out 200ms;
   display: block;
   margin-bottom: 5px;
+
+  &.error {
+    color: #e74c3c;
+    border-color: #e74c3c;
+  }
 }

@@ -91,7 +91,12 @@ const Contact = () => {
             <div className={styles.row}>
               <div className={styles.col}>
                 <Form.Field>
-                  <Form.Label htmlFor="fullName">Full name</Form.Label>
+                  <Form.Label
+                    htmlFor="fullName"
+                    hasError={errors.hasOwnProperty('fullName')}
+                  >
+                    Full name
+                  </Form.Label>
                   <Form.Input
                     id="fullName"
                     name="fullName"
@@ -102,7 +107,12 @@ const Contact = () => {
               </div>
               <div className={styles.col}>
                 <Form.Field>
-                  <Form.Label htmlFor="email">Email address</Form.Label>
+                  <Form.Label
+                    htmlFor="email"
+                    hasError={errors.hasOwnProperty('email')}
+                  >
+                    Email address
+                  </Form.Label>
                   <Form.Input
                     id="email"
                     name="email"
@@ -116,7 +126,12 @@ const Contact = () => {
             <div className={styles.row}>
               <div className={styles.col}>
                 <Form.Field>
-                  <Form.Label htmlFor="subject">Subject</Form.Label>
+                  <Form.Label
+                    htmlFor="subject"
+                    hasError={errors.hasOwnProperty('subject')}
+                  >
+                    Subject
+                  </Form.Label>
                   <Form.Input
                     id="subject"
                     name="subject"
@@ -129,7 +144,12 @@ const Contact = () => {
             <div className={styles.row}>
               <div className={styles.col}>
                 <Form.Field>
-                  <Form.Label htmlFor="message">Message</Form.Label>
+                  <Form.Label
+                    htmlFor="message"
+                    hasError={errors.hasOwnProperty('message')}
+                  >
+                    Message
+                  </Form.Label>
                   <Form.Textarea
                     id="message"
                     name="message"

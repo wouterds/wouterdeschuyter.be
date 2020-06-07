@@ -1,3 +1,4 @@
+import cx from 'classnames';
 import React, {
   DetailedHTMLProps,
   forwardRef,
@@ -16,7 +17,18 @@ interface Props
 }
 
 const Textarea = (props: Props, ref: Ref<HTMLTextAreaElement>) => {
-  return <textarea {...props} ref={ref} className={styles.textarea} />;
+  const { hasError } = props;
+
+  return (
+    <textarea
+      {...props}
+      ref={ref}
+      className={cx({
+        [styles.textarea]: true,
+        [styles.error]: hasError,
+      })}
+    />
+  );
 };
 
 export default forwardRef<HTMLTextAreaElement, Props>(Textarea);
