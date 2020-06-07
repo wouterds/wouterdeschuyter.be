@@ -54,7 +54,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
 
   for (const post of posts) {
     const parts = post.mediaAsset.fileName.split('.');
-    const image = `/static/media/${parts[0]}.embed.${parts[1]}`;
+    const image = `${process.env.NEXT_PUBLIC_APP_URL}/static/media/${parts[0]}.embed.${parts[1]}`;
 
     feed.item({
       title: post.title,
@@ -63,7 +63,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
       author: `${post.user.firstName} ${post.user.lastName}`,
       date: new Date(parseInt(post.publishedAt)).toISOString(),
       enclosure: {
-        url: `${process.env.NEXT_PUBLIC_APP_URL}${image}`,
+        url: image,
         size: post.mediaAsset.size,
         type: post.mediaAsset.mediaType,
       },

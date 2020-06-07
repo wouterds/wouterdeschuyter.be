@@ -53,12 +53,14 @@ const generateHtmlFromMarkdown = (
       html = html.replace(
         `:media:${mediaAsset.id}:`,
         isAmp
-          ? `<amp-img src="/static/media/${mediaAsset.fileName}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}" alt="${mediaAsset.fileName}" />`
+          ? `<amp-img src="${process.env.NEXT_PUBLIC_APP_URL}/static/media/${mediaAsset.fileName}" layout="responsive" height="${mediaAsset.height}" width="${mediaAsset.width}" alt="${mediaAsset.fileName}" />`
           : `<div class="media media--image" style="padding-bottom: ${
               (mediaAsset.height / mediaAsset.width) * 100
-            }%"><img loading="lazy" src="/static/media/${
+            }%"><img loading="lazy" src="${
+              process.env.NEXT_PUBLIC_APP_URL
+            }/static/media/${mediaAsset.fileName}" alt="${
               mediaAsset.fileName
-            }" alt="${mediaAsset.fileName}" /></div>`,
+            }" /></div>`,
       );
     }
 
