@@ -92,12 +92,14 @@
   }
 
   &.transparent {
-    .title h1 {
-      color: #fff;
-    }
+    .title {
+      h1 {
+        color: #fff;
+      }
 
-    .logo {
-      background: #fff;
+      .logo {
+        background: #fff;
+      }
     }
 
     .nav a {
