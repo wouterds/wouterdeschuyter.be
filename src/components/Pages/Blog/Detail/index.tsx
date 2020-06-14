@@ -48,8 +48,6 @@ interface Props {
   post: any;
 }
 
-export const config = { amp: 'hybrid' };
-
 const Detail = (props: Props) => {
   const { post } = props;
 

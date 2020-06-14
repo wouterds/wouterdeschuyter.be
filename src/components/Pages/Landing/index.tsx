@@ -5,7 +5,6 @@ import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import Posts from 'components/Posts';
 import gql from 'graphql-tag';
-import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import React from 'react';
 import Header from 'components/Header';
@@ -24,11 +23,8 @@ const FETCH_DATA = gql`
   }
 `;
 
-export const config = { amp: 'hybrid' };
-
 const Landing = () => {
   const { data } = useQuery(FETCH_DATA);
-  const isAmp = useAmp();
 
   return (
     <Layout>
@@ -71,7 +67,7 @@ const Landing = () => {
         {data && <Posts posts={data.posts} />}
 
         <div className={styles.landing}>
-          <Link href={`/blog${isAmp ? '?amp=1' : ''}`}>
+          <Link href="/blog">
             <a>more &raquo;</a>
           </Link>
         </div>

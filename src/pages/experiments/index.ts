@@ -1,1 +1,1 @@
-export { config, default } from 'components/Pages/Experiments';
+export { default } from 'components/Pages/Experiments';

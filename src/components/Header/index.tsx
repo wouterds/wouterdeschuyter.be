@@ -1,5 +1,4 @@
 import cx from 'classnames';
-import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import { NextRouter, withRouter } from 'next/router';
 import React from 'react';
@@ -14,7 +13,6 @@ interface Props {
 
 export const Header = (props: Props) => {
   const { router, hideLogo, transparent } = props;
-  const isAmp = useAmp();
 
   return (
     <div
@@ -25,7 +23,7 @@ export const Header = (props: Props) => {
     >
       {hideLogo !== true && (
         <div className={styles.title}>
-          <Link href={`/${isAmp ? '?amp=1' : ''}`}>
+          <Link href="/">
             <a>
               <div className={styles.logo} />
               <h1>Wouter De Schuyter</h1>
@@ -34,7 +32,7 @@ export const Header = (props: Props) => {
         </div>
       )}
       <nav className={styles.nav}>
-        <Link href={`/about${isAmp ? '?amp=1' : ''}`}>
+        <Link href="/about">
           <a
             className={cx({
               [styles.active]: router.pathname.indexOf('/about') !== -1,
@@ -43,7 +41,7 @@ export const Header = (props: Props) => {
             About
           </a>
         </Link>
-        <Link href={`/blog${isAmp ? '?amp=1' : ''}`}>
+        <Link href="/blog">
           <a
             className={cx({
               [styles.active]: router.pathname.indexOf('/blog') !== -1,

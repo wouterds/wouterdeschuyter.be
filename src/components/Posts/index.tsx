@@ -1,5 +1,4 @@
 import { format } from 'date-fns';
-import { useAmp } from 'next/amp';
 import Link from 'next/link';
 import React from 'react';
 
@@ -18,17 +17,13 @@ interface Props {
 }
 
 const Posts = (props: Props) => {
-  const isAmp = useAmp();
   const { posts } = props;
 
   return (
     <div className={styles.posts}>
       {posts.map((post) => (
         <div key={post.id} className={styles.post}>
-          <Link
-            href="/blog/[slug]"
-            as={`/blog/${post.slug}${isAmp ? '?amp=1' : ''}`}
-          >
+          <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
             <a>
               <header>
                 <time

@@ -1,4 +1,3 @@
-import { useAmp } from 'next/amp';
 import Head from 'next/head';
 import { NextRouter, withRouter } from 'next/router';
 import React, { ReactElement } from 'react';
@@ -12,7 +11,6 @@ interface Props {
 }
 
 const Meta = (props: Props) => {
-  const isAmp = useAmp();
   const { title, description, extra, router } = props;
 
   const url = `${process.env.NEXT_PUBLIC_APP_URL}${
@@ -27,12 +25,10 @@ const Meta = (props: Props) => {
     <Head>
       <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-      {!isAmp && (
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, minimum-scale=1"
-        />
-      )}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1"
+      />
       <meta name="robots" content="index, follow" />
       {description && <meta name="description" content={description} />}
       <meta property="og:title" content={title} />
