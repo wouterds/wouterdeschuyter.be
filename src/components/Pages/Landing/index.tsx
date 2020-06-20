@@ -11,20 +11,18 @@ import Header from 'components/Header';
 import LandingHeader from './Header';
 import styles from './styles.module.scss';
 
-const FETCH_DATA = gql`
-  query fetchData {
-    posts(limit: 3) {
-      id
-      title
-      slug
-      excerpt
-      publishedAt
-    }
-  }
-`;
-
 const Landing = () => {
-  const { data } = useQuery(FETCH_DATA);
+  const { data } = useQuery(gql`
+    query fetchData {
+      posts(limit: 3) {
+        id
+        title
+        slug
+        excerpt
+        publishedAt
+      }
+    }
+  `);
 
   return (
     <Layout>

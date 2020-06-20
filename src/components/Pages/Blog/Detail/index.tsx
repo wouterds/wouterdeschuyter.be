@@ -38,12 +38,6 @@ const FETCH_DATA = gql`
   }
 `;
 
-const INCREASE_VIEW_COUNT = gql`
-  mutation increaseViewCount($id: String!) {
-    increaseViewCount(id: $id)
-  }
-`;
-
 interface Props {
   post: any;
 }
@@ -188,7 +182,11 @@ Detail.getInitialProps = async ({ query, res }: NextPageContext) => {
 
   try {
     Network.apollo.mutate({
-      mutation: INCREASE_VIEW_COUNT,
+      mutation: gql`
+        mutation increaseViewCount($id: String!) {
+          increaseViewCount(id: $id)
+        }
+      `,
       variables: { id: post.id },
     });
   } catch (e) {}

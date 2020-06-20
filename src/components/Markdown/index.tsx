@@ -9,19 +9,6 @@ interface Props {
   markdown: string;
 }
 
-const FETCH_MEDIA = gql`
-  query fetchData($ids: [String]) {
-    mediaAssets(ids: $ids) {
-      id
-      name
-      fileName
-      url
-      width
-      height
-    }
-  }
-`;
-
 const extractMediaIds = (text: string): string[] => {
   const matches = text.match(new RegExp(/\:media\:(.+)\:/g));
 
@@ -84,7 +71,21 @@ const generateHtmlFromMarkdown = (
 
 const Markdown = ({ markdown }: Props) => {
   const mediaIds = extractMediaIds(markdown);
-  const { data } = useQuery(FETCH_MEDIA, { variables: { ids: mediaIds } });
+  const { data } = useQuery(
+    gql`
+      query fetchData($ids: [String]) {
+        mediaAssets(ids: $ids) {
+          id
+          name
+          fileName
+          url
+          width
+          height
+        }
+      }
+    `,
+    { variables: { ids: mediaIds } },
+  );
   const mediaAssets = (data && data.mediaAssets) || [];
 
   const __html = generateHtmlFromMarkdown(markdown, mediaAssets);

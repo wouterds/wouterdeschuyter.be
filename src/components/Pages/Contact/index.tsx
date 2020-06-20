@@ -11,24 +11,22 @@ import { useForm } from 'react-hook-form';
 
 import styles from './styles.module.scss';
 
-const CONTACT = gql`
-  mutation Contact(
-    $fullName: String!
-    $email: String!
-    $subject: String!
-    $message: String!
-  ) {
-    contact(
-      name: $fullName
-      email: $email
-      subject: $subject
-      message: $message
-    )
-  }
-`;
-
 const Contact = () => {
-  const [contact] = useMutation(CONTACT);
+  const [contact] = useMutation(gql`
+    mutation Contact(
+      $fullName: String!
+      $email: String!
+      $subject: String!
+      $message: String!
+    ) {
+      contact(
+        name: $fullName
+        email: $email
+        subject: $subject
+        message: $message
+      )
+    }
+  `);
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<any>({});
   const { register, handleSubmit, errors, reset } = useForm({

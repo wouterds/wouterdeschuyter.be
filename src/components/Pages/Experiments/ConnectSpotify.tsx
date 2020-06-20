@@ -8,23 +8,21 @@ const ConnectSpotify = () => {
   return <ErrorComponent />;
 };
 
-const AUTHORIZE_SPOTIFY = gql`
-  mutation spotifyAuthorize(
-    $authorizationCode: String!
-    $redirectUri: String!
-  ) {
-    spotifyAuthorize(
-      authorizationCode: $authorizationCode
-      redirectUri: $redirectUri
-    )
-  }
-`;
-
 ConnectSpotify.getInitialProps = async ({ res, query }: NextPageContext) => {
   const { code } = query;
 
   await Network.apollo.mutate({
-    mutation: AUTHORIZE_SPOTIFY,
+    mutation: gql`
+      mutation spotifyAuthorize(
+        $authorizationCode: String!
+        $redirectUri: String!
+      ) {
+        spotifyAuthorize(
+          authorizationCode: $authorizationCode
+          redirectUri: $redirectUri
+        )
+      }
+    `,
     variables: {
       authorizationCode: code,
       redirectUri: `${process.env.NEXT_PUBLIC_APP_URL}/experiments/connect-spotify`,

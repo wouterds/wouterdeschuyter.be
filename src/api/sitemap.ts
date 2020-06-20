@@ -4,15 +4,6 @@ import Network from 'services/network';
 import { SitemapStream } from 'sitemap';
 import { createGzip } from 'zlib';
 
-const FETCH_POSTS = gql`
-  query fetchData {
-    posts {
-      slug
-      publishedAt
-    }
-  }
-`;
-
 export default async (_req: NextApiRequest, res: NextApiResponse) => {
   res.setHeader('Content-Type', 'application/xml');
   res.setHeader('Content-Encoding', 'gzip');
@@ -29,7 +20,18 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
   sitemap.write({ url: '/contact', priority: 0.8 });
 
   // dynamic
-  const { posts } = (await Network.apollo.query({ query: FETCH_POSTS })).data;
+  const { posts } = (
+    await Network.apollo.query({
+      query: gql`
+        query fetchData {
+          posts {
+            slug
+            publishedAt
+          }
+        }
+      `,
+    })
+  ).data;
   for (const post of posts) {
     sitemap.write({
       url: `/blog/${post.slug}`,

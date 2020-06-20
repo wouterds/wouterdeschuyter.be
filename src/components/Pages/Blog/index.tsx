@@ -13,19 +13,6 @@ import styles from './styles.module.scss';
 
 const POSTS_PER_PAGE = 7;
 
-const FETCH_DATA = gql`
-  query fetchData($limit: Int, $offset: Int) {
-    postCount
-    posts(limit: $limit, offset: $offset) {
-      id
-      title
-      slug
-      excerpt
-      publishedAt
-    }
-  }
-`;
-
 interface Props {
   page: number;
   posts: Post[];
@@ -136,7 +123,18 @@ Blog.getInitialProps = async ({ query, res }: NextPageContext) => {
 
   const { posts, postCount } = (
     await Network.apollo.query({
-      query: FETCH_DATA,
+      query: gql`
+        query fetchData($limit: Int, $offset: Int) {
+          postCount
+          posts(limit: $limit, offset: $offset) {
+            id
+            title
+            slug
+            excerpt
+            publishedAt
+          }
+        }
+      `,
       variables: { limit: POSTS_PER_PAGE, offset: page * POSTS_PER_PAGE },
     })
   ).data;

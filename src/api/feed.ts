@@ -3,26 +3,6 @@ import { NextApiRequest, NextApiResponse } from 'next';
 import Rss from 'rss';
 import NetworkService from 'services/network';
 
-const FETCH_POSTS = gql`
-  query fetchData {
-    posts {
-      title
-      excerpt
-      slug
-      publishedAt
-      user {
-        firstName
-        lastName
-      }
-      mediaAsset {
-        fileName
-        size
-        mediaType
-      }
-    }
-  }
-`;
-
 const createFeed = () =>
   new Rss({
     title: 'Wouter De Schuyter',
@@ -49,7 +29,27 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
   const feed = createFeed();
 
   const { posts } = (
-    await NetworkService.apollo.query({ query: FETCH_POSTS })
+    await NetworkService.apollo.query({
+      query: gql`
+        query fetchData {
+          posts {
+            title
+            excerpt
+            slug
+            publishedAt
+            user {
+              firstName
+              lastName
+            }
+            mediaAsset {
+              fileName
+              size
+              mediaType
+            }
+          }
+        }
+      `,
+    })
   ).data;
 
   for (const post of posts) {
