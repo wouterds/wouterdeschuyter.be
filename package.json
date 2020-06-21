@@ -72,7 +72,6 @@
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.6.0",
     "prettier": "^2.0.5",
-    "sass": "^1.26.8",
     "tailwindcss": "^1.4.6",
     "typescript": "^3.8.3",
     "webpack": "^4.43.0",
