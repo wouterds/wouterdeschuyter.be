@@ -13,7 +13,7 @@ import React from 'react';
 import Network from 'services/network';
 
 import LocalHeader from './Header';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const MediumZoomHelper = dynamic(() => import('./Helpers/MediumZoom'));
 const HighlightjsHelper = dynamic(() => import('./Helpers/Highlightjs'));

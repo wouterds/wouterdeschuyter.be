@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { NextRouter, withRouter } from 'next/router';
 import React from 'react';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 interface Props {
   router: NextRouter;

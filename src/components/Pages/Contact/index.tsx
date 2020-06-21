@@ -9,7 +9,7 @@ import React, { useCallback, useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const Contact = () => {
   const [contact] = useMutation(gql`

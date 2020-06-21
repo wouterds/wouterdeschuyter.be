@@ -4,7 +4,7 @@ import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import React from 'react';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const Error = () => (
   <Layout>

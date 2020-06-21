@@ -3,7 +3,7 @@ import gql from 'graphql-tag';
 import marked from 'marked';
 import React from 'react';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 interface Props {
   markdown: string;

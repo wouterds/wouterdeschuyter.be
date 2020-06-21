@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import Twemoji from 'react-twemoji';
 
 import Content from './Content';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 interface Props {
   children: ReactNode;

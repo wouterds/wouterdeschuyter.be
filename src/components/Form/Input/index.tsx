@@ -6,7 +6,7 @@ import React, {
   Ref,
 } from 'react';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 interface Props
   extends DetailedHTMLProps<

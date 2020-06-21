@@ -9,7 +9,7 @@ import Link from 'next/link';
 import React from 'react';
 import Network from 'services/network';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const POSTS_PER_PAGE = 7;
 

@@ -9,7 +9,7 @@ import Link from 'next/link';
 import React from 'react';
 import Header from 'components/Header';
 import LandingHeader from './Header';
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const Landing = () => {
   const { data } = useQuery(gql`

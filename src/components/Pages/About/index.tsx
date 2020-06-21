@@ -5,7 +5,7 @@ import Meta from 'components/Meta';
 import { differenceInMilliseconds } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 
-import styles from './styles.module.scss';
+import styles from './styles.module.css';
 
 const getAge = () =>
   (
