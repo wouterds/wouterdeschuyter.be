@@ -1,12 +1,9 @@
 .layout {
-  background: var(--color-background);
-  color: var(--color-text);
-  flex: 1;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
+  @apply bg-white;
+  @apply flex-1;
 
   img.twemoji {
+    display: inline-block;
     height: 1em;
     width: 1em;
     vertical-align: -0.15em;

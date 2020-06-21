@@ -1,28 +1,29 @@
 .content {
-  flex: 1;
-  width: 100%;
-  padding: 1.825em;
-  font-size: 1.2em;
-
-  @media (max-width: 640px) {
-    font-size: 1em;
-  }
-
-  &.centered {
-    max-width: 960px;
-    margin: 0 auto;
-  }
+  @apply mx-auto;
+  @apply p-10;
+  max-width: 960px;
 
   &.editorial {
     h1 {
+      @apply text-4xl;
+      @apply text-gray-900;
+
       &:after {
-        content: '';
-        display: block;
-        background: var(--color-text-dark);
+        @apply mt-4;
+        @apply mb-10;
+        @apply block;
+        @apply bg-gray-900;
+        @apply w-12;
         height: 0.125em;
-        width: 7.5%;
-        margin-top: 0.5em;
-        margin-bottom: 1em;
+        content: '';
+      }
+    }
+
+    p {
+      @apply text-lg;
+
+      + p {
+        @apply mt-4;
       }
     }
   }

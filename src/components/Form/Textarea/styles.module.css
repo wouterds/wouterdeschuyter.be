@@ -1,20 +1,10 @@
 .textarea {
-  outline: 0;
-  border: 1px solid #cfd4db;
-  border-radius: 3px;
-  padding: 0.5em;
-  transition: border ease-in-out 200ms, color ease-in-out 200ms;
-  width: 100%;
-  color: var(--color-text-lighter);
-  background: transparent;
-
-  &:focus {
-    border-color: #838f9e;
-    color: var(--color-text-light);
-  }
-
-  &.error {
-    color: #e74c3c;
-    border-color: #e74c3c;
-  }
+  @apply bg-white;
+  @apply border;
+  @apply appearance-none;
+  @apply rounded;
+  @apply w-full;
+  @apply p-3;
+  @apply text-gray-700;
+  @apply leading-snug;
 }

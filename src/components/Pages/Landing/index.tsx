@@ -60,7 +60,7 @@ const Landing = () => {
         }
       />
       <Header hideLogo />
-      <Layout.Content centered>
+      <Layout.Content>
         <LandingHeader />
         {data && <Posts posts={data.posts} />}
 
@@ -70,7 +70,7 @@ const Landing = () => {
           </Link>
         </div>
       </Layout.Content>
-      <Footer centered />
+      <Footer />
     </Layout>
   );
 };

@@ -1,10 +1,6 @@
 .blog-detail {
   margin-top: 65vh;
 
-  @media (max-width: 640px) {
-    margin-top: 30vh;
-  }
-
   > header {
     time {
       color: #ced5d9;

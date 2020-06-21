@@ -34,7 +34,7 @@ const About = () => {
         )} years young and passionate about all things digital really. When not creating web or mobile apps probably fiddling around with electronics.`}
       />
       <Header />
-      <Layout.Content centered editorial>
+      <Layout.Content editorial>
         <div className={styles.about}>
           <h1>About</h1>
           <p>
@@ -112,7 +112,7 @@ const About = () => {
           <p>Oh right, also a cat person 🐈!</p>
         </div>
       </Layout.Content>
-      <Footer centered />
+      <Footer />
     </Layout>
   );
 };

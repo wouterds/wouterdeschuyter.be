@@ -11,7 +11,7 @@ const Experiments = () => (
       description="Yo, not sure what this is. Just a bunch of random things and experiments 🤪!"
     />
     <Header />
-    <Layout.Content centered editorial>
+    <Layout.Content editorial>
       <div>
         <h1>Experiments 🧪</h1>
         <p>
@@ -20,7 +20,7 @@ const Experiments = () => (
         <br />
       </div>
     </Layout.Content>
-    <Footer centered />
+    <Footer />
   </Layout>
 );
 

@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import './progress';
+
+h1, h2, h3 {
+  @apply font-semibold;
+  @apply text-gray-900;
+}
+
+body {
+  @apply text-base;
+  @apply text-gray-700;
+}

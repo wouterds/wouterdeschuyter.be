@@ -56,7 +56,7 @@ const Blog = (props: Props) => {
         }
       />
       <Header />
-      <Layout.Content centered editorial>
+      <Layout.Content editorial>
         <div className={styles.blog}>
           {posts.length === 0 && (
             <>
@@ -91,7 +91,7 @@ const Blog = (props: Props) => {
           )}
         </div>
       </Layout.Content>
-      <Footer centered />
+      <Footer />
     </Layout>
   );
 };

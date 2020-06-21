@@ -10,10 +10,6 @@
   background-size: cover;
   background-position: center;
 
-  @media (max-width: 640px) {
-    height: 35vh;
-  }
-
   &:after {
     position: absolute;
     top: 0;

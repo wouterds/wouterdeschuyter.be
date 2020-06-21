@@ -1,92 +1,65 @@
 .header {
-  display: flex;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-
-  a:hover {
-    text-decoration: none;
-  }
+  @apply flex;
+  @apply relative;
+  @apply overflow-hidden;
+  @apply z-10;
 
   .logo {
+    @apply bg-gray-900;
+    @apply inline-block;
     mask: url('/static/logo.svg') no-repeat center;
     mask-size: cover;
     width: 1em;
     height: 1.91em;
     margin: 0 0.25em 0 0.525em;
-    background: var(--color-text-dark);
-    display: inline-block;
   }
 
   .title {
-    padding: 1.3em;
+    @apply p-5;
 
     a {
-      border: 0;
-      padding: 0;
-      display: inline-block;
-      line-height: 1;
+      @apply inline-block;
 
       h1 {
-        color: var(--color-text-dark);
-        font-weight: 500;
-        transition: color ease-in-out 200ms;
+        @apply text-gray-900;
+        @apply font-semibold;
       }
 
       .logo {
-        background: var(--color-text-dark);
-        transition: background ease-in-out 200ms;
+        @apply bg-gray-900;
       }
     }
 
     h1 {
-      font-size: 1.8em;
-      line-height: 1;
-      font-weight: 500;
-      padding: 0.25em 0.525em;
-      margin: 0;
-      display: inline-block;
+      @apply inline-block;
+      @apply leading-none;
+      @apply text-2xl;
+      @apply p-2;
     }
 
     .logo {
-      display: none;
-    }
-
-    @media (max-width: 640px) {
-      margin-top: 0.3em;
-      align-self: center;
-
-      h1 {
-        display: none;
-      }
-
-      .logo {
-        display: inline-block;
-      }
+      @apply hidden;
     }
   }
 
   .nav {
-    padding: 1.3em 1.3em 1.3em 1em;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    font-weight: 500;
-    flex: 1;
+    @apply p-5;
+    @apply font-medium;
+    @apply flex;
+    @apply flex-1;
+    @apply justify-end;
+    @apply items-center;
 
     a {
-      padding: 0.525em;
-      border: 0;
-      color: var(--color-alternative-link);
-      transition: color ease-in-out 200ms;
+      @apply text-gray-500;
+      @apply p-2;
 
-      &.active,
-      &:hover {
-        color: var(--color-text-dark);
+      &.active {
+        @apply text-gray-900;
       }
 
       + a {
-        margin-left: 10px;
+        @apply ml-2;
       }
     }
   }
@@ -94,20 +67,21 @@
   &.transparent {
     .title {
       h1 {
-        color: #fff;
+        @apply text-white;
       }
 
       .logo {
-        background: #fff;
+        @apply text-white;
       }
     }
 
     .nav a {
-      color: rgba(255, 255, 255, 0.8);
+      @apply text-white;
+      @apply opacity-75;
 
       &:hover,
       &.active {
-        color: #fff;
+        @apply opacity-100;
       }
     }
   }
