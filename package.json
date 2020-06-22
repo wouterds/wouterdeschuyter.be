@@ -70,6 +70,7 @@
     "imagemin-svgo": "^8.0.0",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.6.0",
+    "postcss-preset-env": "^6.7.0",
     "precss": "^4.0.0",
     "prettier": "^2.0.5",
     "tailwindcss": "^1.4.6",
