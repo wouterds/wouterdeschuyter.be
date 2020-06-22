@@ -2,7 +2,6 @@ module.exports = {
   plugins: {
     precss: {},
     tailwindcss: {},
-    autoprefixer: {},
     ...(process.env.NODE_ENV === 'production'
       ? {
           '@fullhuman/postcss-purgecss': {
