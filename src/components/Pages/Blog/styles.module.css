@@ -1,26 +1,15 @@
-.blog {
-  .links {
-    text-align: right;
-    margin-top: 2.5em;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+.links {
+  @apply mt-12;
+  @apply flex;
+  @apply justify-between;
 
-    a {
-      font-size: 0.9em;
-      font-weight: 500;
-      border: 0;
-      color: var(--color-alternative-link);
-      transition: color ease-in-out 200ms;
+  a {
+    @apply font-medium;
+    @apply text-gray-500;
+    @apply transition ease-in-out duration-150;
 
-      @media (max-width: 640px) {
-        font-size: 1em;
-      }
-
-      &:hover {
-        color: var(--color-text-dark);
-        text-decoration: none;
-      }
+    &:hover {
+      @apply text-gray-900;
     }
   }
 }

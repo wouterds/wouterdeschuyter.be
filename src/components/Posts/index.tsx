@@ -20,7 +20,7 @@ const Posts = (props: Props) => {
   const { posts } = props;
 
   return (
-    <div className={styles.posts}>
+    <>
       {posts.map((post) => (
         <div key={post.id} className={styles.post}>
           <Link href="/blog/[slug]" as={`/blog/${post.slug}`}>
@@ -39,7 +39,7 @@ const Posts = (props: Props) => {
           </Link>
         </div>
       ))}
-    </div>
+    </>
   );
 };
 

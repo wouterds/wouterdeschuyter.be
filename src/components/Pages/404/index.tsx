@@ -13,7 +13,7 @@ const E404 = () => (
       extra={<meta name="robots" content="noindex, follow" />}
     />
     <Header />
-    <Layout.Content centered editorial>
+    <Layout.Content editorial>
       <div className={styles.E404}>
         <h1>Not found</h1>
         <p>The page you were looking for could not be found.</p>
@@ -21,7 +21,7 @@ const E404 = () => (
         <img src="/static/error.gif" alt="error.gif" />
       </div>
     </Layout.Content>
-    <Footer centered />
+    <Footer />
   </Layout>
 );
 

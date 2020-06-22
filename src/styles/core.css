@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@import './progress';
+
+h1, h2, h3 {
+  @apply font-semibold;
+  @apply text-gray-900;
+}
+
+body {
+  @apply text-base;
+  @apply leading-relaxed;
+  @apply text-gray-700;
+  @apply antialiased;
+
+  a {
+    @apply transition ease-in-out duration-150;
+    color: #db2756;
+
+    &:hover {
+      @apply underline;
+    }
+  }
+}
+
+@tailwind utilities;

@@ -1,34 +1,59 @@
 .header {
-  text-align: center;
-  border-bottom: 1px solid #ebeef0;
-  margin: 0.5em 0 3.5em;
+  @apply text-center;
+  @apply border-b border-gray-200;
+  @apply mb-16;
+  @apply leading-tight;
 
   .image {
-    height: 7em;
-    width: 7em;
-    border-radius: 3.5em;
-    background: #10151f;
-    overflow: hidden;
-    margin-bottom: 1.25em;
-    display: inline-block;
+    @apply w-32;
+    @apply h-32;
+    @apply rounded-full;
+    @apply overflow-hidden;
+    @apply inline-block;
+    @apply mb-6;
+    background: #191f2b;
 
     img {
-      border-radius: 3.5em;
-      height: 7em;
-      width: 7em;
+      @apply w-32;
+      @apply h-32;
+      @apply rounded-full;
     }
   }
 
   h1 {
-    font-weight: 500;
-    font-size: 2em;
-    margin-bottom: 0.25em;
+    @apply text-4xl;
   }
 
   h2 {
-    font-weight: 300;
-    color: var(--color-text-lightest);
-    font-size: 1.4em;
-    margin-bottom: 1.5em;
+    @apply text-2xl;
+    @apply text-gray-500;
+    @apply font-light;
+    @apply mb-8;
+  }
+
+  @media (max-width: 640px) {
+    @apply mt-4;
+    @apply mb-12;
+
+    .image,
+    .image img {
+      @apply w-24;
+      @apply h-24;
+    }
+
+    .image {
+      @apply mb-4;
+    }
+
+    h1 {
+      font-size: 1.85rem;
+    }
+
+    h2 {
+      @apply mt-2;
+      @apply px-4;
+      @apply text-xl;
+      @apply mb-6;
+    }
   }
 }
