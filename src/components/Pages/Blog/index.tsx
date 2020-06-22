@@ -56,8 +56,8 @@ const Blog = (props: Props) => {
         }
       />
       <Header />
-      <Layout.Content centered editorial>
-        <div className={styles.blog}>
+      <Layout.Content editorial>
+        <>
           {posts.length === 0 && (
             <>
               <h1>The end</h1>
@@ -89,9 +89,9 @@ const Blog = (props: Props) => {
               )}
             </div>
           )}
-        </div>
+        </>
       </Layout.Content>
-      <Footer centered />
+      <Footer />
     </Layout>
   );
 };

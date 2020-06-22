@@ -115,9 +115,9 @@ const Detail = (props: Props) => {
       />
       <Header transparent={true} />
       <LocalHeader mediaAsset={post.mediaAsset} />
-      <Layout.Content centered editorial>
+      <Layout.Content editorial>
         <div className={styles['blog-detail']}>
-          <header>
+          <header className={styles.header}>
             <time
               dateTime={(post.publishedAt
                 ? new Date(parseInt(post.publishedAt))
@@ -132,14 +132,14 @@ const Detail = (props: Props) => {
               )}
             </time>
           </header>
-          <h1>{post.title}</h1>
+          <h1 className={styles.title}>{post.title}</h1>
           <Markdown markdown={post.body} />
           <Webmentions
             url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`}
           />
         </div>
       </Layout.Content>
-      <Footer centered />
+      <Footer />
       <MediumZoomHelper />
       <HighlightjsHelper />
     </Layout>

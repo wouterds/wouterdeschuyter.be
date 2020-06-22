@@ -1,47 +1,17 @@
 .button {
-  outline: 0;
-  border: 1px solid var(--color-text-dark);
-  background: var(--color-text-dark);
-  color: #fff;
-  border-radius: 3px;
-  padding: 0.55em 1em 0.6em;
-  transition: border ease-in-out 200ms, background ease-in-out 200ms;
-  font-weight: 500;
-  cursor: pointer;
-  position: relative;
+  @apply bg-gray-900;
+  @apply text-gray-100 font-medium;
+  @apply leading-tight;
+  @apply appearance-none;
+  @apply rounded;
+  @apply py-3 px-4;
+  @apply transition ease-in-out duration-150;
 
   &:hover {
-    border-color: #000;
-    background: #000;
+    @apply bg-gray-800;
   }
 
-  &.loading {
-    text-align: left;
-    text-indent: -9999px;
-    background: #000;
-    border-color: #000;
-    cursor: default;
-
-    @keyframes spinner {
-      to {
-        transform: rotate(360deg);
-      }
-    }
-
-    &:before {
-      content: "";
-      box-sizing: border-box;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      margin-top: -10px;
-      margin-left: -10px;
-      border-radius: 50%;
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      border-top-color: rgba(255, 255, 255, 0.9);
-      animation: spinner 0.6s linear infinite;
-    }
+  @media (max-width: 640px) {
+    @apply py-2 px-3;
   }
 }

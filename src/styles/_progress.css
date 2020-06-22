@@ -1,13 +1,11 @@
 #nprogress {
-  pointer-events: none;
+  @apply pointer-events-none;
 
   .bar {
-    background: #e9edf0;
-    position: fixed;
-    z-index: 1031;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
+    @apply bg-gray-200;
+    @apply fixed top-0 left-0;
+    @apply z-50;
+    @apply w-full;
+    height: 2px;
   }
 }

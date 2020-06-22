@@ -60,17 +60,17 @@ const Landing = () => {
         }
       />
       <Header hideLogo />
-      <Layout.Content centered>
+      <Layout.Content>
         <LandingHeader />
         {data && <Posts posts={data.posts} />}
 
-        <div className={styles.landing}>
+        <div className={styles.links}>
           <Link href="/blog">
             <a>more &raquo;</a>
           </Link>
         </div>
       </Layout.Content>
-      <Footer centered />
+      <Footer />
     </Layout>
   );
 };

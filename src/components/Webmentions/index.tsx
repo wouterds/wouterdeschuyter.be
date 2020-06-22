@@ -125,24 +125,21 @@ const Webmentions = (props: Props) => {
               rel="noopener noreferrer"
               href={webmention.url}
             >
-              <span
-                className={styles.head}
-                style={{ backgroundImage: `url(${webmention.author.photo})` }}
-              />
-              <strong>{webmention.author.name}</strong>
-            </a>
-            <a
-              className={styles.content}
-              target="_blank"
-              rel="noopener noreferrer"
-              href={webmention.url}
-            >
-              <strong>{webmention.author.name}</strong>
-              {webmention['wm-property'] === 'mention-of' && 'mentioned'}
-              {webmention['wm-property'] === 'in-reply-to' && 'replied'}
-              {webmention['wm-property'] === 'repost-of' && 'retweeted'}
-              {webmention.published.getTime() > 0 &&
-                ` on ${format(webmention.published, 'MMM d, yyyy')}`}
+              <span>
+                <span
+                  className={styles.head}
+                  style={{ backgroundImage: `url(${webmention.author.photo})` }}
+                />
+                <strong>{webmention.author.name}</strong>
+              </span>
+              <span className={styles.content}>
+                <strong>{webmention.author.name}</strong>
+                {webmention['wm-property'] === 'mention-of' && 'mentioned'}
+                {webmention['wm-property'] === 'in-reply-to' && 'replied'}
+                {webmention['wm-property'] === 'repost-of' && 'retweeted'}
+                {webmention.published.getTime() > 0 &&
+                  ` on ${format(webmention.published, 'MMM d, yyyy')}`}
+              </span>
             </a>
           </li>
         ))}
