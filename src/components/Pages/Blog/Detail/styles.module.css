@@ -1,19 +1,17 @@
 .blog-detail {
   margin-top: 65vh;
 
-  @media (max-width: 640px) {
-    margin-top: 30vh;
+  .title {
+    @apply text-5xl;
+    @apply leading-tight;
   }
 
-  > header {
+  .header {
     time {
-      color: #ced5d9;
-      font-weight: 600;
-      text-transform: uppercase;
-      font-size: 1em;
-      margin-bottom: 0.5em;
-      display: inline-block;
-      transition: color ease-in-out 200ms;
+      @apply text-gray-400;
+      @apply text-lg;
+      @apply font-semibold;
+      @apply uppercase;
     }
   }
 }

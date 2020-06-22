@@ -19,10 +19,6 @@
     a {
       color: var(--color-text-lighter);
       display: block;
-
-      &:hover {
-        text-decoration: none;
-      }
     }
 
     .likes strong,
@@ -41,10 +37,6 @@
         position: relative;
         height: 3em;
 
-        @media (max-width: 500px) {
-          margin-bottom: 0.5em;
-        }
-
         .head {
           position: absolute;
         }
@@ -55,12 +47,6 @@
     .likes {
       display: flex;
       align-items: center;
-
-      @media (max-width: 500px) {
-        align-items: flex-start;
-        flex-direction: column;
-        width: 100%;
-      }
 
       .head {
         height: 3em;
@@ -75,16 +61,6 @@
       }
     }
 
-    .author {
-      @media (max-width: 500px) {
-        width: auto;
-
-        strong {
-          display: none;
-        }
-      }
-    }
-
     .content {
       padding: 0.25em;
       line-height: 1.4;
@@ -92,12 +68,6 @@
       strong {
         display: none;
         color: var(--color-text);
-      }
-
-      @media (max-width: 500px) {
-        strong {
-          display: block;
-        }
       }
     }
   }
