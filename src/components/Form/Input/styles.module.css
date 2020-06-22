@@ -1,20 +1,19 @@
 .input {
-  outline: 0;
-  border: 1px solid #cfd4db;
-  border-radius: 3px;
-  padding: 0.5em;
-  transition: border ease-in-out 200ms, color ease-in-out 200ms;
-  width: 100%;
-  color: var(--color-text-lighter);
-  background: transparent;
+  @apply bg-white;
+  @apply border;
+  @apply appearance-none;
+  @apply rounded;
+  @apply w-full;
+  @apply py-3 px-4;
+  @apply text-gray-700;
+  @apply leading-tight;
+  @apply transition ease-in-out duration-150;
 
-  &:focus {
-    border-color: #838f9e;
-    color: var(--color-text-light);
+  @media (max-width: 640px) {
+    @apply py-2 px-3;
   }
 
   &.error {
-    color: #e74c3c;
-    border-color: #e74c3c;
+    @apply border-red-700;
   }
 }

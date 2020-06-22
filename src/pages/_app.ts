@@ -1,2 +1,2 @@
-import 'styles/base.css';
+import 'styles/core.css';
 export { default } from 'components/App';

@@ -1,53 +1,39 @@
 .markdown {
   p code {
-    background: #f7f7f9;
-    border: 1px solid #e1e1e8;
-    color: var(--color-tint);
+    @apply text-gray-700 text-sm;
+    @apply bg-gray-100;
+    @apply border border-gray-300;
+    @apply rounded;
+    color: #db2756;
     padding: 0.15em 0.3em;
-    border-radius: 3px;
-    font-size: 0.8em;
   }
 
   pre {
-    color: var(--color-text-light);
+    @apply text-gray-700 text-sm;
 
     code {
-      background: #f7f7f9;
-      padding: 0.75em 1em;
-      font-size: 0.8em;
-      display: block;
-      overflow-x: scroll;
-      margin: 0.5em 0 1em;
+      @apply bg-gray-100;
+      @apply py-3 px-4;
+      @apply mt-2 mx-0 mb-4;
+      @apply block;
+      @apply overflow-x-scroll;
     }
   }
 
   ul {
-    list-style: disc inside;
+    @apply list-inside list-disc;
   }
 
   .media {
-    position: relative;
-    background: #f7f7f9;
+    @apply relative;
+    @apply bg-gray-100;
 
-    &-image {
-      img {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        border: 0;
-      }
-    }
-
-    &-video {
-      iframe {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
+    &-image img,
+    &-video iframe {
+      @apply w-full;
+      @apply h-full;
+      @apply absolute top-0 left-0;
+      @apply border-0;
     }
   }
 }

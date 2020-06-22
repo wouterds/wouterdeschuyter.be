@@ -1,4 +1,5 @@
 import { useMutation } from '@apollo/react-hooks';
+import cx from 'classnames';
 import Footer from 'components/Footer';
 import Form from 'components/Form';
 import Header from 'components/Header';
@@ -76,7 +77,7 @@ const Contact = () => {
         description="If you're writing for a project or to work together, please include as much details as possible (idea, goal, timeline, budget, ...). For everything else, write as you please, I'll be more than happy to reply!"
       />
       <Header />
-      <Layout.Content centered editorial>
+      <Layout.Content editorial>
         <div className={styles.contact}>
           <h1>Contact</h1>
           <p>
@@ -87,85 +88,75 @@ const Contact = () => {
           </p>
           <Form onSubmit={onSubmit}>
             <div className={styles.row}>
-              <div className={styles.col}>
-                <Form.Field>
-                  <Form.Label
-                    htmlFor="fullName"
-                    hasError={errors.hasOwnProperty('fullName')}
-                  >
-                    Full name
-                  </Form.Label>
-                  <Form.Input
-                    id="fullName"
-                    name="fullName"
-                    hasError={errors.hasOwnProperty('fullName')}
-                    ref={register({ required: true })}
-                  />
-                </Form.Field>
-              </div>
-              <div className={styles.col}>
-                <Form.Field>
-                  <Form.Label
-                    htmlFor="email"
-                    hasError={errors.hasOwnProperty('email')}
-                  >
-                    Email address
-                  </Form.Label>
-                  <Form.Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    hasError={errors.hasOwnProperty('email')}
-                    ref={register({ required: true })}
-                  />
-                </Form.Field>
-              </div>
+              <Form.Field>
+                <Form.Label
+                  htmlFor="fullName"
+                  hasError={errors.hasOwnProperty('fullName')}
+                >
+                  Full name
+                </Form.Label>
+                <Form.Input
+                  id="fullName"
+                  name="fullName"
+                  hasError={errors.hasOwnProperty('fullName')}
+                  ref={register({ required: true })}
+                />
+              </Form.Field>
+              <Form.Field>
+                <Form.Label
+                  htmlFor="email"
+                  hasError={errors.hasOwnProperty('email')}
+                >
+                  Email address
+                </Form.Label>
+                <Form.Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  hasError={errors.hasOwnProperty('email')}
+                  ref={register({ required: true })}
+                />
+              </Form.Field>
             </div>
-            <div className={styles.row}>
-              <div className={styles.col}>
-                <Form.Field>
-                  <Form.Label
-                    htmlFor="subject"
-                    hasError={errors.hasOwnProperty('subject')}
-                  >
-                    Subject
-                  </Form.Label>
-                  <Form.Input
-                    id="subject"
-                    name="subject"
-                    hasError={errors.hasOwnProperty('subject')}
-                    ref={register({ required: true })}
-                  />
-                </Form.Field>
-              </div>
+            <div className={cx(styles.row, styles.fullWidth)}>
+              <Form.Field>
+                <Form.Label
+                  htmlFor="subject"
+                  hasError={errors.hasOwnProperty('subject')}
+                >
+                  Subject
+                </Form.Label>
+                <Form.Input
+                  id="subject"
+                  name="subject"
+                  hasError={errors.hasOwnProperty('subject')}
+                  ref={register({ required: true })}
+                />
+              </Form.Field>
             </div>
-            <div className={styles.row}>
-              <div className={styles.col}>
-                <Form.Field>
-                  <Form.Label
-                    htmlFor="message"
-                    hasError={errors.hasOwnProperty('message')}
-                  >
-                    Message
-                  </Form.Label>
-                  <Form.Textarea
-                    id="message"
-                    name="message"
-                    hasError={errors.hasOwnProperty('message')}
-                    rows={5}
-                    ref={register({ required: true })}
-                  />
-                </Form.Field>
-              </div>
+            <div className={cx(styles.row, styles.fullWidth)}>
+              <Form.Field>
+                <Form.Label
+                  htmlFor="message"
+                  hasError={errors.hasOwnProperty('message')}
+                >
+                  Message
+                </Form.Label>
+                <Form.Textarea
+                  id="message"
+                  name="message"
+                  hasError={errors.hasOwnProperty('message')}
+                  rows={5}
+                  ref={register({ required: true })}
+                />
+              </Form.Field>
             </div>
-            <div className={styles.row}>
-              <div className={styles.col}>
-                <Form.Field>
-                  <Form.Button type="submit" isLoading={isLoading}>
-                    Send message
-                  </Form.Button>
-                </Form.Field>
-              </div>
+            <div className={cx(styles.row, styles.fullWidth)}>
+              <Form.Field>
+                <Form.Button type="submit" isLoading={isLoading}>
+                  Send message
+                </Form.Button>
+              </Form.Field>
             </div>
             <ReCAPTCHA
               ref={recaptcha}
@@ -177,7 +168,7 @@ const Contact = () => {
           </Form>
         </div>
       </Layout.Content>
-      <Footer centered />
+      <Footer />
     </Layout>
   );
 };

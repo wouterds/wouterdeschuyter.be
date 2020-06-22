@@ -1,25 +1,19 @@
 .footer {
-  padding: 1.825em;
-  color: var(--color-text-lightest);
-  margin-top: 1.5em;
-
-  @media (max-width: 640px) {
-    margin-top: 0.5em;
-  }
-
-  &.centered {
-    width: 100%;
-    max-width: 960px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+  @apply mx-auto;
+  @apply p-10;
+  @apply text-base text-gray-500;
+  max-width: 960px;
 
   p + p {
-    margin-top: 0.5em;
+    @apply mt-2;
+  }
 
-    a {
-      cursor: pointer;
-      margin-left: 0.2em;
+  @media (max-width: 640px) {
+    @apply px-6 py-8;
+    @apply text-sm;
+
+    p + p {
+      @apply mt-1;
     }
   }
 }
