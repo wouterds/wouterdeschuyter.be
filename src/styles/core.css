@@ -17,6 +17,11 @@ body {
     }
   }
 
+  b,
+  strong {
+    @apply font-semibold;
+  }
+
   h1,
   h2,
   h3 {
