@@ -15,7 +15,7 @@
 
     &:after {
       @apply mt-4;
-      @apply mb-12;
+      @apply mb-10;
       @apply block;
       @apply bg-gray-900;
       @apply w-8;
@@ -28,17 +28,9 @@
     }
   }
 
-  h2 {
-    @apply text-3xl;
-  }
-
-  h3 {
-    @apply text-2xl;
-  }
-
-  h4 {
-    @apply text-xl;
-  }
+  h2 { @apply text-3xl; }
+  h3 { @apply text-2xl; }
+  h4 { @apply text-xl; }
 
   p {
     @apply text-lg;
@@ -68,16 +60,14 @@
     @apply mt-2;
   }
 
-  p,
   pre,
   ul,
   blockquote {
     & + h1,
     & + h2,
     & + h3,
-    & + h4,
-    & + p {
-      @apply mt-4;
+    & + h4 {
+      @apply mt-8;
     }
   }
 

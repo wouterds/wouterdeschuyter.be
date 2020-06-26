@@ -24,7 +24,8 @@ body {
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     @apply font-semibold;
     @apply text-gray-900;
   }
