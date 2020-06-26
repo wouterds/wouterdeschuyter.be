@@ -4,6 +4,10 @@
   @apply text-base text-gray-500;
   max-width: 960px;
 
+  .separator {
+    @apply hidden;
+  }
+
   p + p {
     @apply mt-2;
   }
@@ -12,8 +16,13 @@
     @apply px-6 py-8;
     @apply text-sm;
 
-    p + p {
-      @apply mt-1;
+    p,
+    .separator {
+      @apply inline;
+
+      & + p {
+        @apply mt-0;
+      }
     }
   }
 }

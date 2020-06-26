@@ -32,9 +32,10 @@ body {
 
   blockquote {
     @apply relative;
-    @apply opacity-75;
     @apply italic;
-    @apply py-1 px-4;
+    @apply py-3 px-6;
+    @apply bg-gray-100;
+    @apply rounded;
 
     p:last-child {
       @apply m-0;
@@ -44,10 +45,10 @@ body {
       content: '';
       @apply block;
       @apply absolute top-0 left-0 bottom-0;
-      width: 4px;
-      height: 100%;
-      background: #e1e1e8;
-      border-radius: 2px;
+      @apply w-1;
+      @apply h-full;
+      @apply bg-gray-200;
+      @apply rounded-l;
     }
   }
 
