@@ -1,14 +1,14 @@
+import { useDidMount } from 'beautiful-react-hooks';
 import hljs from 'highlight.js';
 import Head from 'next/head';
 import React from 'react';
-import { useEffect } from 'react';
 
 const HighlightJS = () => {
-  useEffect(() => {
+  useDidMount(() => {
     document
       .querySelectorAll('pre code')
       .forEach((block) => hljs.highlightBlock(block));
-  }, []);
+  });
 
   return (
     <Head>

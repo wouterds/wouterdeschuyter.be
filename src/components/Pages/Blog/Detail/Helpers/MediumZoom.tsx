@@ -1,10 +1,10 @@
+import { useDidMount } from 'beautiful-react-hooks';
 import mediumZoom from 'medium-zoom';
-import { useEffect } from 'react';
 
 const MediumZoom = () => {
-  useEffect(() => {
+  useDidMount(() => {
     mediumZoom('[data-markdown] img', { margin: 25 });
-  }, []);
+  });
 
   return null;
 };
