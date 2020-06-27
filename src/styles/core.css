@@ -33,13 +33,9 @@ body {
   blockquote {
     @apply relative;
     @apply italic;
-    @apply py-3 px-6;
+    @apply py-4 px-6;
     @apply bg-gray-100;
     @apply rounded;
-
-    p:last-child {
-      @apply m-0;
-    }
 
     &:before {
       content: '';

@@ -28,6 +28,10 @@
     @apply relative;
     @apply bg-gray-100;
 
+    & + .media {
+      @apply mt-4;
+    }
+
     &-image img,
     &-video iframe {
       @apply w-full;
