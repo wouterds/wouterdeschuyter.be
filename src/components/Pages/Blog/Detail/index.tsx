@@ -10,7 +10,7 @@ import gql from 'graphql-tag';
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import React from 'react';
-import { FaTwitter } from 'react-icons/fa';
+import { FaFacebook, FaTwitter } from 'react-icons/fa';
 import Network from 'services/network';
 
 import LocalHeader from './Header';
@@ -149,6 +149,17 @@ const Detail = (props: Props) => {
             >
               <FaTwitter />
               <span>Share on Twitter</span>
+            </a>
+            <a
+              href={`https://facebook.com/sharer/sharer.php?u=${encodeURIComponent(
+                uri,
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnFacebook}
+            >
+              <FaFacebook />
+              <span>Share on Facebook</span>
             </a>
           </div>
           <Webmentions

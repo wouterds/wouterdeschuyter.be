@@ -2,9 +2,10 @@
   margin-top: 65vh;
 
   .social {
-    @apply mt-8;
+    @apply -m-1 mt-6 mb-0;
 
-    .btnTwitter {
+    .btnTwitter,
+    .btnFacebook {
       @apply cursor-pointer;
       @apply bg-blue-600;
       @apply text-blue-100 text-sm font-semibold;
@@ -13,6 +14,7 @@
       @apply rounded;
       @apply inline-flex;
       @apply items-center;
+      @apply m-1;
 
       span {
         @apply pl-2;
@@ -24,10 +26,19 @@
       }
     }
 
-    @media (max-width: 640px) {
-      @apply mt-6;
+    .btnFacebook {
+      @apply bg-blue-800;
 
-      .btnTwitter {
+      &:hover {
+        @apply bg-blue-700;
+      }
+    }
+
+    @media (max-width: 640px) {
+      @apply mt-4;
+
+      .btnTwitter,
+      .btnFacebook {
         @apply text-xs;
       }
     }
