@@ -1,8 +1,8 @@
 .webmentions {
-  @apply mt-12;
+  @apply mt-8;
 
   @media (max-width: 640px) {
-    @apply mt-8;
+    @apply mt-6;
   }
 
   ul {

@@ -10,6 +10,7 @@ import gql from 'graphql-tag';
 import { NextPageContext } from 'next';
 import dynamic from 'next/dynamic';
 import React from 'react';
+import { FaTwitter } from 'react-icons/fa';
 import Network from 'services/network';
 
 import LocalHeader from './Header';
@@ -53,6 +54,9 @@ const Detail = (props: Props) => {
   const image = parts
     ? `${process.env.NEXT_PUBLIC_APP_URL}/static/media/${parts[0]}.embed.${parts[1]}`
     : undefined;
+
+  const { title } = post;
+  const uri = `${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`;
 
   return (
     <Layout>
@@ -134,6 +138,19 @@ const Detail = (props: Props) => {
           </header>
           <h1 className={styles.title}>{post.title}</h1>
           <Markdown markdown={post.body} />
+          <div className={styles.social}>
+            <a
+              href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
+                uri,
+              )}&text=${encodeURIComponent(title)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnTwitter}
+            >
+              <FaTwitter />
+              <span>Share on Twitter</span>
+            </a>
+          </div>
           <Webmentions
             url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`}
           />

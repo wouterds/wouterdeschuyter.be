@@ -1,6 +1,38 @@
 .blog-detail {
   margin-top: 65vh;
 
+  .social {
+    @apply mt-8;
+
+    .btnTwitter {
+      @apply cursor-pointer;
+      @apply bg-blue-600;
+      @apply text-blue-100 text-sm font-semibold;
+      @apply py-1;
+      @apply px-3;
+      @apply rounded;
+      @apply inline-flex;
+      @apply items-center;
+
+      span {
+        @apply pl-2;
+      }
+
+      &:hover {
+        @apply no-underline;
+        @apply bg-blue-500;
+      }
+    }
+
+    @media (max-width: 640px) {
+      @apply mt-6;
+
+      .btnTwitter {
+        @apply text-xs;
+      }
+    }
+  }
+
   .title {
     @apply text-5xl;
     @apply leading-tight;
