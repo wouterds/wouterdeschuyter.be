@@ -180,6 +180,10 @@ Detail.getInitialProps = async ({ query, res }: NextPageContext) => {
     res.statusCode = 404;
   }
 
+  if (post && post.slug !== slug && res) {
+    return res.writeHead(301, { Location: `/blog/${post.slug}` }).end();
+  }
+
   try {
     Network.apollo.mutate({
       mutation: gql`
