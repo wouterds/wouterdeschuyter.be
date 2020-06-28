@@ -13,7 +13,15 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   }
 
   const fileName = `${parts[0]}.${parts[parts.length - 1]}`;
-  const embed = parts.length > 2 ? parts[1] : null === 'embed';
+  let embed = false;
+  if (parts.length > 2) {
+    if (parts[1] !== 'embed') {
+      res.status(400);
+      return;
+    }
+
+    embed = true;
+  }
 
   const apiRes = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/media-assets/${fileName}?embed=${embed}`,
