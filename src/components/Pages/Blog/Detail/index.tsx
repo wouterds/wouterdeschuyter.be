@@ -30,6 +30,7 @@ const FETCH_DATA = gql`
       publishedAt
       mediaAsset {
         fileName
+        imagePreview
       }
       user {
         firstName
