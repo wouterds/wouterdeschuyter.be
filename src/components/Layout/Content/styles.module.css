@@ -28,9 +28,15 @@
     }
   }
 
-  h2 { @apply text-3xl; }
-  h3 { @apply text-2xl; }
-  h4 { @apply text-xl; }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
 
   blockquote p {
     @apply text-base;
@@ -94,11 +100,23 @@
   }
 
   @media (max-width: 640px) {
-    h1 { @apply text-3xl; }
-    h2 { @apply text-2xl; }
-    h3 { @apply text-xl; }
-    h4 { @apply text-lg; }
-    p { @apply text-base; }
-    blockquote p { @apply text-sm; }
+    h1 {
+      @apply text-3xl;
+    }
+    h2 {
+      @apply text-2xl;
+    }
+    h3 {
+      @apply text-xl;
+    }
+    h4 {
+      @apply text-lg;
+    }
+    p {
+      @apply text-base;
+    }
+    blockquote p {
+      @apply text-sm;
+    }
   }
 }
