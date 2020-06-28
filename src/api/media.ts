@@ -17,10 +17,10 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   }
 
   const fileName = `${parts[0]}.${parts[parts.length - 1]}`;
-  const size = parts.length > 2 ? parts[1] : null;
+  const embed = parts.length > 2 ? parts[1] : null === 'embed';
 
   const apiRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/media-asset/${fileName}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/media-asset/${fileName}?embed=${embed}`,
   );
 
   if (apiRes.status === 404) {
