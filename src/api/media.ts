@@ -16,7 +16,7 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   const embed = parts.length > 2 ? parts[1] : null === 'embed';
 
   const apiRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/media-asset/${fileName}?embed=${embed}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/media-assets/${fileName}?embed=${embed}`,
   );
 
   if (apiRes.status === 404) {
