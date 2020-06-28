@@ -8,8 +8,8 @@
     "build": "next build && webpack --config ./webpack.config.js",
     "start": "next start",
     "dev": "next",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx && tsc",
-    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix"
+    "lint": "eslint src --ext .js,.jsx,.ts,.tsx && tsc && stylelint src",
+    "lint:fix": "eslint src --ext .js,.jsx,.ts,.tsx --fix && stylelint src --fix"
   },
   "husky": {
     "hooks": {
