@@ -1,6 +1,4 @@
 import { useQuery } from '@apollo/react-hooks';
-import { useDidMount } from 'beautiful-react-hooks';
-import { decode as blurhashDecode } from 'blurhash';
 import gql from 'graphql-tag';
 import marked from 'marked';
 import React from 'react';
@@ -30,7 +28,6 @@ const generateHtmlFromMarkdown = (
     url?: string;
     width: number;
     height: number;
-    blurhash?: string;
   }>,
 ): string => {
   let html = marked(markdown);
@@ -43,11 +40,7 @@ const generateHtmlFromMarkdown = (
           styles['media-image']
         }" style="padding-bottom: ${
           (mediaAsset.height / mediaAsset.width) * 100
-        }%">${
-          mediaAsset.blurhash
-            ? `<canvas data-blurhash="${mediaAsset.blurhash}" width="32" height="32"></canvas>`
-            : ''
-        }<img loading="lazy" src="${
+        }%"><img loading="lazy" src="${
           process.env.NEXT_PUBLIC_APP_URL
         }/static/media/${mediaAsset.fileName}" alt="${
           mediaAsset.fileName
@@ -88,7 +81,6 @@ const Markdown = ({ markdown }: Props) => {
           url
           width
           height
-          blurhash
         }
       }
     `,
@@ -97,28 +89,6 @@ const Markdown = ({ markdown }: Props) => {
   const mediaAssets = (data && data.mediaAssets) || [];
 
   const __html = generateHtmlFromMarkdown(markdown, mediaAssets);
-
-  useDidMount(() => {
-    (document.querySelectorAll('[data-blurhash]') as any).forEach(
-      (canvas: HTMLCanvasElement) => {
-        try {
-          const pixels = blurhashDecode(
-            `${canvas.getAttribute('data-blurhash')}`,
-            32,
-            32,
-          );
-          const ctx = canvas.getContext('2d');
-          const imageData = ctx?.createImageData(32, 32);
-          if (ctx && imageData) {
-            imageData.data.set(pixels);
-            ctx.putImageData(imageData, 0, 0);
-          }
-        } catch (e) {
-          // silence!
-        }
-      },
-    );
-  });
 
   return (
     <div dangerouslySetInnerHTML={{ __html }} className={styles.markdown} />
