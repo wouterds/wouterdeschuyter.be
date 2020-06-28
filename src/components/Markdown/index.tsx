@@ -28,6 +28,7 @@ const generateHtmlFromMarkdown = (
     url?: string;
     width: number;
     height: number;
+    imagePreview: string;
   }>,
 ): string => {
   let html = marked(markdown);
@@ -40,7 +41,11 @@ const generateHtmlFromMarkdown = (
           styles['media-image']
         }" style="padding-bottom: ${
           (mediaAsset.height / mediaAsset.width) * 100
-        }%"><img loading="lazy" src="${
+        }%; ${
+          mediaAsset.imagePreview
+            ? `background-image: url('${mediaAsset.imagePreview}'); background-size: 100%;`
+            : ''
+        }"><img loading="lazy" src="${
           process.env.NEXT_PUBLIC_APP_URL
         }/static/media/${mediaAsset.fileName}" alt="${
           mediaAsset.fileName
@@ -81,6 +86,7 @@ const Markdown = ({ markdown }: Props) => {
           url
           width
           height
+          imagePreview
         }
       }
     `,
