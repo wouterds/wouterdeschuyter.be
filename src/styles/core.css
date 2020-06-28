@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@import './progress';
 
 body {
   @apply text-base;
@@ -51,6 +50,19 @@ body {
   hr {
     @apply border-0;
     @aplly border-b-1 border-gray-100;
+  }
+
+  #nprogress {
+    @apply pointer-events-none;
+
+    .bar {
+      @apply bg-gray-400;
+      @apply fixed top-0 left-0;
+      @apply z-50;
+      @apply w-full;
+      @apply opacity-75;
+      height: 2px;
+    }
   }
 }
 
