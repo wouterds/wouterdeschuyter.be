@@ -18,10 +18,10 @@ clean:
 	-rm -rf .build-*
 
 node_modules: yarn.lock
-	docker run --rm -v ${PWD}:/code -w /code node:14.3 yarn
+	docker run --rm -v ${PWD}:/code -w /code node:14 yarn
 
 lint: node_modules
-	docker run --rm -v ${PWD}:/code -w /code node:14.3 yarn lint
+	docker run --rm -v ${PWD}:/code -w /code node:14 yarn lint
 
 .build-app: node_modules
 	docker run --rm -v ${PWD}:/code -w /code \
