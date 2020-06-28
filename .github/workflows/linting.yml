@@ -2,7 +2,7 @@ name: 'linting'
 on:
   push:
     branches:
-      - '*'
+      - '**'
 
 jobs:
   build:
