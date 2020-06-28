@@ -24,6 +24,7 @@ cp .env.example .env
 #### Plugins
 
 - https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
+- https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
 - https://marketplace.visualstudio.com/items?itemName=cpylua.language-postcss
 
 #### Workspace settings
@@ -37,10 +38,11 @@ cp .env.example .env
     "typescriptreact",
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
+    "source.fixAll.stylelint": true,
   },
   "files.associations": {
-    "*.css": "postcss"
-  }
+    "*.css": "postcss",
+  },
 }
 ```
