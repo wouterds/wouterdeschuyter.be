@@ -25,7 +25,7 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
   }
 
   if (apiRes.status !== 200) {
-    res.status(400);
+    res.status(500);
     return;
   }
 
