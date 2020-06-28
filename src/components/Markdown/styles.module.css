@@ -33,6 +33,7 @@
     }
 
     &-image img,
+    &-image canvas,
     &-video iframe {
       @apply w-full;
       @apply h-full;
