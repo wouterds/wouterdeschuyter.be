@@ -16,6 +16,7 @@ interface Props
     HTMLButtonElement
   > {
   isLoading?: boolean;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
 
 const Button = (props: Props, ref: Ref<HTMLButtonElement>) => {
