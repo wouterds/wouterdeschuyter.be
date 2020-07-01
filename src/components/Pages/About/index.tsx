@@ -2,7 +2,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
-import { differenceInMilliseconds } from 'date-fns';
+import { differenceInMilliseconds, differenceInYears } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 
 import styles from './styles.module.css';
@@ -13,6 +13,8 @@ const getAge = () =>
     (365 * 24 * 60 * 60) /
     1000
   ).toFixed(9);
+
+const yearsExperience = differenceInYears(new Date(), new Date('2014-06-01'));
 
 const About = () => {
   const [age, setAge] = useState(getAge);
@@ -29,30 +31,38 @@ const About = () => {
     <Layout>
       <Meta
         title="About"
-        description={`Hey, I'm Wouter! Currently ${Math.round(
+        description={`Hey, I'm Wouter, ${Math.round(
           parseInt(getAge()),
-        )} years young and passionate about all things digital really. When not creating web or mobile apps probably fiddling around with electronics.`}
+        )} years young and passionate about all things digital really. When not creating kickass (web) apps probably fiddling around with electronics.`}
       />
       <Header />
       <Layout.Content editorial>
         <div className={styles.about}>
           <h1>About</h1>
           <p>
-            Hey 👋, I&apos;m Wouter! Currently{' '}
-            <span className={styles.age}>{age}</span> years old and passionate
-            about all things digital really.
+            Hey 👋, I&apos;m Wouter, <span className={styles.age}>{age}</span>{' '}
+            years young and passionate about all things digital really.
           </p>
           <p>
             I studied{' '}
             <a
-              href="https://devine.be"
+              href="https://devine.be/en"
               target="_blank"
               rel="noopener noreferrer"
             >
               Digital Design &amp; Development
             </a>{' '}
-            🎓 at Howest University College and am currently working as a Senior
-            Full Stack Developer at a crypto startup;{' '}
+            🎓 at Howest University College and currently I&apos;m freelancing
+            as a Full Stack Developer. I have about {yearsExperience} years
+            experience as a professional web &amp; mobile developer and in the
+            last few years I&apos;ve been focusing a lot on React &amp; React
+            Native apps. My current favorite tech stack would be a combination
+            of Docker, Nginx, Cloudflare, Node, TypeScript, React &amp; GraphQL
+            💖.
+          </p>
+          <p>
+            Before I started freelancing &amp; consulting I used to work 💻 for
+            a startup{' '}
             <a
               href="https://delta.app"
               target="_blank"
@@ -60,7 +70,7 @@ const About = () => {
             >
               Delta
             </a>{' '}
-            (recently been{' '}
+            (that has been{' '}
             <a
               href="https://techcrunch.com/2019/11/06/investment-platform-etoro-acquires-crypto-portfolio-tracker-app-delta/"
               target="_blank"
@@ -68,8 +78,7 @@ const About = () => {
             >
               acquired by eToro
             </a>
-            ). Before this I also worked at a few other companies such as the
-            scale-up{' '}
+            ). I also worked at a few other startups &amp; scale-ups such as{' '}
             <a
               href="https://teamleader.eu"
               target="_blank"
@@ -85,7 +94,7 @@ const About = () => {
             >
               In The Pocket
             </a>{' '}
-            agency &amp; real estate startup{' '}
+            &amp;{' '}
             <a
               href="https://realo.com"
               target="_blank"
@@ -96,18 +105,18 @@ const About = () => {
             .
           </p>
           <p>
-            When I&apos;m not creating web apps I&apos;m most likely fiddling
-            around with electronics; working on fun projects using Arduino and
-            Raspberry Pi ⚡️. Besides all of that I really love travelling,
-            trying new things and pushing my own limits. Also kind of a data
-            geek, charts &amp; stats are real motivators for me 📈 (loyal Fitbit
-            user over here).
+            When I&apos;m not creating kickass (web) apps I&apos;m most likely
+            fiddling around with electronics using Arduino, ESP or Raspberry Pi
+            ⚡️. Besides all of that I really love traveling, trying new things
+            and pushing my own limits. Also kind of a data geek, charts &amp;
+            stats are real motivators for me 📈 (loyal Fitbit user over here
+            ✋).
           </p>
           <p>
             Since 2017 I&apos;m also involved in the crypto space. I&apos;ve
             really started to appreciate the power of decentralized applications
-            and to be honest, it&apos;s probably one of the most interesting
-            things I&apos;ve come across lately 👀!
+            and to be honest, it&apos;s probably one of the most exciting spaces
+            I&apos;ve come across lately 👀!
           </p>
           <p>Oh right, also a cat person 🐈!</p>
         </div>
