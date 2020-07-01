@@ -70,7 +70,7 @@ const About = () => {
             >
               Delta
             </a>{' '}
-            (that has been{' '}
+            that has been{' '}
             <a
               href="https://techcrunch.com/2019/11/06/investment-platform-etoro-acquires-crypto-portfolio-tracker-app-delta/"
               target="_blank"
@@ -78,7 +78,7 @@ const About = () => {
             >
               acquired by eToro
             </a>
-            ). I also worked at a few other startups &amp; scale-ups such as{' '}
+            . I also worked at a few other startups &amp; scale-ups such as{' '}
             <a
               href="https://teamleader.eu"
               target="_blank"
