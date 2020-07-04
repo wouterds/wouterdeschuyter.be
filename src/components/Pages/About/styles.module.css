@@ -69,11 +69,11 @@
     }
 
     .btnSpotify {
-      color: #eef7ef;
-      background-color: #57b560;
+      color: #e8faee;
+      background-color: #1DD15D;
 
       &:hover {
-        background-color: #4ea256;
+        background-color: #1abc53;
       }
     }
 
