@@ -10,6 +10,8 @@
     .btnFacebook,
     .btnInstagram,
     .btnSpotify,
+    .btnYoutube,
+    .btnSteam,
     .btnGitHub,
     .btnLinkedIn {
       @apply cursor-pointer;
@@ -75,6 +77,15 @@
       }
     }
 
+    .btnYoutube {
+      color: #fdeae9;
+      background-color: #eb3223;
+
+      &:hover {
+        background-color: #d32d1f;
+      }
+    }
+
     .btnLinkedIn {
       color: #eaf1f7;
       background-color: #2f77b0;
@@ -90,6 +101,15 @@
 
       &:hover {
         background-color: #212429;
+      }
+    }
+
+    .btnSteam {
+      color: #e7e9eb;
+      background-color: #0f2840;
+
+      &:hover {
+        background-color: #0d2439;
       }
     }
 

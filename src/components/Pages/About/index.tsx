@@ -10,7 +10,9 @@ import {
   FaInstagram,
   FaLinkedin,
   FaSpotify,
+  FaSteam,
   FaTwitter,
+  FaYoutube,
 } from 'react-icons/fa';
 
 import styles from './styles.module.css';
@@ -165,6 +167,24 @@ const About = () => {
             >
               <FaSpotify />
               <span>Spotify</span>
+            </a>
+            <a
+              href={`https://youtube.com/c/wouterds`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnYoutube}
+            >
+              <FaYoutube />
+              <span>YouTube</span>
+            </a>
+            <a
+              href={`https://open.spotify.com/user/wouterds`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnSteam}
+            >
+              <FaSteam />
+              <span>Steam</span>
             </a>
             <a
               href={`http://linkedin.com/in/wouterds`}
