@@ -117,8 +117,13 @@
       @apply mt-4;
 
       .btnTwitter,
-      .btnLinkedIn,
-      .btnFacebook {
+      .btnFacebook,
+      .btnInstagram,
+      .btnSpotify,
+      .btnYoutube,
+      .btnSteam,
+      .btnGitHub,
+      .btnLinkedIn {
         @apply text-xs;
       }
     }
