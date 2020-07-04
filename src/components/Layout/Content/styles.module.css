@@ -119,4 +119,26 @@
       @apply text-sm;
     }
   }
+
+
+  &.dark {
+    h1,
+    h2,
+    h3,
+    h4 {
+      @apply text-gray-200;
+    }
+
+    h1:after {
+      @apply bg-gray-200;
+    }
+
+    p {
+      @apply text-gray-500;
+    }
+
+    a {
+      color: #e25277;
+    }
+  }
 }

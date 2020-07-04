@@ -6,10 +6,11 @@ import styles from './styles.module.css';
 interface Props {
   children: ReactNode;
   editorial?: boolean;
+  dark?: boolean;
 }
 
 const Content = (props: Props) => {
-  const { children, editorial } = props;
+  const { children, editorial, dark } = props;
 
   return (
     <section
@@ -17,6 +18,7 @@ const Content = (props: Props) => {
       className={cx({
         [styles.content]: true,
         [styles.editorial]: editorial,
+        [styles.dark]: dark,
       })}
     >
       {children}
