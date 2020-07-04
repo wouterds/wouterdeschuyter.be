@@ -4,6 +4,14 @@ import Layout from 'components/Layout';
 import Meta from 'components/Meta';
 import { differenceInMilliseconds, differenceInYears } from 'date-fns';
 import React, { useEffect, useState } from 'react';
+import {
+  FaFacebook,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaSpotify,
+  FaTwitter,
+} from 'react-icons/fa';
 
 import styles from './styles.module.css';
 
@@ -119,6 +127,64 @@ const About = () => {
             I&apos;ve come across lately 👀!
           </p>
           <p>Oh right, also a cat person 🐈!</p>
+
+          <h2>Socials</h2>
+          <div className={styles.social}>
+            <a
+              href={`https://twitter.com/wouterds`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnTwitter}
+            >
+              <FaTwitter />
+              <span>Twitter</span>
+            </a>
+            <a
+              href={`https://fb.me/wouter.de.schuyter`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnFacebook}
+            >
+              <FaFacebook />
+              <span>Facebook</span>
+            </a>
+            <a
+              href={`https://instagram.com/wouterds`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnInstagram}
+            >
+              <FaInstagram />
+              <span>Instagram</span>
+            </a>
+            <a
+              href={`https://open.spotify.com/user/wouterds`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnSpotify}
+            >
+              <FaSpotify />
+              <span>Spotify</span>
+            </a>
+            <a
+              href={`http://linkedin.com/in/wouterds`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnLinkedIn}
+            >
+              <FaLinkedin />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href={`http://github.com/wouterds`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnGitHub}
+            >
+              <FaGithub />
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
       </Layout.Content>
       <Footer />

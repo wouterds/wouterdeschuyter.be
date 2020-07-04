@@ -2,4 +2,105 @@
   .age {
     font-variant-numeric: tabular-nums;
   }
+
+  .social {
+    @apply -m-1 mt-2;
+
+    .btnTwitter,
+    .btnFacebook,
+    .btnInstagram,
+    .btnSpotify,
+    .btnGitHub,
+    .btnLinkedIn {
+      @apply cursor-pointer;
+      @apply text-sm font-semibold;
+      @apply py-1;
+      @apply px-3;
+      @apply rounded;
+      @apply inline-flex;
+      @apply items-center;
+      @apply m-1;
+
+      span {
+        @apply pl-2;
+      }
+
+      &:hover {
+        @apply no-underline;
+      }
+    }
+
+    .btnTwitter {
+      color: #ecf5fd;
+      background-color: #48a1eb;
+
+      &:hover {
+        background-color: #4090d3;
+      }
+    }
+
+    .btnFacebook {
+      color: #eaf1fc;
+      background-color: #3279ea;
+
+      &:hover {
+        background-color: #2d6cd2;
+      }
+    }
+
+    .btnInstagram {
+      color: #fff;
+      background: #dc2743;
+      background: linear-gradient(
+        45deg,
+        #f09433 0%,
+        #e6683c 25%,
+        #dc2743 50%,
+        #cc2366 75%,
+        #bc1888 100%
+      );
+      opacity: 0.9;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+    .btnSpotify {
+      color: #eef7ef;
+      background-color: #57b560;
+
+      &:hover {
+        background-color: #4ea256;
+      }
+    }
+
+    .btnLinkedIn {
+      color: #eaf1f7;
+      background-color: #2f77b0;
+
+      &:hover {
+        background-color: #2a6b9e;
+      }
+    }
+
+    .btnGitHub {
+      color: #e9e9ea;
+      background-color: #25292e;
+
+      &:hover {
+        background-color: #212429;
+      }
+    }
+
+    @media (max-width: 640px) {
+      @apply mt-4;
+
+      .btnTwitter,
+      .btnLinkedIn,
+      .btnFacebook {
+        @apply text-xs;
+      }
+    }
+  }
 }
