@@ -1,11 +1,20 @@
 @tailwind base;
 @tailwind components;
 
+html,
+body,
+#__next {
+  @apply min-h-full h-full;
+}
+
+#__next {
+  @apply h-auto;
+  @apply flex flex-col;
+}
+
 body {
-  @apply text-base;
-  @apply leading-relaxed;
-  @apply text-gray-700;
-  @apply antialiased;
+  @apply text-base text-gray-700;
+  @apply leading-relaxed antialiased;
 
   a {
     @apply transition ease-in-out duration-150;
