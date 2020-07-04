@@ -4,6 +4,10 @@
   @apply text-base text-gray-500;
   max-width: 960px;
 
+  &.dark {
+    @apply text-gray-700;
+  }
+
   .separator {
     @apply hidden;
   }

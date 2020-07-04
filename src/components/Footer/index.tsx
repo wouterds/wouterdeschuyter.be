@@ -1,9 +1,19 @@
+import cx from 'classnames';
 import React from 'react';
 
 import styles from './styles.module.css';
 
-export const Footer = () => (
-  <div className={styles.footer}>
+interface Props {
+  dark?: boolean;
+}
+
+export const Footer = ({ dark }: Props = { dark: false }) => (
+  <div
+    className={cx({
+      [styles.footer]: true,
+      [styles.dark]: dark,
+    })}
+  >
     <p>
       &copy; Copyright {new Date().getFullYear()} Wouter De Schuyter,
       BE0745.964.642
