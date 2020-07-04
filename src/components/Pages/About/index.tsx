@@ -128,7 +128,7 @@ const About = () => {
           </p>
           <p>Oh right, also a cat person 🐈!</p>
 
-          <h2>Socials</h2>
+          <h2>Connect with me</h2>
           <div className={styles.social}>
             <a
               href={`https://twitter.com/wouterds`}
