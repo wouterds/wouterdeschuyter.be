@@ -2,6 +2,10 @@
   @apply bg-white;
   @apply flex-1;
 
+  &.dark {
+    background: #151119;
+  }
+
   img.twemoji {
     @apply inline-block;
     height: 1em;
