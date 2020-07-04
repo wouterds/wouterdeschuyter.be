@@ -63,9 +63,9 @@ const About = () => {
               Digital Design &amp; Development
             </a>{' '}
             🎓 at Howest University College and currently I&apos;m freelancing
-            as a Full Stack Developer. I have about {yearsExperience} years
+            as a Full Stack Developer. I have about {yearsExperience} years of
             experience as a professional web &amp; mobile developer 💻 and in
-            the last few years I&apos;ve been focusing a lot on React &amp;
+            the last few years, I&apos;ve been focusing a lot on React &amp;
             React Native apps. My current favorite tech stack would be a
             combination of Docker, Nginx, Cloudflare, Node, Yarn, TypeScript,
             React &amp; GraphQL 💖.
@@ -116,11 +116,11 @@ const About = () => {
           </p>
           <p>
             When I&apos;m not creating kickass (web) apps I&apos;m most likely
-            fiddling around with electronics using Arduino, ESP or Raspberry Pi
-            ⚡️. Besides all of that I really love traveling, trying new things
-            and pushing my own limits. Also kind of a data geek, charts &amp;
-            stats are real motivators for me 📈 (loyal Fitbit user over here
-            ✋).
+            fiddling around with electronics using Arduino, ESP, or Raspberry Pi
+            ⚡️. Besides all of that, I really love traveling, trying new
+            things, and pushing my own limits. Also kind of a data geek, charts
+            &amp; stats are real motivators for me 📈 (loyal Fitbit user over
+            here ✋).
           </p>
           <p>
             Since 2017 I&apos;m also involved in the crypto space. I&apos;ve
