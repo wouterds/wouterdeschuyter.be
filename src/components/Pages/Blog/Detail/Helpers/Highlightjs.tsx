@@ -5,9 +5,9 @@ import React from 'react';
 
 const HighlightJS = () => {
   useDidMount(() => {
-    document
-      .querySelectorAll('pre code')
-      .forEach((block) => hljs.highlightBlock(block));
+    (document.querySelectorAll(
+      'pre code',
+    ) as any).forEach((block: HTMLElement) => hljs.highlightBlock(block));
   });
 
   return (
