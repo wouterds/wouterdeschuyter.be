@@ -96,7 +96,6 @@ const Webmentions = (props: Props) => {
                 }}
               >
                 {likes
-                  .reverse()
                   .slice(likes.length > 7 ? likes.length - 7 : 0, likes.length)
                   .map((webmention: Webmention, index: number) => (
                     <span
