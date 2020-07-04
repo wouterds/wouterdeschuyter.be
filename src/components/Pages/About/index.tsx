@@ -64,15 +64,15 @@ const About = () => {
             </a>{' '}
             🎓 at Howest University College and currently I&apos;m freelancing
             as a Full Stack Developer. I have about {yearsExperience} years
-            experience as a professional web &amp; mobile developer and in the
-            last few years I&apos;ve been focusing a lot on React &amp; React
-            Native apps. My current favorite tech stack would be a combination
-            of Docker, Nginx, Cloudflare, Node, TypeScript, React &amp; GraphQL
-            💖.
+            experience as a professional web &amp; mobile developer 💻 and in
+            the last few years I&apos;ve been focusing a lot on React &amp;
+            React Native apps. My current favorite tech stack would be a
+            combination of Docker, Nginx, Cloudflare, Node, Yarn, TypeScript,
+            React &amp; GraphQL 💖.
           </p>
           <p>
-            Before I started freelancing &amp; consulting I used to work 💻 for
-            a startup{' '}
+            Before I started freelancing &amp; consulting I used to work for a
+            startup{' '}
             <a
               href="https://delta.app"
               target="_blank"
