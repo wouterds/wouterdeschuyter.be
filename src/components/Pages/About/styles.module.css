@@ -105,11 +105,11 @@
     }
 
     .btnSteam {
-      color: #e7e9eb;
-      background-color: #0f2840;
+      color: #e9ecee;
+      background-color: #23445d;
 
       &:hover {
-        background-color: #0d2439;
+        background-color: #1f3d53;
       }
     }
 
