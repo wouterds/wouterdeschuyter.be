@@ -31,7 +31,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState<any>({});
   const { register, handleSubmit, errors, reset } = useForm({
-    submitFocusError: false,
+    shouldFocusError: false,
   });
 
   const recaptcha = useRef<ReCAPTCHA>(null);
