@@ -9,16 +9,18 @@ interface Props {
   router: NextRouter;
   hideLogo?: boolean;
   transparent?: boolean;
+  dark?: boolean;
 }
 
 export const Header = (props: Props) => {
-  const { router, hideLogo, transparent } = props;
+  const { router, hideLogo, transparent, dark } = props;
 
   return (
     <div
       className={cx({
         [styles.header]: true,
         [styles.transparent]: transparent,
+        [styles.dark]: dark,
       })}
     >
       {hideLogo !== true && (

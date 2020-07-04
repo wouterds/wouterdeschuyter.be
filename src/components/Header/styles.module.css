@@ -67,7 +67,8 @@
     }
   }
 
-  &.transparent {
+  &.transparent,
+  &.dark {
     .title {
       h1 {
         @apply text-white;
