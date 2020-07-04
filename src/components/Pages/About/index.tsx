@@ -140,7 +140,7 @@ const About = () => {
           <div className={styles.social}>
             <a
               key="link--social-twitter"
-              href={`https://twitter.com/wouterds`}
+              href="https://twitter.com/wouterds"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnTwitter}
@@ -150,7 +150,7 @@ const About = () => {
             </a>
             <a
               key="link--social-fb"
-              href={`https://fb.me/wouter.de.schuyter`}
+              href="https://fb.me/wouter.de.schuyter"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnFacebook}
@@ -160,7 +160,7 @@ const About = () => {
             </a>
             <a
               key="link--social-ig"
-              href={`https://instagram.com/wouterds`}
+              href="https://instagram.com/wouterds"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnInstagram}
@@ -170,7 +170,7 @@ const About = () => {
             </a>
             <a
               key="link--social-spotify"
-              href={`https://open.spotify.com/user/wouterds`}
+              href="https://open.spotify.com/user/wouterds"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnSpotify}
@@ -180,7 +180,7 @@ const About = () => {
             </a>
             <a
               key="link--social-yt"
-              href={`https://youtube.com/c/wouterds`}
+              href="https://youtube.com/c/wouterds"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnYoutube}
@@ -190,7 +190,7 @@ const About = () => {
             </a>
             <a
               key="link--social-steam"
-              href={`https://steamcommunity.com/id/wouterds`}
+              href="https://steamcommunity.com/id/wouterds"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnSteam}
@@ -200,7 +200,7 @@ const About = () => {
             </a>
             <a
               key="link--social-linkedin"
-              href={`http://linkedin.com/in/wouterds`}
+              href="http://linkedin.com/in/wouterds"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnLinkedIn}
@@ -210,7 +210,7 @@ const About = () => {
             </a>
             <a
               key="link--social-github"
-              href={`http://github.com/wouterds`}
+              href="http://github.com/wouterds"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnGitHub}
