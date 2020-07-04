@@ -7,8 +7,7 @@
     .btnTwitter,
     .btnFacebook {
       @apply cursor-pointer;
-      @apply bg-blue-600;
-      @apply text-blue-100 text-sm font-semibold;
+      @apply text-sm font-semibold;
       @apply py-1;
       @apply px-3;
       @apply rounded;
@@ -22,15 +21,24 @@
 
       &:hover {
         @apply no-underline;
-        @apply bg-blue-500;
+      }
+    }
+
+    .btnTwitter {
+      color: #ecf5fd;
+      background-color: #48a1eb;
+
+      &:hover {
+        background-color: #4090d3;
       }
     }
 
     .btnFacebook {
-      @apply bg-blue-800;
+      color: #eaf1fc;
+      background-color: #3279ea;
 
       &:hover {
-        @apply bg-blue-700;
+        background-color: #2d6cd2;
       }
     }
 
