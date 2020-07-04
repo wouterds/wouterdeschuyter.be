@@ -56,6 +56,7 @@ const About = () => {
           <p>
             I studied{' '}
             <a
+              key="link--devine"
               href="https://devine.be/en"
               target="_blank"
               rel="noopener noreferrer"
@@ -74,6 +75,7 @@ const About = () => {
             Before I started freelancing &amp; consulting I used to work 💻 for
             a startup{' '}
             <a
+              key="link--delta"
               href="https://delta.app"
               target="_blank"
               rel="noopener noreferrer"
@@ -82,6 +84,7 @@ const About = () => {
             </a>{' '}
             that has been{' '}
             <a
+              key="link--techcrunch"
               href="https://techcrunch.com/2019/11/06/investment-platform-etoro-acquires-crypto-portfolio-tracker-app-delta/"
               target="_blank"
               rel="noopener noreferrer"
@@ -90,6 +93,7 @@ const About = () => {
             </a>
             . I also worked at a few other startups &amp; scale-ups such as{' '}
             <a
+              key="link--teamleader"
               href="https://teamleader.eu"
               target="_blank"
               rel="noopener noreferrer"
@@ -98,6 +102,7 @@ const About = () => {
             </a>
             ,{' '}
             <a
+              key="link--itp"
               href="https://inthepocket.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -106,6 +111,7 @@ const About = () => {
             </a>{' '}
             &amp;{' '}
             <a
+              key="link--realo"
               href="https://realo.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -133,6 +139,7 @@ const About = () => {
           <h2>Connect with me</h2>
           <div className={styles.social}>
             <a
+              key="link--social-twitter"
               href={`https://twitter.com/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
@@ -142,6 +149,7 @@ const About = () => {
               <span>Twitter</span>
             </a>
             <a
+              key="link--social-fb"
               href={`https://fb.me/wouter.de.schuyter`}
               target="_blank"
               rel="noopener noreferrer"
@@ -151,6 +159,7 @@ const About = () => {
               <span>Facebook</span>
             </a>
             <a
+              key="link--social-ig"
               href={`https://instagram.com/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
@@ -160,6 +169,7 @@ const About = () => {
               <span>Instagram</span>
             </a>
             <a
+              key="link--social-spotify"
               href={`https://open.spotify.com/user/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
@@ -169,6 +179,7 @@ const About = () => {
               <span>Spotify</span>
             </a>
             <a
+              key="link--social-yt"
               href={`https://youtube.com/c/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
@@ -178,6 +189,7 @@ const About = () => {
               <span>YouTube</span>
             </a>
             <a
+              key="link--social-steam"
               href={`https://steamcommunity.com/id/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
@@ -187,6 +199,7 @@ const About = () => {
               <span>Steam</span>
             </a>
             <a
+              key="link--social-linkedin"
               href={`http://linkedin.com/in/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
@@ -196,6 +209,7 @@ const About = () => {
               <span>LinkedIn</span>
             </a>
             <a
+              key="link--social-github"
               href={`http://github.com/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
