@@ -178,7 +178,7 @@ const About = () => {
               <span>YouTube</span>
             </a>
             <a
-              href={`https://open.spotify.com/user/wouterds`}
+              href={`https://steamcommunity.com/id/wouterds`}
               target="_blank"
               rel="noopener noreferrer"
               className={styles.btnSteam}
