@@ -13,10 +13,18 @@
       @apply bg-gray-200;
       @apply text-gray-800;
 
+      &.active {
+        @apply bg-gray-800;
+        @apply text-gray-100;
+      }
+
       &:hover {
         @apply no-underline;
-        @apply bg-gray-300;
-        @apply text-gray-900;
+
+        &:not(.active) {
+          @apply bg-gray-300;
+          @apply text-gray-900;
+        }
       }
     }
   }
