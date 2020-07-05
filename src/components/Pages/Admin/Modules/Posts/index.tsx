@@ -66,7 +66,7 @@ const AdminModulePosts = () => {
               <th>Status</th>
               <th>Views</th>
               <th>Author</th>
-              <th>Published at</th>
+              <th>Published</th>
             </tr>
           </thead>
           <tbody>

@@ -51,7 +51,7 @@ const AdminModuleMediaAssets = () => {
               <th>Dimensions</th>
               <th>Size</th>
               <th>Url</th>
-              <th>Created at</th>
+              <th>Created</th>
             </tr>
           </thead>
           <tbody>

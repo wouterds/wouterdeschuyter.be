@@ -31,8 +31,8 @@ const AdminModuleUsers = () => {
             <tr>
               <th>Account</th>
               <th>Email</th>
-              <th>Last online at</th>
-              <th>Created at</th>
+              <th>Last online</th>
+              <th>Created</th>
             </tr>
           </thead>
           <tbody>

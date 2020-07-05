@@ -53,7 +53,7 @@ const AdminModulePostAliases = () => {
               <th>Post</th>
               <th>Original slug</th>
               <th>New slug</th>
-              <th>Created at</th>
+              <th>Created</th>
             </tr>
           </thead>
           <tbody>
