@@ -7,14 +7,14 @@
 
     .avatar {
       @apply flex-shrink-0;
-      @apply h-10 w-10;
+      @apply h-12 w-16;
       @apply bg-gray-100;
       @apply rounded-sm;
       @apply overflow-hidden;
       @apply bg-cover;
 
       img {
-        @apply h-10 w-10;
+        @apply h-12 w-16;
         @apply rounded-sm;
       }
     }

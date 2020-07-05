@@ -4,10 +4,10 @@
 
     .avatar {
       @apply flex-shrink-0;
-      @apply h-10 w-10;
+      @apply h-12 w-12;
 
       img {
-        @apply h-10 w-10;
+        @apply h-12 w-12;
         @apply rounded-full;
       }
     }
