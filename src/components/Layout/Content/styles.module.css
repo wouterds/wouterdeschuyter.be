@@ -1,6 +1,7 @@
 .content {
   @apply mx-auto;
   @apply p-10;
+  @apply w-full;
   max-width: 960px;
 
   @media (max-width: 640px) {

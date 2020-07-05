@@ -2,6 +2,7 @@
   @apply mx-auto;
   @apply p-10;
   @apply text-base text-gray-500;
+  @apply w-full;
   max-width: 960px;
 
   &.fullWidth {
