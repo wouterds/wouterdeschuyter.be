@@ -5,7 +5,17 @@ import Meta from 'components/Meta';
 import withAuth from 'hocs/withAuth';
 import React from 'react';
 
-const Admin = () => {
+interface Props {
+  user: {
+    id: string;
+    name: string;
+    email: string;
+  };
+}
+
+const Admin = (props: Props) => {
+  const { user } = props;
+
   return (
     <Layout>
       <Meta
@@ -15,6 +25,7 @@ const Admin = () => {
       <Header />
       <Layout.Content editorial>
         <h1>Admin</h1>
+        <p>Hi, {user.name}</p>
       </Layout.Content>
       <Footer />
     </Layout>
