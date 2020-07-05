@@ -3,6 +3,7 @@ import cx from 'classnames';
 import Table from 'components/Table';
 import { format as formatDate } from 'date-fns';
 import gql from 'graphql-tag';
+import humanFormat from 'human-format';
 import React from 'react';
 
 import styles from './styles.module.css';
@@ -12,6 +13,7 @@ type Post = {
   title: string;
   slug: string;
   status: string;
+  views: number;
   mediaAsset?: {
     id: string;
     name: string;
@@ -40,6 +42,7 @@ const AdminModulePosts = () => {
           slug
           status
           publishedAt
+          views
           user {
             name
           }
@@ -61,6 +64,7 @@ const AdminModulePosts = () => {
               <th>Post</th>
               <th>Slug</th>
               <th>Status</th>
+              <th>Views</th>
               <th>Author</th>
               <th>Published at</th>
             </tr>
@@ -112,6 +116,7 @@ const AdminModulePosts = () => {
                       {post.status}
                     </span>
                   </td>
+                  <td>{humanFormat(post.views).toUpperCase()}</td>
                   <td>{post.user.name}</td>
                   <td>
                     {post.publishedAt
