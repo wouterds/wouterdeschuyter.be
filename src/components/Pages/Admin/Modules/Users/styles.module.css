@@ -5,6 +5,9 @@
     .avatar {
       @apply flex-shrink-0;
       @apply h-12 w-12;
+      @apply bg-gray-100;
+      @apply rounded-full;
+      @apply overflow-hidden;
 
       img {
         @apply h-12 w-12;
