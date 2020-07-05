@@ -1,0 +1,32 @@
+.adminModuleMediaAssets {
+  .asset {
+    > div {
+      @apply flex items-center;
+      max-width: 320px;
+    }
+
+    .avatar {
+      @apply flex-shrink-0;
+      @apply h-10 w-10;
+      @apply bg-gray-100;
+      @apply rounded-sm;
+      @apply overflow-hidden;
+      @apply bg-cover;
+
+      img {
+        @apply h-10 w-10;
+        @apply rounded-sm;
+      }
+    }
+
+    .details {
+      @apply ml-4;
+      @apply w-full;
+
+      .name {
+        @apply text-sm leading-5 font-medium text-gray-900;
+        @apply truncate;
+      }
+    }
+  }
+}
