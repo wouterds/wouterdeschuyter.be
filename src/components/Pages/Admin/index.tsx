@@ -9,6 +9,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 
 import AdminModuleDashboard from './Modules/Dashboard';
+import AdminModuleUsers from './Modules/Users';
 import styles from './styles.module.css';
 
 const Admin = () => {
@@ -100,6 +101,7 @@ const Admin = () => {
           </nav>
           <div className={styles.content}>
             {page === 'dashboard' && <AdminModuleDashboard />}
+            {page === 'users' && <AdminModuleUsers />}
           </div>
         </div>
       </Layout.Content>
