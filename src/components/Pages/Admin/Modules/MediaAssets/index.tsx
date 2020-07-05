@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/react-hooks';
 import Table from 'components/Table';
 import { format as formatDate } from 'date-fns';
 import gql from 'graphql-tag';
-import prettyBytes from 'pretty-bytes';
+import humanFormat from 'human-format';
 import React from 'react';
 
 import styles from './styles.module.css';
@@ -93,7 +93,9 @@ const AdminModuleMediaAssets = () => {
                       : '--'}
                   </td>
                   <td>
-                    {mediaAsset.size ? prettyBytes(mediaAsset.size) : '--'}
+                    {mediaAsset.size
+                      ? humanFormat(mediaAsset.size, { unit: 'B' })
+                      : '--'}
                   </td>
                   <td>{mediaAsset.url || '--'}</td>
                   <td>
