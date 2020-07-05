@@ -1,0 +1,33 @@
+.table {
+  @apply align-middle;
+  @apply inline-block;
+  @apply min-w-full;
+  @apply overflow-hidden;
+  @apply rounded;
+  @apply border border-gray-200;
+
+  table {
+    @apply min-w-full;
+
+    th {
+      @apply px-6 py-3;
+      @apply border-b border-gray-200;
+      @apply bg-gray-100;
+      @apply text-left text-xs leading-4 font-semibold text-gray-500 uppercase tracking-wider;
+    }
+
+    tbody {
+      @apply bg-white;
+    }
+
+    td {
+      @apply px-6 py-4;
+      @apply whitespace-no-wrap;
+      @apply border-b border-gray-200;
+    }
+
+    tr:last-child td {
+      @apply border-b-0;
+    }
+  }
+}
