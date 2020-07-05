@@ -80,7 +80,7 @@ const AdminModulePosts = () => {
               }
 
               return (
-                <tr key={`mediaAsset-${post.id}`}>
+                <tr key={`post-${post.id}`}>
                   <td className={styles.post}>
                     <div>
                       <div
