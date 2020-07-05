@@ -8,12 +8,9 @@ export const useCookie = (
 ): [string, (item: string, options?: CookieSetOptions) => void] => {
   const [value, setInnerValue] = useState(Cookie.get(key) || initialValue);
 
-  const setValue = (
-    value: string,
-    options: CookieSetOptions = { path: '/' },
-  ) => {
+  const setValue = (value: string, options: CookieSetOptions = {}) => {
     setInnerValue(value);
-    Cookie.set(key, value, options);
+    Cookie.set(key, value, { path: '/', ...options });
   };
 
   return [value, setValue];
