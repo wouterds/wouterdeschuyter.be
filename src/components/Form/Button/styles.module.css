@@ -6,6 +6,39 @@
   @apply py-2 px-3;
   @apply text-gray-100 font-medium;
   @apply transition ease-in-out duration-150;
+  @apply relative;
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(359deg);
+    }
+  }
+
+  .spinner {
+    @apply absolute top-0 right-0 bottom-0 left-0;
+    @apply flex inset-0 items-center justify-center;
+    @apply opacity-0;
+
+    svg {
+      animation: spin 500ms linear infinite;
+    }
+  }
+
+  &.loading {
+    @apply pointer-events-none;
+    @apply opacity-75;
+
+    .content {
+      @apply opacity-0;
+    }
+
+    .spinner {
+      @apply opacity-100;
+    }
+  }
 
   &:hover {
     @apply bg-gray-800;
