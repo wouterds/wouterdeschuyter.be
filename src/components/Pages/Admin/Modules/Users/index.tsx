@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/react-hooks';
 import Table from 'components/Table';
 import { User } from 'data/user';
+import { format as formatDate } from 'date-fns';
 import gql from 'graphql-tag';
 import md5 from 'md5';
 import React from 'react';
@@ -29,41 +30,39 @@ const AdminModuleUsers = () => {
           <thead>
             <tr>
               <th>Account</th>
+              <th>Email</th>
               <th>Last online at</th>
               <th>Created at</th>
-              <th />
             </tr>
           </thead>
           <tbody>
             {(data?.users || []).map((user) => (
               <tr key={`user-${user.id}`}>
                 <td>
-                  <div className="flex items-center">
-                    <div className="flex-shrink-0 h-10 w-10">
+                  <div className={styles.account}>
+                    <div className={styles.avatar}>
                       <img
-                        className="h-10 w-10 rounded-full"
-                        src={`https://www.gravatar.com/avatar/${md5(
-                          user.email,
-                        )}`}
-                        alt=""
+                        src={`https://gravatar.com/avatar/${md5(user.email)}`}
                       />
                     </div>
-                    <div className="ml-4">
-                      <div className="text-sm leading-5 font-medium text-gray-900">
-                        Bernard Lane
-                      </div>
-                      <div className="text-sm leading-5 text-gray-500">
-                        bernardlane@example.com
-                      </div>
+                    <div className={styles.details}>
+                      <div className={styles.name}>{user.name}</div>
+                      <div>{user.id}</div>
                     </div>
                   </div>
                 </td>
-                <td>Owner</td>
-                <td>Owner</td>
+                <td>{user.email}</td>
                 <td>
-                  <a href="#" className="text-indigo-600 hover:text-indigo-900">
-                    Edit
-                  </a>
+                  {formatDate(
+                    new Date(parseInt(`${user.lastOnlineAt}`)),
+                    'd MMMM, yyyy HH:mm',
+                  )}
+                </td>
+                <td>
+                  {formatDate(
+                    new Date(parseInt(`${user.createdAt}`)),
+                    'd MMMM, yyyy HH:mm',
+                  )}
                 </td>
               </tr>
             ))}

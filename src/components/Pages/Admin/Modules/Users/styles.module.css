@@ -1,2 +1,23 @@
 .adminModuleUsers {
+  .account {
+    @apply flex items-center;
+
+    .avatar {
+      @apply flex-shrink-0;
+      @apply h-10 w-10;
+
+      img {
+        @apply h-10 w-10;
+        @apply rounded-full;
+      }
+    }
+
+    .details {
+      @apply ml-4;
+
+      .name {
+        @apply text-sm leading-5 font-medium text-gray-900;
+      }
+    }
+  }
 }
