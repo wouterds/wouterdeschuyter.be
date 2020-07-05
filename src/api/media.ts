@@ -14,17 +14,24 @@ export default async ({ query }: NextApiRequest, res: NextApiResponse) => {
 
   const fileName = `${parts[0]}.${parts[parts.length - 1]}`;
   let embed = false;
+  let thumbnail = false;
   if (parts.length > 2) {
-    if (parts[1] !== 'embed') {
+    if (parts[1] === 'embed') {
+      embed = true;
+    }
+
+    if (parts[1] === 'thumbnail') {
+      thumbnail = true;
+    }
+
+    if (!embed && !thumbnail) {
       res.status(400);
       return;
     }
-
-    embed = true;
   }
 
   const apiRes = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/media-assets/${fileName}?embed=${embed}`,
+    `${process.env.NEXT_PUBLIC_API_URL}/media-assets/${fileName}?embed=${embed}&thumbnail=${thumbnail}`,
   );
 
   if (apiRes.status === 404) {
