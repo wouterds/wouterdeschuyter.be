@@ -32,4 +32,4 @@ const Admin = (props: Props) => {
   );
 };
 
-export default withAuth(Admin);
+export default withAuth(Admin as any);
