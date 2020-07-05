@@ -38,8 +38,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
             slug
             publishedAt
             user {
-              firstName
-              lastName
+              name
             }
             mediaAsset {
               fileName
@@ -60,7 +59,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
       title: post.title,
       description: post.excerpt,
       url: `${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`,
-      author: `${post.user.firstName} ${post.user.lastName}`,
+      author: post.user.name,
       date: new Date(parseInt(post.publishedAt)).toISOString(),
       enclosure: {
         url: image,

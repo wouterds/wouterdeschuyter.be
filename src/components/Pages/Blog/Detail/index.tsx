@@ -33,8 +33,7 @@ const FETCH_DATA = gql`
         imagePreview
       }
       user {
-        firstName
-        lastName
+        name
       }
     }
   }
@@ -101,7 +100,7 @@ const Detail = (props: Props) => {
                     : undefined,
                   author: {
                     '@type': 'Person',
-                    name: `${post.user.firstName} ${post.user.lastName}`,
+                    name: post.user.name,
                   },
                   publisher: {
                     '@type': 'Organization',
