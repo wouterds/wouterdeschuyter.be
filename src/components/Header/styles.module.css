@@ -63,6 +63,10 @@
 
       &.admin {
         @apply text-red-500;
+
+        &:hover {
+          @apply text-red-600;
+        }
       }
 
       + a {
@@ -95,6 +99,10 @@
       &.admin {
         @apply text-red-500;
         @apply opacity-100;
+
+        &:hover {
+          @apply text-red-400;
+        }
       }
     }
   }
