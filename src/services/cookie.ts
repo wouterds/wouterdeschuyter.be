@@ -1,21 +1,27 @@
+import { NextPageContext } from 'next';
+import { destroyCookie, parseCookies, setCookie } from 'nookies';
 import UniversalCookie, {
   CookieGetOptions as _CookieGetOptions,
-  CookieSetOptions as _CookieSetOptions,
 } from 'universal-cookie';
 
 export enum Cookies {
   JWT = 'jwt',
-  DATA_BAR = 'data-bar',
 }
 
 export type CookieGetOptions = _CookieGetOptions;
-export type CookieSetOptions = _CookieSetOptions;
+export interface CookieSetOptions {
+  ctx?: NextPageContext;
+  maxAge?: number;
+  path?: string;
+}
 
 class Cookie {
   private client = new UniversalCookie();
 
-  public init(header: string | null = null) {
-    this.client = new UniversalCookie(header);
+  public init(ctx: NextPageContext) {
+    parseCookies(ctx);
+
+    this.client = new UniversalCookie(ctx.req?.headers.cookie);
 
     return this.client;
   }
@@ -23,8 +29,37 @@ class Cookie {
   public get = (name: string, options?: CookieGetOptions) =>
     this.client.get(name, options);
 
-  public set = (name: string, value: any, options?: CookieSetOptions) =>
-    this.client.set(name, value, options);
+  public set = (name: string, value: any, options?: CookieSetOptions) => {
+    this.client.set(name, value, {
+      path: options?.path || '/',
+      maxAge: 24 * 60 * 60 * 30, // 30 days
+    });
+
+    if (options?.ctx) {
+      parseCookies(options?.ctx);
+    }
+
+    setCookie(options?.ctx, name, value, {
+      path: options?.path || '/',
+      maxAge: 24 * 60 * 60 * 30, // 30 days
+    });
+  };
+
+  public destroy = (name: string, options?: CookieSetOptions) => {
+    this.client.remove(name, {
+      path: options?.path || '/',
+    });
+
+    if (options?.ctx) {
+      parseCookies(options?.ctx);
+    }
+
+    destroyCookie(options?.ctx, name, {
+      path: options?.path || '/',
+    });
+  };
 }
 
-export default new Cookie();
+const CookieService = new Cookie();
+
+export default CookieService;
