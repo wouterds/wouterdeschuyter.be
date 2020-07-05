@@ -20,4 +20,8 @@
       }
     }
   }
+
+  .content {
+    @apply mt-8;
+  }
 }
