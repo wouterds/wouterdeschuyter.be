@@ -1,0 +1,23 @@
+.admin {
+  .nav {
+    @apply -m-1;
+
+    a {
+      @apply cursor-pointer;
+      @apply text-sm font-semibold;
+      @apply py-1 px-3;
+      @apply rounded;
+      @apply inline-flex;
+      @apply items-center;
+      @apply m-1;
+      @apply bg-gray-200;
+      @apply text-gray-800;
+
+      &:hover {
+        @apply no-underline;
+        @apply bg-gray-300;
+        @apply text-gray-900;
+      }
+    }
+  }
+}

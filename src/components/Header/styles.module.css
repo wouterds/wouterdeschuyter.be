@@ -15,7 +15,7 @@
   }
 
   .title {
-    @apply p-5;
+    @apply p-6;
 
     a {
       @apply inline-block;
@@ -44,7 +44,7 @@
   }
 
   .nav {
-    @apply px-5 py-4;
+    @apply px-6 py-4;
     @apply font-medium;
     @apply flex flex-1;
     @apply justify-end;

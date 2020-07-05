@@ -7,10 +7,11 @@ interface Props {
   children: ReactNode;
   editorial?: boolean;
   dark?: boolean;
+  fullWidth?: boolean;
 }
 
 const Content = (props: Props) => {
-  const { children, editorial, dark } = props;
+  const { children, editorial, dark, fullWidth = false } = props;
 
   return (
     <section
@@ -19,6 +20,7 @@ const Content = (props: Props) => {
         [styles.content]: true,
         [styles.editorial]: editorial,
         [styles.dark]: dark,
+        [styles.fullWidth]: fullWidth,
       })}
     >
       {children}

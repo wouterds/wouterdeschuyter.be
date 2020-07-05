@@ -6,6 +6,13 @@
   @media (max-width: 640px) {
     @apply px-6 py-2;
   }
+
+  &.fullWidth {
+    @apply max-w-full;
+    @apply p-8 pt-4;
+    @apply flex-1;
+    @apply m-0;
+  }
 }
 
 .editorial {

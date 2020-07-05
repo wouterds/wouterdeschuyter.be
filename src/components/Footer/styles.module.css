@@ -4,6 +4,12 @@
   @apply text-base text-gray-500;
   max-width: 960px;
 
+  &.fullWidth {
+    @apply max-w-full;
+    @apply p-8;
+    @apply m-0;
+  }
+
   &.dark {
     @apply text-gray-700;
   }

@@ -1,6 +1,6 @@
 .layout {
   @apply bg-white;
-  @apply flex-1;
+  @apply flex flex-col flex-1;
 
   &.dark {
     background: #151119;

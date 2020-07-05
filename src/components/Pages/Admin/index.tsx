@@ -5,6 +5,8 @@ import Meta from 'components/Meta';
 import withAuth from 'hocs/withAuth';
 import React from 'react';
 
+import styles from './styles.module.css';
+
 interface Props {
   user: {
     id: string;
@@ -23,11 +25,21 @@ const Admin = (props: Props) => {
         extra={<meta key="robots" name="robots" content="noindex, follow" />}
       />
       <Header />
-      <Layout.Content editorial>
-        <h1>Admin</h1>
-        <p>Hi, {user.name}</p>
+      <Layout.Content fullWidth>
+        <div className={styles.admin}>
+          <nav className={styles.nav}>
+            <a href="#">Dashboard</a>
+            <a href="#">Users</a>
+            <a href="#">Media assets</a>
+            <a href="#">Posts</a>
+            <a href="#">Post aliases</a>
+            <a href="#">Authentication requests</a>
+            <a href="#">Access tokens</a>
+            <a href="#">Sensors</a>
+          </nav>
+        </div>
       </Layout.Content>
-      <Footer />
+      <Footer fullWidth />
     </Layout>
   );
 };
