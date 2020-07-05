@@ -4,6 +4,7 @@ import React, {
   DetailedHTMLProps,
   forwardRef,
   MouseEvent,
+  ReactNode,
   Ref,
   useCallback,
 } from 'react';
