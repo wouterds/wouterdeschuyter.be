@@ -16,7 +16,7 @@ import styles from './styles.module.css';
 
 const Admin = () => {
   const { query } = useRouter();
-  const page = query['sub-page'];
+  const page = query['sub-page'] || 'dashboard';
 
   return (
     <Layout>
@@ -28,7 +28,7 @@ const Admin = () => {
       <Layout.Content fullWidth>
         <div className={styles.admin}>
           <nav className={styles.nav}>
-            <Link href="/admin/[sub-page]" as="/admin/dashboard">
+            <Link href="/admin" as="/admin">
               <a
                 className={cx({
                   [styles.active]: page === 'dashboard',
