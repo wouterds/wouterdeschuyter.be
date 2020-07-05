@@ -2,7 +2,7 @@
   .post {
     > div {
       @apply flex items-center;
-      max-width: 320px;
+      max-width: 300px;
     }
 
     .avatar {
@@ -31,7 +31,7 @@
   }
 
   .slug {
-    max-width: 320px;
+    max-width: 240px;
 
     div {
       @apply truncate;
