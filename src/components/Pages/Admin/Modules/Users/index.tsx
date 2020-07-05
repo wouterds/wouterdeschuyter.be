@@ -43,6 +43,7 @@ const AdminModuleUsers = () => {
                     <div className={styles.avatar}>
                       <img
                         src={`https://gravatar.com/avatar/${md5(user.email)}`}
+                        loading="lazy"
                       />
                     </div>
                     <div className={styles.details}>
