@@ -1,4 +1,5 @@
 import { useQuery } from '@apollo/react-hooks';
+import Loader from 'components/Loader';
 import Table from 'components/Table';
 import { User } from 'data/user';
 import { format as formatDate } from 'date-fns';
@@ -9,7 +10,7 @@ import React from 'react';
 import styles from './styles.module.css';
 
 const AdminModuleUsers = () => {
-  const { data } = useQuery<{ users: User[] }>(
+  const { data, loading } = useQuery<{ users: User[] }>(
     gql`
       query {
         users {
@@ -22,6 +23,17 @@ const AdminModuleUsers = () => {
       }
     `,
   );
+
+  const users = data?.users || [];
+  if (users.length === 0 && loading) {
+    return (
+      <div className={styles.adminModuleUsers}>
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.adminModuleUsers}>
@@ -36,7 +48,7 @@ const AdminModuleUsers = () => {
             </tr>
           </thead>
           <tbody>
-            {(data?.users || []).map((user) => (
+            {users.map((user) => (
               <tr key={`user-${user.id}`}>
                 <td>
                   <div className={styles.account}>

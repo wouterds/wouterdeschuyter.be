@@ -6,7 +6,9 @@ import styles from './styles.module.css';
 const AdminModuleAuthenticationRequests = () => {
   return (
     <div className={styles.adminModuleAuthenticationRequests}>
-      <Loader />
+      <div className={styles.loader}>
+        <Loader />
+      </div>
     </div>
   );
 };

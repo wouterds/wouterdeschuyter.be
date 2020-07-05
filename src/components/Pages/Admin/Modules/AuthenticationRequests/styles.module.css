@@ -1,4 +1,6 @@
 .adminModuleAuthenticationRequests {
-  @apply text-center;
-  @apply p-20;
+  .loader {
+    @apply text-center;
+    @apply p-20;
+  }
 }

@@ -1,4 +1,9 @@
 .adminModuleUsers {
+  .loader {
+    @apply text-center;
+    @apply p-20;
+  }
+
   .account {
     @apply flex items-center;
 

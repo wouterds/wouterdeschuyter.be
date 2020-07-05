@@ -1,4 +1,5 @@
 import { useQuery } from '@apollo/react-hooks';
+import Loader from 'components/Loader';
 import Table from 'components/Table';
 import { format as formatDate } from 'date-fns';
 import gql from 'graphql-tag';
@@ -21,7 +22,7 @@ type MediaAsset = {
 };
 
 const AdminModuleMediaAssets = () => {
-  const { data } = useQuery<{ mediaAssets: MediaAsset[] }>(
+  const { data, loading } = useQuery<{ mediaAssets: MediaAsset[] }>(
     gql`
       query {
         mediaAssets {
@@ -40,6 +41,17 @@ const AdminModuleMediaAssets = () => {
     `,
   );
 
+  const mediaAssets = data?.mediaAssets || [];
+  if (mediaAssets.length === 0 && loading) {
+    return (
+      <div className={styles.adminModuleMediaAssets}>
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.adminModuleMediaAssets}>
       <Table>
@@ -55,7 +67,7 @@ const AdminModuleMediaAssets = () => {
             </tr>
           </thead>
           <tbody>
-            {(data?.mediaAssets || []).map((mediaAsset) => {
+            {mediaAssets.map((mediaAsset) => {
               const { fileName } = mediaAsset;
 
               let image = null;

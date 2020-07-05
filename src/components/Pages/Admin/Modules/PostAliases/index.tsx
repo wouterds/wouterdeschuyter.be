@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/react-hooks';
 import cx from 'classnames';
+import Loader from 'components/Loader';
 import Table from 'components/Table';
 import { format as formatDate } from 'date-fns';
 import gql from 'graphql-tag';
@@ -24,7 +25,7 @@ type PostAlias = {
 };
 
 const AdminModulePostAliases = () => {
-  const { data } = useQuery<{ postAliases: PostAlias[] }>(
+  const { data, loading } = useQuery<{ postAliases: PostAlias[] }>(
     gql`
       query {
         postAliases {
@@ -45,6 +46,17 @@ const AdminModulePostAliases = () => {
     `,
   );
 
+  const postAliases = data?.postAliases || [];
+  if (postAliases.length === 0 && loading) {
+    return (
+      <div className={styles.adminModulePostAliases}>
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.adminModulePostAliases}>
       <Table>
@@ -59,7 +71,7 @@ const AdminModulePostAliases = () => {
             </tr>
           </thead>
           <tbody>
-            {(data?.postAliases || []).map((postAlias) => {
+            {postAliases.map((postAlias) => {
               const { post } = postAlias;
               const { mediaAsset } = post;
 

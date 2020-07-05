@@ -1,5 +1,6 @@
 import { useQuery } from '@apollo/react-hooks';
 import cx from 'classnames';
+import Loader from 'components/Loader';
 import Table from 'components/Table';
 import { format as formatDate } from 'date-fns';
 import gql from 'graphql-tag';
@@ -33,7 +34,7 @@ type Post = {
 };
 
 const AdminModulePosts = () => {
-  const { data } = useQuery<{ posts: Post[] }>(
+  const { data, loading } = useQuery<{ posts: Post[] }>(
     gql`
       query {
         posts(includeDrafts: true) {
@@ -55,6 +56,17 @@ const AdminModulePosts = () => {
     `,
   );
 
+  const posts = data?.posts || [];
+  if (posts.length === 0 && loading) {
+    return (
+      <div className={styles.adminModulePosts}>
+        <div className={styles.loader}>
+          <Loader />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.adminModulePosts}>
       <Table>
@@ -70,7 +82,7 @@ const AdminModulePosts = () => {
             </tr>
           </thead>
           <tbody>
-            {(data?.posts || []).map((post) => {
+            {posts.map((post) => {
               const { mediaAsset } = post;
 
               let image = null;
