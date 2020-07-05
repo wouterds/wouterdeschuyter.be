@@ -4660,6 +4660,11 @@ https-browserify@^1.0.0:
   resolved "https://registry.yarnpkg.com/https-browserify/-/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
+human-format@^0.11.0:
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/human-format/-/human-format-0.11.0.tgz#bfc85a6e135f9a9292d641a38e979ed9f82557e9"
+  integrity sha512-g4UtoBnhfitCjkGjjiOlY8tkmArIcrstBa5adihxSJwSde1A7iQzvrNLB5ceX89FHXzYi9yTi04t3m82J/XIag==
+
 human-signals@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
