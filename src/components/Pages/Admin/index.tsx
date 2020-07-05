@@ -10,6 +10,7 @@ import React from 'react';
 
 import AdminModuleDashboard from './Modules/Dashboard';
 import AdminModuleMediaAssets from './Modules/MediaAssets';
+import AdminModulePostAliases from './Modules/PostAliases';
 import AdminModulePosts from './Modules/Posts';
 import AdminModuleUsers from './Modules/Users';
 import styles from './styles.module.css';
@@ -106,6 +107,7 @@ const Admin = () => {
             {page === 'users' && <AdminModuleUsers />}
             {page === 'media-assets' && <AdminModuleMediaAssets />}
             {page === 'posts' && <AdminModulePosts />}
+            {page === 'post-aliases' && <AdminModulePostAliases />}
           </div>
         </div>
       </Layout.Content>
