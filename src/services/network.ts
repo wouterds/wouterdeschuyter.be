@@ -3,7 +3,7 @@ import { ApolloClient } from 'apollo-client';
 import { setContext } from 'apollo-link-context';
 import { HttpLink } from 'apollo-link-http';
 
-import CookieService, { Cookies } from './cookie';
+import Cookie, { Cookies } from './cookie';
 
 class NetworkService {
   private _apollo: ApolloClient<NormalizedCacheObject>;
@@ -18,7 +18,7 @@ class NetworkService {
     });
 
     const authMiddleware = setContext(async (_request, context) => {
-      const jwt = CookieService.get(Cookies.JWT);
+      const jwt = Cookie.get(Cookies.JWT);
 
       const { headers = {} } = context;
 

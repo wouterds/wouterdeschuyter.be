@@ -1,6 +1,6 @@
 import gql from 'graphql-tag';
 import { NextPageContext } from 'next';
-import CookieService, { Cookies } from 'services/cookie';
+import Cookie, { Cookies } from 'services/cookie';
 import Network from 'services/network';
 
 const CONSUME_AUTH_REQUEST = gql`
@@ -15,7 +15,7 @@ Auth.getInitialProps = async (ctx: NextPageContext) => {
   const { res, query } = ctx;
   const { token } = query;
 
-  CookieService.init(ctx);
+  Cookie.init(ctx);
 
   try {
     const { data } = await Network.apollo.mutate({
@@ -24,7 +24,7 @@ Auth.getInitialProps = async (ctx: NextPageContext) => {
     });
 
     if (data?.consomeAuthenticationRequest) {
-      CookieService.set(Cookies.JWT, data?.consomeAuthenticationRequest, {
+      Cookie.set(Cookies.JWT, data?.consomeAuthenticationRequest, {
         ctx,
       });
     }

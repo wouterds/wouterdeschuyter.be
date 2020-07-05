@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 import { NextApiRequest, NextApiResponse } from 'next';
 import Rss from 'rss';
-import NetworkService from 'services/network';
+import Network from 'services/network';
 
 const createFeed = () =>
   new Rss({
@@ -29,7 +29,7 @@ export default async (_req: NextApiRequest, res: NextApiResponse) => {
   const feed = createFeed();
 
   const { posts } = (
-    await NetworkService.apollo.query({
+    await Network.apollo.query({
       query: gql`
         query fetchData {
           posts {

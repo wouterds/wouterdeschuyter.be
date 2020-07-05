@@ -15,7 +15,7 @@ export interface CookieSetOptions {
   path?: string;
 }
 
-class Cookie {
+class CookieService {
   private client = new UniversalCookie();
 
   public init(ctx: NextPageContext) {
@@ -60,6 +60,6 @@ class Cookie {
   };
 }
 
-const CookieService = new Cookie();
+const Cookie = new CookieService();
 
-export default CookieService;
+export default Cookie;
