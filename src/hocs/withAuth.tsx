@@ -53,7 +53,7 @@ const withAuth = (Component: NextComponentType) => {
     try {
       const { data } = await Network.apollo.query({ query: ME });
       user = data?.me || null;
-    } catch (e) {
+    } catch {
       return res?.writeHead(302, { Location: '/admin/authenticate' }).end();
     }
 

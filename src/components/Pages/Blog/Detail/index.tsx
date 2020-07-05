@@ -232,7 +232,7 @@ Detail.getInitialProps = async ({ query, res }: NextPageContext) => {
       `,
       variables: { id: post.id },
     });
-  } catch (e) {}
+  } catch {}
 
   return { post };
 };
