@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import { useUser } from 'data/user';
 import Link from 'next/link';
 import { NextRouter, withRouter } from 'next/router';
 import React from 'react';
@@ -14,6 +15,7 @@ interface Props {
 
 export const Header = (props: Props) => {
   const { router, hideLogo, transparent, dark } = props;
+  const [user] = useUser();
 
   return (
     <div
@@ -61,6 +63,11 @@ export const Header = (props: Props) => {
             Contact
           </a>
         </Link>
+        {user && (
+          <Link href="/admin">
+            <a className={styles.admin}>Admin</a>
+          </Link>
+        )}
       </nav>
     </div>
   );
