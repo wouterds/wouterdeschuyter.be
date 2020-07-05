@@ -31,7 +31,7 @@
   }
 
   .slug {
-    max-width: 240px;
+    max-width: 340px;
 
     div {
       @apply truncate;
@@ -43,6 +43,15 @@
 
     &.new {
       @apply text-green-500;
+    }
+  }
+
+  .arrow {
+    @apply px-1;
+    @apply text-center;
+
+    svg {
+      @apply inline-block;
     }
   }
 

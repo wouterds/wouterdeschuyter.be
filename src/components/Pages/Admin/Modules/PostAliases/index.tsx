@@ -4,6 +4,7 @@ import Table from 'components/Table';
 import { format as formatDate } from 'date-fns';
 import gql from 'graphql-tag';
 import React from 'react';
+import { FaArrowCircleRight } from 'react-icons/fa';
 
 import styles from './styles.module.css';
 
@@ -51,8 +52,9 @@ const AdminModulePostAliases = () => {
           <thead>
             <tr>
               <th>Post</th>
-              <th>Original slug</th>
-              <th>New slug</th>
+              <th>Alias slug</th>
+              <th />
+              <th>Post slug</th>
               <th>Created</th>
             </tr>
           </thead>
@@ -92,10 +94,13 @@ const AdminModulePostAliases = () => {
                     </div>
                   </td>
                   <td className={cx(styles.slug, styles.old)}>
-                    <div>{postAlias.post.slug || '--'}</div>
+                    <div>{postAlias.slug || '--'}</div>
+                  </td>
+                  <td className={styles.arrow}>
+                    <FaArrowCircleRight />
                   </td>
                   <td className={cx(styles.slug, styles.new)}>
-                    <div>{postAlias.slug || '--'}</div>
+                    <div>{postAlias.post.slug || '--'}</div>
                   </td>
                   <td>
                     {postAlias.createdAt
