@@ -2,6 +2,7 @@ import Footer from 'components/Footer';
 import Header from 'components/Header';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';
+import withAuth from 'hocs/withAuth';
 import React from 'react';
 
 const Admin = () => {
@@ -20,4 +21,4 @@ const Admin = () => {
   );
 };
 
-export default Admin;
+export default withAuth(Admin);
