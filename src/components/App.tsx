@@ -1,22 +1,64 @@
 import { ApolloProvider } from '@apollo/react-hooks';
 import { getDataFromTree } from '@apollo/react-ssr';
 import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
+import { User, UserContextProvider } from 'data/user';
+import gql from 'graphql-tag';
 import withApollo from 'next-with-apollo';
-import NextApp from 'next/app';
+import NextApp, { AppContext } from 'next/app';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import React from 'react';
+import Cookie, { Cookies } from 'services/cookie';
 import GoogleAnalytics from 'services/google-analytics';
 import Network from 'services/network';
 
-class App extends NextApp {
+const ME = gql`
+  query {
+    me {
+      id
+      name
+      email
+    }
+  }
+`;
+
+interface Props {
+  user: User | null;
+}
+
+class App extends NextApp<Props> {
+  static getInitialProps = async (appContext: AppContext) => {
+    const appProps = await NextApp.getInitialProps(appContext);
+    const { ctx } = appContext;
+
+    Cookie.init(ctx);
+
+    let user = null;
+    const jwt = Cookie.get(Cookies.JWT);
+
+    if (!jwt) {
+      return { ...appProps, user };
+    }
+
+    try {
+      const { data } = await Network.apollo.query({ query: ME });
+      user = data?.me || null;
+    } catch {
+      return { ...appProps, user };
+    }
+
+    return { ...appProps, user };
+  };
+
   public render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, user } = this.props;
 
     return (
       <ApolloProvider client={Network.apollo}>
-        <GoogleAnalyticsSDK />
-        <Component {...pageProps} />
+        <UserContextProvider user={user}>
+          <GoogleAnalyticsSDK />
+          <Component {...pageProps} />
+        </UserContextProvider>
       </ApolloProvider>
     );
   }
