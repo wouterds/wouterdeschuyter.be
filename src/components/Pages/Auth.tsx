@@ -29,10 +29,10 @@ Auth.getInitialProps = async (ctx: NextPageContext) => {
       });
     }
   } catch {
-    return res?.writeHead(302, { Location: `/` }).end();
+    return res?.writeHead(302, { Location: `/admin/authenticate` }).end();
   }
 
-  return res?.writeHead(302, { Location: `/` }).end();
+  return res?.writeHead(302, { Location: `/admin` }).end();
 };
 
 export default Auth;
