@@ -34,10 +34,10 @@ const AdminModulePostAliases = () => {
             id
             slug
             title
-          }
-          mediaAsset {
-            imagePreview
-            fileName
+            mediaAsset {
+              imagePreview
+              fileName
+            }
           }
         }
       }
