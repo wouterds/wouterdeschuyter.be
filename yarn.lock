@@ -6148,6 +6148,14 @@ node-releases@^1.1.53:
   resolved "https://registry.yarnpkg.com/node-releases/-/node-releases-1.1.58.tgz#8ee20eef30fa60e52755fcc0942def5a734fe935"
   integrity sha512-NxBudgVKiRh/2aPWMgPR7bPTX0VPmGx5QBwCtdHitnqFE5/O8DeBXuIMH1nwNnw/aMo6AjOrpsHzfY3UbUJ7yg==
 
+nookies@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/nookies/-/nookies-2.3.2.tgz#5a6111dc8f7247d3b532f35a073fe4e408c8f027"
+  integrity sha512-iV0aRpJhpmf3Ri7q0tulK5epR8sYvYuifphVwSMlm/SIt0gVII+R6lSDYNgLJLFMCK+9gvJC6H87vSCA4CtKcA==
+  dependencies:
+    cookie "^0.4.0"
+    set-cookie-parser "^2.4.3"
+
 normalize-html-whitespace@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/normalize-html-whitespace/-/normalize-html-whitespace-1.0.0.tgz#5e3c8e192f1b06c3b9eee4b7e7f28854c7601e34"
@@ -8354,6 +8362,11 @@ set-blocking@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7"
   integrity sha1-BF+XgtARrppoA93TgrJDkrPYkPc=
+
+set-cookie-parser@^2.4.3:
+  version "2.4.6"
+  resolved "https://registry.yarnpkg.com/set-cookie-parser/-/set-cookie-parser-2.4.6.tgz#43bdea028b9e6f176474ee5298e758b4a44799c3"
+  integrity sha512-mNCnTUF0OYPwYzSHbdRdCfNNHqrne+HS5tS5xNb6yJbdP9wInV0q5xPLE0EyfV/Q3tImo3y/OXpD8Jn0Jtnjrg==
 
 set-value@^2.0.0, set-value@^2.0.1:
   version "2.0.1"
