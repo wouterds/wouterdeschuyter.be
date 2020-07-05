@@ -1,3 +1,4 @@
+import { useMediaQuery } from 'beautiful-react-hooks';
 import Head from 'next/head';
 import { NextRouter, withRouter } from 'next/router';
 import React, { ReactElement } from 'react';
@@ -20,6 +21,8 @@ const Meta = (props: Props) => {
   const extraMetaHtml = extra ? renderToString(extra) : '';
   const extraOgType = extraMetaHtml.indexOf('og:type') > -1;
   const extraOgImage = extraMetaHtml.indexOf('og:image') > -1;
+
+  const isDark = useMediaQuery('(prefers-color-scheme: dark)');
 
   return (
     <Head>
@@ -56,13 +59,18 @@ const Meta = (props: Props) => {
         rel="icon"
         type="image/png"
         sizes="32x32"
-        href="/favicon-32x32.png"
+        href={`/favicon-32x32.${isDark ? 'alt.' : ''}png`}
       />
       <link
         rel="icon"
         type="image/png"
         sizes="16x16"
-        href="/favicon-16x16.png"
+        href={`/favicon-16x16.${isDark ? 'alt.' : ''}png`}
+      />
+      <link
+        rel="icon"
+        type="image/x-icon"
+        href={`favicon.${isDark ? 'alt.' : ''}ico`}
       />
       <link
         rel="alternate"
