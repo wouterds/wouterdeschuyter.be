@@ -4,7 +4,7 @@
   @apply appearance-none;
   @apply rounded;
   @apply w-full;
-  @apply py-2 px-3;
+  @apply py-3 px-4;
   @apply text-gray-700;
   @apply leading-tight;
   @apply transition ease-in-out duration-150;
