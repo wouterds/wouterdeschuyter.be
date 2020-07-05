@@ -38,7 +38,7 @@
     }
 
     &.old {
-      @apply text-red-500;
+      @apply text-orange-500;
     }
 
     &.new {
