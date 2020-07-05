@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
+import AdminModuleAuthenticationRequests from './Modules/AuthenticationRequests';
 import AdminModuleDashboard from './Modules/Dashboard';
 import AdminModuleMediaAssets from './Modules/MediaAssets';
 import AdminModulePostAliases from './Modules/PostAliases';
@@ -108,6 +109,9 @@ const Admin = () => {
             {page === 'media-assets' && <AdminModuleMediaAssets />}
             {page === 'posts' && <AdminModulePosts />}
             {page === 'post-aliases' && <AdminModulePostAliases />}
+            {page === 'authentication-requests' && (
+              <AdminModuleAuthenticationRequests />
+            )}
           </div>
         </div>
       </Layout.Content>
