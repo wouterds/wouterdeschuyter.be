@@ -10,6 +10,7 @@ import React from 'react';
 
 import AdminModuleDashboard from './Modules/Dashboard';
 import AdminModuleMediaAssets from './Modules/MediaAssets';
+import AdminModulePosts from './Modules/Posts';
 import AdminModuleUsers from './Modules/Users';
 import styles from './styles.module.css';
 
@@ -104,6 +105,7 @@ const Admin = () => {
             {page === 'dashboard' && <AdminModuleDashboard />}
             {page === 'users' && <AdminModuleUsers />}
             {page === 'media-assets' && <AdminModuleMediaAssets />}
+            {page === 'posts' && <AdminModulePosts />}
           </div>
         </div>
       </Layout.Content>
