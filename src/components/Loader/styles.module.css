@@ -25,6 +25,18 @@
 
     svg {
       animation: spin 500ms linear infinite;
+      @apply h-6 w-6;
+      @apply opacity-75;
+
+      path {
+        &:first-child {
+          @apply text-gray-600;
+        }
+
+        &:last-child {
+          @apply text-gray-400;
+        }
+      }
     }
   }
 }
