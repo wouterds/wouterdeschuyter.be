@@ -14,6 +14,7 @@ import AdminModuleDashboard from './Modules/Dashboard';
 import AdminModuleMediaAssets from './Modules/MediaAssets';
 import AdminModulePostAliases from './Modules/PostAliases';
 import AdminModulePosts from './Modules/Posts';
+import AdminModuleSensors from './Modules/Sensors';
 import AdminModuleUsers from './Modules/Users';
 import styles from './styles.module.css';
 
@@ -114,6 +115,7 @@ const Admin = () => {
               <AdminModuleAuthenticationRequests />
             )}
             {page === 'access-tokens' && <AdminModuleAccessTokens />}
+            {page === 'sensors' && <AdminModuleSensors />}
           </div>
         </div>
       </Layout.Content>
