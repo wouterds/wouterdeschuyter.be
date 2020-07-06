@@ -3,9 +3,9 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-const AdminModuleAccessTokens = () => {
+const AdminModuleSensors = () => {
   return (
-    <div className={styles.adminModuleAccessTokens}>
+    <div className={styles.adminModuleSensors}>
       <div className={styles.loader}>
         <Loader />
       </div>
@@ -13,4 +13,4 @@ const AdminModuleAccessTokens = () => {
   );
 };
 
-export default AdminModuleAccessTokens;
+export default AdminModuleSensors;
