@@ -8,6 +8,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
 
+import AdminModuleAccessTokens from './Modules/AccessTokens';
 import AdminModuleAuthenticationRequests from './Modules/AuthenticationRequests';
 import AdminModuleDashboard from './Modules/Dashboard';
 import AdminModuleMediaAssets from './Modules/MediaAssets';
@@ -112,6 +113,7 @@ const Admin = () => {
             {page === 'authentication-requests' && (
               <AdminModuleAuthenticationRequests />
             )}
+            {page === 'access-tokens' && <AdminModuleAccessTokens />}
           </div>
         </div>
       </Layout.Content>
