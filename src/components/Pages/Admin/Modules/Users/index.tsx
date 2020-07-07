@@ -66,10 +66,12 @@ const AdminModuleUsers = () => {
                 </td>
                 <td>{user.email}</td>
                 <td>
-                  {formatDate(
-                    new Date(parseInt(`${user.lastOnlineAt}`)),
-                    'd MMMM, yyyy HH:mm',
-                  )}
+                  {user.lastOnlineAt
+                    ? formatDate(
+                        new Date(parseInt(`${user.lastOnlineAt}`)),
+                        'd MMMM, yyyy HH:mm',
+                      )
+                    : '--'}
                 </td>
                 <td>
                   {formatDate(
