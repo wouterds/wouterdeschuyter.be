@@ -43,7 +43,7 @@ const About = () => {
         title="About"
         description={`Hey, I'm Wouter, ${Math.round(
           parseInt(getAge()),
-        )} years young and passionate about all things digital really. When not creating kickass (web) apps probably fiddling around with electronics.`}
+        )} years old and passionate about all things digital really. When not creating kickass (web) apps probably fiddling around with electronics.`}
       />
       <Header />
       <Layout.Content editorial>
@@ -51,7 +51,7 @@ const About = () => {
           <h1>About</h1>
           <p>
             Hey 👋, I&apos;m Wouter, <span className={styles.age}>{age}</span>{' '}
-            years young and passionate about all things digital really.
+            years old and passionate about all things digital really.
           </p>
           <p>
             I studied{' '}
