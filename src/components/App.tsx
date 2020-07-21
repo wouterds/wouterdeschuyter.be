@@ -1,5 +1,5 @@
-import { ApolloProvider } from '@apollo/react-hooks';
-import { getDataFromTree } from '@apollo/react-ssr';
+import { ApolloProvider } from '@apollo/client';
+import { getDataFromTree } from '@apollo/client/react/ssr';
 import GoogleAnalyticsSDK from 'components/GoogleAnalyticsSDK';
 import { User, UserContextProvider } from 'data/user';
 import gql from 'graphql-tag';

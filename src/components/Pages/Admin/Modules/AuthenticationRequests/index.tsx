@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import Loader from 'components/Loader';
 import Table from 'components/Table';
 import { User } from 'data/user';

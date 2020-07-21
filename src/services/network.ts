@@ -1,7 +1,7 @@
-import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
-import { ApolloClient } from 'apollo-client';
-import { setContext } from 'apollo-link-context';
-import { HttpLink } from 'apollo-link-http';
+import { HttpLink } from '@apollo/client';
+import { InMemoryCache, NormalizedCacheObject } from '@apollo/client/cache';
+import { ApolloClient } from '@apollo/client/core';
+import { setContext } from '@apollo/client/link/context';
 
 import Cookie, { Cookies } from './cookie';
 

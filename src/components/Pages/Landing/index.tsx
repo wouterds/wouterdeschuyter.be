@@ -1,5 +1,5 @@
 /* eslint-disable simple-import-sort/sort */
-import { useQuery } from '@apollo/react-hooks';
+import { useQuery } from '@apollo/client';
 import Footer from 'components/Footer';
 import Layout from 'components/Layout';
 import Meta from 'components/Meta';

@@ -1,4 +1,4 @@
-import { useMutation } from '@apollo/react-hooks';
+import { useMutation } from '@apollo/client';
 import Footer from 'components/Footer';
 import Form from 'components/Form';
 import Header from 'components/Header';
