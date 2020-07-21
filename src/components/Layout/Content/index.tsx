@@ -8,10 +8,17 @@ interface Props {
   editorial?: boolean;
   dark?: boolean;
   fullWidth?: boolean;
+  responsiveBig?: boolean;
 }
 
 const Content = (props: Props) => {
-  const { children, editorial, dark, fullWidth = false } = props;
+  const {
+    children,
+    editorial,
+    dark,
+    fullWidth = false,
+    responsiveBig = false,
+  } = props;
 
   return (
     <section
@@ -21,6 +28,7 @@ const Content = (props: Props) => {
         [styles.editorial]: editorial,
         [styles.dark]: dark,
         [styles.fullWidth]: fullWidth,
+        [styles.responsiveBig]: responsiveBig,
       })}
     >
       {children}

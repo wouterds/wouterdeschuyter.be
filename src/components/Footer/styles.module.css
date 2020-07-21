@@ -5,6 +5,12 @@
   @apply w-full;
   max-width: 960px;
 
+  &.responsiveBig {
+    @media (min-width: 1200px) {
+      max-width: 1024px;
+    }
+  }
+
   &.fullWidth {
     @apply max-w-full;
     @apply p-8;
