@@ -64,7 +64,7 @@ body {
   h2,
   h3,
   h4 {
-    @apply font-bold;
+    @apply font-semibold;
     @apply text-gray-900;
   }
 
