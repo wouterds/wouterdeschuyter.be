@@ -57,14 +57,14 @@ body {
 
   b,
   strong {
-    @apply font-semibold;
+    @apply font-bold;
   }
 
   h1,
   h2,
   h3,
   h4 {
-    @apply font-semibold;
+    @apply font-bold;
     @apply text-gray-900;
   }
 

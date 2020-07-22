@@ -5,8 +5,7 @@
   @apply leading-tight;
 
   .image {
-    @apply w-32;
-    @apply h-32;
+    @apply w-32 h-32;
     @apply rounded-full;
     @apply overflow-hidden;
     @apply inline-block;
@@ -14,20 +13,17 @@
     background: #191f2b;
 
     img {
-      @apply w-32;
-      @apply h-32;
+      @apply w-32 h-32;
       @apply rounded-full;
     }
   }
 
   h1 {
-    @apply text-4xl;
+    @apply text-4xl font-semibold;
   }
 
   h2 {
-    @apply text-2xl;
-    @apply text-gray-500;
-    @apply font-light;
+    @apply text-2xl text-gray-500 font-light;
     @apply mb-8;
   }
 

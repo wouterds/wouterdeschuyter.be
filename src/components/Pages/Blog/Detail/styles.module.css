@@ -67,15 +67,12 @@
 
   .title {
     @apply text-5xl;
-    @apply leading-tight;
     @apply mt-4;
   }
 
   .header {
     time {
-      @apply text-gray-400;
-      @apply text-lg;
-      @apply font-semibold;
+      @apply text-lg text-gray-400 font-bold;
       @apply uppercase;
     }
   }

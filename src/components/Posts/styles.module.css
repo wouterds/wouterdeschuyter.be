@@ -26,9 +26,7 @@
   }
 
   time {
-    @apply text-gray-400;
-    @apply text-sm;
-    @apply font-semibold;
+    @apply text-gray-400 text-sm font-bold;
     @apply uppercase;
 
     @media (max-width: 640px) {
