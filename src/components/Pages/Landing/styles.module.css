@@ -1,10 +1,9 @@
 .links {
-  @apply mt-6;
+  @apply mt-8;
   @apply text-right;
 
   a {
-    @apply font-medium;
-    @apply text-gray-500;
+    @apply font-semibold text-gray-500;
     @apply transition ease-in-out duration-150;
 
     &:hover {
