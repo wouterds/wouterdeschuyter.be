@@ -71,18 +71,22 @@ body {
   blockquote {
     @apply relative;
     @apply italic;
-    @apply py-4 px-6;
-    @apply bg-gray-100;
-    @apply rounded;
+    @apply py-2 pl-6;
+    @apply border-l-4 border-gray-200;
+    @apply text-gray-600 font-medium;
 
-    &:before {
-      content: '';
-      @apply block;
-      @apply absolute top-0 left-0 bottom-0;
-      @apply w-1;
-      @apply h-full;
-      @apply bg-gray-200;
-      @apply rounded-l;
+    p {
+      quotes: '\201C''\201D''\2018''\2019';
+
+      &:first-child:before {
+        content: open-quote;
+        @apply text-gray-700;
+      }
+
+      &:last-child:after {
+        content: close-quote;
+        @apply text-gray-700;
+      }
     }
   }
 
