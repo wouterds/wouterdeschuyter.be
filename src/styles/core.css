@@ -57,7 +57,7 @@ body {
 
   b,
   strong {
-    @apply font-bold;
+    @apply font-semibold;
   }
 
   h1,
