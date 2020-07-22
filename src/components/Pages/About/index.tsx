@@ -133,6 +133,24 @@ const About = () => {
           <h2>Connect with me</h2>
           <div className={styles.social}>
             <a
+              href="http://linkedin.com/in/wouterds"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnLinkedIn}
+            >
+              <FaLinkedin />
+              <span>LinkedIn</span>
+            </a>
+            <a
+              href="http://github.com/wouterds"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnGitHub}
+            >
+              <FaGithub />
+              <span>GitHub</span>
+            </a>
+            <a
               href="https://twitter.com/wouterds"
               target="_blank"
               rel="noopener noreferrer"
@@ -167,24 +185,6 @@ const About = () => {
             >
               <FaSteam />
               <span>Steam</span>
-            </a>
-            <a
-              href="http://linkedin.com/in/wouterds"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.btnLinkedIn}
-            >
-              <FaLinkedin />
-              <span>LinkedIn</span>
-            </a>
-            <a
-              href="http://github.com/wouterds"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.btnGitHub}
-            >
-              <FaGithub />
-              <span>GitHub</span>
             </a>
           </div>
         </div>
