@@ -3,7 +3,7 @@
   @apply p-10;
   @apply text-base text-gray-500;
   @apply w-full;
-  max-width: 960px;
+  max-width: var(--container-width);
 
   &.fullWidth {
     @apply max-w-full;

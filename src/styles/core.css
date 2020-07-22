@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 
+:root {
+  --container-width: 960px;
+}
+
 html,
 body,
 #__next {

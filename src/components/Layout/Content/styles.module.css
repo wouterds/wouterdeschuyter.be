@@ -2,7 +2,7 @@
   @apply mx-auto;
   @apply p-10;
   @apply w-full;
-  max-width: 960px;
+  max-width: var(--container-width);
 
   @media (max-width: 640px) {
     @apply px-6 py-2;
