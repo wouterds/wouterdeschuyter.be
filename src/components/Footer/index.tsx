@@ -6,22 +6,16 @@ import styles from './styles.module.css';
 interface Props {
   dark?: boolean;
   fullWidth?: boolean;
-  responsiveBig?: boolean;
 }
 
 export const Footer = (
-  { dark, fullWidth, responsiveBig }: Props = {
-    dark: false,
-    fullWidth: false,
-    responsiveBig: false,
-  },
+  { dark, fullWidth }: Props = { dark: false, fullWidth: false },
 ) => (
   <div
     className={cx({
       [styles.footer]: true,
       [styles.dark]: dark,
       [styles.fullWidth]: fullWidth,
-      [styles.responsiveBig]: responsiveBig,
     })}
   >
     <p>

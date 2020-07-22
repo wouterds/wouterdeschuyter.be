@@ -6,18 +6,10 @@
     @apply rounded;
     color: #db2756;
     padding: 0.15em 0.3em;
-
-    @media (min-width: 1200px) {
-      @apply text-base;
-    }
   }
 
   pre {
     @apply text-gray-700 text-sm;
-
-    @media (min-width: 1200px) {
-      @apply text-base;
-    }
 
     code {
       @apply bg-gray-100;
@@ -38,10 +30,6 @@
 
     & + .media {
       @apply mt-4;
-
-      @media (min-width: 1200px) {
-        @apply mt-5;
-      }
     }
 
     &-image img,

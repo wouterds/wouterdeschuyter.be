@@ -119,7 +119,7 @@ const Detail = (props: Props) => {
       />
       <Header transparent={true} />
       <LocalHeader mediaAsset={post.mediaAsset} />
-      <Layout.Content editorial responsiveBig>
+      <Layout.Content editorial>
         <div className={styles['blog-detail']}>
           <header className={styles.header}>
             <time
@@ -178,7 +178,7 @@ const Detail = (props: Props) => {
           />
         </div>
       </Layout.Content>
-      <Footer responsiveBig />
+      <Footer />
       <MediumZoomHelper />
       <HighlightjsHelper />
     </Layout>

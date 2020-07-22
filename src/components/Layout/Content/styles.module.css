@@ -8,228 +8,144 @@
     @apply px-6 py-2;
   }
 
-  &.responsiveBig {
-    @media (min-width: 1200px) {
-      max-width: 1024px;
-    }
-  }
-
   &.fullWidth {
     @apply max-w-full;
     @apply p-8 pt-4;
     @apply flex-1;
     @apply m-0;
   }
+}
 
-  &.editorial {
-    h1 {
-      @apply text-4xl;
-      @apply text-gray-900;
+.editorial {
+  h1 {
+    @apply text-4xl;
+    @apply text-gray-900;
 
-      &:after {
-        @apply mt-4;
-        @apply mb-10;
-        @apply block;
-        @apply bg-gray-900;
-        @apply w-8;
-        height: 0.125em;
-        content: '';
+    &:after {
+      @apply mt-4;
+      @apply mb-10;
+      @apply block;
+      @apply bg-gray-900;
+      @apply w-8;
+      height: 0.125em;
+      content: '';
 
-        @media (max-width: 640px) {
-          @apply mb-8;
-        }
+      @media (max-width: 640px) {
+        @apply mb-8;
       }
     }
+  }
 
-    h2 {
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+
+  blockquote p {
+    @apply text-base;
+  }
+
+  p {
+    @apply text-lg;
+
+    & + p {
+      @apply mt-5;
+    }
+  }
+
+  p + h1,
+  p + h2,
+  p + h3,
+  p + h4 {
+    @apply mt-8;
+  }
+
+  h1 + p,
+  h1 + h2 {
+    @apply mt-3;
+  }
+
+  h2 + p,
+  h2 + h3,
+  h3 + p,
+  h3 + h4,
+  h4 + p,
+  ul + p {
+    @apply mt-2;
+  }
+
+  pre,
+  ul,
+  blockquote {
+    & + h1,
+    & + h2,
+    & + h3,
+    & + h4,
+    & + p {
+      @apply mt-8;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  ul,
+  pre,
+  img {
+    & + img,
+    & + ul,
+    & + pre,
+    & + blockquote {
+      @apply mt-4;
+    }
+  }
+
+  @media (max-width: 640px) {
+    h1 {
       @apply text-3xl;
     }
-    h3 {
+    h2 {
       @apply text-2xl;
     }
-    h4 {
+    h3 {
       @apply text-xl;
     }
-
-    blockquote p {
+    h4 {
+      @apply text-lg;
+    }
+    p {
       @apply text-base;
     }
-
-    p {
-      @apply text-lg;
-
-      & + p {
-        @apply mt-5;
-      }
-
-      & + h1,
-      & + h2,
-      & + h3,
-      & + h4 {
-        @apply mt-8;
-      }
+    blockquote p {
+      @apply text-sm;
     }
+  }
 
-    h1 + p,
-    h1 + h2 {
-      @apply mt-3;
-    }
-
-    h2 + p,
-    h2 + h3,
-    h3 + p,
-    h3 + h4,
-    h4 + p,
-    ul + p {
-      @apply mt-2;
-    }
-
-    pre,
-    ul,
-    blockquote {
-      & + h1,
-      & + h2,
-      & + h3,
-      & + h4,
-      & + p {
-        @apply mt-8;
-      }
-    }
-
+  &.dark {
     h1,
     h2,
     h3,
-    h4,
-    p,
-    ul,
-    pre,
-    img {
-      & + img,
-      & + ul,
-      & + pre,
-      & + blockquote {
-        @apply mt-4;
-      }
+    h4 {
+      @apply text-gray-200;
     }
 
-    &.responsiveBig {
-      h1 {
-        @apply text-5xl;
-
-        &:after {
-          @apply w-12;
-        }
-      }
-      h2 {
-        @apply text-4xl;
-      }
-      h3 {
-        @apply text-3xl;
-      }
-      h4 {
-        @apply text-2xl;
-      }
-      blockquote p {
-        @apply text-lg;
-      }
-      p {
-        @apply text-xl;
-
-        & + p {
-          @apply mt-6;
-        }
-
-        & + h1,
-        & + h2,
-        & + h3,
-        & + h4 {
-          @apply mt-10;
-        }
-      }
-
-      h1 + p,
-      h1 + h2 {
-        @apply mt-4;
-      }
-
-      h2 + p,
-      h2 + h3,
-      h3 + p,
-      h3 + h4,
-      h4 + p,
-      ul + p {
-        @apply mt-3;
-      }
-
-      pre,
-      ul,
-      blockquote {
-        & + h1,
-        & + h2,
-        & + h3,
-        & + h4,
-        & + p {
-          @apply mt-10;
-        }
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      p,
-      ul,
-      pre,
-      img {
-        & + img,
-        & + ul,
-        & + pre,
-        & + blockquote {
-          @apply mt-5;
-        }
-      }
+    h1:after {
+      @apply bg-gray-200;
     }
 
-    @media (max-width: 640px) {
-      h1 {
-        @apply text-3xl;
-      }
-      h2 {
-        @apply text-2xl;
-      }
-      h3 {
-        @apply text-xl;
-      }
-      h4 {
-        @apply text-lg;
-      }
-      p {
-        @apply text-base;
-      }
-      blockquote p {
-        @apply text-sm;
-      }
+    p {
+      @apply text-gray-500;
     }
 
-    &.dark {
-      h1,
-      h2,
-      h3,
-      h4 {
-        @apply text-gray-200;
-      }
-
-      h1:after {
-        @apply bg-gray-200;
-      }
-
-      p {
-        @apply text-gray-500;
-      }
-
-      a {
-        color: #e25277;
-      }
+    a {
+      color: #e25277;
     }
   }
 }

@@ -70,11 +70,7 @@
   .title {
     @apply text-5xl;
     @apply leading-tight;
-
-    @media (min-width: 1200px) {
-      @apply text-6xl !important;
-      @apply mt-5;
-    }
+    @apply mt-4;
   }
 
   .header {
@@ -83,10 +79,6 @@
       @apply text-lg;
       @apply font-semibold;
       @apply uppercase;
-
-      @media (min-width: 1200px) {
-        @apply text-xl;
-      }
     }
   }
 
