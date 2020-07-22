@@ -1,12 +1,11 @@
 .button {
+  @apply cursor-pointer appearance-none;
   @apply bg-gray-900;
-  @apply leading-tight;
-  @apply appearance-none;
-  @apply rounded;
-  @apply py-3 px-4;
-  @apply text-gray-100 font-medium;
-  @apply transition ease-in-out duration-150;
   @apply relative;
+  @apply transition ease-in-out duration-150;
+  @apply text-gray-100 font-semibold;
+  @apply py-2 px-4;
+  @apply rounded;
 
   @keyframes spin {
     0% {

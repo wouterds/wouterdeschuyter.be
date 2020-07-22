@@ -1,7 +1,6 @@
 .label {
   @apply block;
-  @apply text-gray-700;
-  @apply font-medium;
+  @apply text-gray-700 font-medium text-base;
   @apply mb-2;
 
   &.error {

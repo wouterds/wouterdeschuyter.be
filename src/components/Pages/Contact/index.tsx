@@ -118,7 +118,7 @@ const Contact = () => {
                 />
               </Form.Field>
             </div>
-            <div className={cx(styles.row, styles.fullWidth)}>
+            <div className={styles.row}>
               <Form.Field>
                 <Form.Label
                   htmlFor="subject"
@@ -146,7 +146,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   hasError={errors.hasOwnProperty('message')}
-                  rows={5}
+                  rows={7}
                   ref={register({ required: true })}
                 />
               </Form.Field>

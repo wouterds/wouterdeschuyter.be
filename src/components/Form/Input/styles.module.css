@@ -4,9 +4,8 @@
   @apply appearance-none;
   @apply rounded;
   @apply w-full;
-  @apply py-3 px-4;
-  @apply text-gray-700;
-  @apply leading-tight;
+  @apply p-3;
+  @apply text-gray-700 leading-none;
   @apply transition ease-in-out duration-150;
 
   &.error {
