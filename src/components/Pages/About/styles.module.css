@@ -9,7 +9,6 @@
     .btnTwitter,
     .btnFacebook,
     .btnInstagram,
-    .btnSpotify,
     .btnYoutube,
     .btnSteam,
     .btnGitHub,
@@ -65,15 +64,6 @@
 
       &:hover {
         opacity: 1;
-      }
-    }
-
-    .btnSpotify {
-      color: #e8faee;
-      background-color: #1dd15d;
-
-      &:hover {
-        background-color: #1abc53;
       }
     }
 
