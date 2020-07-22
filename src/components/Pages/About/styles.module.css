@@ -9,7 +9,6 @@
     .btnTwitter,
     .btnFacebook,
     .btnInstagram,
-    .btnYoutube,
     .btnSteam,
     .btnGitHub,
     .btnLinkedIn {
@@ -64,15 +63,6 @@
 
       &:hover {
         opacity: 1;
-      }
-    }
-
-    .btnYoutube {
-      color: #fdeae9;
-      background-color: #eb3223;
-
-      &:hover {
-        background-color: #d32d1f;
       }
     }
 

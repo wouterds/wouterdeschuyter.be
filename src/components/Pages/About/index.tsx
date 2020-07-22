@@ -160,15 +160,6 @@ const About = () => {
               <span>Instagram</span>
             </a>
             <a
-              href="https://youtube.com/c/wouterds"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.btnYoutube}
-            >
-              <FaYoutube />
-              <span>YouTube</span>
-            </a>
-            <a
               href="https://steamcommunity.com/id/wouterds"
               target="_blank"
               rel="noopener noreferrer"
