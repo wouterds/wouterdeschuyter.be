@@ -7,8 +7,7 @@
 
   &.fullWidth {
     @apply max-w-full;
-    @apply p-8;
-    @apply m-0;
+    @apply p-8 m-0;
   }
 
   &.dark {

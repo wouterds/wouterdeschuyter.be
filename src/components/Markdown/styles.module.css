@@ -13,8 +13,7 @@
 
     code {
       @apply bg-gray-100;
-      @apply py-3 px-4;
-      @apply mt-2 mx-0 mb-4;
+      @apply py-3 px-4 mt-2 mx-0 mb-4;
       @apply block;
       @apply overflow-x-scroll;
     }

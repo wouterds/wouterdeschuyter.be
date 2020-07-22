@@ -50,8 +50,7 @@
     }
 
     h2 {
-      @apply mt-2 mb-6;
-      @apply px-4;
+      @apply mt-2 mb-6 px-4;
       @apply text-xl;
     }
   }

@@ -10,9 +10,8 @@
 
   &.fullWidth {
     @apply max-w-full;
-    @apply p-8 pt-4;
+    @apply p-8 pt-4 m-0;
     @apply flex-1;
-    @apply m-0;
   }
 }
 
@@ -22,8 +21,7 @@
     @apply text-gray-900;
 
     &:after {
-      @apply mt-4;
-      @apply mb-10;
+      @apply mt-4 mb-10;
       @apply block;
       @apply bg-gray-900;
       @apply w-8;
