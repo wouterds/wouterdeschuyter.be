@@ -2,7 +2,12 @@
 @tailwind components;
 
 :root {
+  --font-size: 16px;
   --container-width: 960px;
+}
+
+html {
+  font-size: var(--font-size);
 }
 
 html,
