@@ -97,9 +97,7 @@
   h4,
   p,
   ul,
-  pre,
-  img {
-    & + img,
+  pre {
     & + ul,
     & + pre,
     & + blockquote {
