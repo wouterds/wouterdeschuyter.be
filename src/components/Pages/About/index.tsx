@@ -9,10 +9,8 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedin,
-  FaSpotify,
   FaSteam,
   FaTwitter,
-  FaYoutube,
 } from 'react-icons/fa';
 
 import styles from './styles.module.css';
