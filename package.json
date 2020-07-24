@@ -24,7 +24,7 @@
     "date-fns": "^2.15.0",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
-    "highlight.js": "^10.0.3",
+    "highlight.js": "^10.1.2",
     "human-format": "^0.11.0",
     "marked": "^1.1.1",
     "md5": "^2.2.1",
