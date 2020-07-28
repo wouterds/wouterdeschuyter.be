@@ -55,7 +55,7 @@
     "@types/react-google-recaptcha": "^2.1.0",
     "@types/rss": "^0.0.28",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
-    "@typescript-eslint/parser": "^3.7.0",
+    "@typescript-eslint/parser": "^3.7.1",
     "babel-loader": "^8.0.6",
     "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
