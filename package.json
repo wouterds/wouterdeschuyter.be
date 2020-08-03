@@ -36,7 +36,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-google-recaptcha": "^2.0.1",
-    "react-hook-form": "^6.1.2",
+    "react-hook-form": "^6.2.0",
     "react-icons": "^3.10.0",
     "react-twemoji": "^0.2.3",
     "rss": "^1.2.2",
