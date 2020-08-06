@@ -1,4 +1,4 @@
 {
-  "**/*.(ts|tsx|js|jsx)": "eslint src --ext '.js, .jsx, .ts, .tsx'",
+  "**/*.(ts|tsx|js|jsx)": "eslint --ext '.js, .jsx, .ts, .tsx'",
   "**/*.css": "stylelint"
 }
