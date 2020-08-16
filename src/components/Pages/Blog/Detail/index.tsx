@@ -174,7 +174,7 @@ const Detail = (props: Props) => {
             </a>
           </div>
           <Webmentions
-            url={`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`}
+            urls={[`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`]}
           />
         </div>
       </Layout.Content>

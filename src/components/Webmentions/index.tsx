@@ -1,5 +1,6 @@
+import { useDidMount } from 'beautiful-react-hooks';
 import { format } from 'date-fns';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import styles from './styles.module.css';
 
@@ -17,51 +18,53 @@ interface Webmention {
 }
 
 interface Props {
-  url: string;
+  urls: string[];
 }
 
 const Webmentions = (props: Props) => {
-  const { url } = props;
+  const { urls } = props;
   const [webmentions, setWebMentions] = useState<Webmention[]>([]);
 
-  useEffect(() => {
-    fetch(
-      `https://webmention.io/api/mentions.jf2?per-page=100&page=0&target=${encodeURI(
-        url,
-      )}`,
-    ).then(async (response) => {
-      const { children } = (await response.json()) || {};
+  useDidMount(() => {
+    for (const url of urls) {
+      fetch(
+        `https://webmention.io/api/mentions.jf2?per-page=100&page=0&target=${encodeURI(
+          url,
+        )}`,
+      ).then(async (response) => {
+        const { children } = (await response.json()) || {};
 
-      if (!Array.isArray(children)) {
-        return;
-      }
-
-      const cleanedWebmentions: Webmention[] = [];
-      for (const webmention of children) {
-        if (webmention.type !== 'entry') {
-          continue;
+        if (!Array.isArray(children)) {
+          return;
         }
 
-        const urls = cleanedWebmentions.map((webmention) => webmention.url);
-        if (urls.includes(webmention.url)) {
-          continue;
+        const cleanedWebmentions: Webmention[] = [];
+        for (const webmention of children) {
+          if (webmention.type !== 'entry') {
+            continue;
+          }
+
+          const urls = cleanedWebmentions.map((webmention) => webmention.url);
+          if (urls.includes(webmention.url)) {
+            continue;
+          }
+
+          cleanedWebmentions.push({
+            ...webmention,
+            published: new Date(
+              webmention.published || webmention['wm-received'],
+            ),
+          });
         }
 
-        cleanedWebmentions.push({
-          ...webmention,
-          published: new Date(
-            webmention.published || webmention['wm-received'],
-          ),
-        });
-      }
+        cleanedWebmentions.sort((a: Webmention, b: Webmention) =>
+          a.published > b.published ? -1 : 1,
+        );
 
-      cleanedWebmentions.sort((a: Webmention, b: Webmention) =>
-        a.published > b.published ? -1 : 1,
-      );
-
-      setWebMentions(cleanedWebmentions);
-    });
-  }, [url]);
+        setWebMentions([...webmentions, ...cleanedWebmentions]);
+      });
+    }
+  });
 
   if (webmentions.length === 0) {
     return null;
