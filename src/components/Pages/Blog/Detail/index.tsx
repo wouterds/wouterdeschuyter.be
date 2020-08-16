@@ -35,6 +35,9 @@ const FETCH_DATA = gql`
       user {
         name
       }
+      postAliases {
+        slug
+      }
     }
   }
 `;
@@ -57,6 +60,12 @@ const Detail = (props: Props) => {
 
   const { title } = post;
   const uri = `${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`;
+
+  const urls = post.postAliases.map(
+    (alias: { slug: string }) =>
+      `${process.env.NEXT_PUBLIC_APP_URL}/blog/${alias.slug}`,
+  );
+  urls.push(`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`);
 
   return (
     <Layout>
@@ -173,9 +182,7 @@ const Detail = (props: Props) => {
               <span>Share on LinkedIn</span>
             </a>
           </div>
-          <Webmentions
-            urls={[`${process.env.NEXT_PUBLIC_APP_URL}/blog/${post.slug}`]}
-          />
+          <Webmentions urls={urls} />
         </div>
       </Layout.Content>
       <Footer />
