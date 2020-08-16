@@ -53,7 +53,7 @@
     a {
       @apply text-gray-500;
       @apply transition ease-in-out duration-150;
-      @apply p-3;
+      @apply px-3 py-4;
 
       &:hover,
       &.active {
