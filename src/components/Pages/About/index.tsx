@@ -41,7 +41,7 @@ const About = () => {
         title="About"
         description={`Hey, I'm Wouter, ${Math.round(
           parseInt(getAge()),
-        )} years old and passionate about all things digital really. When not creating kickass (web) apps probably fiddling around with electronics.`}
+        )} years old and passionate about all things digital really. When not creating kickass digital applications, I'm probably fiddling around with electronics.`}
       />
       <Header />
       <Layout.Content editorial>
@@ -61,15 +61,13 @@ const About = () => {
               Digital Design &amp; Development
             </a>{' '}
             🎓 at Howest University College and currently I&apos;m freelancing
-            as a Full Stack Developer. I have about {yearsExperience} years of
-            experience as a professional web &amp; mobile developer 💻 and in
-            the last few years, I&apos;ve been focusing a lot on React &amp;
-            React Native apps. My current favorite tech stack would be a
-            combination of Docker, Nginx, Cloudflare, Node, Yarn, TypeScript,
-            React &amp; GraphQL 💖.
+            as a Full Stack Developer 💻. I have about {yearsExperience} years
+            of experience as a professional web &amp; mobile developer and in
+            the last few years, I&apos;ve been focusing a lot on React, React
+            Native &amp; Node.js applications.
           </p>
           <p>
-            Before I started freelancing &amp; consulting I used to work for a
+            Before I started freelancing &amp; contracting I used to work for a
             startup{' '}
             <a
               href="https://delta.app"
@@ -77,8 +75,8 @@ const About = () => {
               rel="noopener noreferrer"
             >
               Delta
-            </a>{' '}
-            that has been{' '}
+            </a>
+            , which has been{' '}
             <a
               href="https://techcrunch.com/2019/11/06/investment-platform-etoro-acquires-crypto-portfolio-tracker-app-delta/"
               target="_blank"
@@ -113,20 +111,19 @@ const About = () => {
             .
           </p>
           <p>
-            When I&apos;m not creating kickass (web) apps I&apos;m most likely
-            fiddling around with electronics using Arduino, ESP, or Raspberry Pi
-            ⚡️. Besides all of that, I really love traveling, trying new
-            things, and pushing my own limits. Also kind of a data geek, charts
-            &amp; stats are real motivators for me 📈 (loyal Fitbit user over
-            here ✋).
+            When I&apos;m not creating kickass digital applications, I&apos;m
+            probably fiddling around with electronics using Arduino, ESP and
+            Raspberry Pi ⚡️. Besides that, I really love traveling, trying new
+            things and pushing my own limits. Also kind of a data geek, charts
+            &amp; stats are real motivators for me 📈.
           </p>
           <p>
-            Since 2017 I&apos;m also involved in the crypto space. I&apos;ve
-            really started to appreciate the power of decentralized applications
-            and to be honest, it&apos;s probably one of the most exciting spaces
-            I&apos;ve come across lately 👀!
+            Since 2017 heavily involved in the crypto space and really started
+            to appreciate the power of decentralized applications. And to be
+            honest, it&apos;s probably one of the most exciting things I&apos;ve
+            come across lately 👀!
           </p>
-          <p>Oh right, also a cat person 🐈!</p>
+          <p>Also a cat person 🐈.</p>
 
           <h2>Connect with me</h2>
           <div className={styles.social}>
