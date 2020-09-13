@@ -2000,10 +2000,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-beautiful-react-hooks@^0.27.2:
-  version "0.27.2"
-  resolved "https://registry.yarnpkg.com/beautiful-react-hooks/-/beautiful-react-hooks-0.27.2.tgz#6b97b8c3904fb7d2e3c712bf4e98b0bcf190c6fc"
-  integrity sha512-3TANSRI2+HhZkmslOIUjQ6plC1NdXg50C5ydYc3JXbfV7hx14SjnrZaWwAplCU7kgbbGkKMeZGdf7hrISMygRg==
+beautiful-react-hooks@^0.30.1:
+  version "0.30.1"
+  resolved "https://registry.yarnpkg.com/beautiful-react-hooks/-/beautiful-react-hooks-0.30.1.tgz#8a1e8459b477acf1985b653170cdfecf4dae049b"
+  integrity sha512-PLAW9z8/YuAGES9PNVnUkguvtxqkmq0zPDZp3/yyzSm4zqKTc2D0ELsI2kVpKUXRAZs3wlg93i+wcBKMtPOPRw==
   dependencies:
     lodash.debounce "^4.0.8"
     lodash.throttle "^4.1.1"
