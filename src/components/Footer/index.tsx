@@ -19,11 +19,11 @@ export const Footer = (
     })}
   >
     <p>
-      &copy; Copyright {new Date().getFullYear()} Wouter De Schuyter,
+      &copy; Copyright {new Date().getFullYear()} Wouter De Schuyter -
       BE0745.964.642
     </p>
     <p className={styles.separator}> | </p>
-    <p>Made in TypeScript using Next.js, GraphQL and a few other packages ✨</p>
+    <p>Made in TypeScript using Next.js, GraphQL and a few other packages 💖</p>
   </div>
 );
 
