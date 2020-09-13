@@ -33,7 +33,7 @@
     "react-google-recaptcha": "^2.0.1",
     "react-hook-form": "^6.8.2",
     "react-icons": "^3.11.0",
-    "react-twemoji": "^0.2.3",
+    "react-twemoji": "^0.3.0",
     "rss": "^1.2.2",
     "sitemap": "^6.1.5",
     "universal-cookie": "^4.0.3"
