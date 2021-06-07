@@ -4614,10 +4614,10 @@ he@1.1.1:
   resolved "https://registry.yarnpkg.com/he/-/he-1.1.1.tgz#93410fd21b009735151f8868c2f271f3427e23fd"
   integrity sha1-k0EP0hsAlzUVH4howvJx80J+I/0=
 
-highlight.js@^10.2.0:
-  version "10.2.0"
-  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.2.0.tgz#367151bcf813adebc54822f1cb51d2e1e599619f"
-  integrity sha512-OryzPiqqNCfO/wtFo619W+nPYALM6u7iCQkum4bqRmmlcTikOkmlL06i009QelynBPAlNByTQU6cBB2cOBQtCw==
+highlight.js@^11.0.1:
+  version "11.0.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.0.1.tgz#a78bafccd9aa297978799fe5eed9beb7ee1ef887"
+  integrity sha512-EqYpWyTF2s8nMfttfBA2yLKPNoZCO33pLS4MnbXQ4hECf1TKujCt1Kq7QAdrio7roL4+CqsfjqwYj4tYgq0pJQ==
 
 hmac-drbg@^1.0.0:
   version "1.0.1"
