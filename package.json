@@ -21,7 +21,7 @@
     "graphql-tag": "^2.10.3",
     "highlight.js": "^10.2.0",
     "human-format": "^0.11.0",
-    "marked": "^1.1.1",
+    "marked": "^3.0.8",
     "md5": "^2.3.0",
     "medium-zoom": "^1.0.4",
     "next": "^9.5.3",
