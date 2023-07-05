@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const withPlugins = require('next-compose-plugins');
-const optimizedImages = require('next-optimized-images');
+/** @type {import('next').NextConfig} */
+const nextConfig = {}
 
-module.exports = withPlugins([[optimizedImages]]);
+module.exports = nextConfig

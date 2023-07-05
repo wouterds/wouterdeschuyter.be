@@ -1,48 +1,34 @@
-# wouterdeschuyter.be
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-![version](https://img.shields.io/github/v/tag/wouterds/wouterdeschuyter.be?color=orange&label=version)
-![release](https://github.com/wouterds/wouterdeschuyter.be/workflows/release/badge.svg)
-![linting](https://github.com/wouterds/wouterdeschuyter.be/workflows/linting/badge.svg)
-![dependencies](https://img.shields.io/david/wouterds/wouterdeschuyter.be)
-![nginx image](https://img.shields.io/docker/image-size/wouterds/wouterdeschuyter.be/nginx?label=nginx%20image)
-![node image](https://img.shields.io/docker/image-size/wouterds/wouterdeschuyter.be/node?label=node%20image)
+## Getting Started
 
-## Running
+First, run the development server:
 
 ```bash
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
 ```
 
-## Setup
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-cp .env.example .env
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### VSCode
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-#### Plugins
+## Learn More
 
-- https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint
-- https://marketplace.visualstudio.com/items?itemName=stylelint.vscode-stylelint
-- https://marketplace.visualstudio.com/items?itemName=cpylua.language-postcss
+To learn more about Next.js, take a look at the following resources:
 
-#### Workspace settings
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-```javascript
-{
-  "eslint.validate": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-  ],
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true,
-  },
-  "files.associations": {
-    "*.css": "postcss",
-  },
-}
-```
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.

@@ -1,9 +1,0 @@
-.label {
-  @apply block;
-  @apply text-gray-700 font-medium text-base;
-  @apply mb-2;
-
-  &.error {
-    @apply text-red-700;
-  }
-}
